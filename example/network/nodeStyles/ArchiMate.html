@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+<head>
+  <title>ArchiMate visualization</title>
+
+  <style type="text/css">
+    #mynetwork {
+      width: 600px;
+      height: 500px;
+      border: 1px solid lightgray;
+    }
+  </style>
+
+  <script type="text/javascript" src="../../../dist/vis.js"></script>
+  <link href="../../../dist/vis-network.min.css" rel="stylesheet" type="text/css" />
+
+  <script type="text/javascript">
+    var nodes = null;
+    var edges = null;
+    var network = null;
+
+    var DIR = '../img/archimate/';
+    var EDGE_LENGTH_MAIN = 150;
+    var EDGE_LENGTH_SUB = 50;
+
+    // Called when the Visualization API is loaded.
+    function draw() {
+      // Create a data table with nodes.
+      nodes = [];
+
+      // Create a data table with links.
+      edges = [];
+      title="I'm an ArchiMate Object";
+
+      nodes.push({id: 1, shape: 'image',label: 'ArchiMate', image: DIR + 'business-object.png', shape: 'image'}); 
+      nodes.push({id: 2, shape: 'image',label: 'Business Layer', image: DIR + 'business-object.png', shape: 'image'}); 
+      nodes.push({id: 3, shape: 'image',label: 'Application Layer', image: DIR + 'business-object.png', shape: 'image'});
+      nodes.push({id: 4, shape: 'image',label: 'PhysicalTechnology Layer', image: DIR + 'business-object.png', shape: 'image'});
+      nodes.push({id: 5, shape: 'image',label: 'Motivation', image: DIR + 'business-object.png', shape: 'image'});
+      nodes.push({id: 6, shape: 'image',label: 'Other', image: DIR + 'business-object.png', shape: 'image'});
+      nodes.push({id: 7, shape: 'image',label: 'ImplementationMigration', image: DIR + 'business-object.png', shape: 'image'}); 
+      nodes.push({id: 8, shape: 'image',label: 'Strategy', image: DIR + 'business-object.png', shape: 'image'});      
+
+      
+      nodes.push({id: 500, title: "I'm an ArchiMate Business Actor", label: 'Actor', image: DIR + 'actor.png', shape: 'image'});
+      nodes.push({id: 501, label: 'Application Collaboration', image: DIR + 'application-collaboration.png', shape: 'image'});      
+      nodes.push({id: 502, label: 'Application Component', image: DIR + 'application-component.png', shape: 'image'});      
+      nodes.push({id: 503, label: 'Application Event', image: DIR + 'application-event.png', shape: 'image'});      
+      nodes.push({id: 504, label: 'Application Function', image: DIR + 'application-function.png', shape: 'image'});      
+      nodes.push({id: 505, label: 'Application Interaction', image: DIR + 'application-interaction.png', shape: 'image'});      
+      nodes.push({id: 506, label: 'Application Interface', image: DIR + 'application-interface.png', shape: 'image'});      
+      nodes.push({id: 507, label: 'Application Process', image: DIR + 'application-process.png', shape: 'image'});      
+      nodes.push({id: 508, label: 'Application Service', image: DIR + 'application-service.png', shape: 'image'});      
+      nodes.push({id: 509, label: 'Artifact', image: DIR + 'artifact.png', shape: 'image'});      
+      nodes.push({id: 510, label: 'Assessment', image: DIR + 'assessment.png', shape: 'image'});      
+      nodes.push({id: 511, label: 'Business Collaboration', image: DIR + 'business-collaboration.png', shape: 'image'});      
+      nodes.push({id: 512, label: 'Business Event', image: DIR + 'business-event.png', shape: 'image'});      
+      nodes.push({id: 513, label: 'Business Function', image: DIR + 'business-function.png', shape: 'image'});      
+      nodes.push({id: 514, label: 'Business Interaction', image: DIR + 'business-interaction.png', shape: 'image'});      
+      nodes.push({id: 515, label: 'Business Interface', image: DIR + 'business-interface.png', shape: 'image'});      
+      nodes.push({id: 516, label: 'Business Object', image: DIR + 'business-object.png', shape: 'image'});      
+      nodes.push({id: 517, label: 'Business Process', image: DIR + 'business-process.png', shape: 'image'});      
+      nodes.push({id: 518, label: 'Business Role', image: DIR + 'business-role.png', shape: 'image'});      
+      nodes.push({id: 519, label: 'Business Service', image: DIR + 'business-service.png', shape: 'image'});      
+      nodes.push({id: 520, label: 'Capability', image: DIR + 'capability.png', shape: 'image'});      
+      nodes.push({id: 521, label: 'Communication Network', image: DIR + 'communication-network.png', shape: 'image'});      
+      nodes.push({id: 522, label: 'Constraint', image: DIR + 'constraint.png', shape: 'image'});      
+      nodes.push({id: 523, label: 'Contract', image: DIR + 'contract.png', shape: 'image'});      
+      nodes.push({id: 524, label: 'Course of Action', image: DIR + 'course-of-action.png', shape: 'image'});      
+      nodes.push({id: 525, label: 'Data Object', image: DIR + 'data-object.png', shape: 'image'});      
+      nodes.push({id: 526, label: 'Deliverable', image: DIR + 'deliverable.png', shape: 'image'});      
+      nodes.push({id: 527, label: 'Device', image: DIR + 'device.png', shape: 'image'});      
+      nodes.push({id: 528, label: 'Distribution Network', image: DIR + 'distribution-network.png', shape: 'image'});      
+      nodes.push({id: 529, label: 'Driver', image: DIR + 'driver.png', shape: 'image'});      
+      nodes.push({id: 530, label: 'Equipment', image: DIR + 'equipment.png', shape: 'image'});      
+      nodes.push({id: 531, label: 'Facility', image: DIR + 'facility.png', shape: 'image'});      
+      nodes.push({id: 532, label: 'Gap', image: DIR + 'gap.png', shape: 'image'});      
+      nodes.push({id: 533, label: 'Goal', image: DIR + 'goal.png', shape: 'image'});      
+      nodes.push({id: 534, label: 'Implementation Event', image: DIR + 'implementation-event.png', shape: 'image'});      
+      nodes.push({id: 535, label: 'Location', image: DIR + 'location.png', shape: 'image'});      
+      nodes.push({id: 536, label: 'Material', image: DIR + 'material.png', shape: 'image'});      
+      nodes.push({id: 537, label: 'Meaning', image: DIR + 'meaning.png', shape: 'image'});      
+      nodes.push({id: 538, label: 'Node', image: DIR + 'node.png', shape: 'image'});      
+      nodes.push({id: 539, label: 'Outcome', image: DIR + 'outcome.png', shape: 'image'});      
+      nodes.push({id: 540, label: 'Path', image: DIR + 'path.png', shape: 'image'});      
+      nodes.push({id: 541, label: 'Plateau', image: DIR + 'plateau.png', shape: 'image'});      
+      nodes.push({id: 542, label: 'Principle', image: DIR + 'principle.png', shape: 'image'});      
+      nodes.push({id: 543, label: 'Product', image: DIR + 'product.png', shape: 'image'});      
+      nodes.push({id: 544, label: 'Representation', image: DIR + 'representation.png', shape: 'image'});      
+      nodes.push({id: 545, label: 'Requirement', image: DIR + 'requirement.png', shape: 'image'});      
+      nodes.push({id: 546, label: 'Resource', image: DIR + 'resource.png', shape: 'image'});      
+      nodes.push({id: 547, label: 'Stakeholder', image: DIR + 'stakeholder.png', shape: 'image'});      
+      nodes.push({id: 548, label: 'System Software', image: DIR + 'system-software.png', shape: 'image'});      
+      nodes.push({id: 549, label: 'Technology Collaboration', image: DIR + 'technology-collaboration.png', shape: 'image'});      
+      nodes.push({id: 550, label: 'Technology Event', image: DIR + 'technology-collaboration.png', shape: 'image'});      
+      nodes.push({id: 551, label: 'Technology Function', image: DIR + 'technology-function.png', shape: 'image'});      
+      nodes.push({id: 552, label: 'Technology Interaction', image: DIR + 'technology-interaction.png', shape: 'image'});      
+      nodes.push({id: 553, label: 'Technology Interface', image: DIR + 'technology-interface.png', shape: 'image'});      
+      nodes.push({id: 554, label: 'Technology Process', image: DIR + 'technology-process.png', shape: 'image'});      
+      nodes.push({id: 555, label: 'Value', image: DIR + 'value.png', shape: 'image'});      
+      nodes.push({id: 556, label: 'Work Package', image: DIR + 'workpackage.png', shape: 'image'});      
+
+      for (var i = 2; i <= 8; i++) {
+         edges.push({from: 1, to: i,  arrows:{ to: {type: 'circle'}},length: EDGE_LENGTH_MAIN});
+      }
+
+      for (var i = 501; i <= 508; i++) {
+         edges.push({from: 3, to: i,  arrows:'to', length: EDGE_LENGTH_MAIN});
+      }
+      edges.push({from: 3, to: 500,  arrows:'to',length: EDGE_LENGTH_MAIN});
+      edges.push({from: 3, to: 525,  arrows:'to',length: EDGE_LENGTH_MAIN});
+
+      for (var i = 511; i <= 519; i++) {
+         edges.push({from: 2, to: i,arrows:'to', length: EDGE_LENGTH_MAIN});
+      }
+      edges.push({from: 2, to: 523,arrows:'to', length: EDGE_LENGTH_MAIN});
+      edges.push({from: 2, to: 543,arrows:'to', length: EDGE_LENGTH_MAIN});
+      edges.push({from: 2, to: 544,arrows:'to', length: EDGE_LENGTH_MAIN});
+
+      for (var i = 549; i <= 554; i++) {
+         edges.push({from: 4, to: i, arrows:'to',length: EDGE_LENGTH_MAIN});
+      }      
+      edges.push({from: 4, to: 509, arrows:'to',length: EDGE_LENGTH_MAIN});
+      edges.push({from: 4, to: 521, arrows:'to',length: EDGE_LENGTH_MAIN});
+      edges.push({from: 4, to: 527, arrows:'to',length: EDGE_LENGTH_MAIN});      
+      edges.push({from: 4, to: 528, arrows:'to',length: EDGE_LENGTH_MAIN});   
+      edges.push({from: 4, to: 530, arrows:'to',length: EDGE_LENGTH_MAIN});  
+      edges.push({from: 4, to: 531, arrows:'to',length: EDGE_LENGTH_MAIN});  
+      edges.push({from: 4, to: 536, arrows:'to',length: EDGE_LENGTH_MAIN});  
+      edges.push({from: 4, to: 538, arrows:'to',length: EDGE_LENGTH_MAIN});                     
+      edges.push({from: 4, to: 540, arrows:'to',length: EDGE_LENGTH_MAIN});
+      edges.push({from: 4, to: 548, arrows:'to',length: EDGE_LENGTH_MAIN});       
+ 
+      edges.push({from: 5, to: 510, arrows:'to', length: EDGE_LENGTH_MAIN}); 
+      edges.push({from: 5, to: 522, arrows:'to',length: EDGE_LENGTH_MAIN});  
+      edges.push({from: 5, to: 529, arrows:'to',length: EDGE_LENGTH_MAIN}); 
+      edges.push({from: 5, to: 533, arrows:'to',length: EDGE_LENGTH_MAIN});  
+      edges.push({from: 5, to: 537, arrows:'to',length: EDGE_LENGTH_MAIN}); 
+      edges.push({from: 5, to: 539, arrows:'to',length: EDGE_LENGTH_MAIN});           
+      edges.push({from: 5, to: 542, arrows:'to',length: EDGE_LENGTH_MAIN});           
+      edges.push({from: 5, to: 545, arrows:'to',length: EDGE_LENGTH_MAIN});           
+      edges.push({from: 5, to: 547, arrows:'to',length: EDGE_LENGTH_MAIN}); 
+      edges.push({from: 5, to: 555, arrows:'to',length: EDGE_LENGTH_MAIN});       
+
+      edges.push({from: 6, to: 535, arrows:'to',length: EDGE_LENGTH_MAIN});        
+
+      edges.push({from: 7, to: 526,arrows:'to', length: EDGE_LENGTH_MAIN});  
+      edges.push({from: 7, to: 532,arrows:'to', length: EDGE_LENGTH_MAIN});  
+      edges.push({from: 7, to: 534,arrows:'to', length: EDGE_LENGTH_MAIN}); 
+      edges.push({from: 7, to: 541,arrows:'to', length: EDGE_LENGTH_MAIN});  
+      edges.push({from: 7, to: 556, arrows:'to',length: EDGE_LENGTH_MAIN});  
+                        
+      edges.push({from: 8, to: 520,arrows:'to', length: EDGE_LENGTH_MAIN});  
+      edges.push({from: 8, to: 524,arrows:'to', length: EDGE_LENGTH_MAIN});  
+      edges.push({from: 8, to: 546, arrows:'to',length: EDGE_LENGTH_MAIN});  
+
+      // create a network
+      var container = document.getElementById('mynetwork');
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+      var options = {interaction:{hover:true}};
+      network = new vis.Network(container, data, options);
+
+    network.on("click", function (params) {
+        params.event = "[original event]";
+        document.getElementById('eventSpan').innerHTML = '<h2>Click event:</h2>' + JSON.stringify(params, null, 4);
+        console.log('click event, getNodeAt returns: ' + this.getNodeAt(params.pointer.DOM));
+    });
+    network.on("doubleClick", function (params) {
+        params.event = "[original event]";
+        document.getElementById('eventSpan').innerHTML = '<h2>doubleClick event:</h2>' + JSON.stringify(params, null, 4);
+    });
+    network.on("oncontext", function (params) {
+        params.event = "[original event]";
+        document.getElementById('eventSpan').innerHTML = '<h2>oncontext (right click) event:</h2>' + JSON.stringify(params, null, 4);
+    });
+    network.on("dragStart", function (params) {
+        params.event = "[original event]";
+        document.getElementById('eventSpan').innerHTML = '<h2>dragStart event:</h2>' + JSON.stringify(params, null, 4);
+    });
+    network.on("dragging", function (params) {
+        params.event = "[original event]";
+        document.getElementById('eventSpan').innerHTML = '<h2>dragging event:</h2>' + JSON.stringify(params, null, 4);
+    });
+    network.on("dragEnd", function (params) {
+        params.event = "[original event]";
+        document.getElementById('eventSpan').innerHTML = '<h2>dragEnd event:</h2>' + JSON.stringify(params, null, 4);
+    });
+    network.on("zoom", function (params) {
+        document.getElementById('eventSpan').innerHTML = '<h2>zoom event:</h2>' + JSON.stringify(params, null, 4);
+    });
+    network.on("showPopup", function (params) {
+        document.getElementById('eventSpan').innerHTML = '<h2>showPopup event: </h2>' + JSON.stringify(params, null, 4);
+    });
+    network.on("hidePopup", function () {
+        console.log('hidePopup Event');
+    });
+    network.on("select", function (params) {
+        console.log('select Event:', params);
+    });
+    network.on("selectNode", function (params) {
+        console.log('selectNode Event:', params);
+    });
+    network.on("selectEdge", function (params) {
+        console.log('selectEdge Event:', params);
+    });
+    network.on("deselectNode", function (params) {
+        console.log('deselectNode Event:', params);
+    });
+    network.on("deselectEdge", function (params) {
+        console.log('deselectEdge Event:', params);
+    });
+    network.on("hoverNode", function (params) {
+        console.log('hoverNode Event:', params);
+    });
+    network.on("hoverEdge", function (params) {
+        console.log('hoverEdge Event:', params);
+    });
+    network.on("blurNode", function (params) {
+        console.log('blurNode Event:', params);
+    });
+    network.on("blurEdge", function (params) {
+        console.log('blurEdge Event:', params);
+    });
+    }
+  </script>
+  
+
+<body onload="draw()">
+
+<p>
+  The ArchiMate language constructs dynamic interactive graph (powered by vis.js).
+  Version 0.1 by Nicolas Figay, the 21st of September, 2017
+</p>
+<div id="mynetwork"></div>
+<pre id="eventSpan"></pre>
+
+</body>
+</html>
