@@ -7,7 +7,7 @@
   
     #mynetwork {
       float: left;
-      width: 1000px;
+      width: 800px;
       height: 500px;
       border: 1px solid lightgray;
     }  
@@ -210,7 +210,7 @@ configure: {
     network = new vis.Network(container, data, options);
 
 
-      alert("Relations:"+ checkedRelations+ " From entities:"+inputEntities);
+  //    alert("Relations:"+ checkedRelations+ " From entities:"+inputEntities);
 
 
 
@@ -769,14 +769,15 @@ myArchiMateRelations=
 
 <p>
   The ArchiMate language constructs dynamic interactive graph (powered by vis.js).
-  Version 0.1 by Nicolas Figay, the 21st of September, 2017
+  Version 0.1 by Nicolas Figay, the 4th of November, 2017</p>
+<p>  Usage: select relations and entities then double click on the diagram.
 </p>
 <div id="mynetwork"></div>
 <div id="config"></div>
 <p id="selection"></p>
 <pre id="eventSpan"></pre>
 <div id="relationsCheck">
-<p>Access(a):<input type="checkbox" class="relationsCheckbox" id="access" value="a" > 
+<p><b>Relations </b></p><p>Access(a):<input type="checkbox" class="relationsCheckbox" id="access" value="a" > 
 Composition(c):<input type="checkbox" class="relationsCheckbox" id="composition" value="c"> 
 Flow(f):<input type="checkbox" class="relationsCheckbox" id="flow" value="f"> 
 Aggregation(g):<input type="checkbox" class="relationsCheckbox" id="aggregation" value="g">
@@ -787,11 +788,12 @@ Specialization(s):<input type="checkbox" class="relationsCheckbox" id="specializ
 Triggering(t):<input type="checkbox" class="relationsCheckbox" id="triggering" value="t"> 
 Serving(v):<input type="checkbox" class="relationsCheckbox" id="serving" value="v"></p>
 </div>
-<div id="relationsCheck">
-<p>Resource: <input type="checkbox" class="entitiesCheckbox" id="resource" value="0" >
+<div id="entitiesCheck">
+<p><b>Entities </b></p><p>
+<p><U>Strategy</U>: Resource: <input type="checkbox" class="entitiesCheckbox" id="resource" value="0" >
 Capability:<input type="checkbox" class="entitiesCheckbox" id="capability" value="1" > 
 Course_Of_Action:<input type="checkbox" class="entitiesCheckbox" id="course_of_action" value="2" ></p>
-<p>Actor:<input type="checkbox" class="entitiesCheckbox" id="actor" value="3" > 
+<p><U>Business</U>: Actor:<input type="checkbox" class="entitiesCheckbox" id="actor" value="3" > 
 Role:<input type="checkbox" class="entitiesCheckbox" id="business_role" value="4" >
 Collaboration:<input type="checkbox" class="entitiesCheckbox" id="business_collaboration" value="5" > 
 Business_Interface:<input type="checkbox"  class="entitiesCheckbox" id="business_interface" value="6"  > 
@@ -804,7 +806,7 @@ Object:<input type="checkbox" class="entitiesCheckbox" id="business_object" valu
 Contract:<input type="checkbox" class="entitiesCheckbox" id="contract" value="13" > 
 Representation:<input type="checkbox" class="entitiesCheckbox" id="representation" value="14" > 
 Product:<input type="checkbox" class="entitiesCheckbox" id="product" value="15" ></p>
-<p>Component:<input type="checkbox" class="entitiesCheckbox" id="application_component" value="16" > 
+<p><U>Application</U>: Component:<input type="checkbox" class="entitiesCheckbox" id="application_component" value="16" > 
 Collaboration:<input type="checkbox" class="entitiesCheckbox" id="application_collaboration" value="17" > 
 Interface:<input type="checkbox" class="entitiesCheckbox" id="application_interface" value="18" > 
 Function:<input type="checkbox" class="entitiesCheckbox" id="application_function" value="19" > 
@@ -813,7 +815,7 @@ Process:<input type="checkbox" class="entitiesCheckbox" id="application_process"
 Application_Event:<input type="checkbox" class="entitiesCheckbox" id="application_event" value="22" > 
 Service:<input type="checkbox" class="entitiesCheckbox" id="application_service" value="23" > 
 Data Object:<input type="checkbox" class="entitiesCheckbox" id="data_object" value="24" ></p>
-<p>Node:<input type="checkbox" class="entitiesCheckbox" id="node" value="25" > 
+<p><U>Physical</U>: Node:<input type="checkbox" class="entitiesCheckbox" id="node" value="25" > 
 Device:<input type="checkbox" class="entitiesCheckbox" id="device" value="26" > 
 System Software:<input type="checkbox" class="entitiesCheckbox" id="system_software" value="27" > 
 Collaboration:<input type="checkbox" class="entitiesCheckbox" id="technology_collaboration" value="28" > 
@@ -830,7 +832,7 @@ Equipment:<input type="checkbox" class="entitiesCheckbox" id="equipment" value="
 Facility:<input type="checkbox" class="entitiesCheckbox" id="facility" value="39" > 
 Distribution Network:<input type="checkbox" class="entitiesCheckbox" id="distribution_network" value="40" > 
 Material:<input type="checkbox" class="entitiesCheckbox" id="material" value="41" ></p>
-<p>Stakeholder:<input type="checkbox" class="entitiesCheckbox" id="stakeholder" value="42" > 
+<p><U>Motivation</U>: Stakeholder:<input type="checkbox" class="entitiesCheckbox" id="stakeholder" value="42" > 
 Driver:<input type="checkbox" class="entitiesCheckbox" id="stakeholder" value="43" > 
 Assessment:<input type="checkbox" class="entitiesCheckbox" id="assessment" value="44"  > 
 Goal:<input type="checkbox" class="entitiesCheckbox" id="goal" value="45" > 
@@ -840,14 +842,13 @@ Requirement:<input type="checkbox" class="entitiesCheckbox" id="requirement" val
 Constraint:<input type="checkbox" class="entitiesCheckbox" id="constraint" value="50" > 
 Meaning:<input type="checkbox" class="entitiesCheckbox" id="meaning" value="51" > 
 Value:<input type="checkbox" class="entitiesCheckbox" id="value" value="52" >
-<p>WorkPackage:<input type="checkbox" class="entitiesCheckbox" id="workPackage" value="53" > 
+<p><U>Project&Implementation</U>: WorkPackage:<input type="checkbox" class="entitiesCheckbox" id="workPackage" value="53" > 
 Deliverable:<input type="checkbox" class="entitiesCheckbox" id="deliverable" value="54" > 
 Implementation_Event:<input type="checkbox" class="entitiesCheckbox" id="implementation_event" value="55" > 
 Plateau:<input type="checkbox" class="entitiesCheckbox" id="plateau" value="56" >
-Gap:<input type="checkbox" class="entitiesCheckbox" id="gap" value="57" > 
-Location:<input type="checkbox" class="entitiesCheckbox" id="location" value="58"  ></p>
+Gap:<input type="checkbox" class="entitiesCheckbox" id="gap" value="57" ></p>
+<p><U>Other</U>: Location:<input type="checkbox" class="entitiesCheckbox" id="location" value="58"  ></p>
 <p>Layers:<input type="checkbox" class="layersCheckbox" id="layers" checked> </p>
-
 </div>
 </body>
 </html>
