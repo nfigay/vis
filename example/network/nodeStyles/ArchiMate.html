@@ -91,13 +91,13 @@
  if (document.getElementById('layers').checked){     
 
 //      nodes.push({id: 100, shape: 'image',label: 'ArchiMate', image: DIR + 'business-object.png', shape: 'image'}); 
-      nodes.push({id: 200, shape: 'image',label: 'Business Layer', image: DIR + 'business-object.png', shape: 'image'}); 
-      nodes.push({id: 300, shape: 'image',label: 'Application Layer', image: DIR + 'business-object.png', shape: 'image'});
-      nodes.push({id: 400, shape: 'image',label: 'PhysicalTechnology Layer', image: DIR + 'business-object.png', shape: 'image'});
-      nodes.push({id: 500, shape: 'image',label: 'Motivation', image: DIR + 'business-object.png', shape: 'image'});
-      nodes.push({id: 600, shape: 'image',label: 'Other', image: DIR + 'business-object.png', shape: 'image'});
-      nodes.push({id: 700, shape: 'image',label: 'ImplementationMigration', image: DIR + 'business-object.png', shape: 'image'}); 
-      nodes.push({id: 800, shape: 'image',label: 'Strategy', image: DIR + 'business-object.png', shape: 'image'});
+      nodes.push({id: 200, shape: 'image',label: 'Business Layer', image: DIR + 'business-layer.svg', shape: 'image'}); 
+      nodes.push({id: 300, shape: 'image',label: 'Application Layer', image: DIR + 'application-layer.svg', shape: 'image'});
+      nodes.push({id: 400, shape: 'image',label: 'PhysicalTechnology Layer', image: DIR + 'physical-technology-layer.svg', shape: 'image'});
+      nodes.push({id: 500, shape: 'image',label: 'Motivation', image: DIR + 'motivation-layer.svg', shape: 'image'});
+      nodes.push({id: 600, shape: 'image',label: 'Other', image: DIR + 'other-layer.svg', shape: 'image'});
+      nodes.push({id: 700, shape: 'image',label: 'ImplementationMigration', image: DIR + 'implementation-migration-layer.svg', shape: 'image'}); 
+      nodes.push({id: 800, shape: 'image',label: 'Strategy', image: DIR + 'strategy-layer.svg', shape: 'image'});
 
  }   
 
@@ -106,7 +106,7 @@
       nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
               +'"title":"'+myArchiMateObjects[i]+'"'+","+'"shape":"image"' +','
               +'"label":"'+myArchiMateObjects[i]+'"'+','
-              +'"image":"../img/archimate/'+image+'.png"'
+              +'"image":"../img/archimate/'+image+'.svg"'
               +'}';
       
       node=JSON.parse(nodeString);
