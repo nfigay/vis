@@ -171,7 +171,7 @@
     var inputRelations=null;
     var inputEntities=null;
     var inputLayers=null;
-
+    var trace=null;
 
 // Called when the Visualization API is loaded.
 function draw() {
@@ -230,9 +230,10 @@ function draw() {
 
 
 
+
 switch (document.getElementById("relation").selectedIndex){
     case 0:
-    
+    trace='';
     for (var i = 0; i < ArchiMateObjects.length-2; i++) {
         image= ArchiMateObjects[i].toLowerCase().replace("_", "-").replace("_", "-");
         nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
@@ -246,7 +247,7 @@ switch (document.getElementById("relation").selectedIndex){
         nodeString=null;
     };
 
-   for (var i = 0; i <57; i++) {
+   for (var i = 0; i <58; i++) {
       for (var j = 1; j <59 ; j++) {
         //          edgeString='{from:'+ i+", to:"+ j +",  arrows:{ to: {type: 'circle'}},length: EDGE_LENGTH_MAIN}";
         //         edgeLength=ArchiMateRelations[i][j].length;
@@ -259,17 +260,20 @@ switch (document.getElementById("relation").selectedIndex){
             //          "value": 1,
             "title":title
         };
+        trace= trace + "i:"+i+ " j:"+ j +" ";
         
          if(inputEntities[i].checked==true) {
+
             for (var k = 0; k <checkedRelations.length ; k++) {
                   if (ArchiMateRelations[i][j].indexOf(checkedRelations[k])>=0){;
                       edge=JSON.parse(JSON.stringify(edgeString));
-                      edges.push(edge);}
+                      edges.push(edge);
+                      }
             }
          }
       }
    }
-    
+   // alert (trace);
     if (document.getElementById('layers').checked){
         nodes.push({id: 200, shape: 'image',label: 'Business Layer', image: DIR + 'business-layer.svg', shape: 'image'});
         nodes.push({id: 300, shape: 'image',label: 'Application Layer', image: DIR + 'application-layer.svg', shape: 'image'});
@@ -302,7 +306,7 @@ switch (document.getElementById("relation").selectedIndex){
         };
     }
 
-   for (var i = 0; i <57; i++) {
+   for (var i = 0; i <58; i++) {
        for (var j = 1; j <59 ; j++) {
           if (ArchiMateRelations[i][j].indexOf('a')>=0){
               title=ArchiMateRelations[i][j];
@@ -336,7 +340,7 @@ switch (document.getElementById("relation").selectedIndex){
             nodeString=null;
         }
     }
-    for (var i = 0; i <57; i++) {
+    for (var i = 0; i <58; i++) {
         for (var j = 1; j <59 ; j++) {
             if (ArchiMateRelations[i][j].indexOf('c')>=0){
                 title=ArchiMateRelations[i][j];
@@ -367,7 +371,7 @@ switch (document.getElementById("relation").selectedIndex){
             nodeString=null;
         }
     }
-    for (var i = 0; i <57; i++) {
+    for (var i = 0; i <58; i++) {
         for (var j = 1; j <59 ; j++) {
             if (ArchiMateRelations[i][j].indexOf('f')>=0){
                 title=ArchiMateRelations[i][j];
@@ -398,7 +402,7 @@ switch (document.getElementById("relation").selectedIndex){
             nodeString=null;
         }
     }
-    for (var i = 0; i <57; i++) {
+    for (var i = 0; i <58; i++) {
         for (var j = 1; j <59 ; j++) {
             if (ArchiMateRelations[i][j].indexOf('g')>=0){
                 title=ArchiMateRelations[i][j];
@@ -431,7 +435,7 @@ switch (document.getElementById("relation").selectedIndex){
             nodeString=null;
         }
     }
-    for (var i = 0; i <57; i++) {
+    for (var i = 0; i <58; i++) {
         for (var j = 1; j <59 ; j++) {
             if (ArchiMateRelations[i][j].indexOf('i')>=0){
                 title=ArchiMateRelations[i][j];
@@ -462,7 +466,7 @@ switch (document.getElementById("relation").selectedIndex){
             nodeString=null;
         }
     }
-    for (var i = 0; i <57; i++) {
+    for (var i = 0; i <58; i++) {
         for (var j = 1; j <59 ; j++) {
             if (ArchiMateRelations[i][j].indexOf('n')>=0){
                 title=ArchiMateRelations[i][j];
@@ -493,7 +497,7 @@ switch (document.getElementById("relation").selectedIndex){
             nodeString=null;
         }
     }
-    for (var i = 0; i <57; i++) {
+    for (var i = 0; i <58; i++) {
         for (var j = 1; j <59 ; j++) {
             if (ArchiMateRelations[i][j].indexOf('r')>=0){
                 title=ArchiMateRelations[i][j];
@@ -525,7 +529,7 @@ switch (document.getElementById("relation").selectedIndex){
             nodeString=null;
         }
     }
-    for (var i = 0; i <57; i++) {
+    for (var i = 0; i <58; i++) {
         for (var j = 1; j <59 ; j++) {
             if (ArchiMateRelations[i][j].indexOf('s')>=0){
                 title=ArchiMateRelations[i][j];
@@ -556,7 +560,7 @@ switch (document.getElementById("relation").selectedIndex){
             nodeString=null;
         }
     }
-    for (var i = 0; i <57; i++) {
+    for (var i = 0; i <58; i++) {
         for (var j = 1; j <59 ; j++) {
             if (ArchiMateRelations[i][j].indexOf('t')>=0){
                 title=ArchiMateRelations[i][j];
@@ -587,7 +591,7 @@ switch (document.getElementById("relation").selectedIndex){
             nodeString=null;
         }
     }
-    for (var i = 0; i <57; i++) {
+    for (var i = 0; i <58; i++) {
         for (var j = 1; j <59 ; j++) {
             if (ArchiMateRelations[i][j].indexOf('s')>=0){
                 title=ArchiMateRelations[i][j];
@@ -611,7 +615,9 @@ switch (document.getElementById("relation").selectedIndex){
     
 }
 
-
+//alert(checkedEntities);
+//alert (ArchiMateObjects.length);
+//alert (ArchiMateRelations.length);
 container = document.getElementById('container');
     data = {
         nodes: nodes,
@@ -723,7 +729,7 @@ function initArchiMate(){
           "o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o",
           "o","no","no","nor","nor","nor","nor","nor","no","no",
           "o","o","o","o","o","o",
-          "cfginorstv","fiort" ],
+          "cfgionrstv","fionrt" ],
          [ "Capability",
           "fot", "cfgostv", "forv",
           "o","o","o","o","o","o","o","o","o","o","o","o","o",
@@ -795,23 +801,31 @@ function initArchiMate(){
           "fotv","fotv","fotv","fotv","fotv","fot","fot","fotv","fotv","fotv","otv","fotv","ao","fotv","fotv","fot","ao",
           "no","no","no","nor","nor","nor","nor","nor","no","no",
           "o","o","o","o","o","fot",
-          "acfgnorstv","afnortv" ],
-         [ "Business_Service",
+          "acfgnorstv","afnortv" ],       
+         [ "Business_Event",
           "o", "o", "o",
           "fot","fot","fot","fot","fot","fot","fot","cfgost","fot","ao","ao","ao","fo",
           "fot","fot","fot","fot","fot","fot","ot","fot","o",
-          "fot","fot","fot","fot","fot","fot","fot","fot","fot","fot","ot","fot","o","fot","fot","fot","a",
+          "fot","fot","fot","fot","fot","fot","fot","fot","fot","fot","ot","fot","o","fot","fot","fot","o",
           "o","no","no","nor","nor","nor","nor","nor","no","no",
           "o","o","o","o","o","fot",
           "acfgnorst","afnort" ],
-         [ "Business_Object",
+          [ "Business_Service",
           "o", "or", "or",
           "fotv","fotv","fotv","fotv","fotv","fotv","fotv","fotv","cfgostv","ao","ao","ao","fo",
           "fotv","fotv","fotv","fotv","fotv","fotv","otv","fotv","ao",
           "fotv","fotv","fotv","fotv","fotv","fot","fot","fotv","fotv","fotv","otv","fotv","ao","fotv","fotv","fot","ao",
           "no","no","no","nor","nor","nor","nor","nor","no","no",
           "o","o","o","o","o","fot",
-          "acfgnorstv","afnortv" ],
+          "acfgnorstv","afnortv" ],  
+         [ "Business_Object",
+          "or", "or", "or",
+          "o","o","o","o","o","o","o","o","o","cgos","cgos","o","o",
+          "o","o","o","o","o","o","o","o","o",
+          "o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o",
+          "o","no","no","nor","nor","nor","nor","nor","no","no",
+          "o","o","o","o","o","o",
+          "cgnors","nor" ],
          [ "Contract",
           "or", "or", "or",
           "o","o","o","o","o","o","o","o","o","cgos","cgos","o","o",
@@ -822,7 +836,7 @@ function initArchiMate(){
           "cgnors","nor" ],
          [  "Representation",
           "or", "or", "or",
-          "o","o","o","o","o","o","o","o","o","cgos","cgos","o","o",
+          "o","o","o","o","o","o","o","o","o","or","or","cgos","o",
           "o","o","o","o","o","o","o","o","o",
           "o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o",
           "o","no","no","nor","nor","nor","nor","nor","no","no",
@@ -830,20 +844,20 @@ function initArchiMate(){
           "cgnors","nor" ],
          [ "Product",
           "or", "or", "or",
-          "o","o","o","o","o","o","o","o","o","or","or","cgos","o",
-          "o","o","o","o","o","o","o","o","o",
-          "o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o",
-          "o","no","no","nor","nor","nor","nor","nor","no","no",
-          "o","o","o","o","o","o",
-          "cgnors","nor" ],
-         [ "Application_Component",
-          "or", "or", "or",
           "forv","forv","fov","forv","forv","forv","forv","forv","cfgorv","acgo","acgo","acgo","cfgos",
           "forv","forv","forv","forv","forv","forv","forv","cfgorv","acgo",
           "forv","forv","forv","forv","forv","fo","fo","forv","forv","forv","forv","cfgorv","acgo","forv","forv","fo","acgo",
           "nor","no","no","nor","nor","nor","nor","nor","no","no",
           "o","o","o","o","o","fo",
           "acfgnorsv","afnorv" ],
+         [ "Application_Component",
+          "or", "or", "or",
+          "fotv","fotv","fotv","fortv","fortv","fortv","fortv","fotv","fortv","ao","ao","ao","fo",
+          "cfgorstv","cfgorstv","cfgortv","fiortv","fiortv","fiortv","fiortv","fiortv","ao",
+          "fotv","fotv","fotv","fotv","fotv","fot","fot","fotv","fotv","fotv","otv","fotv","ao","fotv","fotv","fot","ao",
+          "no","no","no","nor","nor","nor","nor","nor","no","no",
+          "o","o","o","o","o","fot",
+          "acfginorstv","afinortv" ],
          [ "Application_Collaboration",
           "or", "or", "or",
           "fotv","fotv","fotv","fortv","fortv","fortv","fortv","fotv","fortv","ao","ao","ao","fo",
@@ -894,7 +908,7 @@ function initArchiMate(){
           "acfgnorst","afnort" ],
          [ "Application_Service",
           "o", "or", "or",
-          "fotv","fotv","fotv","fotv","fotv","fort","fort","fotv","fortv","ao","ao","ao","fo",
+          "fotv","fotv","fotv","fotv","fotv","fortv","fotv","fotv","fortv","ao","ao","ao","fo",
           "fotv","fotv","fotv","fotv","fotv","fotv","fotv","cfgostv","ao",
           "fotv","fotv","fotv","fotv","fotv","fot","fot","fotv","fotv","fotv","otv","fotv","ao","fotv","fotv","fot","ao",
           "no","no","no","nor","nor","nor","nor","nor","no","no",
@@ -915,7 +929,7 @@ function initArchiMate(){
           "cfgiorstv","cfgiorstv","cfgiorstv","cfgiorstv","cfgiortv","fot","fot","fiortv","fiortv","fiortv","fiortv","fiortv","aio","cfgiorstv","cfgiorstv","fot","ao",
           "nor","no","no","nor","nor","nor","nor","nor","no","no",
           "o","o","o","o","o","fot",
-          "acfgiorstv","afinortv" ],
+          "acfginorstv","afinortv" ],
          [ "Device",
           "or", "or", "or",
           "fiortv","fiortv","fotv","fiortv","fiortv","fiortv","fiorv","fiortv","fiortv","ao","ao","ao","fo",
@@ -923,15 +937,15 @@ function initArchiMate(){
           "cfgiorstv","cfgiorstv","cfgiorstv","cfgiorstv","cfgiortv","fot","fot","fiortv","fiortv","fiortv","fiortv","fiortv","aio","cfgiorstv","cfgiorstv","fot","ao",
           "nor","no","no","nor","nor","nor","nor","nor","no","no",
           "o","o","o","o","o","fot",
-          "acfgiorstv","afinortv" ],
+          "acfginorstv","afinortv" ],
          [ "System_Software",
           "or", "or", "or",
-          "fiortv","fiortv","fotv","fiortv","fiortv","fiortv","fiorv","fiortv","fiortv","ao","ao","ao","fo",
+          "fiortv","fiortv","fotv","fiortv","fiortv","fiortv","fiortv","fiortv","fiortv","ao","ao","ao","fo",
           "fortv","fortv","fortv","fortv","fortv","fortv","fortv","fortv","ao",
           "cfgiorstv","cfgiorstv","cfgiorstv","cfgiorstv","cfgiortv","fot","fot","fiortv","fiortv","fiortv","fiortv","fiortv","aio","cfgiorstv","cfgiorstv","fot","ao",
           "nor","no","no","nor","nor","nor","nor","nor","no","no",
           "o","o","o","o","o","fot",
-          "acfgiorstv","afinortv" ],
+          "acfginorstv","afinortv" ],
          [ "Technology_Collaboration",
           "or", "or", "or",
           "fiortv","fiortv","fotv","fiortv","fiortv","fiortv","fiorv","fiortv","fiortv","ao","ao","ao","fo",
@@ -939,15 +953,15 @@ function initArchiMate(){
           "cfgiorstv","cfgiorstv","cfgiorstv","cfgiorstv","cfgiortv","fot","fot","fiortv","fiortv","fiortv","fiortv","fiortv","aio","cfgiorstv","cfgiorstv","fot","ao",
           "nor","no","no","nor","nor","nor","nor","nor","no","no",
           "o","o","o","o","o","fot",
-          "acfgiorstv","afinortv" ],
+          "acfginorstv","afinortv" ],
          [ "Technology_Interface",
           "or", "or", "or",
           "fotv","fotv","fotv","fortv","fotv","fotv","fotv","fotv","fortv","ao","ao","ao","fo",
-          "fotv","fotv","fotv","fotv","fotv","fotv","fotv","fortv","ao",
+          "fotv","fotv","fortv","fotv","fotv","fotv","fotv","fortv","ao",
           "fotv","fotv","fotv","fotv","cfgostv","fot","fot","fotv","fotv","fotv","fotv","fiotv","ao","fotv","fotv","fot","ao",
           "no","no","no","nor","nor","nor","nor","nor","no","no",
           "o","o","o","o","o","fot",
-          "acfgiorstv","afinortv" ],
+          "acfginorstv","afinortv" ],
          [ "Path",
           "or", "or", "or",
           "fiortv","fiortv","fotv","fiortv","fiortv","fiortv","fiortv","fiortv","fiortv","ao","ao","ao","fo",
@@ -971,7 +985,7 @@ function initArchiMate(){
           "fotv","fotv","fotv","fotv","fotv","fot","fot","cfgostv","cfgotv","cfgotv","fotv","fortv","ao","fotv","fotv","fot","ao",
           "no","no","no","nor","nor","nor","nor","nor","no","no",
           "o","o","o","o","o","fot",
-          "acfgiorstv","afinortv" ],
+          "acfgnorstv","afnortv" ],
          [ "Technology_Process",
           "o", "or", "or",
           "fotv","fotv","fotv","fotv","fortv","fortv","fortv","fotv","fortv","ao","ao","ao","fo",
@@ -979,7 +993,7 @@ function initArchiMate(){
           "fotv","fotv","fotv","fotv","fotv","fot","fot","cfgotv","cfgostv","cfgotv","fotv","fortv","ao","fotv","fotv","fot","ao",
           "no","no","no","nor","nor","nor","nor","nor","no","no",
           "o","o","o","o","o","fot",
-          "acfgiorstv","afinortv" ],
+          "acfgnorstv","afnortv" ],
          [ "Technology_Interaction",
           "o", "or", "or",
           "fotv","fotv","fotv","fotv","fortv","fortv","fortv","fotv","fortv","ao","ao","ao","fo",
@@ -987,7 +1001,7 @@ function initArchiMate(){
           "fotv","fotv","fotv","fotv","fotv","fot","fot","cfgotv","cfgotv","cfgostv","fotv","fortv","ao","fotv","fotv","fot","ao",
           "no","no","no","nor","nor","nor","nor","nor","no","no",
           "o","o","o","o","o","fot",
-          "acfgiorstv","afinortv" ],
+          "acfgnorstv","afnortv" ],
          [ "Technology_Event",
           "o", "o", "o",
           "ot","ot","ot","ot","ot","ot","ot","ot","ot","ao","ao","ao","fo",
@@ -1023,7 +1037,7 @@ function initArchiMate(){
          [ "Facility",
           "or", "or", "or",
           "fiortv","fiortv","fotv","fiortv","fiortv","fiortv","fiortv","fiortv","fiortv","ao","ao","ao","fo",
-          "fortv","fortv","fortv","fortv","fortv","fortv","fortv","fortv","aor",
+          "fortv","fortv","fortv","fortv","fortv","fortv","fortv","fortv","ao",
           "cfgiorstv","cfgiorstv","cfgiorstv","cfgiorstv","cfgiorstv","fot","fot","fiortv","fiortv","fiortv","fiortv","fiortv","aio","cfgiorstv","cfgiorstv","fot","ao",
           "nor","no","no","nor","nor","nor","nor","nor","no","no",
           "o","o","o","o","o","fot",
@@ -1162,7 +1176,7 @@ function initArchiMate(){
           "o","o","o","o","o","o","o","o","o",
           "o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o",
           "o","o","o","o","o","o","o","o","o","o",
-          "o","o","o","o","cgoso","o",
+          "o","o","o","o","cgos","o",
           "cgos","o" ],
          [ "Location",
           "cgor", "cgor", "cgor",
@@ -1176,9 +1190,9 @@ function initArchiMate(){
           "cgorst", "cfgiorstv", "cfgorst",
           "cfgiorstv","cfgiortsv","cfgorstv","cfgiorstv","cfgiorstv","cfgiorstv","cfgiorstv","cfgiorstv","cfgiorstv","acgors","acgors","acgors","cfgors",
           "cfgorstv","cfgorstv","cfgorstv","cfgiorstv","cfgiortsv","cfgiorstv","cfgiorstv","cfgiorstv","acgors",
-          "cfgiorstv","cfgiorstv","cfgiortsv","cfgiorstv","cfgiorstv","cfgorst","cfgiorstv","cfgiorstv","cfgiortv","cfgiorstv","cfgiorstv","cfgiorstv","acgoors","cfgiorstv","cfgiorstv","cfgorst","acgiors",
-          "cgniors","cgnos","cgnos","cgnors","cgnors","cgnors","cgnors","cgnors","cgnos","cgnos",
-          "cfgiost","accgors","cfgiost","cgorst","cgos","cfgorst",
+          "cfgiorstv","cfgiorstv","cfgiortsv","cfgiorstv","cfgiorstv","cfgorst","cfgorst","cfgiorstv","cfgiortv","cfgiorstv","cfgiorstv","cfgiorstv","acgiors","cfgiorstv","cfgiorstv","cfgorst","acgiors",
+          "cgninors","cgnos","cgnos","cgnors","cgnors","cgnors","cgnors","cgnors","cgnos","cgnos",
+          "cfgiost","acgors","cfgiost","cgorst","cgos","cfgorst",
           "acfginorstv","acfginortv" ],
          [ "Junction",
           "fort", "fiortv", "fortv",
