@@ -706,7 +706,31 @@ function init(){
      {
        "children": [
          {
-           "children": [], 
+            "children": [
+              {
+                 "children": [
+                    {
+                       "children": [], 
+                          "data": {
+                            "NbConstruct": "1", 
+                            "$color": "#FFCCFF", 
+                            "image": "../img/archimate/workpackage.svg", 
+                            "$area": 100
+                          }, 
+                          "id": "to-workpackage", 
+                          "name": "Work Package"
+                        }                
+                 ], 
+                 "data": {
+                   "NbConstruct": "1", 
+                   "$color": "#FFCCFF", 
+                   "image": "../img/archimate/meaning.svg", 
+                   "$area": 100
+                 }, 
+                 "id": "flow from workpackage", 
+                 "name": "Flow"
+               }          
+           ], 
            "data": {
              "NbConstruct": "1", 
              "$color": "#FFCCFF", 
