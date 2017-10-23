@@ -256,6 +256,21 @@
     var SpecializationRelationArray=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
     var TriggeringRelationArray=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
     var ServingRelationArray=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    var ArchiMateObjects=null;
+    var StrategyObjectsWithNames=null;
+    var BusinessObjectsWithNames=null;
+    var ApplicationObjectsWithNames=null;
+    var TechnicalObjectsWithNames=null;
+    var MotivationObjectsWithNames=null;
+    var ImplementationMigrationObjectWithNames=null;
+    var OtherObjectsWithNames=null;
+    var StrategyObjectsWithId=null;
+    var BusinessObjectsWithId=null;
+    var ApplicationObjectsWithId=null;
+    var TechnicalObjectsWithId=null;
+    var MotivationObjectsWithId=null;
+    var ImplementationMigrationObjectWithId=null;
+    var OtherObjectsWithId=null;
     var z=0;
     var alreadyConfigured=0;
     var checkedRelations=null;
@@ -331,6 +346,7 @@ function draw() {
 switch (document.getElementById("relation").selectedIndex){
     case 0:
     trace='';
+    edgeId='';
     for (var i = 0; i < ArchiMateObjects.length-2; i++) {
         image= ArchiMateObjects[i].toLowerCase().replace("_", "-").replace("_", "-");
         nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
@@ -348,7 +364,10 @@ switch (document.getElementById("relation").selectedIndex){
         //          edgeString='{from:'+ i+", to:"+ j +",  arrows:{ to: {type: 'circle'}},length: EDGE_LENGTH_MAIN}";
         //         edgeLength=ArchiMateRelations[i][j].length;
         title=ArchiMateRelations[i][j];
+        edgeId= '{' +'"from":'+ i + "," + '"to":' + j + ","+'"relations":'+ title+  '}';
+        
         edgeString={
+            "id": edgeId,
             "from": i,
             "to": j-1,
             "arrows":'to',
@@ -726,12 +745,8 @@ container = document.getElementById('ArchiMateLanguage');
                document.getElementById('eventSpan').innerHTML = '<h2>doubleClick event:</h2>' + JSON.stringify(params, null, 4);
                draw();
                });
-    ArchiMateLanguage.on("click", function (params) {
-      params.event = "[original event]";
-      document.getElementById('eventSpan').innerHTML = '<h2>Click event:</h2>' + JSON.stringify(params, null, 4);
-      console.log('click event, getNodeAt returns: ' + this.getNodeAt(params.pointer.DOM));
-      });
-                          
+    ArchiMateLanguage.on("click", testConnectedNodes); 
+    
     ArchiMateLanguage.on("oncontext", function (params) {
       params.event = "[original event]";
       document.getElementById('eventSpan').innerHTML = '<h2>oncontext (right click) event:</h2>' + JSON.stringify(params, null, 4);
@@ -816,6 +831,21 @@ function initArchiMate(){
         alert("Welcome to ArchiMagine Vis viewer for ArchiMate\nAuthor: Dr Nicolas Figay\nMotivation: ArchiMate visual exploration");
         
         ArchiMateObjects=["Resource","Capability", "Course_Of_Action","Actor","Business_Role", "Business_Collaboration", "Business_Interface", "Business_Process", "Business_Function", "Business_Interaction", "Business_Event", "Business_Service", "Business_Object", "Contract", "Representation", "Product", "Application_Component", "Application_Collaboration", "Application_Interface", "Application_Function", "Application_Interaction", "Application_Process", "Application_Event","Application_Service", "Data_Object", "Node", "Device", "System_Software","Technology_Collaboration", "Technology_Interface", "Path","Communication_Network", "Technology_Function", "Technology_Process", "Technology_Interaction", "Technology_Event", "Technology_Service", "Artifact", "Equipment", "Facility", "Distribution_Network", "Material", "Stakeholder", "Driver", "Assessment", "Goal", "Outcome", "Principle", "Requirement", "Constraint", "Meaning", "Value", "WorkPackage", "Deliverable", "Implementation_Event", "Plateau", "Gap", "Location", "Grouping", "Junction"];
+        StrategyObjectsWithNames=["Resource", "Capability", "Course_Of_Action" ];
+        BusinessObjectsWithNames=["Actor","Business_Role", "Business_Collaboration", "Business_Interface", "Business_Process", "Business_Function", "Business_Interaction", "Business_Event", "Business_Service", "Business_Object", "Contract", "Representation", "Product"];
+        ApplicationObjectsWithNames=["Application_Component", "Application_Collaboration", "Application_Interface", "Application_Function", "Application_Interaction", "Application_Process", "Application_Event","Application_Service", "Data_Object"];
+        TechnicalObjectsWithNames=["Node", "Device", "System_Software","Technology_Collaboration", "Technology_Interface", "Path","Communication_Network", "Technology_Function", "Technology_Process", "Technology_Interaction", "Technology_Event", "Technology_Service", "Artifact", "Equipment", "Facility", "Distribution_Network", "Material"];
+        MotivationObjectsWithNames=["Stakeholder", "Driver", "Assessment", "Goal", "Outcome", "Principle", "Requirement", "Constraint", "Meaning", "Value"];
+        ImplementationMigrationObjectWithNames=["WorkPackage", "Deliverable", "Implementation_Event", "Plateau", "Gap"];
+        OtherObjectsWithNames=["Location", "Grouping", "Junction"];
+        StrategyObjectsWithId=[0,1,2];
+        BusinessObjectsWithId=[4,5,6,7,9,9,10,11,12,13,14,15,16];
+        ApplicationObjectsWithId=[17,18,19,20,21,22,23,24,25];
+        TechnicalObjectsWithId=[26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42];
+        MotivationObjectsWithId=[43,44,45,46,47,48,49,50,51,52];
+        ImplementationMigrationObjectWithId=[53,54,55,56,57];
+        OtherObjectsWithId=[59,60,61];
+        
         ArchiMateRelations=
         [
          [ "Resource",
@@ -1315,14 +1345,15 @@ function initArchiMate(){
 
         edges = [];      nodes = [];
         nodes.push({id: 0, shape: 'image',label: 'ArchiMagine Dynamic Viewer', image:  './lib/img/ArchiMagine_DMN.svg', shape: 'image'});
-        nodes.push({id: 1, shape: 'image', image: './lib/img/Imagine.png', shape: 'image'});
-        nodes.push({id: 2, shape: 'image', image: './lib/img/archimagine.png', shape: 'image'});
-        nodes.push({id: 3, shape: 'image', image: './lib/img/vis-js.png', shape: 'image'});
-        nodes.push({id: 4, shape: 'image', image: './lib/img/ArchiMate-logo.jpg', shape: 'image'});
-        edges.push({from: 0, to: 1,  arrows:'to'});
-        edges.push({from: 0, to: 2,  arrows:'to'});
-        edges.push({from: 0, to: 3,  arrows:'to'});
-        edges.push({from: 0, to: 4,  arrows:'to'});
+        nodes.push({id: 1, shape: 'image',label: 'IMAGINE',  image: './lib/img/Imagine.png', shape: 'image'});
+        nodes.push({id: 2, shape: 'image',label: 'ArchiMagine',  image: './lib/img/archimagine.png', shape: 'image'});
+        nodes.push({id: 3, shape: 'image',label: 'Visjs',  image: './lib/img/vis-js.png', shape: 'image'});
+        nodes.push({id: 4, shape: 'image',label: 'ArchiMate',  image: './lib/img/ArchiMate-logo.jpg', shape: 'image'});
+        edges.push({from: 0, to: 1, id:"1", label:"output from", arrows:'to'});
+        edges.push({from: 0, to: 2, id:"2", label:"component of",arrows:'to'});
+        edges.push({from: 0, to: 3, id:"3", label:"uses", arrows:'to'});
+        edges.push({from: 0, to: 4, id:"4",label:"based on", arrows:'to'});
+
 
 
          var data = {
@@ -1364,11 +1395,7 @@ function initArchiMate(){
                     document.getElementById('eventSpan').innerHTML = '<h2>doubleClick event:</h2>' + JSON.stringify(params, null, 4);
                     draw();
                     });
-          ArchiMateLanguage.on("click", function (params) {
-                    params.event = "[original event]";
-                    document.getElementById('eventSpan').innerHTML = '<h2>Click event:</h2>' + JSON.stringify(params, null, 4);
-                    console.log('click event, getNodeAt returns: ' + this.getNodeAt(params.pointer.DOM));
-                    });
+          ArchiMateLanguage.on("click", testConnectedNodes); 
 
           ArchiMateLanguage.on("oncontext", function (params) {
                     params.event = "[original event]";
@@ -1454,7 +1481,38 @@ function initArchiMate(){
 
 };
 
+function testConnectedNodes(params){
+params.event = "[original event]";
+document.getElementById('eventSpan').innerHTML = '<h2>Click event:</h2>' + JSON.stringify(params, null, 4);
+console.log('click event, getNodeAt returns: ' + this.getNodeAt(params.pointer.DOM));
 
+//if (params.nodes.length > 0) {
+
+ //  var connectedEdges = ArchiMateLanguage.getConnectedEdges(params.nodes[0]);
+//   var fromNodes="";
+ //  var toNodes=""; 
+ //  var selectedNode=nodes[params.nodes[0]];
+ //  var size=connectedEdges.length;
+
+//   alert(nodes[params.nodes[0]].label + " with " + size + " edges" );
+
+
+ //  for (var i = 0; i < size; i++) {
+ //     alert ("i: "+ i+ " from: " +edges[i].from);
+  //    if (edges[i].from == params.nodes[0]){toNodes=toNodes+nodes[edges[i].to]+"; "}
+  //    else {fromNodes=fromNodes+nodes[edges[i].to]+"; "};
+//      describedConnectedEdges=describedConnectedEdges + edges[i].from + ";"
+ //     }
+//   alert ("node: " + selectedNode + " edge from: " + fromNode + " edge to:" + toNode);
+//   alert (connectedEdges); 
+//alert ("i:" + i + " edge " + edges[connectedEdges[i].id].from + " to " +edges[connectedEdges[i].id].to );     
+// alert ("i:" + i + " edge " + connectedEdges[i]);     
+ 
+// }
+
+ //}
+// alert(describedConnectedEdges);
+}
 
 </script>
   
@@ -1509,7 +1567,7 @@ function initArchiMate(){
             Distribution Network:<input type="checkbox" class="entitiesCheckbox" id="distribution_network" value="40" >
             Material:<input type="checkbox" class="entitiesCheckbox" id="material" value="41" ></p>
         <p><U>Motivation</U>: Stakeholder:<input type="checkbox" class="entitiesCheckbox" id="stakeholder" value="42" >
-            Driver:<input type="checkbox" class="entitiesCheckbox" id="stakeholder" value="43" >
+            Driver:<input type="checkbox" class="entitiesCheckbox" id="driver" value="43" >
             Assessment:<input type="checkbox" class="entitiesCheckbox" id="assessment" value="44"  >
             Goal:<input type="checkbox" class="entitiesCheckbox" id="goal" value="45" >
             Outcome:<input type="checkbox" class="entitiesCheckbox" id="outcome" value="47">
@@ -1518,7 +1576,7 @@ function initArchiMate(){
             Constraint:<input type="checkbox" class="entitiesCheckbox" id="constraint" value="50" >
             Meaning:<input type="checkbox" class="entitiesCheckbox" id="meaning" value="51" >
             Value:<input type="checkbox" class="entitiesCheckbox" id="value" value="52" >
-        <p><U>Project Implementation</U>: WorkPackage:<input type="checkbox" class="entitiesCheckbox" id="workPackage" value="53" >
+        <p><U>Project Implementation</U>: WorkPackage:<input type="checkbox" class="entitiesCheckbox" id="workpackage" value="53" >
             Deliverable:<input type="checkbox" class="entitiesCheckbox" id="deliverable" value="54" >
             Implementation_Event:<input type="checkbox" class="entitiesCheckbox" id="implementation_event" value="55" >
             Plateau:<input type="checkbox" class="entitiesCheckbox" id="plateau" value="56" >
@@ -1651,15 +1709,17 @@ function initArchiMate(){
 <button data-toggle="tooltip" title="Plateau" onclick="var c = document.getElementById('plateau') ; c.checked = (c.checked) ? false : true ;this.style.backgroundColor='white';if (c.checked==true){this.style.backgroundColor='lightgray';}"><img src="./lib/img/archimate/plateau.svg" alt="Plateau" width="16" height="16"></button>
 <button data-toggle="tooltip" title="Gap" onclick="var c = document.getElementById('gap') ; c.checked = (c.checked) ? false : true ;this.style.backgroundColor='white';if (c.checked==true){this.style.backgroundColor='lightgray';}"><img src="./lib/img/archimate/gap.svg" alt="Gap" width="16" height="16"></button>
 <hr/>
-<button data-toggle="tooltip" title="Composition" onclick="var c = document.getElementById('composition') ; c.checked = (c.checked) ? false : true ;this.style.backgroundColor='white';if (c.checked==true){this.style.backgroundColor='lightgray';}"><img src="./lib/img/archimate/composition.png" alt="Composition" width="16" height="16"'></button>
-<button data-toggle="tooltip" title="Aggregation" onclick="var c = document.getElementById('aggregation') ; c.checked = (c.checked) ? false : true ;this.style.backgroundColor='white';if (c.checked==true){this.style.backgroundColor='lightgray';}"><img src="./lib/img/archimate/aggregation.png" alt="Aggregation" width="16" height="16"'></button>
-<button data-toggle="tooltip" title="Assignment" onclick="var c = document.getElementById('assignment') ; c.checked = (c.checked) ? false : true ;this.style.backgroundColor='white';if (c.checked==true){this.style.backgroundColor='lightgray';}"><img src="./lib/img/archimate/assignment.png" alt="Assignment" width="16" height="16" '></button>
-<button data-toggle="tooltip" title="Serving"  onclick="var c = document.getElementById('serving') ; c.checked = (c.checked) ? false : true ;this.style.backgroundColor='white';if (c.checked==true){this.style.backgroundColor='lightgray';}"><img src="./lib/img/archimate/serving.png" alt="Serving" width="16" height="16"></button>
-<button data-toggle="tooltip" title="Access" onclick="var c = document.getElementById('access') ; c.checked = (c.checked) ? false : true ;this.style.backgroundColor='white';if (c.checked==true){this.style.backgroundColor='lightgray';}"><img src="./lib/img/archimate/access.png" alt="Access" width="16" height="16"'></button>
-<button data-toggle="tooltip" title="Influence" onclick="var c = document.getElementById('influence') ; c.checked = (c.checked) ? false : true ;this.style.backgroundColor='white';if (c.checked==true){this.style.backgroundColor='lightgray';}"><img src="./lib/img/archimate/influence.png" alt="Influence" width="16" height="16"'></button>
-<button data-toggle="tooltip" title="Triggering" onclick="var c = document.getElementById('triggering') ; c.checked = (c.checked) ? false : true ;this.style.backgroundColor='white';if (c.checked==true){this.style.backgroundColor='lightgray';}"><img src="./lib/img/archimate/triggering.png" alt="Triggering" width="16" height="16" '></button>
-<button data-toggle="tooltip" title="Flow" onclick="var c = document.getElementById('flow') ; c.checked = (c.checked) ? false : true ;this.style.backgroundColor='white';if (c.checked==true){this.style.backgroundColor='lightgray';}"><img src="./lib/img/archimate/flow.png" alt="Flow" width="16" height="16"'></button>
-<button data-toggle="tooltip" title="Specialization" onclick="var c = document.getElementById('specialization') ; c.checked = (c.checked) ? false : true ;this.style.backgroundColor='white';if (c.checked==true){this.style.backgroundColor='lightgray';}"><img src="./lib/img/archimate/specialization.png" alt="Specialization" width="16" height="16"'></button>
+<button data-toggle="tooltip" title="(c)omposition" onclick="var c = document.getElementById('composition') ; c.checked = (c.checked) ? false : true ;this.style.backgroundColor='white';if (c.checked==true){this.style.backgroundColor='lightgray';}"><img src="./lib/img/archimate/composition.png" alt="Composition" width="16" height="16"'></button>
+<button data-toggle="tooltip" title="a(g)gregation" onclick="var c = document.getElementById('aggregation') ; c.checked = (c.checked) ? false : true ;this.style.backgroundColor='white';if (c.checked==true){this.style.backgroundColor='lightgray';}"><img src="./lib/img/archimate/aggregation.png" alt="Aggregation" width="16" height="16"'></button>
+<button data-toggle="tooltip" title="ass(i)gnment" onclick="var c = document.getElementById('assignment') ; c.checked = (c.checked) ? false : true ;this.style.backgroundColor='white';if (c.checked==true){this.style.backgroundColor='lightgray';}"><img src="./lib/img/archimate/assignment.png" alt="Assignment" width="16" height="16" '></button>
+<button data-toggle="tooltip" title="(s)erving"  onclick="var c = document.getElementById('serving') ; c.checked = (c.checked) ? false : true ;this.style.backgroundColor='white';if (c.checked==true){this.style.backgroundColor='lightgray';}"><img src="./lib/img/archimate/serving.png" alt="Serving" width="16" height="16"></button>
+<button data-toggle="tooltip" title="(a)ccess" onclick="var c = document.getElementById('access') ; c.checked = (c.checked) ? false : true ;this.style.backgroundColor='white';if (c.checked==true){this.style.backgroundColor='lightgray';}"><img src="./lib/img/archimate/access.png" alt="Access" width="16" height="16"'></button>
+<button data-toggle="tooltip" title="i(n)fluence" onclick="var c = document.getElementById('influence') ; c.checked = (c.checked) ? false : true ;this.style.backgroundColor='white';if (c.checked==true){this.style.backgroundColor='lightgray';}"><img src="./lib/img/archimate/influence.png" alt="Influence" width="16" height="16"'></button>
+<button data-toggle="tooltip" title="(t)riggering" onclick="var c = document.getElementById('triggering') ; c.checked = (c.checked) ? false : true ;this.style.backgroundColor='white';if (c.checked==true){this.style.backgroundColor='lightgray';}"><img src="./lib/img/archimate/triggering.png" alt="Triggering" width="16" height="16" '></button>
+<button data-toggle="tooltip" title="(f)low" onclick="var c = document.getElementById('flow') ; c.checked = (c.checked) ? false : true ;this.style.backgroundColor='white';if (c.checked==true){this.style.backgroundColor='lightgray';}"><img src="./lib/img/archimate/flow.png" alt="Flow" width="16" height="16"'></button>
+<button data-toggle="tooltip" title="(s)pecialization" onclick="var c = document.getElementById('specialization') ; c.checked = (c.checked) ? false : true ;this.style.backgroundColor='white';if (c.checked==true){this.style.backgroundColor='lightgray';}"><img src="./lib/img/archimate/specialization.png" alt="Specialization" width="16" height="16"'></button>
+<button data-toggle="tooltip" title="(r)ealization" onclick="var c = document.getElementById('realization') ; c.checked = (c.checked) ? false : true ;this.style.backgroundColor='white';if (c.checked==true){this.style.backgroundColor='lightgray';}"><img src="./lib/img/archimate/realization.png" alt="Realization" width="16" height="16"'></button>
+
 
 <hr/>
 <p style="text-align:center">
