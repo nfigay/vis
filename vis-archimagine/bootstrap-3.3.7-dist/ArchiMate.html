@@ -10,13 +10,13 @@
   
   button
     {  background-color:white;
-    color:white;
+    color:black;
     width:30px;
     height:30px;
   }
 
    
-  #ArchiMateLanguage,#pane,#pane2
+  #ArchiMateModel,#pane,#pane2
   {
     display:block;
     position:absolute;
@@ -31,11 +31,11 @@
     margin-bottom:20px;
   }
   
-  #ArchiMateLanguage {
-  width:1000px; 
+  #ArchiMateModel {
+  width:780px; 
   color:#686c70;
   background-repeat:no-repeat;
-  left:80px;
+  left:300px;
   }
 
 
@@ -92,22 +92,45 @@
   border:10px solid #ddd;
  
 }  
+    table.legend_table {
+      font-size: 11px;
+      border-width:1px;
+      border-color:#d3d3d3;
+      border-style:solid;
+    }
+    table.legend_table,td {
+      border-width:1px;
+      border-color:#d3d3d3;
+      border-style:solid;
+      padding: 2px;
+    }
+    div.table_content {
+      width:80px;
+      text-align:center;
+    }
+    div.table_description {
+      width:100px;
+    }
+
+    #operation {
+      font-size:28px;
+    }
    
    #network-popUp {
-    display:none;
-    position:absolute;
-    top:350px;
-    left:170px;
-    z-index:299;
-    width:250px;
-    height:120px;
-    background-color: #f9f9f9;
-    border-style:solid;
-    border-width:3px;
-    border-color: #5394ed;
-    padding:10px;
-    text-align: center;
-  }
+      display:none;
+      position:absolute;
+      top:350px;
+      left:170px;
+      z-index:299;
+      width:250px;
+      height:200;
+      background-color: #f9f9f9;
+      border-style:solid;
+      border-width:3px;
+      border-color: #5394ed;
+      padding:10px;
+      text-align: center;
+    }
       
   p {  margin-top: 0.4em; margin-bottom: 0em; }
   
@@ -223,12 +246,17 @@
   
   <script type="text/javascript" src="./dist/vis.js"></script>
   <link href="./dist/vis-network.min.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="./exampleUtil.js"></script>
 
   <script type="text/javascript">
 
     var nodes = null;
     var edges = null;
-    var ArchiMateLanguage = null;
+    var ArchiMateModel = null;
+    var ArchiMateModelNodesDataSet=null;
+    var ArchiMateModelEdgesDataSet=null;
+    var ArchiMateModelNodesDataView=null;
+    var ArchiMateModelEdgesDataView=null;
     var node=null;
     var edge=null;
     var nodeString=null;
@@ -240,6 +268,7 @@
     var letsDraw=0;
     var data=null;
     var options=null;
+    var seed = 2;
 
     var DIR = './lib/img/archimate/';
     var EDGE_LENGTH_MAIN = 150;
@@ -733,79 +762,80 @@ switch (document.getElementById("relation").selectedIndex){
 //alert(checkedEntities);
 //alert (ArchiMateObjects.length);
 //alert (ArchiMateRelations.length);
-container = document.getElementById('ArchiMateLanguage');
+    container = document.getElementById('ArchiMateModel');
     data = {
         nodes: nodes,
         edges: edges
     };
-    document.getElementById("ArchiMateLanguage").innerHTML = "";
-    ArchiMateLanguage = new vis.Network(container, data, options);
-    ArchiMateLanguage.on("doubleClick", function (params) {
+    document.getElementById("ArchiMateModel").innerHTML = "";
+
+    ArchiMateModel = new vis.Network(container, data, options);
+    ArchiMateModel.on("doubleClick", function (params) {
                params.event = "[original event]";
                document.getElementById('eventSpan').innerHTML = '<h2>doubleClick event:</h2>' + JSON.stringify(params, null, 4);
                draw();
                });
-    ArchiMateLanguage.on("click", testConnectedNodes); 
+    ArchiMateModel.on("click", onClickArchiMateNodes); 
     
-    ArchiMateLanguage.on("oncontext", function (params) {
+    ArchiMateModel.on("oncontext", function (params) {
       params.event = "[original event]";
       document.getElementById('eventSpan').innerHTML = '<h2>oncontext (right click) event:</h2>' + JSON.stringify(params, null, 4);
       });
-    ArchiMateLanguage.on("dragStart", function (params) {
+    ArchiMateModel.on("dragStart", function (params) {
       params.event = "[original event]";
       document.getElementById('eventSpan').innerHTML = '<h2>dragStart event:</h2>' + JSON.stringify(params, null, 4);
       });
-    ArchiMateLanguage.on("dragging", function (params) {
+    ArchiMateModel.on("dragging", function (params) {
       params.event = "[original event]";
       document.getElementById('eventSpan').innerHTML = '<h2>dragging event:</h2>' + JSON.stringify(params, null, 4);
       });
-   ArchiMateLanguage.on("dragEnd", function (params) {
+   ArchiMateModel.on("dragEnd", function (params) {
       params.event = "[original event]";
       document.getElementById('eventSpan').innerHTML = '<h2>dragEnd event:</h2>' + JSON.stringify(params, null, 4);
       });
-   ArchiMateLanguage.on("zoom", function (params) {
+   ArchiMateModel.on("zoom", function (params) {
       document.getElementById('eventSpan').innerHTML = '<h2>zoom event:</h2>' + JSON.stringify(params, null, 4);
       });
-   ArchiMateLanguage.on("showPopup", function (params) {
+   ArchiMateModel.on("showPopup", function (params) {
       document.getElementById('eventSpan').innerHTML = '<h2>showPopup event: </h2>' + JSON.stringify(params, null, 4);
       });
-   ArchiMateLanguage.on("hidePopup", function () {
+   ArchiMateModel.on("hidePopup", function () {
       console.log('hidePopup Event');
       });
-   ArchiMateLanguage.on("select", function (params) {
+   ArchiMateModel.on("select", function (params) {
       console.log('select Event:', params);
       });
-   ArchiMateLanguage.on("selectNode", function (params) {
+   ArchiMateModel.on("selectNode", function (params) {
       console.log('selectNode Event:', params);
       });
-   ArchiMateLanguage.on("selectEdge", function (params) {
+   ArchiMateModel.on("selectEdge", function (params) {
       console.log('selectEdge Event:', params);
       });
-   ArchiMateLanguage.on("deselectNode", function (params) {
+   ArchiMateModel.on("deselectNode", function (params) {
       console.log('deselectNode Event:', params);
       });
-   ArchiMateLanguage.on("deselectEdge", function (params) {
+   ArchiMateModel.on("deselectEdge", function (params) {
       console.log('deselectEdge Event:', params);
       });
-   ArchiMateLanguage.on("hoverNode", function (params) {
+   ArchiMateModel.on("hoverNode", function (params) {
       console.log('hoverNode Event:', params);
       });
-   ArchiMateLanguage.on("hoverEdge", function (params) {
+   ArchiMateModel.on("hoverEdge", function (params) {
       console.log('hoverEdge Event:', params);
       });
-   ArchiMateLanguage.on("blurNode", function (params) {
+   ArchiMateModel.on("blurNode", function (params) {
       console.log('blurNode Event:', params);
       });
-  ArchiMateLanguage.on("blurEdge", function (params) {
+  ArchiMateModel.on("blurEdge", function (params) {
       console.log('blurEdge Event:', params);
       });
 
 }
 
 function destroy() {
-    if (ArchiMateLanguage !== null) {
-        ArchiMateLanguage.destroy();
-        ArchiMateLanguage = null;
+    if (ArchiMateModel !== null) {
+        ArchiMateModel.destroy();
+        ArchiMateModel = null;
     }
 }
   function clearPopUp() {
@@ -822,6 +852,7 @@ function destroy() {
   function saveData(data,callback) {
       data.id = document.getElementById('node-id').value;
       data.label = document.getElementById('node-label').value;
+      data.title = document.getElementById('node-title').value;
       clearPopUp();
       callback(data);
   }
@@ -829,6 +860,7 @@ function destroy() {
 function initArchiMate(){
     
         alert("Welcome to ArchiMagine Vis viewer for ArchiMate\nAuthor: Dr Nicolas Figay\nMotivation: ArchiMate visual exploration");
+       
         
         ArchiMateObjects=["Resource","Capability", "Course_Of_Action","Actor","Business_Role", "Business_Collaboration", "Business_Interface", "Business_Process", "Business_Function", "Business_Interaction", "Business_Event", "Business_Service", "Business_Object", "Contract", "Representation", "Product", "Application_Component", "Application_Collaboration", "Application_Interface", "Application_Function", "Application_Interaction", "Application_Process", "Application_Event","Application_Service", "Data_Object", "Node", "Device", "System_Software","Technology_Collaboration", "Technology_Interface", "Path","Communication_Network", "Technology_Function", "Technology_Process", "Technology_Interaction", "Technology_Event", "Technology_Service", "Artifact", "Equipment", "Facility", "Distribution_Network", "Material", "Stakeholder", "Driver", "Assessment", "Goal", "Outcome", "Principle", "Requirement", "Constraint", "Meaning", "Value", "WorkPackage", "Deliverable", "Implementation_Event", "Plateau", "Gap", "Location", "Grouping", "Junction"];
         StrategyObjectsWithNames=["Resource", "Capability", "Course_Of_Action" ];
@@ -1330,7 +1362,42 @@ function initArchiMate(){
           "afinortv","afinortv" ]
          ];
          
+         //Creation of vis DataSets for Nodes and Edges
+         //The idea is to take advantage of DataSet and DataView features
          
+         
+         nodes = [];
+         edges = [];
+         document.getElementById("ArchiMateModel").innerHTML = "";
+
+         ArchiMateModelNodesDataSet = new vis.DataSet(nodes);
+         ArchiMateModelEdgesDataSet = new vis.DataSet(edges);
+         
+         
+         ArchiMateModelNodesDataSet.on('*', function (event, properties, senderId) {
+           console.log('event', event, properties);
+         });
+         ArchiMateModelEdgesDataSet.on('*', function (event, properties, senderId) {
+            console.log('event', event, properties);
+          });
+          
+         ArchiMateModelNodesDataSet.add ([
+         {id: 0, label: 'ArchiMagine Dynamic Viewer', image:  './lib/img/ArchiMagine_DMN.svg', shape: 'image'},
+         {id: 1, label: 'IMAGINE',  image: './lib/img/Imagine.png', shape: 'image'},
+         {id: 2, label: 'ArchiMagine',  image: './lib/img/archimagine.png', shape: 'image'},
+         {id: 3, label: 'Visjs',  image: './lib/img/vis-js.png', shape: 'image'},
+         {id: 4, label: 'ArchiMate',  image: './lib/img/ArchiMate-logo.jpg', shape: 'image'}
+         ]);
+
+         ArchiMateModelEdgesDataSet.add([
+         {from: 0, to: 1, id:"1", label:"output from", arrows:'to'},
+         {from: 0, to: 2, id:"2", label:"component of",arrows:'to'},
+         {from: 0, to: 3, id:"3", label:"uses", arrows:'to'},
+         {from: 0, to: 4, id:"4",label:"based on", arrows:'to'}       
+         ]);
+         
+         
+                
          //Creation of RelationArrays which is a matrix the list of entities which are in the domain or in the range of the relation, and is used in order to define all the nodes of the network for describing the relation
          for (var i = 0; i <57; i++) {for (var j = 1; j <59 ; j++) {if (ArchiMateRelations[i][j].indexOf("a")>=0){AccessRelationArray[i]=1;AccessRelationArray[j-1]=1;};};};
          for (var i = 0; i <57; i++) {for (var j = 1; j <59 ; j++) {if (ArchiMateRelations[i][j].indexOf("c")>=0){CompositionRelationArray[i]=1;CompositionRelationArray[j-1]=1;};};};
@@ -1343,28 +1410,34 @@ function initArchiMate(){
          for (var i = 0; i <57; i++) {for (var j = 1; j <59 ; j++) {if (ArchiMateRelations[i][j].indexOf("t")>=0){TriggeringRelationArray[i]=1;TriggeringRelationArray[j-1]=1;};};};
          for (var i = 0; i <57; i++) {for (var j = 1; j <59 ; j++) {if (ArchiMateRelations[i][j].indexOf("v")>=0){ServingRelationArray[i]=1;ServingRelationArray[j-1]=1;};};};
 
-        edges = [];      nodes = [];
-        nodes.push({id: 0, shape: 'image',label: 'ArchiMagine Dynamic Viewer', image:  './lib/img/ArchiMagine_DMN.svg', shape: 'image'});
-        nodes.push({id: 1, shape: 'image',label: 'IMAGINE',  image: './lib/img/Imagine.png', shape: 'image'});
-        nodes.push({id: 2, shape: 'image',label: 'ArchiMagine',  image: './lib/img/archimagine.png', shape: 'image'});
-        nodes.push({id: 3, shape: 'image',label: 'Visjs',  image: './lib/img/vis-js.png', shape: 'image'});
-        nodes.push({id: 4, shape: 'image',label: 'ArchiMate',  image: './lib/img/ArchiMate-logo.jpg', shape: 'image'});
-        edges.push({from: 0, to: 1, id:"1", label:"output from", arrows:'to'});
-        edges.push({from: 0, to: 2, id:"2", label:"component of",arrows:'to'});
-        edges.push({from: 0, to: 3, id:"3", label:"uses", arrows:'to'});
-        edges.push({from: 0, to: 4, id:"4",label:"based on", arrows:'to'});
+//        edges = [];      nodes = [];
+//        nodes.push({id: 0, shape: 'image',label: 'ArchiMagine Dynamic Viewer', image:  './lib/img/ArchiMagine_DMN.svg', shape: 'image'});
+//        nodes.push({id: 1, shape: 'image',label: 'IMAGINE',  image: './lib/img/Imagine.png', shape: 'image'});
+//        nodes.push({id: 2, shape: 'image',label: 'ArchiMagine',  image: './lib/img/archimagine.png', shape: 'image'});
+//        nodes.push({id: 3, shape: 'image',label: 'Visjs',  image: './lib/img/vis-js.png', shape: 'image'});
+//        nodes.push({id: 4, shape: 'image',label: 'ArchiMate',  image: './lib/img/ArchiMate-logo.jpg', shape: 'image'});
+//        edges.push({from: 0, to: 1, id:"1", label:"output from", arrows:'to'});
+//        edges.push({from: 0, to: 2, id:"2", label:"component of",arrows:'to'});
+//        edges.push({from: 0, to: 3, id:"3", label:"uses", arrows:'to'});
+//        edges.push({from: 0, to: 4, id:"4",label:"based on", arrows:'to'});
 
-
+var ArchiMateModelNodesDataView = new vis.DataView(ArchiMateModelNodesDataSet, {
+  filter: function (item) {
+    return (item.id == 1);
+  },
+  fields: ['id', 'shape', 'label', 'image']
+});
 
          var data = {
-             nodes: nodes,
-             edges: edges
+             nodes: ArchiMateModelNodesDataSet,
+            edges: ArchiMateModelEdgesDataSet
          };
+ 
          document.getElementById('ER').checked=true;
          document.getElementById('R').checked=false;
          document.getElementById('ALL').checked=true;
          
-         var container = document.getElementById('ArchiMateLanguage');
+         var container = document.getElementById('ArchiMateModel');
 
          
          var options = {interaction:{hover:false},
@@ -1383,70 +1456,112 @@ function initArchiMate(){
 	                            color: {border: '#406897',background: '#6AAFFF'},
                                 font:{color:'black'},
                                 shapeProperties: {useBorderWithImage:true}
-                                }
+                                },
+                        layout: {randomSeed:seed}, // just to make sure the layout is the same when the locale is changed
+       	                manipulation: {
 
+             addNode: function (data, callback) {
+               // filling in the popup DOM elements
+               document.getElementById('operation').innerHTML = "Add Node";
+               document.getElementById('node-id').value = data.id;
+               document.getElementById('node-label').value = data.label;
+               document.getElementById('node-title').value = data.title;
+               document.getElementById('saveButton').onclick = saveData.bind(this, data, callback);
+               document.getElementById('cancelButton').onclick = clearPopUp.bind();
+               document.getElementById('network-popUp').style.display = 'block';
+             },
+             editNode: function (data, callback) {
+               // filling in the popup DOM elements
+               document.getElementById('operation').innerHTML = "Edit Node";
+               document.getElementById('node-id').value = data.id;
+               document.getElementById('node-label').value = data.label;
+               document.getElementById('saveButton').onclick = saveData.bind(this, data, callback);
+               document.getElementById('cancelButton').onclick = cancelEdit.bind(this,callback);
+               document.getElementById('network-popUp').style.display = 'block';
+             },
+             addEdge: function (data, callback) {
+               if (data.from == data.to) {
+                 var r = confirm("Do you want to connect the node to itself?");
+                 if (r == true) {
+                   callback(data);
+                 }
+               }
+               else {
+                 callback(data);
+               }
+             }
+            }
          };
-         document.getElementById("ArchiMateLanguage").innerHTML = "";
-         ArchiMateLanguage = new vis.Network(container, data, options);
+
+         ArchiMateModel = new vis.Network(container, data, options);
 
 
-         ArchiMateLanguage.on("doubleClick", function (params) {
+
+
+         ArchiMateModel.on("doubleClick", function (params) {
                     params.event = "[original event]";
                     document.getElementById('eventSpan').innerHTML = '<h2>doubleClick event:</h2>' + JSON.stringify(params, null, 4);
-                    draw();
+     //               draw();
+     //                  ArchiMateModelNodesDataSet.add ([
+     //    {id: 10, shape: 'image',label: 'ArchiMagine Dynamic Viewer', image:  './lib/img/ArchiMagine_DMN.svg', shape: 'image'},
+     //    {id: 11, shape: 'image',label: 'IMAGINE',  image: './lib/img/Imagine.png', shape: 'image'},
+     //    {id: 12, shape: 'image',label: 'ArchiMagine',  image: './lib/img/archimagine.png', shape: 'image'},
+     //    {id: 13, shape: 'image',label: 'Visjs',  image: './lib/img/vis-js.png', shape: 'image'},
+     //    {id: 14, shape: 'image',label: 'ArchiMate',  image: './lib/img/ArchiMate-logo.jpg', shape: 'image'}
+     //    ]);
                     });
-          ArchiMateLanguage.on("click", testConnectedNodes); 
+          ArchiMateModel.on("click", onClickArchiMateNodes); 
 
-          ArchiMateLanguage.on("oncontext", function (params) {
+          ArchiMateModel.on("oncontext", function (params) {
                     params.event = "[original event]";
                     document.getElementById('eventSpan').innerHTML = '<h2>oncontext (right click) event:</h2>' + JSON.stringify(params, null, 4);
                     });
-          ArchiMateLanguage.on("dragStart", function (params) {
+          ArchiMateModel.on("dragStart", function (params) {
                     params.event = "[original event]";
                     document.getElementById('eventSpan').innerHTML = '<h2>dragStart event:</h2>' + JSON.stringify(params, null, 4);
                     });
-          ArchiMateLanguage.on("dragging", function (params) {
+          ArchiMateModel.on("dragging", function (params) {
                     params.event = "[original event]";
                     document.getElementById('eventSpan').innerHTML = '<h2>dragging event:</h2>' + JSON.stringify(params, null, 4);
                     });
-          ArchiMateLanguage.on("dragEnd", function (params) {
+          ArchiMateModel.on("dragEnd", function (params) {
                     params.event = "[original event]";
                     document.getElementById('eventSpan').innerHTML = '<h2>dragEnd event:</h2>' + JSON.stringify(params, null, 4);
                     });
-          ArchiMateLanguage.on("zoom", function (params) {
+          ArchiMateModel.on("zoom", function (params) {
                     document.getElementById('eventSpan').innerHTML = '<h2>zoom event:</h2>' + JSON.stringify(params, null, 4);
                     });
-          ArchiMateLanguage.on("showPopup", function (params) {
+          ArchiMateModel.on("showPopup", function (params) {
                     document.getElementById('eventSpan').innerHTML = '<h2>showPopup event: </h2>' + JSON.stringify(params, null, 4);
                     });
-          ArchiMateLanguage.on("hidePopup", function () {
+          ArchiMateModel.on("hidePopup", function () {
                     console.log('hidePopup Event');
                     });
-          ArchiMateLanguage.on("select", function (params) {
+          ArchiMateModel.on("select", function (params) {
                     console.log('select Event:', params);
                     });
-          ArchiMateLanguage.on("selectNode", function (params) {
+          ArchiMateModel.on("selectNode", function (params) {
                     console.log('selectNode Event:', params);
                     });
-          ArchiMateLanguage.on("selectEdge", function (params) {
+          ArchiMateModel.on("selectEdge", function (params) {
                     console.log('selectEdge Event:', params);
                     });
-         ArchiMateLanguage.on("deselectNode", function (params) {
+         ArchiMateModel.on("deselectNode", function (params) {
                     console.log('deselectNode Event:', params);
                     });
-         ArchiMateLanguage.on("deselectEdge", function (params) {
+         ArchiMateModel.on("deselectEdge", function (params) {
                     console.log('deselectEdge Event:', params);
                     });
-         ArchiMateLanguage.on("hoverNode", function (params) {
+         ArchiMateModel.on("hoverNode", function (params) {
                     console.log('hoverNode Event:', params);
                     });
-         ArchiMateLanguage.on("hoverEdge", function (params) {
+         ArchiMateModel.on("hoverEdge", function (params) {
                     console.log('hoverEdge Event:', params);
                    });
-         ArchiMateLanguage.on("blurNode", function (params) {
+         ArchiMateModel.on("blurNode", function (params) {
                    console.log('blurNode Event:', params);
                    });
-         ArchiMateLanguage.on("blurEdge", function (params) {
+         ArchiMateModel.on("blurEdge", function (params) {
                    console.log('blurEdge Event:', params);
                    });
          document.getElementById("relation").addEventListener("change", function(){
@@ -1481,14 +1596,14 @@ function initArchiMate(){
 
 };
 
-function testConnectedNodes(params){
+function onClickArchiMateNodes(params){
 params.event = "[original event]";
 document.getElementById('eventSpan').innerHTML = '<h2>Click event:</h2>' + JSON.stringify(params, null, 4);
 console.log('click event, getNodeAt returns: ' + this.getNodeAt(params.pointer.DOM));
 
 //if (params.nodes.length > 0) {
 
- //  var connectedEdges = ArchiMateLanguage.getConnectedEdges(params.nodes[0]);
+ //  var connectedEdges = ArchiMateModel.getConnectedEdges(params.nodes[0]);
 //   var fromNodes="";
  //  var toNodes=""; 
  //  var selectedNode=nodes[params.nodes[0]];
@@ -1513,6 +1628,10 @@ console.log('click event, getNodeAt returns: ' + this.getNodeAt(params.pointer.D
  //}
 // alert(describedConnectedEdges);
 }
+
+
+
+
 
 </script>
   
@@ -1596,7 +1715,7 @@ console.log('click event, getNodeAt returns: ' + this.getNodeAt(params.pointer.D
                   Serving(v):<input type="checkbox" class="relationsCheckbox" id="serving" value="v"></p></div>
     </div>
 
-    <div id="ArchiMateLanguage"></div>
+    <div id="ArchiMateModel"></div>
     <div id="myArchiMateModel"></div>
 
 
@@ -1755,10 +1874,14 @@ console.log('click event, getNodeAt returns: ' + this.getNodeAt(params.pointer.D
     </tr>
     <tr>
         <td>label</td><td><input id="node-label" value="new value" /></td>
+    </tr>
+    <tr>
+        <td>title</td><td><input id="node-title" value="new value" /></td>
     </tr></table>
     <input type="button" value="save" id="saveButton" />
     <input type="button" value="cancel" id="cancelButton" />
 </div>
+
 
     <div id="toolDescription">The ArchiMate language constructs dynamic interactive graph (powered by vis.js).</div>
     <div id="toolVersion">Version 0.1 by Nicolas Figay, the 4th of November, 2017</div>
