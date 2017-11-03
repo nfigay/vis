@@ -17,6 +17,9 @@ var nodes = null;
     var data=null;
     var options=null;
     var seed = 2;
+    var selectedModel="ER";
+    var eventDisplay=false;
+    var parameterDisplay=false;
 
     var DIR = './img/archimate/';
     var EDGE_LENGTH_MAIN = 150;
@@ -66,30 +69,17 @@ function draw() {
     document.getElementById('configureDisplay').innerHTML="";
     checkedRelations=[];
     checkedEntities=[];
-    document.getElementById("ArchiMateLanguage").style.display="block";
     document.getElementById("RSelection-pane").style.display="none";
-    document.getElementById("ERSelection-pane").style.display="none";   
+    document.getElementById("ERSelection-pane").style.display="none";
+    if (selectedModel=="ER" || selectedModel=="R"){document.getElementById("ArchiMateLanguage").style.display="block";}
+ 
     
     inputRelations = document.getElementsByClassName('relationsCheckbox');
     inputEntities = document.getElementsByClassName('entitiesCheck');
 
-    alert ("R" +document.getElementById("R").checked);
-    alert ("RE" +document.getElementById("ER").checked);
-  
-    if (document.getElementById("R").checked==true){
-    if (document.getElementById("relation").selectedIndex=="0"){document.getElementById("relation").selectedIndex="1";};    
-    }
-    if (document.getElementById("ER").checked==true){
-       document.getElementById("relation").selectedIndex="0"; 
+    if (selectedModel=="ER"){document.getElementById("relation").selectedIndex="0";}
 
-    }  
- 
- 
     
-    if (document.getElementById("eventDisplay").checked){ document.getElementById("eventSpan").style.display='block';}
-    else{document.getElementById("eventSpan").style.display='none';};
-    
-    if (document.getElementById("parameterDisplay").checked){
         
         var options = {interaction:{hover:false},
             physics:{enabled: true, timestep: 0.5, adaptiveTimestep: true, maxVelocity: 50, minVelocity: 0.1, solver: 'barnesHut',
@@ -100,15 +90,8 @@ function draw() {
             container: document.getElementById('configureDisplay')}
         };
         
-        ;}
-    else{
-        var options = {interaction:{hover:false},
-            physics:{enabled: true, timestep: 0.5, adaptiveTimestep: true, maxVelocity: 50, minVelocity: 0.1, solver: 'barnesHut',
-                barnesHut: { gravitationalConstant: -1000, centralGravity: 0.1, springLength: 95, springConstant: 0.04, damping: 0.09, avoidOverlap: 0}},
-            configure: false
-        };
-        ;};
-    
+
+
 
     for(var i=0; inputRelations[i]; ++i){
             if(inputRelations[i].checked){
@@ -620,10 +603,16 @@ function initArchiMate(){
 		document.getElementById("relationsButtons").style.display="none";
 		document.getElementById("relationsCheckbox").style.display="none";
 		document.getElementById("entitiesCheck").style.display="none";
-		document.getElementById("ArchiMateLanguage").style.display="block";
+        document.getElementById("ArchiMateLanguage").style.display="block";
+        document.getElementById("physicConfiguration").style.display="none";
+        document.getElementById("event").style.display="none";
+        document.getElementById("displayPropertyButton").style.backgroundColor="white";
+        document.getElementById("displayEventButton").style.backgroundColor="white";
+        document.getElementById("R").style.backgroundColor="white";
+        document.getElementById("ER").style.backgroundColor="white";
 
     
-        alert("This is the ArchiMagine Vis viewer for ArchiMate\nMotivation: ArchiMate visual exploration\nCopyright © 2017-2021 Nicolas Figay. All Rights Reserved.");
+  //      alert("This is the ArchiMagine Vis viewer for ArchiMate\nMotivation: ArchiMate visual exploration\nCopyright © 2017-2021 Nicolas Figay. All Rights Reserved.");
        
         
         ArchiMateObjects=["Resource","Capability", "Course_Of_Action","Actor","Business_Role", "Business_Collaboration", "Business_Interface", "Business_Process", "Business_Function", "Business_Interaction", "Business_Event", "Business_Service", "Business_Object", "Contract", "Representation", "Product", "Application_Component", "Application_Collaboration", "Application_Interface", "Application_Function", "Application_Interaction", "Application_Process", "Application_Event","Application_Service", "Data_Object", "Node", "Device", "System_Software","Technology_Collaboration", "Technology_Interface", "Path","Communication_Network", "Technology_Function", "Technology_Process", "Technology_Interaction", "Technology_Event", "Technology_Service", "Artifact", "Equipment", "Facility", "Distribution_Network", "Material", "Stakeholder", "Driver", "Assessment", "Goal", "Outcome", "Principle", "Requirement", "Constraint", "Meaning", "Value", "WorkPackage", "Deliverable", "Implementation_Event", "Plateau", "Gap", "Location", "Grouping", "Junction"];
@@ -1291,35 +1280,40 @@ var ArchiMateLanguageNodesDataView = new vis.DataView(ArchiMateLanguageNodesData
                    draw();
                    });
                                                                         
-         document.getElementById("eventDisplay").addEventListener("change", function(){
-                   if (document.getElementById("eventDisplay").checked){ document.getElementById("eventSpan").style.display='block';}
-                   else{document.getElementById("eventSpan").style.display='none';};
-                   });
+
                                                                                                                                  
-         document.getElementById("parameterDisplay").addEventListener("change", function(){
-                   if (document.getElementById("parameterDisplay").selectedIndex=="0"){
-                      var options = {interaction:{hover:false},
-                                     physics:{enabled: true, timestep: 0.5, adaptiveTimestep: true, maxVelocity: 50, minVelocity: 0.1, solver: 'barnesHut',
-                                     barnesHut: { gravitationalConstant: -1000, centralGravity: 0.1, springLength: 95, springConstant: 0.04, damping: 0.09, avoidOverlap: 0}},
-                                     configure: { filter:function (option, path) {
-                                                if (path.indexOf('physics') !== -1) { return true;}
-                                                if (path.indexOf('smooth') !== -1 || option === 'smooth') {return true;} return false;},
-                                     container: document.getElementById('myArchi')}
-                                    };
-                     }
-                  else{
-                        var options = {interaction:{hover:false},
-                        physics:{enabled: true, timestep: 0.5, adaptiveTimestep: true, maxVelocity: 50, minVelocity: 0.1, solver: 'barnesHut',
-                        barnesHut: { gravitationalConstant: -1000, centralGravity: 0.1, springLength: 95, springConstant: 0.04, damping: 0.09, avoidOverlap: 0}},
-                        configure: false}
-                     };
-                     draw();
-                     });
+
 
 
 };
 
-function clickButton(button)
+function displayEvent(button){
+
+    if (button.style.backgroundColor=='white'){
+        button.style.backgroundColor='lightgray';
+        document.getElementById("event").style.display="block";
+    }
+    else{
+        button.style.backgroundColor='white';
+        document.getElementById("event").style.display="none";
+    }
+
+    
+}
+
+function displayProperty(button){
+    if (button.style.backgroundColor=='white'){
+        button.style.backgroundColor='lightgray';
+        document.getElementById("physicConfiguration").style.display="block";
+    }
+    else{
+        button.style.backgroundColor='white';
+        document.getElementById("physicConfiguration").style.display="none";
+    }
+    
+}
+
+function clickModelElement(button)
 {
 myButton=button.title;
 var c = document.getElementById(myButton.toLowerCase().replace(" ", "_").replace(" ", "_").replace('(', "").replace(')', "")) ; c.checked = (c.checked) ? false : true ;button.style.backgroundColor='white';if (c.checked==true){button.style.backgroundColor='lightgray';}
@@ -1329,18 +1323,31 @@ var c = document.getElementById(myButton.toLowerCase().replace(" ", "_").replace
 function setModel(modelType)
 {
     myModelType=modelType.name;
+
     document.getElementById("ERSelection-pane").style.display="none";
     document.getElementById("RSelection-pane").style.display="none";
     document.getElementById("ArchiMateLanguage").style.display="none";
+    document.getElementById("physicConfiguration").style.display="none";
+    document.getElementById("displayPropertyButton").style.backgroundColor="white";
+    document.getElementById("event").style.display="none";
+    document.getElementById("displayEventButton").style.backgroundColor="white";
+    
+    document.getElementById("ER").style.backgroundColor='white';
+    document.getElementById("R").style.backgroundColor='white';
+
+    modelType.style.backgroundColor='lightgray';
+    
     switch (myModelType){
     case "ER":
-    document.getElementById("ERSelection-pane").style.display="block";
-    break;
+       document.getElementById("ERSelection-pane").style.display="block";
+       selectedModel=myModelType;
+       break;
     case "R":
-    document.getElementById("RSelection-pane").style.display="block";
-    break;
-    document.getElementById("ArchiMateLanguage").style.display="block";
-    default:    
+       document.getElementById("RSelection-pane").style.display="block";
+       selectedModel=myModelType;
+       break;
+    default:
+       break;
     } 
 
 }
