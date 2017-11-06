@@ -59,6 +59,9 @@ var nodes = null;
     var inputEntities=null;
     var inputLayers=null;
     var trace=null;
+    var oneArcPerRelation=false;
+    var listOfNodeIds;
+    var relationArcValue;
 
 // Called when the Visualization API is loaded.
 function draw() {
@@ -71,6 +74,8 @@ function draw() {
     checkedEntities=[];
     document.getElementById("RSelection-pane").style.display="none";
     document.getElementById("ERSelection-pane").style.display="none";
+    document.getElementById("displayPropertyButton").style.display="block";
+    document.getElementById("displayEventButton").style.display="block";
     if (selectedModel=="ER" || selectedModel=="R"){document.getElementById("ArchiMateLanguage").style.display="block";}
  
     
@@ -94,6 +99,7 @@ function draw() {
 
 
     for(var i=0; inputRelations[i]; ++i){
+    
             if(inputRelations[i].checked){
                 checkedRelations.push(inputRelations[i].value);}}
     
@@ -129,33 +135,65 @@ switch (document.getElementById("relation").selectedIndex){
     };
 
     //creation of edges from relations
+   listOfNodeIds=[];
+
    for (var i = 0; i <58; i++) {
       for (var j = 1; j <59 ; j++) {
         title=ArchiMateRelations[i][j];
-        edgeId= '{' +'"from":'+ i + "," + '"to":' + j + ","+'"relations":'+ title+  '}';
-        edgeString={
-            "id": edgeId,
-            "from": i,
-            "to": j-1,
-            "arrows":'to',
-            "length": EDGE_LENGTH_MAIN,
-            //          "value": 1,
-            "title":title
-        };
+        
+          if (document.getElementById('oneArcPerRelation').checked==false){
+            title="";
+              for (k=0; k<checkedRelations.length;k++){
+                if (ArchiMateRelations[i][j].indexOf(checkedRelations[k])>=0){title=title+checkedRelations[k];}}}
+                    
+
+
+          
         trace= trace + "i:"+i+ " j:"+ j +" ";
         
          if(inputEntities[i].checked==true) {
 
             for (var k = 0; k <checkedRelations.length ; k++) {
+                value=0;
                   if (ArchiMateRelations[i][j].indexOf(checkedRelations[k])>=0){;
-                      edge=JSON.parse(JSON.stringify(edgeString));
-                      edges.push(edge);
+                      if (document.getElementById('oneArcPerRelation').checked==true){title=checkedRelations[k];}
+                      relationArcValue=title.length;
+                      edgeId= '{' +'"from":'+ i + "," + '"to":' + j + ","+'"relation":'+ title+  '}';
+                      if (document.getElementById('oneArcPerRelation').checked==true){
+                      edgeString={
+                          "id": edgeId,
+                          "from": i,
+                          "to": j-1,
+                          "arrows":'to',
+                          "length": EDGE_LENGTH_MAIN,
+                          "title":title
+                      };}
+                      else {
+                          edgeString={
+                              "id": edgeId,
+                              "from": i,
+                              "to": j-1,
+                              "arrows":'to',
+                              "length": EDGE_LENGTH_MAIN,
+                              "value": relationArcValue,
+                              "title":title
+                          };
+                      
+                      
                       }
+                      
+                      if (listOfNodeIds.indexOf(edgeId)>=0){;}else{
+                          edge=JSON.parse(JSON.stringify(edgeString));
+                          edges.push(edge);}
+                          listOfNodeIds.push(edgeId);
+                         
+                    }
             }
          }
       }
    }
 //    alert (trace);
+        
    
    //if layers is checked, some complementary nodes for each layer is created, plus edges from layers to entities belonging to the layers
     if (document.getElementById('layers').checked){
@@ -601,15 +639,18 @@ function initArchiMate(){
 		document.getElementById("ERSelection-pane").style.display="none";
 		document.getElementById("RSelection-pane").style.display="none";
 		document.getElementById("relationsButtons").style.display="none";
-		document.getElementById("relationsCheckbox").style.display="none";
+		document.getElementById("relationsCheckbox").style.display="block";
 		document.getElementById("entitiesCheck").style.display="none";
         document.getElementById("ArchiMateLanguage").style.display="block";
         document.getElementById("physicConfiguration").style.display="none";
         document.getElementById("event").style.display="none";
         document.getElementById("displayPropertyButton").style.backgroundColor="white";
         document.getElementById("displayEventButton").style.backgroundColor="white";
-        document.getElementById("R").style.backgroundColor="white";
+        document.getElementById("R").style.display="white";
         document.getElementById("ER").style.backgroundColor="white";
+        document.getElementById("displayPropertyButton").style.display="none";
+        document.getElementById("displayEventButton").style.display="none";
+
 
     
   //      alert("This is the ArchiMagine Vis viewer for ArchiMate\nMotivation: ArchiMate visual exploration\nCopyright © 2017-2021 Nicolas Figay. All Rights Reserved.");
@@ -1315,13 +1356,17 @@ function displayProperty(button){
 
 function clickModelElement(button)
 {
-myButton=button.title;
-var c = document.getElementById(myButton.toLowerCase().replace(" ", "_").replace(" ", "_").replace('(', "").replace(')', "")) ; c.checked = (c.checked) ? false : true ;button.style.backgroundColor='white';if (c.checked==true){button.style.backgroundColor='lightgray';}
+    idRelation=button.id.replace ("b_", "");
+    var c = document.getElementById(idRelation) ;
+    c.checked = (c.checked) ? false : true ;
+    button.style.backgroundColor='white';
+    if (c.checked==true){button.style.backgroundColor='lightgray';}
 
 }
 
 function setModel(modelType)
 {
+    
     myModelType=modelType.name;
 
     document.getElementById("ERSelection-pane").style.display="none";
