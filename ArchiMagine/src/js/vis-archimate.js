@@ -80,12 +80,11 @@ function draw() {
  
     
     inputRelations = document.getElementsByClassName('relationsCheckbox');
-    inputEntities = document.getElementsByClassName('entitiesCheck');
+    inputEntities = document.getElementsByClassName('entitiesCheckbox');
+
 
     if (selectedModel=="ER"){document.getElementById("relation").selectedIndex="0";}
-
     
-        
         var options = {interaction:{hover:false},
             physics:{enabled: true, timestep: 0.5, adaptiveTimestep: true, maxVelocity: 50, minVelocity: 0.1, solver: 'barnesHut',
                 barnesHut: { gravitationalConstant: -1000, centralGravity: 0.1, springLength: 95, springConstant: 0.04, damping: 0.09, avoidOverlap: 0}},
@@ -94,9 +93,6 @@ function draw() {
                 if (path.indexOf('smooth') !== -1 || option === 'smooth') {return true;} return false;},
             container: document.getElementById('configureDisplay')}
         };
-        
-
-
 
     for(var i=0; inputRelations[i]; ++i){
     
@@ -105,6 +101,7 @@ function draw() {
     
     
     inputEntities = document.getElementsByClassName('entitiesCheckbox');
+
     checkedEntities='';
     for(var i=0; inputEntities[i]; ++i){
             if(inputEntities[i].checked){
@@ -113,6 +110,7 @@ function draw() {
                     checkedEntities = checkedEntities+ '-'+ inputEntities[i].value;}
                     }
         }
+
 
 
 switch (document.getElementById("relation").selectedIndex){
@@ -139,17 +137,15 @@ switch (document.getElementById("relation").selectedIndex){
 
    for (var i = 0; i <58; i++) {
       for (var j = 1; j <59 ; j++) {
-        title=ArchiMateRelations[i][j];
+        title=ArchiMateRelations[i][j-1];
         
           if (document.getElementById('oneArcPerRelation').checked==false){
             title="";
               for (k=0; k<checkedRelations.length;k++){
                 if (ArchiMateRelations[i][j].indexOf(checkedRelations[k])>=0){title=title+checkedRelations[k];}}}
-                    
-
-
           
-        trace= trace + "i:"+i+ " j:"+ j +" ";
+//        trace= trace + "i:"+i+ " j:"+ j +"id:" + inputEntities[i].id;
+//          console.log (trace);
         
          if(inputEntities[i].checked==true) {
 
@@ -158,7 +154,8 @@ switch (document.getElementById("relation").selectedIndex){
                   if (ArchiMateRelations[i][j].indexOf(checkedRelations[k])>=0){;
                       if (document.getElementById('oneArcPerRelation').checked==true){title=checkedRelations[k];}
                       relationArcValue=title.length;
-                      edgeId= '{' +'"from":'+ i + "," + '"to":' + j + ","+'"relation":'+ title+  '}';
+                      beforeJ=j-1;
+                      edgeId= '{' +'"from":'+ i + "," + '"to":' + beforeJ + ","+'"relation":'+ title+  '}';
                       if (document.getElementById('oneArcPerRelation').checked==true){
                       edgeString={
                           "id": edgeId,
@@ -178,15 +175,11 @@ switch (document.getElementById("relation").selectedIndex){
                               "value": relationArcValue,
                               "title":title
                           };
-                      
-                      
                       }
-                      
                       if (listOfNodeIds.indexOf(edgeId)>=0){;}else{
                           edge=JSON.parse(JSON.stringify(edgeString));
                           edges.push(edge);}
                           listOfNodeIds.push(edgeId);
-                         
                     }
             }
          }
@@ -639,7 +632,7 @@ function initArchiMate(){
 		document.getElementById("ERSelection-pane").style.display="none";
 		document.getElementById("RSelection-pane").style.display="none";
 		document.getElementById("relationsButtons").style.display="none";
-		document.getElementById("relationsCheckbox").style.display="block";
+		document.getElementById("relationsCheckbox").style.display="none";
 		document.getElementById("entitiesCheck").style.display="none";
         document.getElementById("ArchiMateLanguage").style.display="block";
         document.getElementById("physicConfiguration").style.display="none";
@@ -1220,7 +1213,7 @@ var ArchiMateLanguageNodesDataView = new vis.DataView(ArchiMateLanguageNodesData
  
          document.getElementById('ER').checked=true;
          document.getElementById('R').checked=false;
-         document.getElementById('ALL').checked=true;
+
          
          var container = document.getElementById('ArchiMateLanguage');
 
