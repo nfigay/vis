@@ -50,7 +50,13 @@
 						<img  src="./img/events.svg" alt="Draw" width="25" height="25" >
 					</button>
                 </div>
-                
+				
+				<div class="btn-group" >
+					<button id="displayViewpointButton" data-toggle="tooltip" title="Displaying viewpoints" class="btn btn-default" type="button" onclick='displayViewpoint(this);'>
+						<img   src="./img/viewpoint.svg" alt="Draw" width="25" height="25" >
+					</button>
+				</div>
+
                 <div class="btn-group" >
 					<button data-toggle="tooltip" title="Draw the network" class="btn btn-default" type="button" onclick='draw();'>
 						<img   src="./img/Draw.png" alt="Draw" width="25" height="25" >
@@ -64,6 +70,75 @@
             	<div id="ArchiMateModel"></div>
                 <div id="event">
                     <pre id="eventSpan"></pre>
+				</div>
+				<div id="viewpoint">
+						From viewpoint to stakeholder: <input type="checkbox"  disable="true" class="choiceDirectionVSCheckbox" id="VS" value="0" onclick="SV_VS(this);">
+						From stakeholder to viewpoint <input type="checkbox"  disable="true" class="choiceDirectionVSCheckbox" id="SV" value="1" onclick="SV_VS(this);">
+					<div id="stakeholdersCheck">
+						<p><b>Select Stakeholders </b></p><p>
+							<p>
+							Enterprise architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="enterprise_architect_stakeholder" value="0" onclick="clickStakeholder(this);">
+							Process architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="process_architect_stakeholder" value="1" onclick="clickStakeholder(this);">
+							Application Architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="application_architect_stakeholder" value="2" onclick="clickStakeholder(this);">
+							Domain architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="domain_architect_stakeholder" value="3" onclick="clickStakeholder(this);">
+							Operational manager: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="operational_manager_stakeholder" value="4" onclick="clickStakeholder(this);">
+							Business manager: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="business_manager_stakeholder" value="5" onclick="clickStakeholder(this);">
+							Business architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="business_architect_stakeholder" value="6" onclick="clickStakeholder(this);">
+							ICT architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="ict_architect_stakeholder" value="7" onclick="clickStakeholder(this);">
+							Business analyst: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="business_analyst_stakeholder" value="8" onclick="clickStakeholder(this);">
+							Requirements manager: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="requirements_manager_stakeholder" value="9" onclick="clickStakeholder(this);">
+							Employee: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="employee_stakeholder" value="10" onclick="clickStakeholder(this);">
+							Shareholder: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="shareholder_stakeholder" value="11" onclick="clickStakeholder(this);">
+							Information architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="information_architect_stakeholder" value="12" onclick="clickStakeholder(this);">
+							Infrastructure architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="infrastructure_architect_stakeholder" value="13" onclick="clickStakeholder(this);">
+							Manager: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="manager_stakeholder" value="14" onclick="clickStakeholder(this);">
+							Product developer: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="product_developer_stakeholder" value="15" onclick="clickStakeholder(this);">
+							Product manager: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="product_manager_stakeholder" value="16" onclick="clickStakeholder(this);">
+							Stakeholder: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="stakeholder_stakeholder" value="17" onclick="clickStakeholder(this);">
+						</p>
+
+						<p><b>Select action </b></p><p>	
+						<p> 
+							Filter: <input type="checkbox"  disable="true" class="actionCheckbox" id="filterStakholder" value="0" >
+							Ghost:<input type="checkbox"  disable="true" class="actionCheckbox" id="ghostStakeholder" value="1" >
+							Display:<input type="checkbox"  disable="true" class="actionCheckbox" id="displayStakeholder" value="2" >
+						</p>
+
+					</div>
+					<div id="viewpointsCheck">
+						<p><b>Select viewpoints </b></p><p>
+								<p>Application Cooperation: <input type="checkbox"  disable="true" class="viewpointsCheckbox" id="application_cooperation_viewpoint" value="0" onclick="clickViewpoint(this);">
+								Application usage:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="application_usage_viewpoint" value="1" onclick="clickViewpoint(this);">
+								Business Process Cooperation:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="business_process_cooperation_viewpoint" value="2" onclick="clickViewpoint(this);">
+								Capability:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="capability_viewpoint" value="3" onclick="clickViewpoint(this);">
+								Goal Realization:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="goal_realization_viewpoint" value="4" onclick="clickViewpoint(this);">
+								Implementation and deployment:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="implementation_and_deployment_viewpoint" value="5" onclick="clickViewpoint(this);">
+								Implementation and migration:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="implementation_and_migration_viewpoint" value="6" onclick="clickViewpoint(this);">
+								Information structure:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="information_structure_viewpoint" value="7"onclick="clickViewpoint(this);" >
+								Layered:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="layered_viewpoint" value="8" onclick="clickViewpoint(this);">
+								Migration:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="migration_viewpoint" value="9" onclick="clickViewpoint(this);" >
+								Motivation:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="motivation_viewpoint" value="10" onclick="clickViewpoint(this);">
+								Organization:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="organization_viewpoint" value="11" onclick="clickViewpoint(this);">
+								Outcome realization:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="outcome_realization_viewpoint" value="12" onclick="clickViewpoint(this);">
+								Physical:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="physical_viewpoint" value="13" onclick="clickViewpoint(this);">
+								Product:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="product_viewpoint" value="14" onclick="clickViewpoint(this);">
+								Project:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="project_viewpoint" value="15" onclick="clickViewpoint(this);">
+								Requirements realization:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="requirements_realization_viewpoint" value="16" onclick="clickViewpoint(this);">
+								Resource:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="resource_viewpoint" value="17" onclick="clickViewpoint(this);">
+								Service realization:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="service_realization_viewpoint" value="18" onclick="clickViewpoint(this);">
+								Stakeholder:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="stakeholder_viewpoint" value="19" onclick="clickViewpoint(this);">
+								Strategy:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="strategy_viewpoint" value="20" onclick="clickViewpoint(this);">
+								Technology:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="technology_viewpoint" value="21" onclick="clickViewpoint(this);">
+								Technology usage:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="technology_usage_viewpoint" value="22" onclick="clickViewpoint(this);">
+								</p>
+					<p><b>Select action </b></p><p>	
+							<p> 
+								Filter: <input type="checkbox"  disable="true" class="actionCheckbox" id="filterViewpoint" value="0" >
+								Ghost:<input type="checkbox"  disable="true" class="actionCheckbox" id="ghostViewpoint" value="1" >
+								Display:<input type="checkbox"  disable="true" class="actionCheckbox" id="displayViewpoint" value="2" >
+							</p>
+															
+							</div>
                 </div>
                 <div id="physicConfiguration">
                     <pre id="configureDisplay" ></pre>

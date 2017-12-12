@@ -51,6 +51,11 @@ var nodes = null;
     var MotivationObjectsWithId=null;
     var ImplementationMigrationObjectWithId=null;
     var OtherObjectsWithId=null;
+    var Stakeholders=null;
+    var Viewpoints=null;
+    var ViewpointsWithId=null;
+    var StakeholdersWithId=null;
+    var W4S=null;
     var z=0;
     var alreadyConfigured=0;
     var checkedRelations=null;
@@ -81,6 +86,70 @@ function draw() {
     
     inputRelations = document.getElementsByClassName('relationsCheckbox');
     inputEntities = document.getElementsByClassName('entitiesCheckbox');
+
+    if (document.getElementById("displayViewpoint").checked==true){
+        //creation of nodes from viewpoints
+        for (var i = 0; i < Viewpoints.length; i++) {
+            image= "viewpoint";
+            var myId=Viewpoints[i].toLowerCase().replace(" ", "_").replace(" ", "_")+"_viewpoint";
+        
+            nodeString='{'+'"id":"'+myId+'",'+'"shape":"image"' +','
+                +'"title":"'+Viewpoints[i]+'"'+","+'"shape":"image"' +','
+                +'"label":"'+Viewpoints[i]+'"'+','
+                +'"image":"./img/'+image+'.svg"'
+                +'}';       
+            node=JSON.parse(nodeString);
+            //alert (myId);
+            if (document.getElementById(myId).checked==true){
+                nodes.push(node);
+            }
+            nodeString=null;
+        };
+
+    }
+
+    if (document.getElementById("displayStakeholder").checked==true){
+         //creation of nodes from stakeholders
+         for (var i = 0; i < Stakeholders.length; i++) {
+            image= "stakeholder";
+            var myId=Stakeholders[i].toLowerCase().replace(" ", "_").replace(" ", "_")+"_stakeholder";
+        
+            nodeString='{'+'"id":"'+myId+'",'+'"shape":"image"' +','
+                +'"title":"'+Stakeholders[i]+'"'+","+'"shape":"image"' +','
+                +'"label":"'+Stakeholders[i]+'"'+','
+                +'"image":"./img/'+image+'.svg"'
+                +'}';       
+            node=JSON.parse(nodeString);
+            nodeString=null;
+            //alert (myId);
+            if (document.getElementById(myId).checked==true){
+                nodes.push(node);
+                
+                for (j=0;j<W4S.length;j++){
+                    if (W4S[j].indexOf(i)>-1){
+                        //alert (W4S[j].toString());
+                        var myViewpoint=Viewpoints[j].toLowerCase().replace(" ", "_").replace(" ", "_")+"_viewpoint";
+
+                        if (document.getElementById("displayStakeholder").checked==true && document.getElementById(myViewpoint).checked==true){
+                            edgeString={
+                                "id": myId +"."+myViewpoint,
+                                "from": myId,
+                                "to": myViewpoint,
+                                "arrows":'to',
+                                "length": EDGE_LENGTH_MAIN,
+                                "value": relationArcValue,
+                                "title":myId + "-->" + myViewpoint
+                            };  
+                            edge=JSON.parse(JSON.stringify(edgeString));
+                            edges.push(edge);  
+                        }
+                    }
+                
+                }
+            }
+        }
+    }
+
 
 
     if (selectedModel=="ER"){document.getElementById("relation").selectedIndex="0";}
@@ -130,6 +199,27 @@ switch (document.getElementById("relation").selectedIndex){
         node=JSON.parse(nodeString);
         nodes.push(node);
         nodeString=null;
+        for (j=0;j<O4W.length;j++){
+            if (O4W[j].indexOf(i)>-1){
+                //alert (W4S[j].toString());
+                var myViewpoint=Viewpoints[j].toLowerCase().replace(" ", "_").replace(" ", "_")+"_viewpoint";
+
+                if (document.getElementById("displayViewpoint").checked==true && document.getElementById(myViewpoint).checked==true){
+                    edgeString={
+                        "id": myViewpoint +"."+i,
+                        "from": myViewpoint,
+                        "to": i,
+                        "arrows":'to',
+                        "length": EDGE_LENGTH_MAIN,
+                        "value": relationArcValue,
+                        "title":myViewpoint+ "-->" + i
+                    };  
+                    edge=JSON.parse(JSON.stringify(edgeString));
+                    edges.push(edge);  
+                }
+            }
+        
+        }
     };
 
     //creation of edges from relations
@@ -629,6 +719,7 @@ function destroy() {
   }
 
 function initArchiMate(){
+
 		document.getElementById("ERSelection-pane").style.display="none";
 		document.getElementById("RSelection-pane").style.display="none";
 		document.getElementById("relationsButtons").style.display="none";
@@ -637,8 +728,10 @@ function initArchiMate(){
         document.getElementById("ArchiMateLanguage").style.display="block";
         document.getElementById("physicConfiguration").style.display="none";
         document.getElementById("event").style.display="none";
+        document.getElementById("viewpoint").style.display="none";
         document.getElementById("displayPropertyButton").style.backgroundColor="white";
         document.getElementById("displayEventButton").style.backgroundColor="white";
+        document.getElementById("displayViewpointButton").style.backgroundColor="white";
         document.getElementById("R").style.display="white";
         document.getElementById("ER").style.backgroundColor="white";
         document.getElementById("displayPropertyButton").style.display="none";
@@ -664,6 +757,60 @@ function initArchiMate(){
         MotivationObjectsWithId=[43,44,45,46,47,48,49,50,51,52];
         ImplementationMigrationObjectWithId=[53,54,55,56,57];
         OtherObjectsWithId=[59,60,61];
+        Viewpoints=["Application Cooperation","Application Usage", "Business Process Cooperation", "Capability","Goal Realization", "Implementation and Deployment", "Implementation and Migration", "Information Structure", "Layered", "Migration","Motivation","Organization","Outcome Realization","Physical", "Product", "Project","Requirements Realization","Resource","Service Realization","Stakeholder","Strategy","Technology","Technology Usage"];
+        ViewpointsWithId=[ 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22];
+        Stakeholders=["Enterprise Architect", "Process Architect", "Application Architect", "Domain Architect", "Operational Manager", "Business Manager", "Business Architect","ICT Architect", "Business Analyst", "Requirements Manager","Employee", "Shareholder", "Information Architect", "Infrastructure Architect", "Manager", "Product Developer", "Product Manager","Stakeholder" ];
+        StakeholdersWithId=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17];
+        W4S=[
+            [0,1,2],
+            [0,1,2,3],
+            [1,3,4],
+            [0,5,6],
+            [0,4,5,7,8,17],
+            [2,3],
+            [0,7,9,10,11],
+            [3,12],
+            [0,1,2,3,13],
+            [0,1,2,3,10,11,13],
+            [0,4,7,8],
+            [0,1,3,10,11,14],
+            [0,5,6],
+            [9,13],
+            [1,3,15,16],
+            [0,5,7,11,12],
+            [0,4,7,8],
+            [0,5,6],
+            [1,3,9,16],
+            [0,4,5,7,8,17],
+            [0,6,7],
+            [9,13],
+            [2,4,13]
+        ];
+        O4W=[
+            [16,17,18,19,20,21,22,23,24,57,58],
+            [3,4,5,7,8,9,10,12,16,17,18,19,20,21,22,23,24,58],
+            [3,4,5,6,7,8,9,10,11,12,14,16,17,18,19,20,21,22,23,24,57,58],
+            [0,1,46,58],
+            [45,46,47,48,49,58],
+            [16,17,18,19,20,21,22,23,24,27,29,30,32,33,34,36,37,58],
+            [3,4,5,7,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,18,29,30,31,32,33,34,35,36,37,45,48,49,52,53,54,55,56,57,58],
+            [12,14,24,37,50,58],
+            [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58],
+            [55,56,58],
+            [42,43,44,45,46,47,48,49,50,51,58],
+            [3,4,5,6,57,58],
+            [0,1,3,4,5,6,7,8,9,10,11,12,13,14,15,6,17,18,19,20,21,22,23,24,25,26,27,18,29,30,31,32,33,34,35,36,37,46,50,51,57,58],
+            [25,26,30,31,38,39,40,41,57,58],
+            [3,4,5,6,7,8,9,10,11,12,13,15,16,17,18,19,20,21,22,23,24,36,37,41,41,58],
+            [3,4,45,64,65,66,58],
+            [,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,45,46,48,49,50,51,57,58],
+            [0,1,52,58],
+            [3,4,5,6,7,8,9,10,11,12,14,16,17,18,19,20,21,22,23,24,58],
+            [42,43,44,45,46,58],
+            [0,1,2,46,58],
+            [25,26,27,18,29,30,31,32,33,34,35,36,37,57,58],
+            [16,17,19,20,21,22,25,26,27,28,29,30,31,32,33,34,35,36,37,58]
+        ];
         
         ArchiMateRelations=
         [
@@ -1332,7 +1479,34 @@ function displayEvent(button){
         document.getElementById("event").style.display="none";
     }
 
+}
+function displayViewpoint(button){
     
+    button.style.backgroundColor='lightgray';
+    document.getElementById("ERSelection-pane").style.display="none";
+    document.getElementById("RSelection-pane").style.display="none";
+    document.getElementById("viewpoint").style.display="block";
+    //  document.getElementById("ER").style.backgroundColor='white';
+    document.getElementById("R").style.backgroundColor='white';
+    document.getElementById("ArchiMateLanguage").style.display="none";
+    document.getElementById("physicConfiguration").style.display="none";
+    if (document.getElementById("SV").checked==false && document.getElementById("VS").checked==false){
+        document.getElementById("SV").checked=true;
+    }   
+}
+
+function SV_VS(check){
+    if (check.id=="SV"){document.getElementById("VS").checked=!document.getElementById("SV").checked;}
+    if (check.id=="VS"){document.getElementById("SV").checked=!document.getElementById("VS").checked;}
+    for (i=0; i<Viewpoints.length; i++){
+        var s=document.getElementById(Viewpoints[i].toLowerCase().replace(" ", "_").replace(" ", "_")+'_viewpoint');
+        s.checked=false;
+        }
+    for (i=0; i<Stakeholders.length; i++){
+        //alert (Stakeholders[i].toLowerCase().replace(" ", "_").replace(" ", "_")+'_stakeholder');
+        var s=document.getElementById(Stakeholders[i].toLowerCase().replace(" ", "_").replace(" ", "_")+'_stakeholder');
+        s.checked=false;
+    }
 }
 
 function displayProperty(button){
@@ -1356,7 +1530,25 @@ function clickModelElement(button)
     if (c.checked==true){button.style.backgroundColor='lightgray';}
 
 }
+function clickViewpoint(viewpointCheckbox){
+    if (document.getElementById("VS").checked && viewpointCheckbox.checked){
+        for (i=0; i<W4S[viewpointCheckbox.value].length; i++){
+        var s=document.getElementById(Stakeholders[W4S[viewpointCheckbox.value][i]].toLowerCase().replace(" ", "_").replace(" ", "_")+'_stakeholder');
+        s.checked=true;
+        }
+    }
+}
 
+function clickStakeholder(stakeholderCheckbox){
+    if (document.getElementById("SV").checked && stakeholderCheckbox.checked){
+        for (i=0; i<W4S.length; i++){
+            if (W4S[i].indexOf(parseInt(stakeholderCheckbox.value))>-1){
+                var s=document.getElementById(Viewpoints[i].toLowerCase().replace(" ", "_").replace(" ", "_")+'_viewpoint');
+                s.checked=true;
+            }
+        }
+    }
+}
 function setModel(modelType)
 {
     
@@ -1369,7 +1561,8 @@ function setModel(modelType)
     document.getElementById("displayPropertyButton").style.backgroundColor="white";
     document.getElementById("event").style.display="none";
     document.getElementById("displayEventButton").style.backgroundColor="white";
-    
+    document.getElementById("viewpoint").style.display="none";
+    document.getElementById("displayViewpointButton").style.backgroundColor="white";
     document.getElementById("ER").style.backgroundColor='white';
     document.getElementById("R").style.backgroundColor='white';
 

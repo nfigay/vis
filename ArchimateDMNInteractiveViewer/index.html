@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ArchiMagine Model Interactive Viewer</title>
+
+    <meta name="description" content="ArchiMagine Model Interactive Viewer">
+    <meta name="author" content="Dr Nicolas Figay">
+    <link href=" https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+    <link href="./css/ArchiMateDmnViewer.css" rel="stylesheet" type="text/css" />
+    
+   
+
+  </head>
+  <body  onload="loadArchi();">
+    <div id="Title">
+        <p>The Advanced Interactive Viewer</p>
+    </div>
+    <div id="Description">
+        <p>The Advanced Interactive Viewer aims at visualizing agregated ArchiMate Enterprise Models </p>
+    </div>
+    <label><input type="checkbox" id="folders" checked>Folders</label>
+        <div id="ArchiMateModel"></div>
+        <div id="configureDisplay"></div>
+        <p id="demo"></p>
+        <div class="root">	
+           <div class="views"></div>
+           <div class="model"></div>
+	   </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <script src="./js/ArchiMateDmnViewer.js"></script>
+  </body>
+</html>
