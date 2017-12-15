@@ -3,7 +3,7 @@ function loadArchi()
 {
   var myModel=null;
   myModel= document.getElementById("model").value;
-  fetch('http://www.eads-iw.net/html/test4.archimate')
+  fetch('../' +myModel)
   .then(response => response.text())
   .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
   .then( function(data){
