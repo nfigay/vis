@@ -15,12 +15,15 @@
    
 
   </head>
-  <body  onload="loadArchi();">
+  <body >
     <div id="Title">
-        <p>The Advanced Interactive Viewer</p>
+        <p>The Advanced ArchiMate Model Interactive Viewer</p>
     </div>
     <div id="Description">
         <p>The Advanced Interactive Viewer aims at visualizing agregated ArchiMate Enterprise Models </p>
+        <p> Open model from URL:/p>
+            <input id="model" defaultValue="http://www.eads-iw.net/html/test4.archimate'">           
+            <button type="button" onclick="loadArchi();">Submit</button>
     </div>
     <label><input type="checkbox" id="folders" checked>Folders</label>
         <div id="ArchiMateModel"></div>
