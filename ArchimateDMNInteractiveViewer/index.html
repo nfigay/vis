@@ -22,7 +22,16 @@
     <div id="Description">
         <p>The Advanced Interactive Viewer aims at visualizing agregated ArchiMate Enterprise Models </p>
         <p> Open model name:</p>
-            <input id="model" defaultValue="test4.archimate">           
+            <input id="model" list="modelList">    
+            <label for="modelList">
+                <datalist id="modelList">
+                  <select>
+                    <option value="test">test</option>
+                    <option value="test4">test4</option>
+                    <option value="ArchiMagine20171212">ArchiMagine20171212</option>
+                  </select>
+                </datalist>
+              </label>       
             <button type="button" onclick="loadArchi();">Submit</button>
     </div>
     <label><input type="checkbox" id="folders" checked>Folders</label>
