@@ -229,7 +229,8 @@ function createVis(model){
        +'"label":"'+views[i].getAttribute('name')+'"'+','
        +'"image":"'+dir_image+'view.svg"'
        +'}';
-    node=JSON.parse(nodeString);
+    alert (nodeString);
+       node=JSON.parse(nodeString);
     nodes.push(node);
   //now let's associate each view to the viewpoint it is associated with
   var associatedViewpoint="";

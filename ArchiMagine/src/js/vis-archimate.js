@@ -1,10 +1,14 @@
 var nodes = null;
     var edges = null;
+    var edges2=null;
+    var nodes2=null;
     var ArchiMateLanguage = null;
     var ArchiMateLanguageNodesDataSet=null;
     var ArchiMateLanguageEdgesDataSet=null;
     var ArchiMateLanguageNodesDataView=null;
     var ArchiMateLanguageEdgesDataView=null;
+    var JsonTestNodesDataSet=null;
+    var JsonTestEdgesDataSet=null;
     var node=null;
     var edge=null;
     var nodeString=null;
@@ -1299,13 +1303,18 @@ function initArchiMate(){
          //Creation of vis DataSets for Nodes and Edges
          //The idea is to take advantage of DataSet and DataView features
          
-         
+         nodes2 = [];
+         //nodes2=[];
+         edges2 = [];
          nodes = [];
          edges = [];
          document.getElementById("ArchiMateLanguage").innerHTML = "";
 
          ArchiMateLanguageNodesDataSet = new vis.DataSet(nodes);
          ArchiMateLanguageEdgesDataSet = new vis.DataSet(edges);
+         JsonTestNodesDataSet=new vis.DataSet(nodes2);
+         JsonTestEdgesDataSet=new vis.DataSet(edges2);
+
          
          
          ArchiMateLanguageNodesDataSet.on('*', function (event, properties, senderId) {
@@ -1314,7 +1323,14 @@ function initArchiMate(){
          ArchiMateLanguageEdgesDataSet.on('*', function (event, properties, senderId) {
             console.log('event', event, properties);
           });
-          
+
+          JsonTestNodesDataSet.on('*', function (event, properties, senderId) {
+            console.log('event', event, properties);
+          });
+          JsonTestEdgesDataSet.on('*', function (event, properties, senderId) {
+             console.log('event', event, properties);
+           });
+
          ArchiMateLanguageNodesDataSet.add ([
          {id: 0, label: 'ArchiMagine Dynamic Viewer', image:  './img/ArchiMagine_DMN.svg', shape: 'image'},
          {id: 1, label: 'IMAGINE',  image: './img/Imagine.png', shape: 'image'},
@@ -1329,7 +1345,39 @@ function initArchiMate(){
          {from: 0, to: 3, id:"3", label:"uses", arrows:'to'},
          {from: 0, to: 4, id:"4",label:"based on", arrows:'to'}       
          ]);
-         
+
+         JsonTestNodesDataSet.add ([
+            {
+                id : "http://www.semanticweb.org/nicolasfigay/ontologies/2017/11/16/untitled-ontology-119",
+                label: "untitled-ontology-119",
+                title :  "http://www.w3.org/2002/07/owl#Ontology" 
+            }, 
+            {
+                id : "http://www.semanticweb.org/nicolasfigay/ontologies/2017/11/16/untitled-ontology-119#C1",
+                label: "C1",
+                title :  "http://www.w3.org/2002/07/owl#Class" 
+            },
+            {
+                id: "http://www.semanticweb.org/nicolasfigay/ontologies/2017/11/16/untitled-ontology-119#C2",
+                label: "C2",
+                title:  "http://www.w3.org/2002/07/owl#Class" 
+            },
+            {
+                id: "http://www.semanticweb.org/nicolasfigay/ontologies/2017/11/16/untitled-ontology-119#C3",
+                label: "C3",
+                title:  "http://www.w3.org/2002/07/owl#Class" 
+            },
+            {
+                id: "http://www.semanticweb.org/nicolasfigay/ontologies/2017/11/16/untitled-ontology-119#C4",
+                label: "C4",
+                title:  "http://www.w3.org/2002/07/owl#Class" 
+            }
+        ]
+         );
+   
+        JsonTestEdgesDataSet.add([
+            {from: "http://www.w3.org/2002/07/owl#Ontology" , to: "http://www.semanticweb.org/nicolasfigay/ontologies/2017/11/16/untitled-ontology-119", id:"1", label:"type", arrows:'to'}
+            ]);       
          
                 
          //Creation of RelationArrays which is a matrix the list of entities which are in the domain or in the range of the relation, and is used in order to define all the nodes of the network for describing the relation
@@ -1358,6 +1406,10 @@ var ArchiMateLanguageNodesDataView = new vis.DataView(ArchiMateLanguageNodesData
             edges: ArchiMateLanguageEdgesDataSet
          };
  
+         var data2 = {
+            nodes: JsonTestNodesDataSet,
+           edges: JsonTestEdgesDataSet
+        };
          document.getElementById('ER').checked=true;
          document.getElementById('R').checked=false;
 
