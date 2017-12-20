@@ -306,7 +306,7 @@ switch (document.getElementById("relation").selectedIndex){
         if (AccessRelationArray[i]=="1"){
             image= ArchiMateObjects[i].toLowerCase().replace("_", "-").replace("_", "-");
             nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
-            +'"title":"'+ArchiMateObjects[i]+'"'+","+'"shape":"image"' +','
+            +'"title":"'+ArchiMateObjects[i]+'"'+","+','
             +'"label":"'+ArchiMateObjects[i]+'"'+','
             +'"image":"./img/archimate/'+image+'.svg"'
             +'}';
@@ -341,7 +341,7 @@ switch (document.getElementById("relation").selectedIndex){
         if (CompositionRelationArray[i]=="1"){
             image= ArchiMateObjects[i].toLowerCase().replace("_", "-").replace("_", "-");
             nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
-            +'"title":"'+ArchiMateObjects[i]+'"'+","+'"shape":"image"' +','
+            +'"title":"'+ArchiMateObjects[i]+'"'+','
             +'"label":"'+ArchiMateObjects[i]+'"'+','
             +'"image":"./img/archimate/'+image+'.svg"'
             +'}';
@@ -372,7 +372,7 @@ switch (document.getElementById("relation").selectedIndex){
         if (FlowRelationArray[i]=="1"){
             image= ArchiMateObjects[i].toLowerCase().replace("_", "-").replace("_", "-");
             nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
-            +'"title":"'+ArchiMateObjects[i]+'"'+","+'"shape":"image"' +','
+            +'"title":"'+ArchiMateObjects[i]+'"'+","+','
             +'"label":"'+ArchiMateObjects[i]+'"'+','
             +'"image":"./img/archimate/'+image+'.svg"'
             +'}';
@@ -403,7 +403,7 @@ switch (document.getElementById("relation").selectedIndex){
         if (AggregationRelationArray[i]=="1"){
             image= ArchiMateObjects[i].toLowerCase().replace("_", "-").replace("_", "-");
             nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
-            +'"title":"'+ArchiMateObjects[i]+'"'+","+'"shape":"image"' +','
+            +'"title":"'+ArchiMateObjects[i]+'"'+','
             +'"label":"'+ArchiMateObjects[i]+'"'+','
             +'"image":"./img/archimate/'+image+'.svg"'
             +'}';
@@ -436,7 +436,7 @@ switch (document.getElementById("relation").selectedIndex){
         if (AssignmentRelationArray[i]=="1"){
             image= ArchiMateObjects[i].toLowerCase().replace("_", "-").replace("_", "-");
             nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
-            +'"title":"'+ArchiMateObjects[i]+'"'+","+'"shape":"image"' +','
+            +'"title":"'+ArchiMateObjects[i]+'"'+','
             +'"label":"'+ArchiMateObjects[i]+'"'+','
             +'"image":"./img/archimate/'+image+'.svg"'
             +'}';
@@ -467,7 +467,7 @@ switch (document.getElementById("relation").selectedIndex){
         if (InfluenceRelationArray[i]=="1"){
             image= ArchiMateObjects[i].toLowerCase().replace("_", "-").replace("_", "-");
             nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
-            +'"title":"'+ArchiMateObjects[i]+'"'+","+'"shape":"image"' +','
+            +'"title":"'+ArchiMateObjects[i]+'"'+','
             +'"label":"'+ArchiMateObjects[i]+'"'+','
             +'"image":"./img/archimate/'+image+'.svg"'
             +'}';
@@ -498,7 +498,7 @@ switch (document.getElementById("relation").selectedIndex){
         if (RealizationRelationArray[i]=="1"){
             image= ArchiMateObjects[i].toLowerCase().replace("_", "-").replace("_", "-");
             nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
-            +'"title":"'+ArchiMateObjects[i]+'"'+","+'"shape":"image"' +','
+            +'"title":"'+ArchiMateObjects[i]+'"'+','
             +'"label":"'+ArchiMateObjects[i]+'"'+','
             +'"image":"./img/archimate/'+image+'.svg"'
             +'}';
@@ -530,7 +530,7 @@ switch (document.getElementById("relation").selectedIndex){
         if (SpecializationRelationArray[i]=="1"){
             image= ArchiMateObjects[i].toLowerCase().replace("_", "-").replace("_", "-");
             nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
-            +'"title":"'+ArchiMateObjects[i]+'"'+","+'"shape":"image"' +','
+            +'"title":"'+ArchiMateObjects[i]+'"'+','
             +'"label":"'+ArchiMateObjects[i]+'"'+','
             +'"image":"./img/archimate/'+image+'.svg"'
             +'}';
@@ -561,7 +561,7 @@ switch (document.getElementById("relation").selectedIndex){
         if (TriggeringRelationArray[i]=="1"){
             image= ArchiMateObjects[i].toLowerCase().replace("_", "-").replace("_", "-");
             nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
-            +'"title":"'+ArchiMateObjects[i]+'"'+","+'"shape":"image"' +','
+            +'"title":"'+ArchiMateObjects[i]+'"'+","
             +'"label":"'+ArchiMateObjects[i]+'"'+','
             +'"image":"./img/archimate/'+image+'.svg"'
             +'}';
@@ -591,8 +591,9 @@ switch (document.getElementById("relation").selectedIndex){
     for (var i = 0; i < ServingRelationArray.length; i++) {
         if (ServingRelationArray[i]=="1"){
             image= ArchiMateObjects[i].toLowerCase().replace("_", "-").replace("_", "-");
-            nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
-            +'"title":"'+ArchiMateObjects[i]+'"'+","+'"shape":"image"' +','
+            nodeString='{'+'"id":'+i+","
+            +'"shape":"image"' +','
+            +'"title":"'+ArchiMateObjects[i]+'"'+','
             +'"label":"'+ArchiMateObjects[i]+'"'+','
             +'"image":"./img/archimate/'+image+'.svg"'
             +'}';

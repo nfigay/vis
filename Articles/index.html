@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ArchiMate visualization</title>
+
+    <meta name="description" content="Happy Christmas">
+    <meta name="author" content="Dr Nicolas Figay">
+    <link href="css/Articles-vis.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/vis-network.min.css" rel="stylesheet" type="text/css" />
+
+
+  </head>
+  <body onload="initArticles();">
+
+    <div class="container-fluid">	
+		<div class="row" id="row-01" name="tool-name">
+			<div class="col-md-12">
+				<h3 class="text-center">
+				    <div  id="toolName">Happy Christmas</div>
+				</h3>
+			</div>
+       	  <div class="text-center" id="toolVersion">Version 0.1 2017</div>
+   	 	</div>
+    
+		<div class="row" id="row-02" name="tool-panes">
+			<div class="col-md-1">
+                
+
+
+                <div class="btn-group" >
+					<button id="displayPropertyButton" class="btn btn-default" type="button" data-toggle="tooltip" title="Parametering the physics"
+                        onclick='displayProperty(this);'>
+					   <img  src="./img/physics.svg" alt="Draw" width="25" height="25">
+					</button> 
+					<button id="displayEventButton" data-toggle="tooltip" title="Displaying events" class="btn btn-default" type="button" onclick='displayEvent(this);'>
+						<img  src="./img/events.svg" alt="Draw" width="25" height="25" >
+					</button>
+                </div>
+				
+                
+			</div>
+
+			<div class="col-md-10">
+            	<div id="Articles"></div>
+                <div id="event">
+                    <pre id="eventSpan"></pre>
+				</div>
+                <div id="physicConfiguration">
+                    <pre id="configureDisplay" ></pre>
+                </div>
+  
+            </div>
+		    <div id="left-pane" class="col-md-1">
+
+            </div>
+		</div>
+	</div>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script type="text/javascript" src="./js/vis.min.js"></script>
+    <script type="text/javascript" src="./js/vis-articles.js"></script>
+    
+  </body>
+</html>

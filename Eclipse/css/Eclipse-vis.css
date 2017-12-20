@@ -1,0 +1,131 @@
+#displayPropertyButton, #displayEventButton
+  {
+      background-color:white;
+  }
+
+#toolName
+  {
+    display:"block";
+    border-style:solid;
+    border-width:1px;
+    border-color:  black;
+    background-color:white;
+  }
+  
+  #toolDescription,
+  #toolVersion,
+  #toolUsage
+  {
+      display:"block";
+      background-color:#F8F8F8;
+      color:grey;
+  }
+
+  img { padding: 0px 0px 0px 0px;}
+  
+  button
+    {  background-color:white;
+    color:black;
+    }
+
+  .btn-group
+{  margin:10px;    }
+
+
+#pane,#pane2
+  {
+
+    display:block;
+    background-color: #ffffff;
+  }
+  
+  #Articles {
+  display:block;
+  color:#686c70;
+  background-repeat:no-repeat;
+  height: 600px;
+  border-style:solid;
+  border-width:1px;
+  border-color:  gray;
+  }
+
+
+
+    table.legend_table {
+      font-size: 11px;
+      border-width:1px;
+      border-color:#d3d3d3;
+      border-style:solid;
+    }
+    table.legend_table,td {
+      border-width:1px;
+      border-color:#d3d3d3;
+      border-style:solid;
+      padding: 2px;
+    }
+    div.table_content {
+      width:80px;
+      text-align:center;
+    }
+    div.table_description {
+      width:100px;
+    }
+
+    #operation {
+      font-size:28px;
+    }
+   
+   #network-popUp {
+      display:"none";
+      position:absolute;
+      top:350px;
+      left:170px;
+      z-index:299;
+      width:250px;
+      height:200;
+      background-color: #f9f9f9;
+      border-style:solid;
+      border-width:3px;
+      border-color: #5394ed;
+      padding:10px;
+      text-align: center;
+    }
+      
+  p {  margin-top: 0.4em; margin-bottom: 0em; }
+  
+  
+   #block {
+       margin:0 auto;
+       position:absolute;
+       height:auto;
+       width:auto;
+       max-width:1100px;
+  }
+
+  #entitiesCheckbox
+  {
+      display:"none";
+  }
+#configureDisplay
+{
+    font-size:10px;
+    width:100%;
+    }
+
+  #eventSpan, #physicConfiguration
+  {
+      display:"none";
+      background-color:white;
+      position:relative;
+      overflow: scroll;
+      border-style:solid;
+      border-width:1px;
+      border-color: black;
+      width:100%;
+
+  }
+
+ 
+
+
+ 
