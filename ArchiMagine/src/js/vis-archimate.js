@@ -158,14 +158,16 @@ function draw() {
 
 
     if (selectedModel=="ER"){document.getElementById("relation").selectedIndex="0";}
+
     
         var options = {interaction:{hover:false},
             physics:{enabled: true, timestep: 0.5, adaptiveTimestep: true, maxVelocity: 50, minVelocity: 0.1, solver: 'barnesHut',
-                barnesHut: { gravitationalConstant: -1000, centralGravity: 0.1, springLength: 95, springConstant: 0.04, damping: 0.09, avoidOverlap: 0}},
+                barnesHut: { gravitationalConstant: -8000, centralGravity: 10.95, springLength: 95, springConstant: 0.04, damping: 1, avoidOverlap: 0}},
             configure: { filter:function (option, path) {
                 if (path.indexOf('physics') !== -1) { return true;}
                 if (path.indexOf('smooth') !== -1 || option === 'smooth') {return true;} return false;},
-            container: document.getElementById('configureDisplay')}
+            container: document.getElementById('configureDisplay')},
+            edges:{smooth:{forceDirection:'none'}}
         };
 
     for(var i=0; inputRelations[i]; ++i){
@@ -377,7 +379,7 @@ switch (document.getElementById("relation").selectedIndex){
             +'"label":"'+ArchiMateObjects[i]+'"'+','
             +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
             +'}';
-            
+
             node=JSON.parse(nodeString);
             nodes.push(node);
             nodeString=null;
@@ -1538,17 +1540,22 @@ function displayEvent(button){
 }
 function displayViewpoint(button){
     
-    button.style.backgroundColor='lightgray';
-    document.getElementById("ERSelection-pane").style.display="none";
-    document.getElementById("RSelection-pane").style.display="none";
-    document.getElementById("viewpoint").style.display="block";
-    //  document.getElementById("ER").style.backgroundColor='white';
-    document.getElementById("R").style.backgroundColor='white';
-    document.getElementById("ArchiMateLanguage").style.display="none";
-    document.getElementById("physicConfiguration").style.display="none";
-    if (document.getElementById("SV").checked==false && document.getElementById("VS").checked==false){
-        document.getElementById("SV").checked=true;
-    }   
+   if (button.style.backgroundColor=='white'){
+        button.style.backgroundColor='lightgray';
+        document.getElementById("ERSelection-pane").style.display="none";
+        document.getElementById("RSelection-pane").style.display="none";
+        document.getElementById("viewpoint").style.display="block";
+        //  document.getElementById("ER").style.backgroundColor='white';
+        document.getElementById("R").style.backgroundColor='white';
+        //document.getElementById("ArchiMateLanguage").style.display="none";
+        document.getElementById("physicConfiguration").style.display="none";
+        if (document.getElementById("SV").checked==false && document.getElementById("VS").checked==false){
+            document.getElementById("SV").checked=true;
+        }   
+    } else {
+        button.style.backgroundColor='white';
+        document.getElementById("viewpoint").style.display="none";
+    }
 }
 
 function SV_VS(check){
