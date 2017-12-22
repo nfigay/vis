@@ -377,6 +377,7 @@ switch (document.getElementById("relation").selectedIndex){
             +'"label":"'+ArchiMateObjects[i]+'"'+','
             +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
             +'}';
+            
             node=JSON.parse(nodeString);
             nodes.push(node);
             nodeString=null;
