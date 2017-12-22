@@ -1554,8 +1554,7 @@ function displayViewpoint(button){
         }   
     } else {
         button.style.backgroundColor='white';
-        document.getElementById("viewpoint").style.display="none";
-    }
+        document.getElementById("viewpoint").style.display="none";    }
 }
 
 function SV_VS(check){
