@@ -311,7 +311,6 @@ switch (document.getElementById("relation").selectedIndex){
             +'"label":"'+ArchiMateObjects[i]+'"'+','
             +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
             +'}';
-            alert (nodeString);
             node=JSON.parse(nodeString);
             nodes.push(node);
             nodeString=null;
@@ -374,7 +373,7 @@ switch (document.getElementById("relation").selectedIndex){
         if (FlowRelationArray[i]=="1"){
             image= ArchiMateObjects[i].toLowerCase().replace("_", "-").replace("_", "-");
             nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
-            +'"title":"'+ArchiMateObjects[i]+'"'+","+','
+            +'"title":"'+ArchiMateObjects[i]+'"'+","
             +'"label":"'+ArchiMateObjects[i]+'"'+','
             +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
             +'}';
