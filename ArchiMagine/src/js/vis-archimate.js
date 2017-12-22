@@ -1586,6 +1586,7 @@ function displaySVG(button)
     }
     else{
         button.style.backgroundColor='green';
+        
         imageExtension="svg";
     } 
 }
