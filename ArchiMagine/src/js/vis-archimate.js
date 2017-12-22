@@ -24,6 +24,7 @@ var nodes = null;
     var selectedModel="ER";
     var eventDisplay=false;
     var parameterDisplay=false;
+    var imageExtension="png";
 
     var DIR = './img/archimate/';
     var EDGE_LENGTH_MAIN = 150;
@@ -100,7 +101,7 @@ function draw() {
             nodeString='{'+'"id":"'+myId+'",'+'"shape":"image"' +','
                 +'"title":"'+Viewpoints[i]+'"'+","+'"shape":"image"' +','
                 +'"label":"'+Viewpoints[i]+'"'+','
-                +'"image":"./img/'+image+'.svg"'
+                +'"image":"./img/'+image+'.'+imageExtension+'"'
                 +'}';       
             node=JSON.parse(nodeString);
             //alert (myId);
@@ -121,7 +122,7 @@ function draw() {
             nodeString='{'+'"id":"'+myId+'",'+'"shape":"image"' +','
                 +'"title":"'+Stakeholders[i]+'"'+","+'"shape":"image"' +','
                 +'"label":"'+Stakeholders[i]+'"'+','
-                +'"image":"./img/'+image+'.svg"'
+                +'"image":"./img/'+image+'.'+imageExtension+'"'
                 +'}';       
             node=JSON.parse(nodeString);
             nodeString=null;
@@ -198,7 +199,7 @@ switch (document.getElementById("relation").selectedIndex){
         nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
         +'"title":"'+ArchiMateObjects[i]+'"'+","+'"shape":"image"' +','
         +'"label":"'+ArchiMateObjects[i]+'"'+','
-        +'"image":"./img/archimate/'+image+'.svg"'
+        +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
         +'}';       
         node=JSON.parse(nodeString);
         nodes.push(node);
@@ -284,13 +285,13 @@ switch (document.getElementById("relation").selectedIndex){
    
    //if layers is checked, some complementary nodes for each layer is created, plus edges from layers to entities belonging to the layers
     if (document.getElementById('layers').checked){
-        nodes.push({id: 200, shape: 'image',label: 'Business Layer', image: DIR + 'business-layer.svg', shape: 'image'});
-        nodes.push({id: 300, shape: 'image',label: 'Application Layer', image: DIR + 'application-layer.svg', shape: 'image'});
-        nodes.push({id: 400, shape: 'image',label: 'PhysicalTechnology Layer', image: DIR + 'physical-technology-layer.svg', shape: 'image'});
-        nodes.push({id: 500, shape: 'image',label: 'Motivation', image: DIR + 'motivation-layer.svg', shape: 'image'});
-        nodes.push({id: 600, shape: 'image',label: 'Other', image: DIR + 'other-layer.svg', shape: 'image'});
-        nodes.push({id: 700, shape: 'image',label: 'ImplementationMigration', image: DIR + 'implementation-migration-layer.svg', shape: 'image'});
-        nodes.push({id: 800, shape: 'image',label: 'Strategy', image: DIR + 'strategy-layer.svg', shape: 'image'});
+        nodes.push({id: 200, shape: 'image',label: 'Business Layer', image: DIR + 'business-layer.'+imageExtension, shape: 'image'});
+        nodes.push({id: 300, shape: 'image',label: 'Application Layer', image: DIR + 'application-layer.'+imageExtension, shape: 'image'});
+        nodes.push({id: 400, shape: 'image',label: 'PhysicalTechnology Layer', image: DIR + 'physical-technology-layer.'+imageExtension, shape: 'image'});
+        nodes.push({id: 500, shape: 'image',label: 'Motivation', image: DIR + 'motivation-layer.'+imageExtension, shape: 'image'});
+        nodes.push({id: 600, shape: 'image',label: 'Other', image: DIR + 'other-layer.'+imageExtension, shape: 'image'});
+        nodes.push({id: 700, shape: 'image',label: 'ImplementationMigration', image: DIR + 'implementation-migration-layer.'+imageExtension, shape: 'image'});
+        nodes.push({id: 800, shape: 'image',label: 'Strategy', image: DIR + 'strategy-layer.'+imageExtension, shape: 'image'});
         for (var i = 0; i <= 2; i++) {edges.push({from: 800, to: i,  arrows:'to', length: EDGE_LENGTH_MAIN});}
         for (var i = 3; i <= 15; i++) {edges.push({from: 200, to: i,arrows:'to', length: EDGE_LENGTH_MAIN});}
         for (var i = 16; i <= 24; i++) {edges.push({from: 300, to: i, arrows:'to',length: EDGE_LENGTH_MAIN});}
@@ -308,7 +309,7 @@ switch (document.getElementById("relation").selectedIndex){
             nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
             +'"title":"'+ArchiMateObjects[i]+'"'+","+','
             +'"label":"'+ArchiMateObjects[i]+'"'+','
-            +'"image":"./img/archimate/'+image+'.svg"'
+            +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
             +'}';
             node=JSON.parse(nodeString);
             nodes.push(node);
@@ -343,7 +344,7 @@ switch (document.getElementById("relation").selectedIndex){
             nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
             +'"title":"'+ArchiMateObjects[i]+'"'+','
             +'"label":"'+ArchiMateObjects[i]+'"'+','
-            +'"image":"./img/archimate/'+image+'.svg"'
+            +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
             +'}';
             node=JSON.parse(nodeString);
             nodes.push(node);
@@ -374,7 +375,7 @@ switch (document.getElementById("relation").selectedIndex){
             nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
             +'"title":"'+ArchiMateObjects[i]+'"'+","+','
             +'"label":"'+ArchiMateObjects[i]+'"'+','
-            +'"image":"./img/archimate/'+image+'.svg"'
+            +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
             +'}';
             node=JSON.parse(nodeString);
             nodes.push(node);
@@ -405,7 +406,7 @@ switch (document.getElementById("relation").selectedIndex){
             nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
             +'"title":"'+ArchiMateObjects[i]+'"'+','
             +'"label":"'+ArchiMateObjects[i]+'"'+','
-            +'"image":"./img/archimate/'+image+'.svg"'
+            +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
             +'}';
              node=JSON.parse(nodeString);
             nodes.push(node);
@@ -438,7 +439,7 @@ switch (document.getElementById("relation").selectedIndex){
             nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
             +'"title":"'+ArchiMateObjects[i]+'"'+','
             +'"label":"'+ArchiMateObjects[i]+'"'+','
-            +'"image":"./img/archimate/'+image+'.svg"'
+            +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
             +'}';
             node=JSON.parse(nodeString);
             nodes.push(node);
@@ -469,7 +470,7 @@ switch (document.getElementById("relation").selectedIndex){
             nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
             +'"title":"'+ArchiMateObjects[i]+'"'+','
             +'"label":"'+ArchiMateObjects[i]+'"'+','
-            +'"image":"./img/archimate/'+image+'.svg"'
+            +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
             +'}';
             node=JSON.parse(nodeString);
             nodes.push(node);
@@ -500,7 +501,7 @@ switch (document.getElementById("relation").selectedIndex){
             nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
             +'"title":"'+ArchiMateObjects[i]+'"'+','
             +'"label":"'+ArchiMateObjects[i]+'"'+','
-            +'"image":"./img/archimate/'+image+'.svg"'
+            +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
             +'}';
             node=JSON.parse(nodeString);
             nodes.push(node);
@@ -532,7 +533,7 @@ switch (document.getElementById("relation").selectedIndex){
             nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
             +'"title":"'+ArchiMateObjects[i]+'"'+','
             +'"label":"'+ArchiMateObjects[i]+'"'+','
-            +'"image":"./img/archimate/'+image+'.svg"'
+            +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
             +'}';
             node=JSON.parse(nodeString);
             nodes.push(node);
@@ -563,7 +564,7 @@ switch (document.getElementById("relation").selectedIndex){
             nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
             +'"title":"'+ArchiMateObjects[i]+'"'+","
             +'"label":"'+ArchiMateObjects[i]+'"'+','
-            +'"image":"./img/archimate/'+image+'.svg"'
+            +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
             +'}';
             node=JSON.parse(nodeString);
             nodes.push(node);
@@ -595,7 +596,7 @@ switch (document.getElementById("relation").selectedIndex){
             +'"shape":"image"' +','
             +'"title":"'+ArchiMateObjects[i]+'"'+','
             +'"label":"'+ArchiMateObjects[i]+'"'+','
-            +'"image":"./img/archimate/'+image+'.svg"'
+            +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
             +'}';
             node=JSON.parse(nodeString);
             nodes.push(node);
@@ -621,7 +622,7 @@ switch (document.getElementById("relation").selectedIndex){
     break;
     
     default:
-    nodes.push({id: 200, shape: 'image',label: 'TO BE DONE', image: DIR + 'business-layer.svg', shape: 'image'});
+    nodes.push({id: 200, shape: 'image',label: 'TO BE DONE', image: DIR + 'business-layer.'+imageExtension, shape: 'image'});
     
     
 }
@@ -741,6 +742,7 @@ function initArchiMate(){
         document.getElementById("ER").style.backgroundColor="white";
         document.getElementById("displayPropertyButton").style.display="none";
         document.getElementById("displayEventButton").style.display="none";
+        document.getElementById("displaySVGButton").style.backgroundColor="gray";
 
 
     
@@ -1333,7 +1335,7 @@ function initArchiMate(){
            });
 
          ArchiMateLanguageNodesDataSet.add ([
-         {id: 0, label: 'ArchiMagine Dynamic Viewer', image:  './img/ArchiMagine_DMN.svg', shape: 'image'},
+         {id: 0, label: 'ArchiMagine Dynamic Viewer', image:  './img/ArchiMagine_DMN.'+imageExtension, shape: 'image'},
          {id: 1, label: 'IMAGINE',  image: './img/Imagine.png', shape: 'image'},
          {id: 2, label: 'ArchiMagine',  image: './img/archimagine.png', shape: 'image'},
          {id: 3, label: 'Visjs',  image: './img/vis-js.png', shape: 'image'},
@@ -1574,6 +1576,19 @@ function displayProperty(button){
     
 }
 
+
+function displaySVG(button)
+{
+    if (button.style.backgroundColor=='green'){
+        button.style.backgroundColor='lightgray';
+        imageExtension="png";
+        
+    }
+    else{
+        button.style.backgroundColor='green';
+        imageExtension="svg";
+    } 
+}
 function clickModelElement(button)
 {
     idRelation=button.id.replace ("b_", "");

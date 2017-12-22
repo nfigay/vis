@@ -33,10 +33,10 @@
                 
                 <div class="btn-group" >
 					<button id="ER" name="ER" class="btn btn-default" type="button" data-toggle="tooltip" title="Display a graph with selected entities and relations" onclick='setModel(this);'>
-						<img type='checkbox'   src="./img/entities-relations.svg" alt="Draw" width="25" height="25">
+						<img type='checkbox'   src="./img/entities-relations.png" alt="Draw" width="25" height="25">
 					</button>		 
                     <button id="R" name='R' class="btn btn-default" type="button" data-toggle="tooltip" title="Display a graph for a selected relation" onclick='setModel(this);' >
-					    <img  src="./img/relation.svg" alt="Draw" width="25" height="25">
+					    <img  src="./img/relation.png" alt="Draw" width="25" height="25">
 					</button>
                 </div>
 
@@ -44,16 +44,16 @@
                 <div class="btn-group" >
 					<button id="displayPropertyButton" class="btn btn-default" type="button" data-toggle="tooltip" title="Parametering the physics"
                         onclick='displayProperty(this);'>
-					   <img  src="./img/physics.svg" alt="Draw" width="25" height="25">
+					   <img  src="./img/physics.png" alt="Draw" width="25" height="25">
 					</button> 
 					<button id="displayEventButton" data-toggle="tooltip" title="Displaying events" class="btn btn-default" type="button" onclick='displayEvent(this);'>
-						<img  src="./img/events.svg" alt="Draw" width="25" height="25" >
+						<img  src="./img/events.png" alt="Draw" width="25" height="25" >
 					</button>
                 </div>
 				
 				<div class="btn-group" >
 					<button id="displayViewpointButton" data-toggle="tooltip" title="Displaying viewpoints" class="btn btn-default" type="button" onclick='displayViewpoint(this);'>
-						<img   src="./img/viewpoint.svg" alt="Draw" width="25" height="25" >
+						<img   src="./img/viewpoint.png" alt="Draw" width="25" height="25" >
 					</button>
 				</div>
 
@@ -211,71 +211,71 @@
     	    		<label><input type="checkbox" id="layers" checked>Layer</label>
                     <label><input type="checkbox" id="oneArcPerRelation" checked>One arc per relation</label></p>
 					<hr/>
-					<button data-toggle="tooltip" id="b_location" title="Location" onclick="clickModelElement(this);">                    <img  src="./img/archimate/location.svg" alt="Location" width="16" height="16" ></button>
+					<button data-toggle="tooltip" id="b_location" title="Location" onclick="clickModelElement(this);">                    <img  src="./img/archimate/location.png" alt="Location" width="16" height="16" ></button>
 					<hr/>
-					<button data-toggle="tooltip" id="b_resource" title="Resource" onclick="clickModelElement(this);">                    <img src="./img/archimate/resource.svg" alt="Resource" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_capability" title="Capability" onclick="clickModelElement(this);">                  <img src="./img/archimate/capability.svg" alt="Capability" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_course_of_action" title="Course of action" onclick="clickModelElement(this);">            <img src="./img/archimate/course-of-action.svg" alt="Course of action" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_resource" title="Resource" onclick="clickModelElement(this);">                    <img src="./img/archimate/resource.png" alt="Resource" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_capability" title="Capability" onclick="clickModelElement(this);">                  <img src="./img/archimate/capability.png" alt="Capability" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_course_of_action" title="Course of action" onclick="clickModelElement(this);">            <img src="./img/archimate/course-of-action.png" alt="Course of action" width="16" height="16"></button>
 				    <hr/>					
-					<button data-toggle="tooltip" id="b_actor" title="Actor" onclick="clickModelElement(this);">                       <img src="./img/archimate/actor.svg" alt="Actor" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_business_role" title="Business Role" onclick="clickModelElement(this);">               <img src="./img/archimate/business-role.svg" alt="Business Role" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_business_collaboration" title="Business Collaboration" onclick="clickModelElement(this);">      <img src="./img/archimate/business-collaboration.svg" alt="Business Collaboration" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_business_interface" title="Business Interface" onclick="clickModelElement(this);">          <img src="./img/archimate/business-interface.svg" alt="Business Interface" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_business_process" title="Business Process" onclick="clickModelElement(this);">            <img src="./img/archimate/business-process.svg" alt="Business Process" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_business_function" title="Business Function" onclick="clickModelElement(this);">           <img src="./img/archimate/business-function.svg" alt="Business Function" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_business_interaction" title="Business Interaction" onclick="clickModelElement(this);">        <img src="./img/archimate/business-interaction.svg" alt="Business Interaction" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_business_event" title="Business Event" onclick="clickModelElement(this);">              <img src="./img/archimate/business-event.svg" alt="Business Event" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_business_service" title="Business Service" onclick="clickModelElement(this);">            <img src="./img/archimate/business-service.svg" alt="Business Service" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_business_object" title="Business Object" onclick="clickModelElement(this);">             <img src="./img/archimate/business-object.svg" alt="Business Object" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_contract" title="Contract" onclick="clickModelElement(this);">                    <img src="./img/archimate/contract.svg" alt="Contract" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_representation" title="Representation" onclick="clickModelElement(this);">              <img src="./img/archimate/representation.svg" alt="Representation" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_product" title="Product" onclick="clickModelElement(this);">                     <img src="./img/archimate/product.svg" alt="Product" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_actor" title="Actor" onclick="clickModelElement(this);">                       <img src="./img/archimate/actor.png" alt="Actor" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_business_role" title="Business Role" onclick="clickModelElement(this);">               <img src="./img/archimate/business-role.png" alt="Business Role" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_business_collaboration" title="Business Collaboration" onclick="clickModelElement(this);">      <img src="./img/archimate/business-collaboration.png" alt="Business Collaboration" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_business_interface" title="Business Interface" onclick="clickModelElement(this);">          <img src="./img/archimate/business-interface.png" alt="Business Interface" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_business_process" title="Business Process" onclick="clickModelElement(this);">            <img src="./img/archimate/business-process.png" alt="Business Process" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_business_function" title="Business Function" onclick="clickModelElement(this);">           <img src="./img/archimate/business-function.png" alt="Business Function" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_business_interaction" title="Business Interaction" onclick="clickModelElement(this);">        <img src="./img/archimate/business-interaction.png" alt="Business Interaction" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_business_event" title="Business Event" onclick="clickModelElement(this);">              <img src="./img/archimate/business-event.png" alt="Business Event" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_business_service" title="Business Service" onclick="clickModelElement(this);">            <img src="./img/archimate/business-service.png" alt="Business Service" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_business_object" title="Business Object" onclick="clickModelElement(this);">             <img src="./img/archimate/business-object.png" alt="Business Object" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_contract" title="Contract" onclick="clickModelElement(this);">                    <img src="./img/archimate/contract.png" alt="Contract" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_representation" title="Representation" onclick="clickModelElement(this);">              <img src="./img/archimate/representation.png" alt="Representation" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_product" title="Product" onclick="clickModelElement(this);">                     <img src="./img/archimate/product.png" alt="Product" width="16" height="16"></button>
 					<hr/>
-					<button data-toggle="tooltip" id="b_application_component" title="Application Component" onclick="clickModelElement(this);">       <img src="./img/archimate/application-component.svg" alt="Application Component" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_application_collaboration" title="Application Collaboration" onclick="clickModelElement(this);">   <img src="./img/archimate/application-collaboration.svg" alt="Application Collaboration" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_application_interface" title="Application Interface" onclick="clickModelElement(this);">       <img src="./img/archimate/application-interface.svg" alt="Application Interface" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_applicatoin_function" title="Application Function" onclick="clickModelElement(this);">        <img src="./img/archimate/application-function.svg" alt="Application Function" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_application_interaction" title="Application Interaction" onclick="clickModelElement(this);">     <img src="./img/archimate/application-interaction.svg" alt="Application-interaction" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_application_process" title="Application Process" onclick="clickModelElement(this);">         <img src="./img/archimate/application-process.svg" alt="Application Process" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_applicatoin_event" title="Application Event" onclick="clickModelElement(this);">           <img src="./img/archimate/application-event.svg" alt="Application Event" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_application_service" title="Application Service" onclick="clickModelElement(this);">         <img src="./img/archimate/application-service.svg" alt="Application-service" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_data_object" title="Data Object" onclick="clickModelElement(this);">                 <img src="./img/archimate/data-object.svg" alt="Data Object" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_application_component" title="Application Component" onclick="clickModelElement(this);">       <img src="./img/archimate/application-component.png" alt="Application Component" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_application_collaboration" title="Application Collaboration" onclick="clickModelElement(this);">   <img src="./img/archimate/application-collaboration.png" alt="Application Collaboration" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_application_interface" title="Application Interface" onclick="clickModelElement(this);">       <img src="./img/archimate/application-interface.png" alt="Application Interface" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_applicatoin_function" title="Application Function" onclick="clickModelElement(this);">        <img src="./img/archimate/application-function.png" alt="Application Function" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_application_interaction" title="Application Interaction" onclick="clickModelElement(this);">     <img src="./img/archimate/application-interaction.png" alt="Application-interaction" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_application_process" title="Application Process" onclick="clickModelElement(this);">         <img src="./img/archimate/application-process.png" alt="Application Process" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_applicatoin_event" title="Application Event" onclick="clickModelElement(this);">           <img src="./img/archimate/application-event.png" alt="Application Event" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_application_service" title="Application Service" onclick="clickModelElement(this);">         <img src="./img/archimate/application-service.png" alt="Application-service" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_data_object" title="Data Object" onclick="clickModelElement(this);">                 <img src="./img/archimate/data-object.png" alt="Data Object" width="16" height="16"></button>
 					<hr/>
-					<button data-toggle="tooltip" id="b_node" title="Node" onclick="clickModelElement(this);">                        <img src="./img/archimate/node.svg" alt="Node" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_device" title="Device" onclick="clickModelElement(this);">                      <img src="./img/archimate/device.svg" alt="Device" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_system_software" title="System Software" onclick="clickModelElement(this);">             <img src="./img/archimate/system-software.svg" alt="System Software" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_technology_collaboration" title="Technology Collaboration" onclick="clickModelElement(this);">    <img src="./img/archimate/technology-collaboration.svg" alt="Technology Collaboration" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_technology_interface" title="Technology Interface" onclick="clickModelElement(this);">        <img src="./img/archimate/technology-interface.svg" alt="Technology Interface" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_path" title="Path" onclick="clickModelElement(this);">                        <img src="./img/archimate/path.svg" alt="Path" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_communication_network" title="Communication Network" onclick="clickModelElement(this);">       <img src="./img/archimate/communication-network.svg" alt="Communication Network" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_technology_function" title="Technology Function" onclick="clickModelElement(this);">         <img src="./img/archimate/technology-function.svg" alt="Technology Function" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_technology_process" title="Technology Process" onclick="clickModelElement(this);">          <img src="./img/archimate/technology-process.svg" alt="Technology Process" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_technology_interaction" title="Technology Interaction" onclick="clickModelElement(this);">      <img src="./img/archimate/technology-interaction.svg" alt="Technology Interaction" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_technology_event" title="Technology Event" onclick="clickModelElement(this);">            <img src="./img/archimate/technology-event.svg" alt="Technology Event" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_technology_service" title="Technology Service" onclick="clickModelElement(this);">          <img src="./img/archimate/technology-service.svg" alt="Technology Service" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_artifact" title="Artifact" onclick="clickModelElement(this);">                    <img src="./img/archimate/artifact.svg" alt="Artifact" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_node" title="Node" onclick="clickModelElement(this);">                        <img src="./img/archimate/node.png" alt="Node" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_device" title="Device" onclick="clickModelElement(this);">                      <img src="./img/archimate/device.png" alt="Device" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_system_software" title="System Software" onclick="clickModelElement(this);">             <img src="./img/archimate/system-software.png" alt="System Software" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_technology_collaboration" title="Technology Collaboration" onclick="clickModelElement(this);">    <img src="./img/archimate/technology-collaboration.png" alt="Technology Collaboration" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_technology_interface" title="Technology Interface" onclick="clickModelElement(this);">        <img src="./img/archimate/technology-interface.png" alt="Technology Interface" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_path" title="Path" onclick="clickModelElement(this);">                        <img src="./img/archimate/path.png" alt="Path" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_communication_network" title="Communication Network" onclick="clickModelElement(this);">       <img src="./img/archimate/communication-network.png" alt="Communication Network" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_technology_function" title="Technology Function" onclick="clickModelElement(this);">         <img src="./img/archimate/technology-function.png" alt="Technology Function" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_technology_process" title="Technology Process" onclick="clickModelElement(this);">          <img src="./img/archimate/technology-process.png" alt="Technology Process" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_technology_interaction" title="Technology Interaction" onclick="clickModelElement(this);">      <img src="./img/archimate/technology-interaction.png" alt="Technology Interaction" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_technology_event" title="Technology Event" onclick="clickModelElement(this);">            <img src="./img/archimate/technology-event.png" alt="Technology Event" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_technology_service" title="Technology Service" onclick="clickModelElement(this);">          <img src="./img/archimate/technology-service.png" alt="Technology Service" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_artifact" title="Artifact" onclick="clickModelElement(this);">                    <img src="./img/archimate/artifact.png" alt="Artifact" width="16" height="16"></button>
 					<hr/>
-					<button data-toggle="tooltip" id="b_equipment" title="Equipment" onclick="clickModelElement(this);">                   <img src="./img/archimate/equipment.svg" alt="Equipment" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_facility" title="Facility" onclick="clickModelElement(this);">                    <img src="./img/archimate/facility.svg" alt="Facility" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_distribution_network" title="Distribution Network" onclick="clickModelElement(this);">        <img src="./img/archimate/distribution-network.svg" alt="Distribution Network" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_material" title="Material" onclick="clickModelElement(this);">                    <img src="./img/archimate/material.svg" alt="Material" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_equipment" title="Equipment" onclick="clickModelElement(this);">                   <img src="./img/archimate/equipment.png" alt="Equipment" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_facility" title="Facility" onclick="clickModelElement(this);">                    <img src="./img/archimate/facility.png" alt="Facility" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_distribution_network" title="Distribution Network" onclick="clickModelElement(this);">        <img src="./img/archimate/distribution-network.png" alt="Distribution Network" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_material" title="Material" onclick="clickModelElement(this);">                    <img src="./img/archimate/material.png" alt="Material" width="16" height="16"></button>
 					<hr/>
-					<button data-toggle="tooltip" id="b_stakeholder" title="Stakeholder" onclick="clickModelElement(this);">                 <img src="./img/archimate/stakeholder.svg" alt="Stakeholder" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_driver" title="Driver" onclick="clickModelElement(this);">                      <img src="./img/archimate/driver.svg" alt="Driver" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_assessment" title="Assessment" onclick="clickModelElement(this);">                  <img src="./img/archimate/assessment.svg" alt="Assessment" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_goal" title="Goal" onclick="clickModelElement(this);">                        <img src="./img/archimate/goal.svg" alt="Goal" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_outcome" title="Outcome" onclick="clickModelElement(this);">                     <img src="./img/archimate/outcome.svg" alt="Outcome" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_principle" title="Principle" onclick="clickModelElement(this);">                   <img src="./img/archimate/principle.svg" alt="Principle" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_requirement" title="Requirement" onclick="clickModelElement(this);">                 <img src="./img/archimate/requirement.svg" alt="Requirement" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_constraint" title="Constraint" onclick="clickModelElement(this);">                  <img src="./img/archimate/constraint.svg" alt="Constraint" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_meaning" title="Meaning" onclick="clickModelElement(this);">                     <img src="./img/archimate/meaning.svg" alt="Meaning" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_value" title="Value" onclick="clickModelElement(this);">                       <img src="./img/archimate/value.svg" alt="Value" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_stakeholder" title="Stakeholder" onclick="clickModelElement(this);">                 <img src="./img/archimate/stakeholder.png" alt="Stakeholder" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_driver" title="Driver" onclick="clickModelElement(this);">                      <img src="./img/archimate/driver.png" alt="Driver" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_assessment" title="Assessment" onclick="clickModelElement(this);">                  <img src="./img/archimate/assessment.png" alt="Assessment" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_goal" title="Goal" onclick="clickModelElement(this);">                        <img src="./img/archimate/goal.png" alt="Goal" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_outcome" title="Outcome" onclick="clickModelElement(this);">                     <img src="./img/archimate/outcome.png" alt="Outcome" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_principle" title="Principle" onclick="clickModelElement(this);">                   <img src="./img/archimate/principle.png" alt="Principle" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_requirement" title="Requirement" onclick="clickModelElement(this);">                 <img src="./img/archimate/requirement.png" alt="Requirement" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_constraint" title="Constraint" onclick="clickModelElement(this);">                  <img src="./img/archimate/constraint.png" alt="Constraint" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_meaning" title="Meaning" onclick="clickModelElement(this);">                     <img src="./img/archimate/meaning.png" alt="Meaning" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_value" title="Value" onclick="clickModelElement(this);">                       <img src="./img/archimate/value.png" alt="Value" width="16" height="16"></button>
 					<hr/>
-					<button data-toggle="tooltip" id="b_workpackage" title="Work Package" onclick="clickModelElement(this);">                <img src="./img/archimate/workpackage.svg" alt="Work Package" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_deliverable" title="Deliverable" onclick="clickModelElement(this);">                 <img src="./img/archimate/deliverable.svg" alt="Deliverable" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_implementation_event" title="Implementation Event" onclick="clickModelElement(this);">        <img src="./img/archimate/implementation-event.svg" alt="Implementation Event" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_plateau" title="Plateau" onclick="clickModelElement(this);">                     <img src="./img/archimate/plateau.svg" alt="Plateau" width="16" height="16"></button>
-					<button data-toggle="tooltip" id="b_gap" title="Gap" onclick="clickModelElement(this);">                         <img src="./img/archimate/gap.svg" alt="Gap" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_workpackage" title="Work Package" onclick="clickModelElement(this);">                <img src="./img/archimate/workpackage.png" alt="Work Package" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_deliverable" title="Deliverable" onclick="clickModelElement(this);">                 <img src="./img/archimate/deliverable.png" alt="Deliverable" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_implementation_event" title="Implementation Event" onclick="clickModelElement(this);">        <img src="./img/archimate/implementation-event.png" alt="Implementation Event" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_plateau" title="Plateau" onclick="clickModelElement(this);">                     <img src="./img/archimate/plateau.png" alt="Plateau" width="16" height="16"></button>
+					<button data-toggle="tooltip" id="b_gap" title="Gap" onclick="clickModelElement(this);">                         <img src="./img/archimate/gap.png" alt="Gap" width="16" height="16"></button>
 					<hr/>
 					<button data-toggle="tooltip" id="b_composition" title="(c)omposition" onclick="clickModelElement(this);">               <img src="./img/archimate/composition.png" alt="Composition" width="16" height="16"></button>
 					<button data-toggle="tooltip" id="b_aggregation" title="a(g)gregation" onclick="clickModelElement(this);">               <img src="./img/archimate/aggregation.png" alt="Aggregation" width="16" height="16"></button>
@@ -331,8 +331,12 @@
            	    </div> 
            	       
             </div>
-		    <div id="left-pane" class="col-md-1">
-
+		    <div id="left-pane" class="col-md-1">		
+				<div class="btn-group" >
+					<button id="displaySVGButton" data-toggle="tooltip" title="Using or not SVG Icons" class="btn btn-default" type="button" onclick='displaySVG(this);'>
+					<img   src="./img/svg.png" alt="Draw" width="64" height="64" >
+					</button>
+				</div>
             </div>
 		</div>
 	</div>
