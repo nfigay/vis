@@ -307,10 +307,11 @@ switch (document.getElementById("relation").selectedIndex){
         if (AccessRelationArray[i]=="1"){
             image= ArchiMateObjects[i].toLowerCase().replace("_", "-").replace("_", "-");
             nodeString='{'+'"id":'+i+","+'"shape":"image"' +','
-            +'"title":"'+ArchiMateObjects[i]+'"'+","+','
+            +'"title":"'+ArchiMateObjects[i]+'"'+","
             +'"label":"'+ArchiMateObjects[i]+'"'+','
             +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
             +'}';
+            alert (nodeString);
             node=JSON.parse(nodeString);
             nodes.push(node);
             nodeString=null;
@@ -742,7 +743,7 @@ function initArchiMate(){
         document.getElementById("ER").style.backgroundColor="white";
         document.getElementById("displayPropertyButton").style.display="none";
         document.getElementById("displayEventButton").style.display="none";
-        document.getElementById("displaySVGButton").style.backgroundColor="gray";
+        document.getElementById("displaySVGButton").style.backgroundColor="lightgray";
 
 
     
@@ -1579,14 +1580,14 @@ function displayProperty(button){
 
 function displaySVG(button)
 {
-    if (button.style.backgroundColor=='green'){
+    if (button.style.backgroundColor=='palegreen'){
         button.style.backgroundColor='lightgray';
         imageExtension="png";
         
     }
     else{
-        button.style.backgroundColor='green';
-        
+        button.style.backgroundColor='palegreen';
+
         imageExtension="svg";
     } 
 }
