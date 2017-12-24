@@ -18,7 +18,7 @@ function process(data){
 }
 
 function createVis(model){
-  alert ("coucou");
+  
   var txt="";
   var dir_image="http://www.eads-iw.net/html/ArchimateDMNInteractiveViewer/img/";
   var elements="";
@@ -230,7 +230,7 @@ function createVis(model){
        +'"label":"'+views[i].getAttribute('name')+'"'+','
        +'"image":"'+dir_image+'view.svg"'
        +'}';
-    alert (nodeString);
+    //alert (nodeString);
        node=JSON.parse(nodeString);
     nodes.push(node);
   //now let's associate each view to the viewpoint it is associated with
