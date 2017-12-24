@@ -20,7 +20,7 @@ function process(data){
 function createVis(model){
   
   var txt="";
-  var dir_image="http://www.eads-iw.net/html/ArchimateDMNInteractiveViewer/img/";
+  var dir_image="http://www.eads-iw.net/html/ArchimateDMNInteractiveViewer/img/archimate";
   var elements="";
   var nodes=[];
   var edges=[];
