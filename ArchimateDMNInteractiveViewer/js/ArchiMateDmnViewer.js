@@ -15,6 +15,7 @@ function loadArchi()
 
 function process(data){
   createVis(data);
+  
 }
 
 function createVis(model){
