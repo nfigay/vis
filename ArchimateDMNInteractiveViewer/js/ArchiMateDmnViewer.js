@@ -54,7 +54,7 @@ function createVis(model){
       +'"shape":"image"' +','
       +'"label":"'+viewpoints[i]+'"'+','
       +'" mass":10 ,'
-      +'"image":"'+dir_image+'viewpoint.svg"'
+      +'"image":"'+dir_image+'viewpoint.png"'
       +'}';
     node=JSON.parse(nodeString);
     nodes.push(node);
@@ -69,12 +69,12 @@ function createVis(model){
       +'"title":"'+stakeholders[i]+'"'+","
       +'"shape":"image"' +','
       +'"label":"'+stakeholders[i]+'"'+','
-      +'"image":"'+dir_image+'stakeholder.svg"'
+      +'"image":"'+dir_image+'stakeholder.png"'
       +'}';
     node=JSON.parse(nodeString);
     nodes.push(node);
   }
-  nodes.push({id: "viewpoint", shape: 'image',label: 'Viewpoint', image: dir_image + 'viewpoint.svg', shape: 'image'});
+  nodes.push({id: "viewpoint", shape: 'image',label: 'Viewpoint', image: dir_image + 'viewpoint.png', shape: 'image'});
   edges.push({from: viewpoints[0].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
   edges.push({from: viewpoints[1].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
   edges.push({from: viewpoints[2].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
@@ -228,7 +228,7 @@ function createVis(model){
     nodeString='{'+'"id":"'+views[i].getAttribute('id')+'",'+'"shape":"image"' +','
        +'"title":"'+views[i].getAttribute('name')+'"'+","+'"shape":"image"' +','
        +'"label":"'+views[i].getAttribute('name')+'"'+','
-       +'"image":"'+dir_image+'view.svg"'
+       +'"image":"'+dir_image+'view.png"'
        +'}';
     //alert (nodeString);
        node=JSON.parse(nodeString);
@@ -261,7 +261,7 @@ function createVis(model){
           nodeString='{'+'"id":"'+diagramObject+'",'+'"shape":"image"' +','
             +'"title":"'+model.getElementById(archiMateElement).getAttribute('name')+'"'+","+'"shape":"image"' +','
             +'"label":"'+model.getElementById(archiMateElement).getAttribute('name')+'"'+','
-            +'"image":"'+dir_image+'archimate/'+image+'.svg"'
+            +'"image":"'+dir_image+'archimate/'+image+'.png"'
             +'}';
             
           node=JSON.parse(nodeString);
@@ -327,7 +327,7 @@ function createVis(model){
           nodeString='{'+'"id":"'+folders[i].getAttribute('id')+'",'+'"shape":"image"' +','
              +'"title":"'+folders[i].getAttribute('name')+'"'+","+'"shape":"image"' +','
              +'"label":"'+folders[i].getAttribute('name')+'"'+','
-             +'"image":"'+dir_image+'archimate/'+image+'.svg"'
+             +'"image":"'+dir_image+'archimate/'+image+'.png"'
              +'}';
           //   alert(nodeString);
           node=JSON.parse(nodeString);
@@ -347,7 +347,7 @@ function createVis(model){
             nodeString='{'+'"id":"'+elements[j].getAttribute('id')+'",'+'"shape":"image"' +','
               +'"title":"'+elements[j].getAttribute('name')+elements[j].getAttribute('xsi:type').replace("archimate:",":")+'"'+","+'"shape":"image"' +','
               +'"label":"'+elements[j].getAttribute('name')+'"'+','
-              +'"image":"./img/archimate/'+image+'.svg"'
+              +'"image":"./img/archimate/'+image+'.png"'
               +'}';
             node=JSON.parse(nodeString);
           
