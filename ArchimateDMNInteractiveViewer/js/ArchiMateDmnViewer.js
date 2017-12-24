@@ -347,7 +347,7 @@ function createVis(model){
             nodeString='{'+'"id":"'+elements[j].getAttribute('id')+'",'+'"shape":"image"' +','
               +'"title":"'+elements[j].getAttribute('name')+elements[j].getAttribute('xsi:type').replace("archimate:",":")+'"'+","+'"shape":"image"' +','
               +'"label":"'+elements[j].getAttribute('name')+'"'+','
-              +'"image":"../img/archimate/'+image+'.svg"'
+              +'"image":"./img/archimate/'+image+'.svg"'
               +'}';
             node=JSON.parse(nodeString);
           
