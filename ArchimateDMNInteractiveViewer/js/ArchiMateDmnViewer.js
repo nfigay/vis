@@ -1,6 +1,6 @@
 
 
-function load()
+function loadArchi()
 {
   var myModel=null;
   myModel= document.getElementById("model").value;
@@ -15,12 +15,11 @@ function load()
 }
 
 function process(data){
-  var model=data;
-  alert("Loading of models OK! Let's parameter visualization and draw.");
+  createVis(data);
   
 }
 
-function createVis(){
+function createVis(model){
   
   var txt="";
   var dir_image="http://www.eads-iw.net/html/ArchimateDMNInteractiveViewer/img/";
