@@ -1,5 +1,6 @@
 
-function loadArchi()
+
+function load()
 {
   var myModel=null;
   myModel= document.getElementById("model").value;
@@ -14,11 +15,12 @@ function loadArchi()
 }
 
 function process(data){
-  createVis(data);
+  var model=data;
+  alert("Loading of models OK! Let's parameter visualization and draw.");
   
 }
 
-function createVis(model){
+function createVis(){
   
   var txt="";
   var dir_image="http://www.eads-iw.net/html/ArchimateDMNInteractiveViewer/img/";
@@ -31,6 +33,7 @@ function createVis(model){
   var myTitle="";
   var EDGE_LENGTH_MAIN = 150;
   var EDGE_LENGTH_SUB = 50;
+  var imageExtension="png";
   var options = {interaction:{hover:false},
                  layout: { improvedLayout:false},
                  physics:{enabled: true, timestep: 0.5, adaptiveTimestep: true, maxVelocity: 50, minVelocity: 0.1, solver: 'barnesHut',
@@ -418,4 +421,17 @@ function nsResolver(prefix) {
     case "xsi":return 'http://www.w3.org/2001/XMLSchema-instance';
     default: return null;
   }
+}
+function displaySVG(button)
+{
+    if (button.style.backgroundColor=='palegreen'){
+        button.style.backgroundColor='lightgray';
+        imageExtension="png";
+        
+    }
+    else{
+        button.style.backgroundColor='palegreen';
+
+        imageExtension="svg";
+    } 
 }
