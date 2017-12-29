@@ -11,84 +11,79 @@
     <meta name="author" content="Dr Nicolas Figay">
     <link href=" https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
     <link href="./css/ArchiMateDmnViewer.css" rel="stylesheet" type="text/css" />
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    
-   
-
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
   </head>
   <body >
     <div class="container-fluid">	
-        <div class="row" id="row-01" name="tool-name">
-            <div class="col-md-12">
-              <h3 class="text-center">
-                  <div  id="toolName">The Advanced ArchiMate Model Interactive Viewer</div>
-              </h3>
-            </div>
-            <div class="text-center" id="toolVersion">Version 0.1 by Nicolas Figay, the 27th of December, 2017</div>
-            <div id="models">
-              <p> Select models to open:</p>
-            <input id="model" list="modelList">    
-            <label for="modelList">
-                <datalist id="modelList">
-                  <select>
-                    <option value="test">test</option>
-                    <option value="test4">test4</option>
-                    <option value="ArchiMagine20171212">ArchiMagine20171212</option>
-                  </select>
-                </datalist>
-              </label>       
-            <button type="button" onclick="loadArchi();">Submit</button>
-          </div>
+      <div class="row" id="row-01" name="tool-name">
+        <div class="col-md-12">
+          <h3 class="text-center">
+            <div  id="toolName">The Advanced ArchiMate Model Interactive Viewer</div>
+          </h3>
         </div>
+        <div class="text-center" id="toolVersion">Version 0.1 by Nicolas Figay, the 27th of December, 2017</div>
+        <div id="models">
+          <p> Select models to open:</p>
+          <input id="model" list="modelList" />    
+          <label for="modelList">
+            <datalist id="modelList">
+              <select>
+                <option value="test">test</option>
+                <option value="test4">test4</option>
+                <option value="ArchiMagine20171212">ArchiMagine20171212</option>
+              </select>
+            </datalist>
+          </label>       
+          <button type="button" onclick="loadArchi();">Submit</button>
+        </div>
+      </div>
 
-        <div class="row" id="row-02" name="tool-panes">
-            <div class="col-md-1">
-                      
-                      <div class="btn-group" >
-                <button id="ER" name="ER" class="btn btn-default" type="button" data-toggle="tooltip" title="Display a graph with selected entities and relations" onclick='setModel(this);'>
-                  <img type='checkbox'   src="./img/entities-relations.png" alt="Draw" width="25" height="25">
-                </button>		 
-                          <button id="R" name='R' class="btn btn-default" type="button" data-toggle="tooltip" title="Display a graph for a selected relation" onclick='setModel(this);' >
-                    <img  src="./img/relation.png" alt="Draw" width="25" height="25">
-                </button>
-                      </div>
-      
-      
-                      <div class="btn-group" >
-                <button id="displayPropertyButton" class="btn btn-default" type="button" data-toggle="tooltip" title="Parametering the physics"
+      <div class="row" id="row-02" name="tool-panes">
+        <div class="col-md-1">                      
+          
+          <div class="btn-group" >
+            <button id="ER" name="ER" class="btn btn-default" type="button" data-toggle="tooltip" title="Display a graph with selected entities and relations" onclick='setModel(this);'>
+              <img type='checkbox'   src="./img/entities-relations.png" alt="Draw" width="25" height="25">
+            </button>		 
+            <button id="R" name='R' class="btn btn-default" type="button" data-toggle="tooltip" title="Display a graph for a selected relation" onclick='setModel(this);' >
+              <img  src="./img/relation.png" alt="Draw" width="25" height="25">
+            </button>
+          </div>   
+          
+          <div class="btn-group" >
+            <button id="displayPropertyButton" class="btn btn-default" type="button" data-toggle="tooltip" title="Parametering the physics"
                               onclick='displayProperty(this);'>
-                   <img  src="./img/physics.png" alt="Draw" width="25" height="25">
-                </button> 
-                <button id="displayEventButton" data-toggle="tooltip" title="Displaying events" class="btn btn-default" type="button" onclick='displayEvent(this);'>
-                  <img  src="./img/events.png" alt="Draw" width="25" height="25" >
-                </button>
-                      </div>
-              
-              <div class="btn-group" >
-                <button id="displayViewpointButton" data-toggle="tooltip" title="Displaying viewpoints" class="btn btn-default" type="button" onclick='displayViewpoint(this);'>
-                  <img   src="./img/viewpoint.png" alt="Draw" width="25" height="25" >
-                </button>
-              </div>
-      
-                      <div class="btn-group" >
-                <button data-toggle="tooltip" title="Draw the network" class="btn btn-default" type="button" onclick='loadArchi();'>
-                  <img   src="./img/Draw.png" alt="Draw" width="25" height="25" >
-                </button>
-              </div>
-                      
-            </div>
-            <div class="col-md-10"></div>
-              <label><input type="checkbox" id="folders" checked>Folders</label>
-              <div id="ArchiMateModel"></div>
-              <div id="configureDisplay"></div>
-              <p id="demo"></p>
-              <div class="root">	
-              <div class="views"></div>
-              <div class="model"></div>
-            </div>
+              <img  src="./img/physics.png" alt="Draw" width="25" height="25">
+            </button> 
+            <button id="displayEventButton" data-toggle="tooltip" title="Displaying events" class="btn btn-default" type="button" onclick='displayEvent(this);'>
+              <img  src="./img/events.png" alt="Draw" width="25" height="25" >
+            </button>
           </div>
+      
+          <div class="btn-group" >
+            <button id="displayViewpointButton" data-toggle="tooltip" title="Displaying viewpoints" class="btn btn-default" type="button" onclick='displayViewpoint(this);'>
+              <img   src="./img/viewpoint.png" alt="Draw" width="25" height="25" >
+            </button>
+          </div>
+      
+          <div class="btn-group" >
+            <button data-toggle="tooltip" title="Draw the network" class="btn btn-default" type="button" onclick='loadArchi();'>
+              <img   src="./img/Draw.png" alt="Draw" width="25" height="25" >
+            </button>
+          </div>                      
+      
+        </div>
+        <div class="col-md-10"></div>
+          <label><input type="checkbox" id="folders" checked>Folders</label>
+          <div id="ArchiMateModel"></div>
+          <div id="configureDisplay"></div>
+          <p id="demo"></p>
+          <div class="root">	
+          <div class="views"></div>
+          <div class="model"></div>
         </div> 
+      
         <div id="left-pane" class="col-md-1">		
             <div class="btn-group" >
               <button id="displaySVGButton" data-toggle="tooltip" title="Using or not SVG Icons. Let's click draw again after chaning" class="btn btn-default" type="button" onclick='displaySVG(this);'>
@@ -96,7 +91,8 @@
               </button>
             </div>
         </div>  
-    </div>
+      </div>
+    </div>  
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
     <script src="./js/ArchiMateDmnViewer.js"></script>
