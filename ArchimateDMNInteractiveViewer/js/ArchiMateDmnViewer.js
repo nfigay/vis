@@ -411,7 +411,7 @@ function createVis(model){
     };
     document.getElementById("ArchiMateModel").innerHTML = "";
 
-    ArchiMateLanguage = new vis.Network(container, data, options);
+    ArchiMateModel = new vis.Network(container, data, options);
   
 }
 
