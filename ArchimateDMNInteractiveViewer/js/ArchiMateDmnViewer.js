@@ -1,4 +1,9 @@
+var myModel="ArchiMagineModelDynamicViewer";
 
+function initArchiMate(){
+  document.getElementById("model").value="ArchiMagineModelDynamicViewer";
+  loadArchi;
+}
 
 function loadArchi()
 {
