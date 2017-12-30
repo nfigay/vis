@@ -497,3 +497,56 @@ function displayViewpoint(button){
       document.getElementById("viewpoint").style.display="none";  
     }
 }
+function clickModelElement(button)
+{
+    idRelation=button.id.replace ("b_", "");
+    var c = document.getElementById(idRelation) ;
+    c.checked = (c.checked) ? false : true ;
+    button.style.backgroundColor='white';
+    if (c.checked==true){button.style.backgroundColor='lightgray';}
+
+}
+function clickViewpoint(viewpointCheckbox){
+    if (document.getElementById("VS").checked && viewpointCheckbox.checked){
+        for (i=0; i<W4S[viewpointCheckbox.value].length; i++){
+        var s=document.getElementById(Stakeholders[W4S[viewpointCheckbox.value][i]].toLowerCase().replace(" ", "_").replace(" ", "_")+'_stakeholder');
+        s.checked=true;
+        }
+    }
+}
+
+function clickStakeholder(stakeholderCheckbox){
+    if (document.getElementById("SV").checked && stakeholderCheckbox.checked){
+        for (i=0; i<W4S.length; i++){
+            if (W4S[i].indexOf(parseInt(stakeholderCheckbox.value))>-1){
+                var s=document.getElementById(Viewpoints[i].toLowerCase().replace(" ", "_").replace(" ", "_")+'_viewpoint');
+                s.checked=true;
+            }
+        }
+    }
+}
+function SV_VS(check){
+  if (check.id=="SV"){document.getElementById("VS").checked=!document.getElementById("SV").checked;}
+  if (check.id=="VS"){document.getElementById("SV").checked=!document.getElementById("VS").checked;}
+  for (i=0; i<Viewpoints.length; i++){
+      var s=document.getElementById(Viewpoints[i].toLowerCase().replace(" ", "_").replace(" ", "_")+'_viewpoint');
+      s.checked=false;
+      }
+  for (i=0; i<Stakeholders.length; i++){
+      //alert (Stakeholders[i].toLowerCase().replace(" ", "_").replace(" ", "_")+'_stakeholder');
+      var s=document.getElementById(Stakeholders[i].toLowerCase().replace(" ", "_").replace(" ", "_")+'_stakeholder');
+      s.checked=false;
+  }
+}
+
+function displayProperty(button){
+  if (button.style.backgroundColor=='white'){
+      button.style.backgroundColor='lightgray';
+      document.getElementById("physicConfiguration").style.display="block";
+  }
+  else{
+      button.style.backgroundColor='white';
+      document.getElementById("physicConfiguration").style.display="none";
+  }
+  
+}
