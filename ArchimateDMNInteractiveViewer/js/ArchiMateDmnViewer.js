@@ -3,6 +3,7 @@ var displayViews=false;
 var displayViewpoints=false;
 var displayStakeholders=true;
 
+
 function initArchiMate(){
   document.getElementById("model").value="ArchiMagineModelDynamicViewer";
   document.getElementById("ERSelection-pane").style.display="none";
