@@ -84,17 +84,16 @@
             <pre id="configureDisplay" ></pre>
           </div>
           <div id="ERSelection-pane">
-              Options:<p style="font-size:12px">
-                 
-                  <label><input type="checkbox" id="layers" checked>Layer</label>
-                        <label><input type="checkbox" id="oneArcPerRelation" checked>One arc per relation</label></p>
+              Options:<p style="font-size:12px">   
+              <label><input type="checkbox" id="layers" checked>Layer</label>
+              <label><input type="checkbox" id="oneArcPerRelation" checked>One arc per relation</label></p>
               <hr/>
               <button data-toggle="tooltip" id="b_location" title="Location" onclick="clickModelElement(this);">                    <img  src="./img/archimate/location.png" alt="Location" width="16" height="16" ></button>
               <hr/>
               <button data-toggle="tooltip" id="b_resource" title="Resource" onclick="clickModelElement(this);">                    <img src="./img/archimate/resource.png" alt="Resource" width="16" height="16"></button>
               <button data-toggle="tooltip" id="b_capability" title="Capability" onclick="clickModelElement(this);">                  <img src="./img/archimate/capability.png" alt="Capability" width="16" height="16"></button>
               <button data-toggle="tooltip" id="b_course_of_action" title="Course of action" onclick="clickModelElement(this);">            <img src="./img/archimate/course-of-action.png" alt="Course of action" width="16" height="16"></button>
-                <hr/>					
+              <hr/>					
               <button data-toggle="tooltip" id="b_actor" title="Actor" onclick="clickModelElement(this);">                       <img src="./img/archimate/actor.png" alt="Actor" width="16" height="16"></button>
               <button data-toggle="tooltip" id="b_business_role" title="Business Role" onclick="clickModelElement(this);">               <img src="./img/archimate/business-role.png" alt="Business Role" width="16" height="16"></button>
               <button data-toggle="tooltip" id="b_business_collaboration" title="Business Collaboration" onclick="clickModelElement(this);">      <img src="./img/archimate/business-collaboration.png" alt="Business Collaboration" width="16" height="16"></button>
@@ -165,84 +164,83 @@
               <button data-toggle="tooltip" id="b_flow" title="(f)low" onclick="clickModelElement(this);">                      <img src="./img/archimate/flow.png" alt="Flow" width="16" height="16"></button>
               <button data-toggle="tooltip" id="b_specialization" title="(s)pecialization" onclick="clickModelElement(this);">            <img src="./img/archimate/specialization.png" alt="Specialization" width="16" height="16"></button>
               <button data-toggle="tooltip" id="b_realization" title="(r)ealization" onclick="clickModelElement(this);">               <img src="./img/archimate/realization.png" alt="Realization" width="16" height="16"></button>
-              </div>
-                 <div id="RSelection-pane">
-                      <p style="font-size:12px">Relation:
-                      <select  style="width:90px" id="relation" >
-                         <option value="">none</option>
-                         <option value="a">Access</option>
-                         <option value="c">Composition</option>
-                         <option value="f">Flow</option>
-                         <option value="g">Aggregation</option>
-                         <option value="i">Assignment</option>
-                         <option value="n">Influence</option>
-                         <option value="r">Realization</option>
-                         <option value="s">Specialization</option>
-                         <option value="t">Triggering</option>
-                        <option value="s">Serving</option>
-                      </select>
-                      </p>
-                  </div> 
-                  <div id="relationsCheckbox">
-                    <p><b>Relations </b></p><p>Access(a):<input type="checkbox" disabled="true" disable="true" class="relationsCheckbox" id="access" value="a" >
-                      Composition(c):<input type="checkbox" disabled="true" disable="true" class="relationsCheckbox" id="composition" value="c">
-                            Flow(f):<input type="checkbox" disabled="true" disable="true" class="relationsCheckbox" id="flow" value="f">
-                            Aggregation(g):<input type="checkbox" disabled="true" disable="true" class="relationsCheckbox" id="aggregation" value="g">
-                      Assignment(i):<input type="checkbox" disabled="true" disable="true" class="relationsCheckbox" id="assignment" value="i">
-                      Influence(n):<input type="checkbox" disabled="true" disable="true" class="relationsCheckbox" id="influence" value="n">
-                       Realization(r):<input type="checkbox" disabled="true" disable="true" class="relationsCheckbox" id="realization" value="r">
-                        Specialization(s):<input type="checkbox" disabled="true" disable="true" class="relationsCheckbox" id="specialization" value="s">
-                  Triggering(t):<input type="checkbox" disabled="true" disable="true" class="relationsCheckbox" id="triggering" value="t">
-                      Serving(v):<input type="checkbox" disabled="true" disable="true" class="relationsCheckbox" id="serving" value="v"></p>
-              </div>
-                   <div id="relationsButtons"> 
-                      <img src="./img/archimate/composition.png" alt="Composition" width="16" height="16"       onclick='if(document.getElementById("R").checked==true) { document.getElementById("relation").selectedIndex=2;draw();}'>
-                  <img src="./img/archimate/aggregation.png" alt="Aggregation" width="16" height="16"       onclick='if(document.getElementById("R").checked==true) { document.getElementById("relation").selectedIndex=4;draw();}'>
-                   <img src="./img/archimate/assignment.png" alt="Assignment" width="16" height="16"         onclick='if(document.getElementById("R").checked==true) { document.getElementById("relation").selectedIndex=5;draw();}'>
-                  <img src="./img/archimate/realization.png" alt="Realization" width="16" height="16"       onclick='if(document.getElementById("R").checked==true) { document.getElementById("relation").selectedIndex=7;draw();}'>
-                    <img src="./img/archimate/serving.png" alt="Serving" width="16" height="16"               onclick='if (document.getElementById("R").checked==true) { document.getElementById("relation").selectedIndex=10;draw()}'>
-                    <img src="./img/archimate/access.png" alt="Access" width="16" height="16"                 onclick='if (document.getElementById("R").checked==true) { document.getElementById("relation").selectedIndex=2;draw();}'>
-                  <img src="./img/archimate/influence.png" alt="Influene" width="16" height="16"            onclick='if (document.getElementById("R").checked==true) { document.getElementById("relation").selectedIndex=6;draw();}'>
-                  <img src="./img/archimate/triggering.png" alt="Triggering" width="16" height="16"         onclick='if (document.getElementById("R").checked==true) { document.getElementById("relation").selectedIndex=9;draw();}'>
-                  <img src="./img/archimate/flow.png" alt="Flow" width="16" height="16"                     onclick='if (document.getElementById("R").checked==true) { document.getElementById("relation").selectedIndex=3;draw();}'>
-                  <img src="./img/archimate/specialization.png" alt="Specialization" width="16" height="16" onclick='if (document.getElementById("R").checked==true) { document.getElementById("relation").selectedIndex=8;draw();}'>
-                     </div> 
-          <div id="viewpoint">
-						From viewpoint to stakeholder: <input type="checkbox"  disable="true" class="choiceDirectionVSCheckbox" id="VS" value="0" onclick="SV_VS(this);">
-            From stakeholder to viewpoint <input type="checkbox"  disable="true" class="choiceDirectionVSCheckbox" id="SV" value="1" onclick="SV_VS(this);">
-          </div>
-					<div id="stakeholdersCheck">
-						<p><b>Select Stakeholders </b></p><p>
-							<p>
-							Enterprise architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="enterprise_architect_stakeholder" value="0" onclick="clickStakeholder(this);">
-							Process architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="process_architect_stakeholder" value="1" onclick="clickStakeholder(this);">
-							Application Architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="application_architect_stakeholder" value="2" onclick="clickStakeholder(this);">
-							Domain architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="domain_architect_stakeholder" value="3" onclick="clickStakeholder(this);">
-							Operational manager: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="operational_manager_stakeholder" value="4" onclick="clickStakeholder(this);">
-							Business manager: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="business_manager_stakeholder" value="5" onclick="clickStakeholder(this);">
-							Business architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="business_architect_stakeholder" value="6" onclick="clickStakeholder(this);">
-							ICT architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="ict_architect_stakeholder" value="7" onclick="clickStakeholder(this);">
-							Business analyst: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="business_analyst_stakeholder" value="8" onclick="clickStakeholder(this);">
-							Requirements manager: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="requirements_manager_stakeholder" value="9" onclick="clickStakeholder(this);">
-							Employee: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="employee_stakeholder" value="10" onclick="clickStakeholder(this);">
-							Shareholder: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="shareholder_stakeholder" value="11" onclick="clickStakeholder(this);">
-							Information architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="information_architect_stakeholder" value="12" onclick="clickStakeholder(this);">
-							Infrastructure architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="infrastructure_architect_stakeholder" value="13" onclick="clickStakeholder(this);">
-							Manager: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="manager_stakeholder" value="14" onclick="clickStakeholder(this);">
-							Product developer: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="product_developer_stakeholder" value="15" onclick="clickStakeholder(this);">
-							Product manager: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="product_manager_stakeholder" value="16" onclick="clickStakeholder(this);">
-							Stakeholder: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="stakeholder_stakeholder" value="17" onclick="clickStakeholder(this);">
-						</p>
-
-						<p><b>Select action </b></p><p>	
-						<p> 
-							Filter: <input type="checkbox"  disable="true" class="actionCheckbox" id="filterStakholder" value="0" >
-							Ghost:<input type="checkbox"  disable="true" class="actionCheckbox" id="ghostStakeholder" value="1" >
-							Display:<input type="checkbox"  disable="true" class="actionCheckbox" id="displayStakeholder" value="2" >
-						</p>
-					</div>
-					<div id="viewpointsCheck">
-						<p><b>Select viewpoints </b></p><p>
+            </div>
+            <div id="RSelection-pane">
+              <p style="font-size:12px">Relation:
+              <select  style="width:90px" id="relation" >
+                <option value="">none</option>
+                <option value="a">Access</option>
+                <option value="c">Composition</option>
+                <option value="f">Flow</option>
+                <option value="g">Aggregation</option>
+                <option value="i">Assignment</option>
+                <option value="n">Influence</option>
+                <option value="r">Realization</option>
+                <option value="s">Specialization</option>
+                <option value="t">Triggering</option>
+                <option value="s">Serving</option>
+              </select>
+              </p>
+            </div> 
+            <div id="relationsCheckbox">
+              <p><b>Relations </b></p><p>Access(a):<input type="checkbox" disabled="true" disable="true" class="relationsCheckbox" id="access" value="a" >
+                    Composition(c):<input type="checkbox" disabled="true" disable="true" class="relationsCheckbox" id="composition" value="c">
+                    Flow(f):<input type="checkbox" disabled="true" disable="true" class="relationsCheckbox" id="flow" value="f">
+                    Aggregation(g):<input type="checkbox" disabled="true" disable="true" class="relationsCheckbox" id="aggregation" value="g">
+                    Assignment(i):<input type="checkbox" disabled="true" disable="true" class="relationsCheckbox" id="assignment" value="i">
+                    Influence(n):<input type="checkbox" disabled="true" disable="true" class="relationsCheckbox" id="influence" value="n">
+                    Realization(r):<input type="checkbox" disabled="true" disable="true" class="relationsCheckbox" id="realization" value="r">
+                    Specialization(s):<input type="checkbox" disabled="true" disable="true" class="relationsCheckbox" id="specialization" value="s">
+                    Triggering(t):<input type="checkbox" disabled="true" disable="true" class="relationsCheckbox" id="triggering" value="t">
+                    Serving(v):<input type="checkbox" disabled="true" disable="true" class="relationsCheckbox" id="serving" value="v"></p>
+            </div>
+            <div id="relationsButtons"> 
+              <img src="./img/archimate/composition.png" alt="Composition" width="16" height="16"       onclick='if(document.getElementById("R").checked==true) { document.getElementById("relation").selectedIndex=2;draw();}'>
+              <img src="./img/archimate/aggregation.png" alt="Aggregation" width="16" height="16"       onclick='if(document.getElementById("R").checked==true) { document.getElementById("relation").selectedIndex=4;draw();}'>
+              <img src="./img/archimate/assignment.png" alt="Assignment" width="16" height="16"         onclick='if(document.getElementById("R").checked==true) { document.getElementById("relation").selectedIndex=5;draw();}'>
+              <img src="./img/archimate/realization.png" alt="Realization" width="16" height="16"       onclick='if(document.getElementById("R").checked==true) { document.getElementById("relation").selectedIndex=7;draw();}'>
+              <img src="./img/archimate/serving.png" alt="Serving" width="16" height="16"               onclick='if (document.getElementById("R").checked==true) { document.getElementById("relation").selectedIndex=10;draw()}'>
+              <img src="./img/archimate/access.png" alt="Access" width="16" height="16"                 onclick='if (document.getElementById("R").checked==true) { document.getElementById("relation").selectedIndex=2;draw();}'>
+              <img src="./img/archimate/influence.png" alt="Influene" width="16" height="16"            onclick='if (document.getElementById("R").checked==true) { document.getElementById("relation").selectedIndex=6;draw();}'>
+              <img src="./img/archimate/triggering.png" alt="Triggering" width="16" height="16"         onclick='if (document.getElementById("R").checked==true) { document.getElementById("relation").selectedIndex=9;draw();}'>
+              <img src="./img/archimate/flow.png" alt="Flow" width="16" height="16"                     onclick='if (document.getElementById("R").checked==true) { document.getElementById("relation").selectedIndex=3;draw();}'>
+              <img src="./img/archimate/specialization.png" alt="Specialization" width="16" height="16" onclick='if (document.getElementById("R").checked==true) { document.getElementById("relation").selectedIndex=8;draw();}'>
+            </div> 
+            <div id="viewpoint">
+						  From viewpoint to stakeholder: <input type="checkbox"  disable="true" class="choiceDirectionVSCheckbox" id="VS" value="0" onclick="SV_VS(this);">
+              From stakeholder to viewpoint <input type="checkbox"  disable="true" class="choiceDirectionVSCheckbox" id="SV" value="1" onclick="SV_VS(this);">
+            
+					    <div id="stakeholdersCheck">
+						    <p><b>Select Stakeholders </b></p><p>
+						  	<p>
+							  Enterprise architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="enterprise_architect_stakeholder" value="0" onclick="clickStakeholder(this);">
+							  Process architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="process_architect_stakeholder" value="1" onclick="clickStakeholder(this);">
+							  Application Architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="application_architect_stakeholder" value="2" onclick="clickStakeholder(this);">
+							  Domain architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="domain_architect_stakeholder" value="3" onclick="clickStakeholder(this);">
+							  Operational manager: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="operational_manager_stakeholder" value="4" onclick="clickStakeholder(this);">
+							  Business manager: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="business_manager_stakeholder" value="5" onclick="clickStakeholder(this);">
+							  Business architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="business_architect_stakeholder" value="6" onclick="clickStakeholder(this);">
+							  ICT architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="ict_architect_stakeholder" value="7" onclick="clickStakeholder(this);">
+							  Business analyst: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="business_analyst_stakeholder" value="8" onclick="clickStakeholder(this);">
+							  Requirements manager: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="requirements_manager_stakeholder" value="9" onclick="clickStakeholder(this);">
+							  Employee: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="employee_stakeholder" value="10" onclick="clickStakeholder(this);">
+							  Shareholder: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="shareholder_stakeholder" value="11" onclick="clickStakeholder(this);">
+							  Information architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="information_architect_stakeholder" value="12" onclick="clickStakeholder(this);">
+							  Infrastructure architect: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="infrastructure_architect_stakeholder" value="13" onclick="clickStakeholder(this);">
+							  Manager: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="manager_stakeholder" value="14" onclick="clickStakeholder(this);">
+							  Product developer: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="product_developer_stakeholder" value="15" onclick="clickStakeholder(this);">
+							  Product manager: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="product_manager_stakeholder" value="16" onclick="clickStakeholder(this);">
+							  Stakeholder: <input type="checkbox"  disable="true" class="stakeholdersCheckbox" id="stakeholder_stakeholder" value="17" onclick="clickStakeholder(this);">
+						    </p>
+						    <p><b>Select action </b></p><p>	
+						    <p> 
+							  Filter: <input type="checkbox"  disable="true" class="actionCheckbox" id="filterStakholder" value="0" >
+							  Ghost:<input type="checkbox"  disable="true" class="actionCheckbox" id="ghostStakeholder" value="1" >
+							  Display:<input type="checkbox"  disable="true" class="actionCheckbox" id="displayStakeholder" value="2" >
+						    </p>
+					    </div>
+					    <div id="viewpointsCheck">
+						    <p><b>Select viewpoints </b></p><p>
 								<p>Application Cooperation: <input type="checkbox"  disable="true" class="viewpointsCheckbox" id="application_cooperation_viewpoint" value="0" onclick="clickViewpoint(this);">
 								Application usage:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="application_usage_viewpoint" value="1" onclick="clickViewpoint(this);">
 								Business Process Cooperation:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="business_process_cooperation_viewpoint" value="2" onclick="clickViewpoint(this);">
@@ -267,14 +265,14 @@
 								Technology:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="technology_viewpoint" value="21" onclick="clickViewpoint(this);">
 								Technology usage:<input type="checkbox"  disable="true" class="viewpointsCheckbox" id="technology_usage_viewpoint" value="22" onclick="clickViewpoint(this);">
 								</p>
-					 <p><b>Select action </b></p><p>	
-							<p> 
+					      <p><b>Select action </b></p><p>	
+						  	<p> 
 								Filter: <input type="checkbox"  disable="true" class="actionCheckbox" id="filterViewpoint" value="0" >
 								Ghost:<input type="checkbox"  disable="true" class="actionCheckbox" id="ghostViewpoint" value="1" >
 								Display:<input type="checkbox"  disable="true" class="actionCheckbox" id="displayViewpoint" value="2" >
-							</p>
-															
-					</div>
+						  	</p>															
+              </div>
+            </div>  
          </div>
         </div> 
       
