@@ -23,9 +23,8 @@ function initArchiMate(){
   document.getElementById("displayPropertyButton").style.display="none";
   document.getElementById("displayEventButton").style.display="none";
   document.getElementById("displaySVGButton").style.backgroundColor="lightgray";
-
-
   loadArchi();
+  
 }
 
 function loadArchi()
