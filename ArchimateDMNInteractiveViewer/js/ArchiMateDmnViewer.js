@@ -20,11 +20,11 @@ function initArchiMate(){
   document.getElementById("displayViewpointButton").style.backgroundColor="white";
   document.getElementById("R").style.display="white";
   document.getElementById("ER").style.backgroundColor="white";
-  document.getElementById("displayPropertyButton").style.display="none";
-  document.getElementById("displayEventButton").style.display="none";
+  document.getElementById("displayPropertyButton").style.display="block";
+  document.getElementById("displayEventButton").style.display="block";
   document.getElementById("displaySVGButton").style.backgroundColor="lightgray";
   loadArchi();
-  
+
 }
 
 function loadArchi()
