@@ -1,4 +1,7 @@
 var myModel="ArchiMagineModelDynamicViewer";
+var displayViews=false;
+var displayViewpoints=true;
+var displayStakeholders=true;
 
 function initArchiMate(){
   document.getElementById("model").value="ArchiMagineModelDynamicViewer";
@@ -19,7 +22,7 @@ function initArchiMate(){
   document.getElementById("displayPropertyButton").style.display="none";
   document.getElementById("displayEventButton").style.display="none";
   document.getElementById("displaySVGButton").style.backgroundColor="lightgray";
-  
+
 
   loadArchi();
 }
@@ -68,13 +71,16 @@ function createVis(model){
                 };
   var folders = model.getElementsByTagName("folder");
   console.log(folders);
-  var i; 
-  // A node is first created for each ArchiMate viewpoint, relying on the way Archi captures it, i.e. with a property viewpoint
-  viewpoints=["Application Cooperation","Application Usage", "Business Process Cooperation", "Capability","Goal Realization", "Implementation and Deployment", "Implementation and Migration", "Information Structure", "Layered", "Migration","Motivation","Organization","Outcome Realization","Physical", "Product", "Project","Requirements Realization","Resource","Service Realization","StakeholderHL","Strategy","Technology","Technology Usage"];
-  for (i = 0; i < viewpoints.length; i++){
-    var viewpointId=viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_");
-    //image= elements[j].getAttribute('xsi:type').toLowerCase().replace("archimate:", "").replace("application", "application-").replace("business", "business-").replace("data", "data-").replace("technology", "technology-").replace("implementation", "implementation-").replace("distribution", "distribution-").replace("communication", "communication-").replace("courseofaction", "course-of-action").replace("systemsoftware", "system-software");
-    nodeString='{'
+  if (displayViewpoints){
+
+
+    var i; 
+    // A node is first created for each ArchiMate viewpoint, relying on the way Archi captures it, i.e. with a property viewpoint
+    viewpoints=["Application Cooperation","Application Usage", "Business Process Cooperation", "Capability","Goal Realization", "Implementation and Deployment", "Implementation and Migration", "Information Structure", "Layered", "Migration","Motivation","Organization","Outcome Realization","Physical", "Product", "Project","Requirements Realization","Resource","Service Realization","StakeholderHL","Strategy","Technology","Technology Usage"];
+    for (i = 0; i < viewpoints.length; i++){
+      var viewpointId=viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_");
+      //image= elements[j].getAttribute('xsi:type').toLowerCase().replace("archimate:", "").replace("application", "application-").replace("business", "business-").replace("data", "data-").replace("technology", "technology-").replace("implementation", "implementation-").replace("distribution", "distribution-").replace("communication", "communication-").replace("courseofaction", "course-of-action").replace("systemsoftware", "system-software");
+      nodeString='{'
       +'"id":"'+viewpointId+'",'
       +'"shape":"image"' +','
       +'"title":"'+viewpoints[i]+'"'+","
@@ -83,14 +89,16 @@ function createVis(model){
       +'" mass":10 ,'
       +'"image":"'+dir_image+'viewpoint.'+imageExtension+'"'
       +'}';
-    node=JSON.parse(nodeString);
-    nodes.push(node);
+      node=JSON.parse(nodeString);
+      nodes.push(node);
+    }
   }
-  var stakeholders=["Enterprise Architect", "Process Architect", "Application Architect", "Domain Architect", "Operational Manager", "Business Manager", "Business Architect","ICT Architect", "Business Analyst", "Requirements Manager","Employee", "Shareholder", "Information Architect", "Infrastructure Architect", "Manager", "Product Developer", "Product Manager","Stakeholder" ];
-  for (i = 0; i < stakeholders.length; i++){
-    var stakeholderId=stakeholders[i].toLowerCase().replace(" ","_");
-    //image= elements[j].getAttribute('xsi:type').toLowerCase().replace("archimate:", "").replace("application", "application-").replace("business", "business-").replace("data", "data-").replace("technology", "technology-").replace("implementation", "implementation-").replace("distribution", "distribution-").replace("communication", "communication-").replace("courseofaction", "course-of-action").replace("systemsoftware", "system-software");
-    nodeString='{'
+  if (displayStakeholders){
+    var stakeholders=["Enterprise Architect", "Process Architect", "Application Architect", "Domain Architect", "Operational Manager", "Business Manager", "Business Architect","ICT Architect", "Business Analyst", "Requirements Manager","Employee", "Shareholder", "Information Architect", "Infrastructure Architect", "Manager", "Product Developer", "Product Manager","Stakeholder" ];
+    for (i = 0; i < stakeholders.length; i++){
+      var stakeholderId=stakeholders[i].toLowerCase().replace(" ","_");
+      //image= elements[j].getAttribute('xsi:type').toLowerCase().replace("archimate:", "").replace("application", "application-").replace("business", "business-").replace("data", "data-").replace("technology", "technology-").replace("implementation", "implementation-").replace("distribution", "distribution-").replace("communication", "communication-").replace("courseofaction", "course-of-action").replace("systemsoftware", "system-software");
+      nodeString='{'
       +'"id":"'+stakeholderId+'",'
       +'"shape":"image"' +','
       +'"title":"'+stakeholders[i]+'"'+","
@@ -98,9 +106,11 @@ function createVis(model){
       +'"label":"'+stakeholders[i]+'"'+','
       +'"image":"'+dir_image+'stakeholder.'+imageExtension+'"'
       +'}';
-    node=JSON.parse(nodeString);
-    nodes.push(node);
+      node=JSON.parse(nodeString);
+      nodes.push(node);
+    }
   }
+  if ( displayViewpoints){
   nodes.push({id: "viewpoint", shape: 'image',label: 'Viewpoint', image: dir_image + 'viewpoint.'+imageExtension, shape: 'image'});
   edges.push({from: viewpoints[0].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
   edges.push({from: viewpoints[1].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
@@ -126,10 +136,10 @@ function createVis(model){
   edges.push({from: viewpoints[21].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
   edges.push({from: viewpoints[22].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
   
+  }
 
 
-
-
+if (displayStakeholders && displayViewpoints){
 
   edges.push({from: viewpoints[0].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[0].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
   edges.push({from: viewpoints[0].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[1].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
@@ -243,8 +253,9 @@ function createVis(model){
   edges.push({from: viewpoints[22].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[2].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
   edges.push({from: viewpoints[22].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[13].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
   edges.push({from: viewpoints[22].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[4].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  
+}
 
+if (displayViews){
   // All the views are found by mean of an XPATH query, and will be pushed in an array before to be processed
   var queryViews = model.evaluate( '//element[@xsi:type="archimate:ArchimateDiagramModel"]', model, nsResolver,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null );  
   var nbviews = model.evaluate( 'count(//element[@xsi:type="archimate:ArchimateDiagramModel"])', model, nsResolver, XPathResult.ANY_TYPE, null );
@@ -342,7 +353,7 @@ function createVis(model){
       }
     
     }
-
+  }
     // Lets now include the model elements
 
     for (i = 0; i < folders.length; i++) {
