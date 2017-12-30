@@ -441,7 +441,7 @@ function setModel(modelType)
 
     document.getElementById("ERSelection-pane").style.display="none";
     document.getElementById("RSelection-pane").style.display="none";
-    document.getElementById("ArchiMateLanguage").style.display="none";
+    document.getElementById("ArchiMateModel").style.display="none";
     document.getElementById("physicConfiguration").style.display="none";
     document.getElementById("displayPropertyButton").style.backgroundColor="white";
     document.getElementById("event").style.display="none";
