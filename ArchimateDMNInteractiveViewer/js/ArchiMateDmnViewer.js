@@ -434,3 +434,66 @@ function displaySVG(button)
         imageExtension="svg";
     } 
 }
+function setModel(modelType)
+{
+    
+    myModelType=modelType.name;
+
+    document.getElementById("ERSelection-pane").style.display="none";
+    document.getElementById("RSelection-pane").style.display="none";
+    document.getElementById("ArchiMateLanguage").style.display="none";
+    document.getElementById("physicConfiguration").style.display="none";
+    document.getElementById("displayPropertyButton").style.backgroundColor="white";
+    document.getElementById("event").style.display="none";
+    document.getElementById("displayEventButton").style.backgroundColor="white";
+    document.getElementById("viewpoint").style.display="none";
+    document.getElementById("displayViewpointButton").style.backgroundColor="white";
+    document.getElementById("ER").style.backgroundColor='white';
+    document.getElementById("R").style.backgroundColor='white';
+
+    modelType.style.backgroundColor='lightgray';
+    
+    switch (myModelType){
+    case "ER":
+       document.getElementById("ERSelection-pane").style.display="block";
+       selectedModel=myModelType;
+       break;
+    case "R":
+       document.getElementById("RSelection-pane").style.display="block";
+       selectedModel=myModelType;
+       break;
+    default:
+       break;
+    } 
+}
+function displayEvent(button){
+
+  if (button.style.backgroundColor=='white'){
+      button.style.backgroundColor='lightgray';
+      document.getElementById("event").style.display="block";
+  }
+  else{
+      button.style.backgroundColor='white';
+      document.getElementById("event").style.display="none";
+  }
+
+}
+function displayViewpoint(button){
+  
+ if (button.style.backgroundColor=='white'){
+      button.style.backgroundColor='lightgray';
+      document.getElementById("ERSelection-pane").style.display="none";
+      document.getElementById("RSelection-pane").style.display="none";
+      document.getElementById("viewpoint").style.display="block";
+      //  document.getElementById("ER").style.backgroundColor='white';
+      document.getElementById("R").style.backgroundColor='white';
+      //document.getElementById("ArchiMateLanguage").style.display="none";
+      document.getElementById("physicConfiguration").style.display="none";
+      if (document.getElementById("SV").checked==false && document.getElementById("VS").checked==false){
+          document.getElementById("SV").checked=true;
+      }   
+  } else {
+      button.style.backgroundColor='white';
+      document.getElementById("viewpoint").style.display="none";  
+    }
+}
