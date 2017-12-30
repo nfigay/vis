@@ -2,12 +2,14 @@ var myModel="ArchiMagineModelDynamicViewer";
 
 function initArchiMate(){
   document.getElementById("model").value="ArchiMagineModelDynamicViewer";
-  loadArchi;
+  alert ("ok");
+
+  loadArchi();
 }
 
 function loadArchi()
 {
-  var myModel=null;
+  
   myModel= document.getElementById("model").value;
   fetch('./' +myModel + '.archimate')
   .then(response => response.text())
