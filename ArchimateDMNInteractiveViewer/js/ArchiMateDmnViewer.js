@@ -1,7 +1,7 @@
 var myModel="ArchiMagineModelDynamicViewer";
 var displayViews=false;
 var displayViewpoints=false;
-var displayStakeholders=true;
+var displayStakeholders=false;
 
 
 function initArchiMate(){
@@ -23,7 +23,7 @@ function initArchiMate(){
   document.getElementById("displayPropertyButton").style.display="none";
   document.getElementById("displayEventButton").style.display="none";
   document.getElementById("displaySVGButton").style.backgroundColor="lightgray";
-alert ("toto");
+
 
   loadArchi();
 }
