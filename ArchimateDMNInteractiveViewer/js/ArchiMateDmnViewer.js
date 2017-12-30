@@ -1,6 +1,6 @@
 var myModel="ArchiMagineModelDynamicViewer";
 var displayViews=false;
-var displayViewpoints=true;
+var displayViewpoints=false;
 var displayStakeholders=true;
 
 function initArchiMate(){
