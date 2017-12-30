@@ -2,7 +2,23 @@ var myModel="ArchiMagineModelDynamicViewer";
 
 function initArchiMate(){
   document.getElementById("model").value="ArchiMagineModelDynamicViewer";
-  alert ("ok");
+  document.getElementById("ERSelection-pane").style.display="none";
+  document.getElementById("RSelection-pane").style.display="none";
+  document.getElementById("relationsButtons").style.display="none";
+  document.getElementById("relationsCheckbox").style.display="none";
+  document.getElementById("entitiesCheck").style.display="none";
+  document.getElementById("ArchiMateModel").style.display="block";
+  document.getElementById("physicConfiguration").style.display="none";
+  document.getElementById("event").style.display="none";
+  document.getElementById("viewpoint").style.display="none";
+  document.getElementById("displayPropertyButton").style.backgroundColor="white";
+  document.getElementById("displayEventButton").style.backgroundColor="white";
+  document.getElementById("displayViewpointButton").style.backgroundColor="white";
+  document.getElementById("R").style.display="white";
+  document.getElementById("ER").style.backgroundColor="white";
+  document.getElementById("displayPropertyButton").style.display="none";
+  document.getElementById("displayEventButton").style.display="none";
+  document.getElementById("displaySVGButton").style.backgroundColor="lightgray";
 
   loadArchi();
 }
