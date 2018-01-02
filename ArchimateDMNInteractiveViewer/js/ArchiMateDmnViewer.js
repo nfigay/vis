@@ -1,7 +1,7 @@
 var myModel="ArchiMagineModelDynamicViewer";
-var displayViews=false;
-var displayViewpoints=false;
-var displayStakeholders=false;
+var displayViews=true;
+var displayViewpoints=true;
+var displayStakeholders=true;
 
 
 function initArchiMate(){
@@ -32,8 +32,7 @@ function loadArchi()
 {
   
   myModel= document.getElementById("model").value;
-  //fetch('./' +myModel + '.archimate')
-  fetch('./' +'test4' + '.archimate')
+  fetch('./' +myModel + '.archimate')
   .then(response => response.text())
   .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
   .then( function(data){
@@ -41,7 +40,6 @@ function loadArchi()
     console.log(data);
     }
   );
-  
 }
 
 function process(data){
