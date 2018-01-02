@@ -30,7 +30,6 @@ function initArchiMate(){
 
 function loadArchi()
 {
-  
   myModel= document.getElementById("model").value;
   fetch('./' +myModel + '.archimate')
   .then(response => response.text())
