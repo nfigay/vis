@@ -3,7 +3,7 @@ var displayViews=true;
 var displayViewpoints=true;
 var displayStakeholders=true;
 
-//all I need is something new
+
 
 
 function initArchiMate(){
