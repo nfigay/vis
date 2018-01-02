@@ -32,7 +32,6 @@ function loadArchi()
 {
   
   myModel= document.getElementById("model").value;
-  alert (myModel);
   fetch('./' +myModel + '.archimate')
   .then(response => response.text())
   .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
@@ -479,7 +478,7 @@ if (displayViews){
     document.getElementById('configureDisplay').innerHTML="";
 
     ArchiMateModel = new vis.Network(container, data, options);
-    ArchiMateModel.on("click", onClickArchiMateNodes); 
+    ArchiMateModel.on("click", onClickModelNodes); 
     
     ArchiMateModel.on("oncontext", function (params) {
       params.event = "[original event]";
@@ -674,3 +673,7 @@ function displayProperty(button){
     
   }
 }
+function onClickModelNodes(params){
+  params.event = "[original event]";
+  document.getElementById('eventSpan').innerHTML = '<h2>Click event:</h2>' + JSON.stringify(params, null, 4);
+  console.log('click event, getNodeAt returns: ' + this.getNodeAt(params.pointer.DOM));
