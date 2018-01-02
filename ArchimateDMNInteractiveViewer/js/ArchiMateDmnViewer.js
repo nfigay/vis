@@ -99,7 +99,8 @@ function createVis(model){
                   interaction: {
                     tooltipDelay: 200,
                     hideEdgesOnDrag: true
-                  }
+                  },
+                  container: document.getElementById('configureDisplay')}
                 };
   var folders = model.getElementsByTagName("folder");
   console.log(folders);
