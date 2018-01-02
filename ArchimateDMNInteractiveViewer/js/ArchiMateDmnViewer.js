@@ -25,7 +25,6 @@ function initArchiMate(){
   document.getElementById("displayEventButton").style.display="block";
   document.getElementById("displaySVGButton").style.backgroundColor="lightgray";
   loadArchi();
-
 }
 
 function loadArchi()
