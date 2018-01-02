@@ -536,6 +536,7 @@ if (displayViews){
   
 }
 
+
 function nsResolver(prefix) {
   switch(prefix){
     case "xsi":return 'http://www.w3.org/2001/XMLSchema-instance';
@@ -599,6 +600,8 @@ function displayEvent(button){
   }
 
 }
+
+
 function displayViewpoint(button){
   
  if (button.style.backgroundColor=='white'){
