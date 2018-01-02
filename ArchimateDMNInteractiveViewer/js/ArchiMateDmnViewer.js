@@ -3,6 +3,8 @@ var displayViews=true;
 var displayViewpoints=true;
 var displayStakeholders=true;
 
+//all I need is something new
+
 
 function initArchiMate(){
   document.getElementById("model").value="ArchiMagineModelDynamicViewer";
