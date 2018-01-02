@@ -41,6 +41,7 @@ function loadArchi()
     console.log(data);
     }
   );
+  
 }
 
 function process(data){
