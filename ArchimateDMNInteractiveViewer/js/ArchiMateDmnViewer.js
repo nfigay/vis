@@ -12,6 +12,7 @@ function initArchiMate(){
   document.getElementById("relationsCheckbox").style.display="none";
   document.getElementById("entitiesCheck").style.display="none";
   document.getElementById("ArchiMateModel").style.display="block";
+  document.getElementById('configureDisplay').innerHTML="";
   document.getElementById("physicConfiguration").style.display="none";
   document.getElementById("event").style.display="none";
   document.getElementById("viewpoint").style.display="none";
@@ -60,51 +61,43 @@ function createVis(model){
   var EDGE_LENGTH_MAIN = 150;
   var EDGE_LENGTH_SUB = 50;
   var imageExtension="png";
-  var options = {interaction:{hover:false},
-                 layout: { improvedLayout:false},
-                 physics:{enabled: true, timestep: 0.5, adaptiveTimestep: true, maxVelocity: 50, minVelocity: 0.1, solver: 'barnesHut',
-                 barnesHut: { gravitationalConstant: -1000, centralGravity: 0.1, springLength: 95, springConstant: 0.04, damping: 0.09, avoidOverlap: 0}},
-                 configure: { filter:function (option, path) {
-                   if (path.indexOf('physics') !== -1) { return true;}
-                   if (path.indexOf('smooth') !== -1 || option === 'smooth') {return true;} return false;},
-                 container: document.getElementById('configureDisplay')}
-                };
-                var options = {
-                  nodes: {
-                    shape: 'dot',
-                    scaling: {
-                      min: 10,
-                      max: 30
-                    },
-                    font: {
-                      size: 12,
-                      face: 'Tahoma'
-                    }
-                  },
-                  edges: {
-                    width: 0.15,
-                    color: {inherit: 'from'},
-                    smooth: {
-                      type: 'continuous'
-                    }
-                  },
-                  physics: {
-                    stabilization: false,
-                    barnesHut: {
-                      gravitationalConstant: -80000,
-                      springConstant: 0.001,
-                      springLength: 200
-                    }
-                  },
-                  interaction: {
-                    tooltipDelay: 200,
-                    hideEdgesOnDrag: true
-                  },
-                  configure: { filter:function (option, path) {
-                    if (path.indexOf('physics') !== -1) { return true;}
-                    if (path.indexOf('smooth') !== -1 || option === 'smooth') {return true;} return false;},
-                  container: document.getElementById('configureDisplay')}
-                };
+  var options = {
+    nodes: {
+      shape: 'dot',
+      scaling: {
+        min: 10,
+        max: 30
+        },
+      font: {
+        size: 12,
+        face: 'Tahoma'
+      }
+    },
+    edges: {
+      width: 0.15,
+      color: {inherit: 'from'},
+      smooth: {
+        type: 'continuous'
+      }
+     },
+    physics: {
+      stabilization: false,
+      barnesHut: {
+        gravitationalConstant: -80000,
+        springConstant: 0.001,
+        springLength: 200
+      }
+    },
+    interaction: {
+      tooltipDelay: 200,
+      hideEdgesOnDrag: true
+    },
+    configure: { filter:function (option, path) {
+      if (path.indexOf('physics') !== -1) { return true;}
+      if (path.indexOf('smooth') !== -1 || option === 'smooth') {return true;} return false;},
+      container: document.getElementById('configureDisplay')
+    }
+  };
   var folders = model.getElementsByTagName("folder");
   console.log(folders);
   if (displayViewpoints){
@@ -482,6 +475,7 @@ if (displayViews){
         edges: edges
     };
     document.getElementById("ArchiMateModel").innerHTML = "";
+    document.getElementById('configureDisplay').innerHTML="";
 
     ArchiMateModel = new vis.Network(container, data, options);
   
@@ -619,6 +613,7 @@ function displayProperty(button){
   else{
       button.style.backgroundColor='white';
       document.getElementById("physicConfiguration").style.display="none";
+      document.getElementById('configureDisplay').innerHTML="";
   }
   
 }
