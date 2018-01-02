@@ -479,6 +479,60 @@ if (displayViews){
     document.getElementById('configureDisplay').innerHTML="";
 
     ArchiMateModel = new vis.Network(container, data, options);
+    ArchiMateModel.on("click", onClickArchiMateNodes); 
+    
+    ArchiMateModel.on("oncontext", function (params) {
+      params.event = "[original event]";
+      document.getElementById('eventSpan').innerHTML = '<h2>oncontext (right click) event:</h2>' + JSON.stringify(params, null, 4);
+      });
+      ArchiMateModel.on("dragStart", function (params) {
+      params.event = "[original event]";
+      document.getElementById('eventSpan').innerHTML = '<h2>dragStart event:</h2>' + JSON.stringify(params, null, 4);
+      });
+      ArchiMateModel.on("dragging", function (params) {
+      params.event = "[original event]";
+      document.getElementById('eventSpan').innerHTML = '<h2>dragging event:</h2>' + JSON.stringify(params, null, 4);
+      });
+      ArchiMateModel.on("dragEnd", function (params) {
+      params.event = "[original event]";
+      document.getElementById('eventSpan').innerHTML = '<h2>dragEnd event:</h2>' + JSON.stringify(params, null, 4);
+      });
+      ArchiMateModel.on("zoom", function (params) {
+      document.getElementById('eventSpan').innerHTML = '<h2>zoom event:</h2>' + JSON.stringify(params, null, 4);
+      });
+      ArchiMateModel.on("showPopup", function (params) {
+      document.getElementById('eventSpan').innerHTML = '<h2>showPopup event: </h2>' + JSON.stringify(params, null, 4);
+      });
+      ArchiMateModel.on("hidePopup", function () {
+      console.log('hidePopup Event');
+      });
+      ArchiMateModel.on("select", function (params) {
+      console.log('select Event:', params);
+      });
+      ArchiMateModel.on("selectNode", function (params) {
+      console.log('selectNode Event:', params);
+      });
+      ArchiMateModel.on("selectEdge", function (params) {
+      console.log('selectEdge Event:', params);
+      });
+      ArchiMateModel.on("deselectNode", function (params) {
+      console.log('deselectNode Event:', params);
+      });
+      ArchiMateModel.on("deselectEdge", function (params) {
+      console.log('deselectEdge Event:', params);
+      });
+      ArchiMateModel.on("hoverNode", function (params) {
+      console.log('hoverNode Event:', params);
+      });
+      ArchiMateModel.on("hoverEdge", function (params) {
+      console.log('hoverEdge Event:', params);
+      });
+      ArchiMateModel.on("blurNode", function (params) {
+      console.log('blurNode Event:', params);
+      });
+      ArchiMateModel.on("blurEdge", function (params) {
+      console.log('blurEdge Event:', params);
+      });
   
 }
 
