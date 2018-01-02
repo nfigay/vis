@@ -614,5 +614,4 @@ function displayProperty(button){
       button.style.backgroundColor='white';
       document.getElementById("physicConfiguration").style.display="none";
   }
-  
 }
