@@ -390,7 +390,7 @@ if (displayViews){
     
     }
   }
-  alert ("views added");
+ 
     // Lets now include the model elements
 
     for (i = 0; i < folders.length; i++) {
@@ -474,7 +474,7 @@ if (displayViews){
         }  
       }
     }
-alert ("data collected");
+
 
     container = document.getElementById('ArchiMateModel');
     data = {
