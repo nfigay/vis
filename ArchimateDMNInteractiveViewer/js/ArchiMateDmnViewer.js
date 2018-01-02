@@ -613,5 +613,6 @@ function displayProperty(button){
   else{
       button.style.backgroundColor='white';
       document.getElementById("physicConfiguration").style.display="none";
+      alert ("toto");
   }
 }
