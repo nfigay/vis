@@ -32,7 +32,8 @@ function loadArchi()
 {
   
   myModel= document.getElementById("model").value;
-  fetch('./' +myModel + '.archimate')
+  //fetch('./' +myModel + '.archimate')
+  fetch('./' +'test4' + '.archimate')
   .then(response => response.text())
   .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
   .then( function(data){
