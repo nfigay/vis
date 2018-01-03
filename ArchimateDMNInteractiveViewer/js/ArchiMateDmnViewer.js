@@ -696,7 +696,7 @@ function createVis(model){
       +'}';
       node=JSON.parse(nodeString);
       if (document.getElementById("filterViewpoint").checked==true){
-        alert(viewpointId);
+        alert(viewpointId+ "ye n'en pouis plou");
         if (document.getElementById(viewpointId).checked==true){ nodes.push(node);}
         else{ nodes.push(node);}
         //fdsqfdqsf
