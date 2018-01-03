@@ -633,11 +633,11 @@ function createVis(model){
   if (selectedModel=="ER" || selectedModel=="R"){document.getElementById("ArchiMateModel").style.display="block";}
   displayViews=false;
   clusterViews=false;
-  alert(document.getElementById( "displayViewsButton").checked);
- if (document.getElementById( "displayViewsButton").checked){
+  alert(document.getElementById( "displayViewsButton").checked==true);
+ if (document.getElementById( "displayViewsButton").checked==true){
    
    displayViews=true;
-   if (document.getElementById("clusterViews").checked){clusterViews=true;}
+   if (document.getElementById("clusterViews").checked==true){clusterViews=true;}
  }
   
   inputRelations = document.getElementsByClassName('relationsCheckbox');
