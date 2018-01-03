@@ -6,7 +6,6 @@ var ArchiMateModel = null;
 var selectedModel="ER";
 var folders=null;
 
-//fdsqfqds
 
 function initArchiMate(){
   document.getElementById("model").value="ArchiMagineModelDynamicViewer";
