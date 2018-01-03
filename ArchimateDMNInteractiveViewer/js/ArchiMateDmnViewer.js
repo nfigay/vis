@@ -536,7 +536,14 @@ if (displayViews){
       });
       // clustering the views and the contained diagram objets
       for (i = 0; i < viewIds.length; i++) {
-        ArchiMateModel.clusterByConnection(viewIds[i]);
+        var clusterOptionsByData = {
+          processProperties: function(clusterOptions, childNodes) {
+            clusterOptions.label = "[" + childNodes.length + "]";
+            return clusterOptions;
+          },
+          clusterNodeProperties: {borderWidth:3, shape:'box', font:{size:30}}
+      };
+        ArchiMateModel.clusterByConnection(viewIds[i], clusterOptionsByData);
         console.log("clustering view:"+viewIds[i]);
       }
   
