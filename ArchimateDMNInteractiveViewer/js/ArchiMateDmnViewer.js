@@ -627,6 +627,7 @@ function createVis(model){
   document.getElementById("displayEventButton").style.display="block";
 
   if (selectedModel=="ER" || selectedModel=="R"){document.getElementById("ArchiMateModel").style.display="block";}
+ 
 
   
   inputRelations = document.getElementsByClassName('relationsCheckbox');
@@ -709,39 +710,47 @@ function createVis(model){
       +'"image":"'+dir_image+'stakeholder.'+imageExtension+'"'
       +'}';
       node=JSON.parse(nodeString);
-      nodes.push(node);
+      if (document.getElementById("filterStakeholder").checked==true){
+        if (document.getElementById(stakeholderId).checked==true){nodes.push(node);}
+      }else{
+        node.push(node);
+      }
+
     }
   }
   if ( displayViewpoints){
+    if (document.getElementById("filterViewpoint").checked==true){}else{
   nodes.push({id: "viewpoint", shape: 'image',label: 'Viewpoint', image: dir_image + 'viewpoint.'+imageExtension, shape: 'image'});
-  edges.push({from: viewpoints[0].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  edges.push({from: viewpoints[1].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  edges.push({from: viewpoints[2].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  edges.push({from: viewpoints[3].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  edges.push({from: viewpoints[4].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  edges.push({from: viewpoints[5].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  edges.push({from: viewpoints[6].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  edges.push({from: viewpoints[7].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  edges.push({from: viewpoints[8].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  edges.push({from: viewpoints[9].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  edges.push({from: viewpoints[10].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  edges.push({from: viewpoints[11].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  edges.push({from: viewpoints[12].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  edges.push({from: viewpoints[13].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  edges.push({from: viewpoints[14].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  edges.push({from: viewpoints[15].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  edges.push({from: viewpoints[16].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  edges.push({from: viewpoints[17].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  edges.push({from: viewpoints[18].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  edges.push({from: viewpoints[19].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  edges.push({from: viewpoints[20].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  edges.push({from: viewpoints[21].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  edges.push({from: viewpoints[22].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  
+  for (i=0;i<23;i++){edges.push({from: viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});}
+  //edges.push({from: viewpoints[0].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+  //edges.push({from: viewpoints[1].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+  //edges.push({from: viewpoints[2].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+  //edges.push({from: viewpoints[3].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+  //edges.push({from: viewpoints[4].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+  //edges.push({from: viewpoints[5].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+  //edges.push({from: viewpoints[6].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+  //edges.push({from: viewpoints[7].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+  //edges.push({from: viewpoints[8].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+  //edges.push({from: viewpoints[9].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+  //edges.push({from: viewpoints[10].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+  //edges.push({from: viewpoints[11].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+  //edges.push({from: viewpoints[12].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+  //edges.push({from: viewpoints[13].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+  //edges.push({from: viewpoints[14].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+  //edges.push({from: viewpoints[15].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+  //edges.push({from: viewpoints[16].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+  //edges.push({from: viewpoints[17].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+  //edges.push({from: viewpoints[18].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+  //edges.push({from: viewpoints[19].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+  //edges.push({from: viewpoints[20].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+  //edges.push({from: viewpoints[21].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+  //edges.push({from: viewpoints[22].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+    }
   }
 
 
 if (displayStakeholders && displayViewpoints){
+  if (document.getElementById("filterStakeholder").checked==true || document.getElementById("filterViewpoint").checked==true){}else{
 
   edges.push({from: viewpoints[0].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[0].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
   edges.push({from: viewpoints[0].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[1].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
@@ -855,6 +864,7 @@ if (displayStakeholders && displayViewpoints){
   edges.push({from: viewpoints[22].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[2].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
   edges.push({from: viewpoints[22].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[13].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
   edges.push({from: viewpoints[22].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[4].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
+}
 }
 
 if (displayViews){
