@@ -695,7 +695,7 @@ function createVis(model){
       +'"image":"'+dir_image+'viewpoint.'+imageExtension+'"'
       +'}';
       node=JSON.parse(nodeString);
-      if (document.getElementById(filterViewpoint).checked==true){
+      if (document.getElementById("filterViewpoint").checked==true){
         if (document.getElementById(viewpointId).checked==true){ nodes.push(node);}
         else{ nodes.push(node);}
       }
