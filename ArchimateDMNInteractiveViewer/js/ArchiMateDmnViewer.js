@@ -633,8 +633,9 @@ function createVis(model){
   if (selectedModel=="ER" || selectedModel=="R"){document.getElementById("ArchiMateModel").style.display="block";}
   displayViews=false;
   clusterViews=false;
+  alert(document.getElementById( "displayViewsButton").checked);
  if (document.getElementById( "displayViewsButton").checked){
-   alert("toto");
+   
    displayViews=true;
    if (document.getElementById("clusterViews").checked){clusterViews=true;}
  }
