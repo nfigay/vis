@@ -1,5 +1,6 @@
 var myModel="ArchiMagineModelDynamicViewer";
 var displayViews=false;
+var clusterViews=false;
 var displayViewpoints=false;
 var displayStakeholders=false;
 var ArchiMateModel = null;
@@ -1138,16 +1139,18 @@ if (displayViews){
       console.log('blurEdge Event:', params);
       });
       // clustering the views and the contained diagram objets
-      for (i = 0; i < viewIds.length; i++) {
-        var clusterOptionsByData = {
-          processProperties: function(clusterOptions, childNodes) {
-            clusterOptions.label = "[" + viewNames[i] + "]";
-            return clusterOptions;
-          },
-          clusterNodeProperties: {borderWidth:3, shape:'image', font:{size:30}, image:dir_image+'view.'+imageExtension}
-      };
-        ArchiMateModel.clusterByConnection(viewIds[i], clusterOptionsByData);
-        console.log("clustering view:"+viewIds[i]);
+      if (clusterViews){
+        for (i = 0; i < viewIds.length; i++) {
+          var clusterOptionsByData = {
+            processProperties: function(clusterOptions, childNodes) {
+              clusterOptions.label = "[" + viewNames[i] + "]";
+              return clusterOptions;
+            },
+            clusterNodeProperties: {borderWidth:3, shape:'image', font:{size:30}, image:dir_image+'view.'+imageExtension}
+        };
+          ArchiMateModel.clusterByConnection(viewIds[i], clusterOptionsByData);
+          console.log("clustering view:"+viewIds[i]);
+        }
       }
   
 }
@@ -1228,6 +1231,7 @@ function displayViewpoint(button){
       document.getElementById("views").style.display="none";
       //  document.getElementById("ER").style.backgroundColor='white';
       document.getElementById("R").style.backgroundColor='white';
+      document.getElementById("displayViewsButton").style.backgroundColor='white';
       //document.getElementById("ArchiMateLanguage").style.display="none";
       document.getElementById("physicConfiguration").style.display="none";
       if (document.getElementById("SV").checked==false && document.getElementById("VS").checked==false){
@@ -1249,6 +1253,7 @@ function displayViewPane(button){
        document.getElementById("views").style.display="block";
        //  document.getElementById("ER").style.backgroundColor='white';
        document.getElementById("R").style.backgroundColor='white';
+       document.getElementById("displayViewpointButton").style.backgroundColor='white';
        //document.getElementById("ArchiMateLanguage").style.display="none";
        document.getElementById("physicConfiguration").style.display="none";
        if (document.getElementById("SV").checked==false && document.getElementById("VS").checked==false){
