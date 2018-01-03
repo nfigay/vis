@@ -1,3 +1,4 @@
+var bidon="tres bidon";
 var myModel="ArchiMagineModelDynamicViewer";
 var displayViews=true;
 var displayViewpoints=true;
