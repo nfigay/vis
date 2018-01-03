@@ -4,6 +4,7 @@ var displayViewpoints=true;
 var displayStakeholders=true;
 var ArchiMateModel = null;
 
+//fdsqfqds
 
 function initArchiMate(){
   document.getElementById("model").value="ArchiMagineModelDynamicViewer";
