@@ -115,7 +115,7 @@ function createVis(model){
   };
 
   
-  var folders = model.getElementsByTagName("folder");
+  var folders = model.getElementsByTagName("folders");
   console.log(folders);
   if (displayViewpoints){
 
