@@ -698,7 +698,7 @@ function createVis(model){
       if (document.getElementById("filterViewpoint").checked==true){
         alert (viewpointId);
         //
-        if (document.getElementById(viewpointId).checked==true){ nodes.push(node);}
+        if (document.getElementById(viewpointId+"_viewpoint").checked==true){ nodes.push(node);}
         else{ nodes.push(node);}
       }
     }
