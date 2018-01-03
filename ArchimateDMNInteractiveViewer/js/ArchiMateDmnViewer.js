@@ -714,7 +714,7 @@ function createVis(model){
       if (document.getElementById("filterStakeholder").checked==true){
         if (document.getElementById(stakeholderId).checked==true){nodes.push(node);}
       }else{
-        node.push(node);
+        nodes.push(node);
       }
 
     }
