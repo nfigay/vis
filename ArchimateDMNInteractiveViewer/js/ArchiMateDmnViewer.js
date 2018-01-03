@@ -61,6 +61,20 @@ function createVis(model){
   var EDGE_LENGTH_MAIN = 150;
   var EDGE_LENGTH_SUB = 50;
   var imageExtension="png";
+  destroy();
+  document.getElementById('configureDisplay').innerHTML="";
+  checkedRelations=[];
+  checkedEntities=[];
+  document.getElementById("RSelection-pane").style.display="none";
+  document.getElementById("ERSelection-pane").style.display="none";
+  document.getElementById("displayPropertyButton").style.display="block";
+  document.getElementById("displayEventButton").style.display="block";
+  if (selectedModel=="ER" || selectedModel=="R"){document.getElementById("ArchiMateModel").style.display="block";}
+
+  
+  inputRelations = document.getElementsByClassName('relationsCheckbox');
+  inputEntities = document.getElementsByClassName('entitiesCheckbox');
+   
   var options = {
     nodes: {
       shape: 'dot',
@@ -98,6 +112,8 @@ function createVis(model){
       container: document.getElementById('configureDisplay')
     }
   };
+
+  
   var folders = model.getElementsByTagName("folder");
   console.log(folders);
   if (displayViewpoints){
@@ -693,4 +709,11 @@ function onClickModelNodes(params){
   params.event = "[original event]";
   document.getElementById('eventSpan').innerHTML = '<h2>Click event:</h2>' + JSON.stringify(params, null, 4);
   console.log('click event, getNodeAt returns: ' + this.getNodeAt(params.pointer.DOM));
+}
+
+function destroy() {
+  if (ArchiMateModel !== null) {
+      ArchiMateModel.destroy();
+      ArchiMateModel = null;
+  }
 }
