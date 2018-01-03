@@ -584,6 +584,7 @@ function initArchiMate(){
   document.getElementById("displaySVGButton").style.backgroundColor="lightgray";
   document.getElementById("filterStakeholder").checked=false;
   document.getElementById("filterViewpoint").checked=false;
+  //fdsqfqdsfdqsfs
   loadArchi();
 }
 
