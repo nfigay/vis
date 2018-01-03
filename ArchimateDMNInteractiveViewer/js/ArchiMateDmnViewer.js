@@ -718,7 +718,7 @@ function createVis(model){
       +'}';
       node=JSON.parse(nodeString);
       if (document.getElementById("filterStakeholder").checked==true){
-        alert (stakeholderId);
+       // alert (stakeholderId);
         if (document.getElementById(stakeholderId).checked==true){nodes.push(node);}
       }else{
         nodes.push(node);
@@ -729,8 +729,8 @@ function createVis(model){
   if ( displayViewpoints){
     if (document.getElementById("filterViewpoint").checked==true){
       for (i=0;i<23;i++){
-        var viewpointId=viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_");
-        if (document.getElementById(viewpointId).checked==true){
+        var viewpointId=viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_").replace(" ","_")+"_viewpoint";
+       if (document.getElementById(viewpointId).checked==true){
         edges.push({from: viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
         }
       }
