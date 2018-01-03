@@ -68,9 +68,10 @@ function createVis(model){
   document.getElementById("ERSelection-pane").style.display="none";
   document.getElementById("displayPropertyButton").style.display="block";
   document.getElementById("displayEventButton").style.display="block";
+
   if (selectedModel=="ER" || selectedModel=="R"){document.getElementById("ArchiMateModel").style.display="block";}
 
-  
+  //dfqfqds
   inputRelations = document.getElementsByClassName('relationsCheckbox');
   inputEntities = document.getElementsByClassName('entitiesCheckbox');
    
