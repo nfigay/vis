@@ -696,17 +696,17 @@ function createVis(model){
       +'}';
       node=JSON.parse(nodeString);
       if (document.getElementById("filterViewpoint").checked==true){
-        alert(viewpointId);
+        //alert(viewpointId);
         if (document.getElementById(viewpointId).checked==true){ nodes.push(node);}
         else{ nodes.push(node);}
-        //fdsqfdqsf
+        
       }
     }
   }
   if (displayStakeholders){
     var stakeholders=["Enterprise Architect", "Process Architect", "Application Architect", "Domain Architect", "Operational Manager", "Business Manager", "Business Architect","ICT Architect", "Business Analyst", "Requirements Manager","Employee", "Shareholder", "Information Architect", "Infrastructure Architect", "Manager", "Product Developer", "Product Manager","Stakeholder" ];
     for (i = 0; i < stakeholders.length; i++){
-      var stakeholderId=stakeholders[i].toLowerCase().replace(" ","_");
+      var stakeholderId=stakeholders[i].toLowerCase().replace(" ","_")+"_stakeholder";
       //image= elements[j].getAttribute('xsi:type').toLowerCase().replace("archimate:", "").replace("application", "application-").replace("business", "business-").replace("data", "data-").replace("technology", "technology-").replace("implementation", "implementation-").replace("distribution", "distribution-").replace("communication", "communication-").replace("courseofaction", "course-of-action").replace("systemsoftware", "system-software");
       nodeString='{'
       +'"id":"'+stakeholderId+'",'
