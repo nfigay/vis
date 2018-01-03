@@ -1273,6 +1273,7 @@ function SV_VS(check){
       var s=document.getElementById(Viewpoints[i].replace (" and ", "_").toLowerCase().replace(" ", "_").replace(" ", "_")+'_viewpoint');
       alert(Viewpoints[i].replace (" and ", "_").toLowerCase().replace(" ", "_").replace(" ", "_")+'_viewpoint');
       s.checked=false;
+      
       }
   for (i=0; i<Stakeholders.length; i++){
       //alert (Stakeholders[i].toLowerCase().replace(" ", "_").replace(" ", "_")+'_stakeholder');
