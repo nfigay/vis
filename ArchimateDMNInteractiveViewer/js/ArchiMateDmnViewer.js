@@ -1260,7 +1260,7 @@ function clickStakeholder(stakeholderCheckbox){
     if (document.getElementById("SV").checked && stakeholderCheckbox.checked){
         for (i=0; i<W4S.length; i++){
             if (W4S[i].indexOf(parseInt(stakeholderCheckbox.value))>-1){
-                var s=document.getElementById(Viewpoints[i].toLowerCase().replace(" ", "_").replace(" ", "_")+'_viewpoint');
+                var s=document.getElementById(Viewpoints[i].toLowerCase().replace(" ", "_").replace(" ", "_")+'_stakeholder');
                 s.checked=true;
             }
         }
@@ -1271,7 +1271,7 @@ function SV_VS(check){
   if (check.id=="VS"){document.getElementById("SV").checked=!document.getElementById("VS").checked;}
   for (i=0; i<Viewpoints.length; i++){
       var s=document.getElementById(Viewpoints[i].replace (" and ", "_").toLowerCase().replace(" ", "_").replace(" ", "_")+'_viewpoint');
-      
+      alert(Viewpoints[i].replace (" and ", "_").toLowerCase().replace(" ", "_").replace(" ", "_")+'_viewpoint');
       s.checked=false;
       }
   for (i=0; i<Stakeholders.length; i++){
