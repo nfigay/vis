@@ -683,7 +683,7 @@ function createVis(model){
     // A node is first created for each ArchiMate viewpoint, relying on the way Archi captures it, i.e. with a property viewpoint
     viewpoints=["Application Cooperation","Application Usage", "Business Process Cooperation", "Capability","Goal Realization", "Implementation and Deployment", "Implementation and Migration", "Information Structure", "Layered", "Migration","Motivation","Organization","Outcome Realization","Physical", "Product", "Project","Requirements Realization","Resource","Service Realization","StakeholderHL","Strategy","Technology","Technology Usage"];
     for (i = 0; i < viewpoints.length; i++){
-      var viewpointId=viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_");
+      var viewpointId=viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_").replace(" ","_")+"_viewpoint";
       //image= elements[j].getAttribute('xsi:type').toLowerCase().replace("archimate:", "").replace("application", "application-").replace("business", "business-").replace("data", "data-").replace("technology", "technology-").replace("implementation", "implementation-").replace("distribution", "distribution-").replace("communication", "communication-").replace("courseofaction", "course-of-action").replace("systemsoftware", "system-software");
       nodeString='{'
       +'"id":"'+viewpointId+'",'
@@ -698,7 +698,7 @@ function createVis(model){
       if (document.getElementById("filterViewpoint").checked==true){
         alert (viewpointId);
         //
-        if (document.getElementById(viewpointId+"_viewpoint").checked==true){ nodes.push(node);}
+        if (document.getElementById(viewpointId).checked==true){ nodes.push(node);}
         else{ nodes.push(node);}
         //fdsqfdqsf
       }
