@@ -1271,14 +1271,14 @@ function SV_VS(check){
   if (check.id=="VS"){document.getElementById("SV").checked=!document.getElementById("VS").checked;}
   for (i=0; i<Viewpoints.length; i++){
       var s=document.getElementById(Viewpoints[i].replace (" and ", "_").toLowerCase().replace(" ", "_").replace(" ", "_")+'_viewpoint');
-      alert(Viewpoints[i].replace (" and ", "_").toLowerCase().replace(" ", "_").replace(" ", "_")+'_viewpoint');
+      //alert(Viewpoints[i].replace (" and ", "_").toLowerCase().replace(" ", "_").replace(" ", "_")+'_viewpoint');
       s.checked=false;
 
       }
   for (i=0; i<Stakeholders.length; i++){
       //alert (Stakeholders[i].toLowerCase().replace(" ", "_").replace(" ", "_")+'_stakeholder');
       var s=document.getElementById(Stakeholders[i].toLowerCase().replace(" ", "_").replace(" ", "_")+'_stakeholder');
-      alert(Stakeholders[i].toLowerCase().replace(" ", "_").replace(" ", "_")+'_stakeholder');
+      //alert(Stakeholders[i].toLowerCase().replace(" ", "_").replace(" ", "_")+'_stakeholder');
       s.checked=false;
   }
 }
