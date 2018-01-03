@@ -4,6 +4,7 @@ var displayViewpoints=true;
 var displayStakeholders=true;
 var ArchiMateModel = null;
 var selectedModel="ER";
+var folders=null;
 
 //fdsqfqds
 
@@ -116,7 +117,7 @@ function createVis(model){
   };
 
   
-  var folders = model.getElementById("folders");
+  var folders = model.getElementsByTagName("folder");
   console.log(folders);
   if (displayViewpoints){
 
