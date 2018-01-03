@@ -5,8 +5,6 @@ var displayStakeholders=true;
 var ArchiMateLanguage = null;
 
 
-
-
 function initArchiMate(){
   document.getElementById("model").value="ArchiMagineModelDynamicViewer";
   document.getElementById("ERSelection-pane").style.display="none";
