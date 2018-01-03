@@ -634,6 +634,7 @@ function createVis(model){
   displayViews=false;
   clusterViews=false;
  if (document.getElementById( "displayViewsButton").checked){
+   alert("toto");
    displayViews=true;
    if (document.getElementById("clusterViews").checked){clusterViews=true;}
  }
