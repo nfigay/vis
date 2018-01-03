@@ -1225,6 +1225,7 @@ function displayViewpoint(button){
       document.getElementById("ERSelection-pane").style.display="none";
       document.getElementById("RSelection-pane").style.display="none";
       document.getElementById("viewpoint").style.display="block";
+      document.getElementById("views").style.display="none";
       //  document.getElementById("ER").style.backgroundColor='white';
       document.getElementById("R").style.backgroundColor='white';
       //document.getElementById("ArchiMateLanguage").style.display="none";
@@ -1237,6 +1238,27 @@ function displayViewpoint(button){
       document.getElementById("viewpoint").style.display="none";  
     }
 }
+
+function displayViewPane(button){
+  
+  if (button.style.backgroundColor=='white'){
+       button.style.backgroundColor='lightgray';
+       document.getElementById("ERSelection-pane").style.display="none";
+       document.getElementById("RSelection-pane").style.display="none";
+       document.getElementById("viewpoint").style.display="none";
+       document.getElementById("views").style.display="block";
+       //  document.getElementById("ER").style.backgroundColor='white';
+       document.getElementById("R").style.backgroundColor='white';
+       //document.getElementById("ArchiMateLanguage").style.display="none";
+       document.getElementById("physicConfiguration").style.display="none";
+       if (document.getElementById("SV").checked==false && document.getElementById("VS").checked==false){
+           document.getElementById("SV").checked=true;
+       }   
+   } else {
+       button.style.backgroundColor='white';
+       document.getElementById("views").style.display="none";  
+     }
+ }
 function clickModelElement(button)
 {
     idRelation=button.id.replace ("b_", "");
