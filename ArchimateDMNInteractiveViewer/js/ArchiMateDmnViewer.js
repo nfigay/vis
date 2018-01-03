@@ -2,7 +2,7 @@ var myModel="ArchiMagineModelDynamicViewer";
 var displayViews=true;
 var displayViewpoints=true;
 var displayStakeholders=true;
-var ArchiMateLanguage = null;
+var ArchiMateModel = null;
 
 
 function initArchiMate(){
@@ -71,7 +71,7 @@ function createVis(model){
 
   if (selectedModel=="ER" || selectedModel=="R"){document.getElementById("ArchiMateModel").style.display="block";}
 
-  //dfqfqds
+  
   inputRelations = document.getElementsByClassName('relationsCheckbox');
   inputEntities = document.getElementsByClassName('entitiesCheckbox');
    
