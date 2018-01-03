@@ -22,7 +22,7 @@ TechnicalObjectsWithId=[26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42];
 MotivationObjectsWithId=[43,44,45,46,47,48,49,50,51,52];
 ImplementationMigrationObjectWithId=[53,54,55,56,57];
 OtherObjectsWithId=[59,60,61];
-Viewpoints=["Application Cooperation","Application Usage", "Business Process Cooperation", "Capability","Goal Realization", "Implementation and Deployment", "Implementation and Migration", "Information Structure", "Layered", "Migration","Motivation","Organization","Outcome Realization","Physical", "Product", "Project","Requirements Realization","Resource","Service Realization","Stakeholder","Strategy","Technology","Technology Usage"];
+Viewpoints=["Application Cooperation","Application Usage", "Business Process Cooperation", "Capability","Goal Realization", "Implementation and Deployment", "Implementation and Migration", "Information Structure", "Layered", "Migration","Motivation","Organization","Outcome Realization","Physical", "Product", "Project","Requirements Realization","Resource","Service Realization","StakeholderHL","Strategy","Technology","Technology Usage"];
 ViewpointsWithId=[ 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22];
 Stakeholders=["Enterprise Architect", "Process Architect", "Application Architect", "Domain Architect", "Operational Manager", "Business Manager", "Business Architect","ICT Architect", "Business Analyst", "Requirements Manager","Employee", "Shareholder", "Information Architect", "Infrastructure Architect", "Manager", "Product Developer", "Product Manager","Stakeholder" ];
 StakeholdersWithId=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17];
@@ -1273,7 +1273,7 @@ function SV_VS(check){
       var s=document.getElementById(Viewpoints[i].replace (" and ", "_").toLowerCase().replace(" ", "_").replace(" ", "_")+'_viewpoint');
       alert(Viewpoints[i].replace (" and ", "_").toLowerCase().replace(" ", "_").replace(" ", "_")+'_viewpoint');
       s.checked=false;
-      
+
       }
   for (i=0; i<Stakeholders.length; i++){
       //alert (Stakeholders[i].toLowerCase().replace(" ", "_").replace(" ", "_")+'_stakeholder');
