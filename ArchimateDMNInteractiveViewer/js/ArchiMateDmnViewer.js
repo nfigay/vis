@@ -700,6 +700,7 @@ function createVis(model){
         //
         if (document.getElementById(viewpointId+"_viewpoint").checked==true){ nodes.push(node);}
         else{ nodes.push(node);}
+        //fdsqfdqsf
       }
     }
   }
