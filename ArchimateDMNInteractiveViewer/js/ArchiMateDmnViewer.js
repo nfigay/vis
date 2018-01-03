@@ -289,6 +289,7 @@ if (displayViews){
   var queryViews = model.evaluate( '//element[@xsi:type="archimate:ArchimateDiagramModel"]', model, nsResolver,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null );  
   var nbviews = model.evaluate( 'count(//element[@xsi:type="archimate:ArchimateDiagramModel"])', model, nsResolver, XPathResult.ANY_TYPE, null );
   var views=[];
+  var viewIds=[];
 
   for (i = 0; i < queryViews.snapshotLength; i++) {
     views.push(queryViews.snapshotItem(i)); 
@@ -300,6 +301,7 @@ if (displayViews){
     //alert (nodeString);
        node=JSON.parse(nodeString);
     nodes.push(node);
+    viewIds.push(views[i].getAttribute('id'));
   //now let's associate each view to the viewpoint it is associated with
   var associatedViewpoint="";
   if (views[i].getAttribute('viewpoint')){ 
@@ -532,6 +534,10 @@ if (displayViews){
       ArchiMateModel.on("blurEdge", function (params) {
       console.log('blurEdge Event:', params);
       });
+      // clustering the views and the contained diagram objets
+      for (i = 0; i < viewIds.length; i++) {
+        ArchiMateModel.clusterByConnection(viewIds[i]);
+      }
   
 }
 
