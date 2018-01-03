@@ -2,6 +2,7 @@ var myModel="ArchiMagineModelDynamicViewer";
 var displayViews=true;
 var displayViewpoints=true;
 var displayStakeholders=true;
+var ArchiMateLanguage = null;
 
 
 
