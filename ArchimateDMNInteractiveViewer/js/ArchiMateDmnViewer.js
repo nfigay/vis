@@ -1269,10 +1269,9 @@ function clickStakeholder(stakeholderCheckbox){
 function SV_VS(check){
   if (check.id=="SV"){document.getElementById("VS").checked=!document.getElementById("SV").checked;}
   if (check.id=="VS"){document.getElementById("SV").checked=!document.getElementById("VS").checked;}
-  alert("OK");
   for (i=0; i<Viewpoints.length; i++){
-      var s=document.getElementById(Viewpoints[i].toLowerCase().replace(" ", "_").replace(" ", "_")+'_viewpoint');
-      alert (Viewpoints[i].toLowerCase().replace(" ", "_").replace(" ", "_")+'_viewpoint');
+      var s=document.getElementById(Viewpoints[i].replace (" and ", "_").toLowerCase().replace(" ", "_").replace(" ", "_")+'_viewpoint');
+      
       s.checked=false;
       }
   for (i=0; i<Stakeholders.length; i++){
