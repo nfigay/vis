@@ -633,11 +633,13 @@ function createVis(model){
   if (selectedModel=="ER" || selectedModel=="R"){document.getElementById("ArchiMateModel").style.display="block";}
   displayViews=false;
   clusterViews=false;
-  alert(document.getElementById( "displayViewsButton").checked==true);
- if (document.getElementById( "displayViewsButton").checked==true){
+ if (displayViewpoints==true){
    
    displayViews=true;
-   if (document.getElementById("clusterViews").checked==true){clusterViews=true;}
+   if (document.getElementById("clusterViews").checked==true){
+    alert("cluster");
+    clusterViews=true;
+    }
  }
   
   inputRelations = document.getElementsByClassName('relationsCheckbox');
@@ -1232,6 +1234,7 @@ function displayViewpoint(button){
   
  if (button.style.backgroundColor=='white'){
       button.style.backgroundColor='lightgray';
+      displayViewpoints=true;
       document.getElementById("ERSelection-pane").style.display="none";
       document.getElementById("RSelection-pane").style.display="none";
       document.getElementById("viewpoint").style.display="block";
@@ -1246,7 +1249,8 @@ function displayViewpoint(button){
       }   
   } else {
       button.style.backgroundColor='white';
-      document.getElementById("viewpoint").style.display="none";  
+      document.getElementById("viewpoint").style.display="none";
+      displayViewpoints=false;  
     }
 }
 
