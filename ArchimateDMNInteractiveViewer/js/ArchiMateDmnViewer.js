@@ -1261,6 +1261,7 @@ function clickStakeholder(stakeholderCheckbox){
         for (i=0; i<W4S.length; i++){
             if (W4S[i].indexOf(parseInt(stakeholderCheckbox.value))>-1){
                 var s=document.getElementById(Viewpoints[i].replace (" and ", "_").toLowerCase().replace(" ", "_").replace(" ", "_")+'_viewpoint');
+                alert (Viewpoints[i].replace (" and ", "_").toLowerCase().replace(" ", "_").replace(" ", "_")+'_viewpoint');
                 s.checked=true;
             }
         }
