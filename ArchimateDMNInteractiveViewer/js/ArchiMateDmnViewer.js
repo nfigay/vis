@@ -582,6 +582,7 @@ function initArchiMate(){
   document.getElementById("displayPropertyButton").style.display="block";
   document.getElementById("displayEventButton").style.display="block";
   document.getElementById("displaySVGButton").style.backgroundColor="lightgray";
+  document.getElementById("filterStakeholder").checked=false;
   loadArchi();
 }
 
