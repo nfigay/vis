@@ -1280,7 +1280,7 @@ function SV_VS(check){
       var s=document.getElementById(Stakeholders[i].toLowerCase().replace(" ", "_").replace(" ", "_")+'_stakeholder');
       //alert(Stakeholders[i].toLowerCase().replace(" ", "_").replace(" ", "_")+'_stakeholder');
       s.checked=false;
-      
+  
   }
 }
 
