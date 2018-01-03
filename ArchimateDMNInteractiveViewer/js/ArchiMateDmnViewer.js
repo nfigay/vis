@@ -3,6 +3,7 @@ var displayViews=true;
 var displayViewpoints=true;
 var displayStakeholders=true;
 var ArchiMateModel = null;
+var selectedModel="ER";
 
 //fdsqfqds
 
