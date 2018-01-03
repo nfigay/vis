@@ -578,6 +578,7 @@ function initArchiMate(){
   document.getElementById("displayPropertyButton").style.backgroundColor="white";
   document.getElementById("displayEventButton").style.backgroundColor="white";
   document.getElementById("displayViewpointButton").style.backgroundColor="white";
+  document.getElementById("displayViewsButton").style.backgroundColor="white";
   document.getElementById("R").style.display="white";
   document.getElementById("ER").style.backgroundColor="white";
   document.getElementById("displayPropertyButton").style.display="block";
@@ -630,8 +631,12 @@ function createVis(model){
   document.getElementById("displayEventButton").style.display="block";
 
   if (selectedModel=="ER" || selectedModel=="R"){document.getElementById("ArchiMateModel").style.display="block";}
- 
-
+  displayViews=false;
+  clusterViews=false;
+ if (document.getElementById( "displayViewsButton").checked){
+   displayViews=true;
+   if (document.getElementById("clusterViews").checked){clusterViews=true;}
+ }
   
   inputRelations = document.getElementsByClassName('relationsCheckbox');
   inputEntities = document.getElementsByClassName('entitiesCheckbox');
