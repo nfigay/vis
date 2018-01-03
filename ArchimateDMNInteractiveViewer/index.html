@@ -41,7 +41,15 @@
       </div>
 
       <div class="row" id="row-02" name="tool-panes">
-        <div class="col-md-1">                      
+        <div class="col-md-1">    
+            <div class="btn-group" >
+                <button id="displayViewpointButton" data-toggle="tooltip" title="Displaying viewpoints" class="btn btn-default" type="button" onclick='displayViewpoint(this);'>
+                  <img   src="./img/viewpoint.png" alt="Draw" width="25" height="25" >
+                </button>
+                <button id="displayViewsButton" data-toggle="tooltip" title="Displaying views" class="btn btn-default" type="button" onclick='displayViews(this);'>
+                    <img   src="./img/view.png" alt="Draw" width="25" height="25" >
+                  </button>
+              </div>                  
           
           <div class="btn-group" >
             <button id="ER" name="ER" class="btn btn-default" type="button" data-toggle="tooltip" title="Display a graph with selected entities and relations" onclick='setModel(this);'>
@@ -62,11 +70,7 @@
             </button>
           </div>
       
-          <div class="btn-group" >
-            <button id="displayViewpointButton" data-toggle="tooltip" title="Displaying viewpoints" class="btn btn-default" type="button" onclick='displayViewpoint(this);'>
-              <img   src="./img/viewpoint.png" alt="Draw" width="25" height="25" >
-            </button>
-          </div>
+
       
           <div class="btn-group" >
             <button data-toggle="tooltip" title="Draw the network" class="btn btn-default" type="button" onclick='loadArchi();'>
@@ -269,6 +273,18 @@
               <img src="./img/archimate/flow.png" alt="Flow" width="16" height="16"                     onclick='if (document.getElementById("R").checked==true) { document.getElementById("relation").selectedIndex=3;draw();}'>
               <img src="./img/archimate/specialization.png" alt="Specialization" width="16" height="16" onclick='if (document.getElementById("R").checked==true) { document.getElementById("relation").selectedIndex=8;draw();}'>
             </div> 
+            <div id="views">
+              <p>
+                Cluster Views: <input type="checkbox"  disable="true" class="choiceClusterViews" id="clusterViews" value="0" >
+              </p>
+              <p>
+                Select views on the following list (to be implemented)
+              </p>
+              <p>
+                Note: it is also possible selecting only views related to given viewpoints or stakeholders using the viewpoint selection button.
+              </p>
+  
+            </div>
             <div id="viewpoint">
 						  From viewpoint to stakeholder: <input type="checkbox"  disable="true" class="choiceDirectionVSCheckbox" id="VS" value="0" onclick="SV_VS(this);">
               From stakeholder to viewpoint <input type="checkbox"  disable="true" class="choiceDirectionVSCheckbox" id="SV" value="1" onclick="SV_VS(this);">
