@@ -1,8 +1,7 @@
-var bidon="tres bidon";
 var myModel="ArchiMagineModelDynamicViewer";
-var displayViews=true;
-var displayViewpoints=true;
-var displayStakeholders=true;
+var displayViews=false;
+var displayViewpoints=false;
+var displayStakeholders=false;
 var ArchiMateModel = null;
 var selectedModel="ER";
 var folders=null;
