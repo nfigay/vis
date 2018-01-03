@@ -290,6 +290,7 @@ if (displayViews){
   var nbviews = model.evaluate( 'count(//element[@xsi:type="archimate:ArchimateDiagramModel"])', model, nsResolver, XPathResult.ANY_TYPE, null );
   var views=[];
   var viewIds=[];
+  var viewNames=[];
 
   for (i = 0; i < queryViews.snapshotLength; i++) {
     views.push(queryViews.snapshotItem(i)); 
@@ -302,6 +303,7 @@ if (displayViews){
        node=JSON.parse(nodeString);
     nodes.push(node);
     viewIds.push(views[i].getAttribute('id'));
+    viewNames.push(views[i].getAttribute('name'));
   //now let's associate each view to the viewpoint it is associated with
   var associatedViewpoint="";
   if (views[i].getAttribute('viewpoint')){ 
@@ -538,10 +540,10 @@ if (displayViews){
       for (i = 0; i < viewIds.length; i++) {
         var clusterOptionsByData = {
           processProperties: function(clusterOptions, childNodes) {
-            clusterOptions.label = "[" + childNodes.length + "]";
+            clusterOptions.label = "[" + viewNames[i] + "]";
             return clusterOptions;
           },
-          clusterNodeProperties: {borderWidth:3, shape:'box', font:{size:30}}
+          clusterNodeProperties: {borderWidth:3, shape:'image', font:{size:30}, image:dir_image+'view.'+imageExtension}
       };
         ArchiMateModel.clusterByConnection(viewIds[i], clusterOptionsByData);
         console.log("clustering view:"+viewIds[i]);
