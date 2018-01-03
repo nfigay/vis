@@ -1269,7 +1269,7 @@ function clickStakeholder(stakeholderCheckbox){
 function SV_VS(check){
   if (check.id=="SV"){document.getElementById("VS").checked=!document.getElementById("SV").checked;}
   if (check.id=="VS"){document.getElementById("SV").checked=!document.getElementById("VS").checked;}
-  alert("ok";)
+  alert("ok");
   for (i=0; i<Viewpoints.length; i++){
       var s=document.getElementById(Viewpoints[i].toLowerCase().replace(" ", "_").replace(" ", "_")+'_viewpoint');
       alert (Viewpoints[i].toLowerCase().replace(" ", "_").replace(" ", "_")+'_viewpoint');
