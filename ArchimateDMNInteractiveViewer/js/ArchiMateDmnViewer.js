@@ -694,7 +694,10 @@ function createVis(model){
       +'"image":"'+dir_image+'viewpoint.'+imageExtension+'"'
       +'}';
       node=JSON.parse(nodeString);
-      nodes.push(node);
+      if (document.getElementById(filterViewpoint).checked==true){
+        if (document.getElementById(viewpointId).checked==true){ nodes.push(node);}
+        else{ nodes.push(node);}
+      }
     }
   }
   if (displayStakeholders){
@@ -720,9 +723,19 @@ function createVis(model){
     }
   }
   if ( displayViewpoints){
-    if (document.getElementById("filterViewpoint").checked==true){}else{
-  nodes.push({id: "viewpoint", shape: 'image',label: 'Viewpoint', image: dir_image + 'viewpoint.'+imageExtension, shape: 'image'});
-  for (i=0;i<23;i++){edges.push({from: viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});}
+    if (document.getElementById("filterViewpoint").checked==true){
+      for (i=0;i<23;i++){
+        var viewpointId=viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_");
+        if (document.getElementById(viewpointId).checked==true){
+        edges.push({from: viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+        }
+      }
+
+    }else{
+      nodes.push({id: "viewpoint", shape: 'image',label: 'Viewpoint', image: dir_image + 'viewpoint.'+imageExtension, shape: 'image'});
+      for (i=0;i<23;i++){
+       edges.push({from: viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+      }
   //edges.push({from: viewpoints[0].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
   //edges.push({from: viewpoints[1].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
   //edges.push({from: viewpoints[2].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
