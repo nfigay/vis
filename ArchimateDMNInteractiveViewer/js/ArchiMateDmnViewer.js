@@ -1177,7 +1177,7 @@ function displaySVG(button)
 }
 
 function setModel(modelType){
-  if (button.style.backgroundColor=='white'){
+  if (modelType.style.backgroundColor=='white'){
     myModelType=modelType.name;
     document.getElementById("ERSelection-pane").style.display="none";
     document.getElementById("RSelection-pane").style.display="none";
