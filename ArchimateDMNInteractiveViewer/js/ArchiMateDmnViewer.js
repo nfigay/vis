@@ -631,16 +631,7 @@ function createVis(model){
   document.getElementById("displayEventButton").style.display="block";
 
   if (selectedModel=="ER" || selectedModel=="R"){document.getElementById("ArchiMateModel").style.display="block";}
-  displayViews=false;
-  clusterViews=false;
- if (displayViewpoints==true){
-   
-   displayViews=true;
-   if (document.getElementById("clusterViews").checked==true){
-    alert("cluster");
-    clusterViews=true;
-    }
- }
+ 
   
   inputRelations = document.getElementsByClassName('relationsCheckbox');
   inputEntities = document.getElementsByClassName('entitiesCheckbox');
@@ -1318,6 +1309,20 @@ function SV_VS(check){
       //alert(Stakeholders[i].toLowerCase().replace(" ", "_").replace(" ", "_")+'_stakeholder');
       s.checked=false;
   
+  }
+}
+
+function DE_Cl(check){
+  if (check.id=="displayViews"){
+    displayViews= document.getElementById("displayViews").checked;
+    if (displayViews==false){
+      document.getElementById("clusterViews").checked=false;
+      clusterViews=false;
+    }
+  }
+  if (check.id=="clusterViews"){
+    clusterViews=document.getElementById("clusterViews").checked;
+   
   }
 }
 

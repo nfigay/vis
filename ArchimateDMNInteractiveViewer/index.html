@@ -22,7 +22,7 @@
             <div  id="toolName">The Advanced ArchiMate Model Interactive Viewer</div>
           </h3>
         </div>
-        <div class="text-center" id="toolVersion">Version 0.1 by Nicolas Figay, the 3rd of January, 2018</div>
+        <div class="text-center" id="toolVersion">Version 0.1 by Nicolas Figay, 4th of January, 2018</div>
         <div id="models">
           <p> Select models to open:</p>
           <input id="model" list="modelList" />    
@@ -275,7 +275,8 @@
             </div> 
             <div id="views">
               <p>
-                Cluster Views: <input type="checkbox"  disable="true" class="choiceClusterViews" id="clusterViews" value="0" >
+                Views with Diagram Elements: <input type="checkbox"  disable="true" class="choiceClusterViews" id="displayViews" value="0" onclick="DE_Cl(this);">
+                Cluster Views: <input type="checkbox"  disable="true" class="choiceClusterViews" id="clusterViews" value="1" onclick="DE_Cl(this);" >
               </p>
               <p>
                 Select views on the following list (to be implemented)
