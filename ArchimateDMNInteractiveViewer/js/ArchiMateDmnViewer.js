@@ -1177,6 +1177,7 @@ function displaySVG(button)
 }
 function setModel(modelType)
 {
+  if (button.style.backgroundColor=='white'){
     
     myModelType=modelType.name;
 
@@ -1193,7 +1194,7 @@ function setModel(modelType)
     document.getElementById("R").style.backgroundColor='white';
 
     modelType.style.backgroundColor='lightgray';
-    
+      
     switch (myModelType){
     case "ER":
        document.getElementById("ERSelection-pane").style.display="block";
@@ -1206,7 +1207,15 @@ function setModel(modelType)
     default:
        break;
     } 
+  }
+  else{
+    modelType.style.backgroundColor='white';
+    document.getElementById("ERSelection-pane").style.display="none";
+    document.getElementById("RSelection-pane").style.display="none";
+    document.getElementById("ArchiMateModel").style.display="block";
+  }
 }
+
 function displayEvent(button){
 
   if (button.style.backgroundColor=='white'){
@@ -1322,7 +1331,6 @@ function DE_Cl(check){
   }
   if (check.id=="clusterViews"){
     clusterViews=document.getElementById("clusterViews").checked;
-   
   }
 }
 
