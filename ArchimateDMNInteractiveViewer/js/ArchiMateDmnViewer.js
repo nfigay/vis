@@ -1175,12 +1175,10 @@ function displaySVG(button)
         imageExtension="svg";
     } 
 }
-function setModel(modelType)
-{
-  if (button.style.backgroundColor=='white'){
-    
-    myModelType=modelType.name;
 
+function setModel(modelType){
+  if (button.style.backgroundColor=='white'){
+    myModelType=modelType.name;
     document.getElementById("ERSelection-pane").style.display="none";
     document.getElementById("RSelection-pane").style.display="none";
     document.getElementById("ArchiMateModel").style.display="none";
@@ -1192,9 +1190,7 @@ function setModel(modelType)
     document.getElementById("displayViewpointButton").style.backgroundColor="white";
     document.getElementById("ER").style.backgroundColor='white';
     document.getElementById("R").style.backgroundColor='white';
-
-    modelType.style.backgroundColor='lightgray';
-      
+    modelType.style.backgroundColor='lightgray'; 
     switch (myModelType){
     case "ER":
        document.getElementById("ERSelection-pane").style.display="block";
@@ -1207,8 +1203,7 @@ function setModel(modelType)
     default:
        break;
     } 
-  }
-  else{
+  }  else{
     modelType.style.backgroundColor='white';
     document.getElementById("ERSelection-pane").style.display="none";
     document.getElementById("RSelection-pane").style.display="none";
