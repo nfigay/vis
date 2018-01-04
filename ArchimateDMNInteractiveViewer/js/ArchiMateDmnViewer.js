@@ -1176,6 +1176,7 @@ function displaySVG(button)
     } 
 }
 
+
 function setModel(modelType){
   if (modelType.style.backgroundColor=='white'){
     myModelType=modelType.name;
