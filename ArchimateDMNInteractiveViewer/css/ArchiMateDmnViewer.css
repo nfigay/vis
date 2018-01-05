@@ -1,7 +1,7 @@
 #loadingBar {
   position:absolute;
-  top:0px;
-  left:0px;
+  top:50px;
+  left:100px;
   width: 600px;
   height: 600 px;
   background-color:white;
