@@ -22,7 +22,7 @@
 
 
 div.outerBorder {
-  position:relative;
+  position:absolute;
   top:400px;
   width:600px;
   height:44px;
