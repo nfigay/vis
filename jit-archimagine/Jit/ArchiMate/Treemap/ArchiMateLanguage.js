@@ -41,7 +41,7 @@ function init(){
 //                   "data": {
 //                     "NbConstruct": "1", 
 //                     "$color": "#FFDB9B", 
-//                     "image": "../img/archimate/resource.png", 
+//                     "image": "../img/archimate/resource.svg", 
 //                      "$area": 100
 //                    }, 
 //                   "id": "to-resource", 
