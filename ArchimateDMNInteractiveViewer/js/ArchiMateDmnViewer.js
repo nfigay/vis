@@ -658,7 +658,11 @@ function createVis(model){
       }
      },
     physics: {
-      stabilization: false,
+      stabilization: {
+        enabled:true,
+        iterations:2000,
+        updateInterval:25
+    },
       barnesHut: {
         gravitationalConstant: -80000,
         springConstant: 0.001,

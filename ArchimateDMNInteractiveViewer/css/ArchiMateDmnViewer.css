@@ -122,6 +122,10 @@ div.outerBorder {
   border-width:1px;
   border-color:  gray;
   }
+  #wrapper {
+    position:relative;
+    height:600;
+}
 
    #ERSelection-pane {
     text-align: left;
