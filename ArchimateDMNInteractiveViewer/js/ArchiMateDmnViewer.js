@@ -3,6 +3,8 @@ var displayViews=false;
 var clusterViews=false;
 var displayViewpoints=false;
 var displayStakeholders=false;
+var filterViewpoints=false;
+var filterStakeholders=false;
 var ArchiMateModel = null;
 var selectedModel="ER";
 var folders=null;
@@ -1084,6 +1086,23 @@ if (displayViews){
     document.getElementById('configureDisplay').innerHTML="";
 
     ArchiMateModel = new vis.Network(container, data, options);
+
+    ArchiMateModel.on("stabilizationProgress", function(params) {
+      var maxWidth = 496;
+      var minWidth = 20;
+      var widthFactor = params.iterations/params.total;
+      var width = Math.max(minWidth,maxWidth * widthFactor);
+
+      document.getElementById('bar').style.width = width + 'px';
+      document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+  });
+  ArchiMateModel.once("stabilizationIterationsDone", function() {
+      document.getElementById('text').innerHTML = '100%';
+      document.getElementById('bar').style.width = '496px';
+      document.getElementById('loadingBar').style.opacity = 0;
+      // really clean the dom element
+      setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+  });
     ArchiMateModel.on("click", onClickModelNodes); 
     
     ArchiMateModel.on("oncontext", function (params) {
@@ -1176,8 +1195,8 @@ function displaySVG(button)
     } 
 }
 
-
 function setModel(modelType){
+
   if (modelType.style.backgroundColor=='white'){
     myModelType=modelType.name;
     document.getElementById("ERSelection-pane").style.display="none";
