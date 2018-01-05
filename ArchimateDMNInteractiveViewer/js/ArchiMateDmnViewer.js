@@ -1093,6 +1093,9 @@ if (displayViews){
 
     ArchiMateModel.on("stabilizationProgress", function(params) {
       document.getElementById('loadingBar').style.display = 'block';
+      document.getElementById('loadingBar').style.opacity = 1;
+      document.getElementById('bar').style.width = '20px';
+      document.getElementById('text').innerHTML = '0%';
       var maxWidth = 496;
       var minWidth = 20;
       var widthFactor = params.iterations/params.total;
@@ -1101,7 +1104,7 @@ if (displayViews){
       document.getElementById('bar').style.width = width + 'px';
       document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
   });
-  ArchiMateModel.once("stabilizationIterationsDone", function() {
+  ArchiMateModel.on("stabilizationIterationsDone", function() {
       document.getElementById('text').innerHTML = '100%';
       document.getElementById('bar').style.width = '496px';
       document.getElementById('loadingBar').style.opacity = 0;
