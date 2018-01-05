@@ -102,7 +102,7 @@ div.outerBorder {
 
   #left-pane
   {
-    left=0px;
+    left:0px;
     display:block;
     background-color: #ffffff;
   }
@@ -124,18 +124,19 @@ div.outerBorder {
   }
   #wrapper {
     position:relative;
-    height:600;
+    height:600px;
 }
 
    #ERSelection-pane {
     text-align: left;
     overflow: scroll;
-    display=none;
+    display:none;}
     
     #RSelection-pane {
     text-align: left;
     overflow: scroll;
-    display=none;
+    display:none;
+    }
     
   #relationsDisplay
  {
@@ -189,9 +190,9 @@ div.outerBorder {
   }  
 
 
-  }
+  
      #sub-pane2 {
-    display="none"; 
+    display:"none"; 
     text-align: left;
     overflow: scroll;
 
