@@ -34,50 +34,50 @@ function init(){
        "children": [
          {
            "children": [         
-              { 
-                "children": [
-                  { 
-                   "children": [], 
-                   "data": {
-                     "NbConstruct": "1", 
-                     "$color": "#FFDB9B", 
-                     "image": "../img/archimate/resource.svg", 
-                     "$area": 100
-                   }, 
-                   "id": "to-resource", 
-                   "name": "Resource"
-                  },
-                  { 
-                   "children": [], 
-                   "data": {
-                     "NbConstruct": "1", 
-                     "$color": "#FFDB9B", 
-                     "image": "../img/archimate/capability.svg", 
-                     "$area": 100
-                   }, 
-                   "id": "to-capability", 
-                   "name": "Capability"
-                  },
-                  { 
-                   "children": [], 
-                   "data": {
-                     "NbConstruct": "1", 
-                     "$color": "#FFDB9B", 
-                     "image": "../img/archimate/course-of-action.svg", 
-                     "$area": 100
-                   }, 
-                   "id": "to-course-of-action", 
-                   "name": "Course of Action"
-                  }
-                ], 
-                "data": {
-                  "NbConstruct": "3", 
-                  "$color": "#FFDB9B", 
-                   "$area": 300
-               }, 
-               "id": "flow-from-resource", 
-               "name": "flow to"
-              }
+//              { 
+//                "children": [
+//                  { 
+//                   "children": [], 
+//                   "data": {
+//                     "NbConstruct": "1", 
+//                     "$color": "#FFDB9B", 
+//                     "image": "../img/archimate/resource.svg", 
+//                      "$area": 100
+//                    }, 
+//                   "id": "to-resource", 
+//                    "name": "Resource"
+//                   },
+//                   { 
+//                    "children": [], 
+//                    "data": {
+//                      "NbConstruct": "1", 
+//                      "$color": "#FFDB9B", 
+//                      "image": "../img/archimate/capability.svg", 
+//                      "$area": 100
+//                    }, 
+//                    "id": "to-capability", 
+//                    "name": "Capability"
+//                   },
+//                   { 
+//                    "children": [], 
+//                    "data": {
+//                      "NbConstruct": "1", 
+//                      "$color": "#FFDB9B", 
+//                      "image": "../img/archimate/course-of-action.svg", 
+//                      "$area": 100
+//                    }, 
+//                    "id": "to-course-of-action", 
+//                    "name": "Course of Action"
+//                   }
+//                 ], 
+//                 "data": {
+//                   "NbConstruct": "3", 
+//                   "$color": "#FFDB9B", 
+//                   "$area": 300
+//                }, 
+//                "id": "flow-from-resource", 
+//                "name": "flow to"
+//               }
            ], 
            "data": {
              "NbConstruct": "1", 
