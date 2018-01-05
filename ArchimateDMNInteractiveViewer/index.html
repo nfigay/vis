@@ -38,6 +38,14 @@
           </label>       
           <button type="button" onclick="loadArchi();">Submit</button>
         </div>
+        <div id="loadingBar">
+            <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                    <div id="bar"></div>
+                </div>
+            </div>
+      </div>
       </div>
 
       <div class="row" id="row-02" name="tool-panes">
@@ -82,15 +90,6 @@
         <div class="col-md-10">
           <label><input type="checkbox" id="folders" checked>Folders</label>
 
-
-          <div id="loadingBar">
-              <div class="outerBorder">
-                  <div id="text">0%</div>
-                  <div id="border">
-                      <div id="bar"></div>
-                  </div>
-              </div>
-        </div>
 
         <div id="ArchiMateModel"></div>  
 
