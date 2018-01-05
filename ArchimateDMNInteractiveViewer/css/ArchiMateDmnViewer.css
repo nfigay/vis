@@ -8,7 +8,7 @@
   opacity:1;
 }
 #text {
-
+ position: absolute;
   top:8px;
   left:530px;
   width:30px;
@@ -20,6 +20,7 @@
 
 
 div.outerBorder {
+  position: absolute;
   top:5px;
   width:600px;
   height:44px;
@@ -38,6 +39,7 @@ div.outerBorder {
 }
 
 #border {
+  position: absolute;
   top:10px;
   left:10px;
   width:500px;
@@ -48,6 +50,7 @@ div.outerBorder {
 }
 
 #bar {
+  position: absolute;
   top:0px;
   left:0px;
   width:20px;
