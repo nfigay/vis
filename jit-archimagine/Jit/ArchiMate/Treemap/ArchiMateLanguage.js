@@ -41,7 +41,7 @@ function init(){
 //                   "data": {
 //                     "NbConstruct": "1", 
 //                     "$color": "#FFDB9B", 
-//                     "image": "../img/archimate/resource.svg", 
+//                     "image": "../img/archimate/resource.png", 
 //                      "$area": 100
 //                    }, 
 //                   "id": "to-resource", 
@@ -52,7 +52,7 @@ function init(){
 //                    "data": {
 //                      "NbConstruct": "1", 
 //                      "$color": "#FFDB9B", 
-//                      "image": "../img/archimate/capability.svg", 
+//                      "image": "../img/archimate/capability.png", 
 //                      "$area": 100
 //                    }, 
 //                    "id": "to-capability", 
@@ -63,7 +63,7 @@ function init(){
 //                    "data": {
 //                      "NbConstruct": "1", 
 //                      "$color": "#FFDB9B", 
-//                      "image": "../img/archimate/course-of-action.svg", 
+//                      "image": "../img/archimate/course-of-action.png", 
 //                      "$area": 100
 //                    }, 
 //                    "id": "to-course-of-action", 
@@ -82,7 +82,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#FFDB9B", 
-             "image": "../img/archimate/course-of-action.svg", 
+             "image": "../img/archimate/course-of-action.png", 
              "$area": 100
            }, 
            "id": "course-of-action", 
@@ -93,7 +93,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#FFDB9B", 
-             "image": "../img/archimate/resource.svg", 
+             "image": "../img/archimate/resource.png", 
              "$area": 100
            }, 
            "id": "resource", 
@@ -104,7 +104,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#FFDB9B", 
-             "image": "../img/archimate/capability.svg", 
+             "image": "../img/archimate/capability.png", 
              "$area": 100
            }, 
            "id": "capability", 
@@ -126,7 +126,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#FFFF99", 
-             "image": "../img/archimate/business-actor.svg", 
+             "image": "../img/archimate/business-actor.png", 
              "$area": 100
            }, 
            "id": "business-actor", 
@@ -137,7 +137,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#FFFF99", 
-             "image": "../img/archimate/contract.svg", 
+             "image": "../img/archimate/contract.png", 
              "$area": 100
            }, 
            "id": "contract", 
@@ -148,7 +148,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#FFFF99", 
-             "image": "../img/archimate/business-function.svg", 
+             "image": "../img/archimate/business-function.png", 
              "$area": 100
            }, 
            "id": "business-function", 
@@ -159,7 +159,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#FFFF99", 
-             "image": "../img/archimate/product.svg", 
+             "image": "../img/archimate/product.png", 
              "$area": 100
            }, 
            "id": "product", 
@@ -170,7 +170,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#FFFF99", 
-             "image": "../img/archimate/business-interface.svg", 
+             "image": "../img/archimate/business-interface.png", 
              "$area": 100
            }, 
            "id": "business-interface", 
@@ -181,7 +181,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#FFFF99", 
-             "image": "../img/archimate/business-interaction.svg", 
+             "image": "../img/archimate/business-interaction.png", 
              "$area": 100
            }, 
            "id": "business-interaction", 
@@ -192,7 +192,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#FFFF99", 
-             "image": "../img/archimate/business-process.svg", 
+             "image": "../img/archimate/business-process.png", 
              "$area": 100
            }, 
            "id": "business-process", 
@@ -203,7 +203,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#FFFF99", 
-             "image": "../img/archimate/business-event.svg", 
+             "image": "../img/archimate/business-event.png", 
              "$area": 100
            }, 
            "id": "business-event", 
@@ -214,7 +214,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#FFFF99", 
-             "image": "../img/archimate/business-collaboration.svg", 
+             "image": "../img/archimate/business-collaboration.png", 
              "$area": 100
            }, 
            "id": "business-collaboration", 
@@ -225,7 +225,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#FFFF99", 
-             "image": "../img/archimate/business-object.svg", 
+             "image": "../img/archimate/business-object.png", 
              "$area": 100
            }, 
            "id": "business-object", 
@@ -236,7 +236,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#FFFF99", 
-             "image": "../img/archimate/representation.svg", 
+             "image": "../img/archimate/representation.png", 
              "$area": 100
            }, 
            "id": "representation", 
@@ -247,7 +247,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#FFFF99", 
-             "image": "../img/archimate/business-service.svg", 
+             "image": "../img/archimate/business-service.png", 
              "$area": 100
            }, 
            "id": "business-service", 
@@ -258,7 +258,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#FFFF99", 
-             "image": "../img/archimate/business-role.svg", 
+             "image": "../img/archimate/business-role.png", 
              "$area": 100
            }, 
            "id": "business-role", 
@@ -280,7 +280,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#DEFFFF", 
-             "image": "../img/archimate/application-service.svg", 
+             "image": "../img/archimate/application-service.png", 
              "$area": 100
            }, 
            "id": "application-service", 
@@ -291,7 +291,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#DEFFFF", 
-             "image": "../img/archimate/application-interaction.svg", 
+             "image": "../img/archimate/application-interaction.png", 
              "$area": 100
            }, 
            "id": "application-interaction", 
@@ -302,7 +302,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#DEFFFF", 
-             "image": "../img/archimate/application-collaboration.svg", 
+             "image": "../img/archimate/application-collaboration.png", 
              "$area": 100
            }, 
            "id": "application-collaboration", 
@@ -313,7 +313,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#DEFFFF", 
-             "image": "../img/archimate/data-object.svg", 
+             "image": "../img/archimate/data-object.png", 
              "$area": 100
            }, 
            "id": "data-object", 
@@ -324,7 +324,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#DEFFFF", 
-             "image": "../img/archimate/application-interface.svg", 
+             "image": "../img/archimate/application-interface.png", 
              "$area": 100
            }, 
            "id": "application-interface", 
@@ -335,7 +335,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#DEFFFF", 
-             "image": "../img/archimate/application-event.svg", 
+             "image": "../img/archimate/application-event.png", 
              "$area": 100
            }, 
            "id": "application-event", 
@@ -346,7 +346,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#DEFFFF", 
-             "image": "../img/archimate/application-process.svg", 
+             "image": "../img/archimate/application-process.png", 
              "$area": 100
            }, 
            "id": "application-process", 
@@ -357,7 +357,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#DEFFFF", 
-             "image": "../img/archimate/application-function.svg", 
+             "image": "../img/archimate/application-function.png", 
              "$area": 100
            }, 
            "id": "application-function", 
@@ -368,7 +368,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#DEFFFF", 
-             "image": "../img/archimate/application-component.svg", 
+             "image": "../img/archimate/application-component.png", 
              "$area": 100
            }, 
            "id": "application-component", 
@@ -390,7 +390,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCF4CC", 
-             "image": "../img/archimate/distribution-network.svg", 
+             "image": "../img/archimate/distribution-network.png", 
              "$area": 100
            }, 
            "id": "distribution-network", 
@@ -401,7 +401,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCF4CC", 
-             "image": "../img/archimate/technology-function.svg", 
+             "image": "../img/archimate/technology-function.png", 
              "$area": 100
            }, 
            "id": "technology-function", 
@@ -412,7 +412,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCF4CC", 
-             "image": "../img/archimate/technology-process.svg", 
+             "image": "../img/archimate/technology-process.png", 
              "$area": 100
            }, 
            "id": "technology-process", 
@@ -423,7 +423,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCF4CC", 
-             "image": "../img/archimate/device.svg", 
+             "image": "../img/archimate/device.png", 
              "$area": 100
            }, 
            "id": "device", 
@@ -434,7 +434,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCF4CC", 
-             "image": "../img/archimate/technology-interface.svg", 
+             "image": "../img/archimate/technology-interface.png", 
              "$area": 100
            }, 
            "id": "technology-interface", 
@@ -445,7 +445,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCF4CC", 
-             "image": "../img/archimate/system-software.svg", 
+             "image": "../img/archimate/system-software.png", 
              "$area": 100
            }, 
            "id": "system-software", 
@@ -456,7 +456,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCF4CC", 
-             "image": "../img/archimate/equipment.svg", 
+             "image": "../img/archimate/equipment.png", 
              "$area": 100
            }, 
            "id": "equipment", 
@@ -467,7 +467,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCF4CC", 
-             "image": "../img/archimate/facility.svg", 
+             "image": "../img/archimate/facility.png", 
              "$area": 100
            }, 
            "id": "facility", 
@@ -478,7 +478,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCF4CC", 
-             "image": "../img/archimate/node.svg", 
+             "image": "../img/archimate/node.png", 
              "$area": 100
            }, 
            "id": "Node", 
@@ -489,7 +489,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCF4CC", 
-             "image": "../img/archimate/technology-service.svg", 
+             "image": "../img/archimate/technology-service.png", 
              "$area": 100
            }, 
            "id": "technology-service", 
@@ -500,7 +500,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCF4CC", 
-             "image": "../img/archimate/artifact.svg", 
+             "image": "../img/archimate/artifact.png", 
              "$area": 100
            }, 
            "id": "artifact", 
@@ -511,7 +511,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCF4CC", 
-             "image": "../img/archimate/technology-collaboration.svg", 
+             "image": "../img/archimate/technology-collaboration.png", 
              "$area": 100
            }, 
            "id": "technology-collaboration", 
@@ -522,7 +522,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCF4CC", 
-             "image": "../img/archimate/path.svg", 
+             "image": "../img/archimate/path.png", 
              "$area": 100
            }, 
            "id": "path", 
@@ -533,7 +533,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCF4CC", 
-             "image": "../img/archimate/material.svg", 
+             "image": "../img/archimate/material.png", 
              "$area": 100
            }, 
            "id": "material", 
@@ -544,7 +544,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCF4CC", 
-             "image": "../img/archimate/technology-interaction.svg", 
+             "image": "../img/archimate/technology-interaction.png", 
              "$area": 100
            }, 
            "id": "technology-interaction", 
@@ -555,7 +555,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCF4CC", 
-             "image": "../img/archimate/communication-network.svg", 
+             "image": "../img/archimate/communication-network.png", 
              "$area": 100
            }, 
            "id": "communication-network", 
@@ -566,7 +566,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCF4CC", 
-             "image": "../img/archimate/technology-event.svg", 
+             "image": "../img/archimate/technology-event.png", 
              "$area": 100
            }, 
            "id": "technology-event", 
@@ -589,7 +589,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCCCFF", 
-             "image": "../img/archimate/goal.svg", 
+             "image": "../img/archimate/goal.png", 
              "$area": 100
            }, 
            "id": "goal", 
@@ -600,7 +600,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCCCFF", 
-             "image": "../img/archimate/principle.svg", 
+             "image": "../img/archimate/principle.png", 
              "$area": 100
            }, 
            "id": "principle", 
@@ -611,7 +611,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCCCFF", 
-             "image": "../img/archimate/outcome.svg", 
+             "image": "../img/archimate/outcome.png", 
              "$area": 100
            }, 
            "id": "outcome", 
@@ -622,7 +622,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCCCFF", 
-             "image": "../img/archimate/requirement.svg", 
+             "image": "../img/archimate/requirement.png", 
              "$area": 100
            }, 
            "id": "requirement", 
@@ -633,7 +633,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCCCFF", 
-             "image": "../img/archimate/value.svg", 
+             "image": "../img/archimate/value.png", 
              "$area": 100
            }, 
            "id": "value", 
@@ -644,7 +644,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCCCFF", 
-             "image": "../img/archimate/stakeholder.svg", 
+             "image": "../img/archimate/stakeholder.png", 
              "$area": 100
            }, 
            "id": "stakeholder", 
@@ -655,7 +655,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCCCFF", 
-             "image": "../img/archimate/assessment.svg", 
+             "image": "../img/archimate/assessment.png", 
              "$area": 100
            }, 
            "id": "assessment", 
@@ -666,7 +666,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCCCFF", 
-             "image": "../img/archimate/constraint.svg", 
+             "image": "../img/archimate/constraint.png", 
              "$area": 100
            }, 
            "id": "constraint", 
@@ -677,7 +677,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCCCFF", 
-             "image": "../img/archimate/driver.svg", 
+             "image": "../img/archimate/driver.png", 
              "$area": 100
            }, 
            "id": "driver", 
@@ -688,7 +688,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#CCCCFF", 
-             "image": "../img/archimate/meaning.svg", 
+             "image": "../img/archimate/meaning.png", 
              "$area": 100
            }, 
            "id": "meaning", 
@@ -714,7 +714,7 @@ function init(){
                           "data": {
                             "NbConstruct": "1", 
                             "$color": "#FFCCFF", 
-                            "image": "../img/archimate/workpackage.svg", 
+                            "image": "../img/archimate/workpackage.png", 
                             "$area": 100
                           }, 
                           "id": "to-workpackage", 
@@ -724,7 +724,7 @@ function init(){
                  "data": {
                    "NbConstruct": "1", 
                    "$color": "#FFCCFF", 
-                   "image": "../img/archimate/meaning.svg", 
+                   "image": "../img/archimate/meaning.png", 
                    "$area": 100
                  }, 
                  "id": "flow from workpackage", 
@@ -734,7 +734,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#FFCCFF", 
-             "image": "../img/archimate/workpackage.svg", 
+             "image": "../img/archimate/workpackage.png", 
              "$area": 100
            }, 
            "id": "workpackage", 
@@ -745,7 +745,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#FFCCFF", 
-             "image": "../img/archimate/plateau.svg", 
+             "image": "../img/archimate/plateau.png", 
              "$area": 100
            }, 
            "id": "plateau", 
@@ -756,7 +756,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#FFCCFF", 
-             "image": "../img/archimate/implementation-event.svg", 
+             "image": "../img/archimate/implementation-event.png", 
              "$area": 100
            }, 
            "id": "implementation-event", 
@@ -767,7 +767,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#FFCCFF", 
-             "image": "../img/archimate/gap.svg", 
+             "image": "../img/archimate/gap.png", 
              "$area": 100
            }, 
            "id": "gap", 
@@ -778,7 +778,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#FFCCFF", 
-             "image": "../img/archimate/deliverable.svg", 
+             "image": "../img/archimate/deliverable.png", 
              "$area": 100
            }, 
            "id": "deliverable", 
@@ -800,7 +800,7 @@ function init(){
            "data": {
              "NbConstruct": "1", 
              "$color": "#FFCC00", 
-             "image": "../img/archimate/location.svg", 
+             "image": "../img/archimate/location.png", 
              "$area": 100
            }, 
            "id": "location", 
