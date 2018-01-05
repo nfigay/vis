@@ -1092,6 +1092,7 @@ if (displayViews){
     ArchiMateModel = new vis.Network(container, data, options);
 
     ArchiMateModel.on("stabilizationProgress", function(params) {
+      document.getElementById('loadingBar').style.display = 'block';
       var maxWidth = 496;
       var minWidth = 20;
       var widthFactor = params.iterations/params.total;
