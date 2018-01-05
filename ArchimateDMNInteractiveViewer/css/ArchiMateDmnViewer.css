@@ -1,6 +1,6 @@
 #loadingBar {
   position:absolute;
-  height: 600;
+  height: 600px;
   background-color:rgba(200,200,200,0.8);
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -23,7 +23,7 @@
 
 div.outerBorder {
   position:absolute;
-  top:400px;
+  top:5px;
   width:600px;
   height:44px;
   margin:auto auto auto auto;
