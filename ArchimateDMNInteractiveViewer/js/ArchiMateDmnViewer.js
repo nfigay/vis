@@ -836,9 +836,7 @@ function createVis(model){
     }
   }
 
- 
 
- 
 
 if (displayStakeholders && displayViewpoints){
   if (document.getElementById("filterStakeholder").checked==true || document.getElementById("filterViewpoint").checked==true){}
@@ -908,7 +906,6 @@ if (displayViews){
       type:"view_viewpoints_association",
       noe:"edge"
       }]);
-
   };
 
 
@@ -1021,6 +1018,7 @@ if (displayViews){
     
     }
   }
+}
  
     // Lets now include the model elements
 
