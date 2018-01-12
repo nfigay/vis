@@ -711,7 +711,7 @@ function createVis(model){
       noe:"edge"
       }]);
   }
-//fqsdfq
+
   for (i = 0; i < Stakeholders.length; i++){
     loadedData.add([{
       id:Stakeholders[i].toLowerCase().replace(" ","_")+"_stakeholder",
