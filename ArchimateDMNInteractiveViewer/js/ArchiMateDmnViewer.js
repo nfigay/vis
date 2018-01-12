@@ -1071,24 +1071,24 @@ if (displayViews){
               +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
               +'}';
             node=JSON.parse(nodeString);
-            console.log ("3");
-            if (elements[j].getAttribute('id')=="f88bd846-6ea9-46be-ba08-a6f1498cf44d"){
-              //console.log (document.getElementById("f88bd846-6ea9-46be-ba08-a6f1498cf44d"));
-              console.log (elements[j].parentElement);
-              console.log (elements[j].parentElement.getAttribute('id'));
 
+//  Just element which are direct child of the folder are considered 
+//  in order to avoid duplication of the element in the dataset
+            if (elements[j].parentElement.getAttribute('id')==folders[i].getAttribute("id")){
+              console.log ("3");
+              loadedData.add([{
+                id:elements[j].getAttribute('id'),
+                shape:"image",
+                title:elements[j].getAttribute('name')+elements[j].getAttribute('xsi:type').replace("archimate:",":"),
+                label: elements[j].getAttribute('name'), 
+                mass:10,
+                image:dir_image+'archimate/'+image+'.'+imageExtension,
+                type:"ModelElement",
+                noe:"node"
+                }]);
             }
 
-            loadedData.add([{
-              id:elements[j].getAttribute('id'),
-              shape:"image",
-              title:elements[j].getAttribute('name')+elements[j].getAttribute('xsi:type').replace("archimate:",":"),
-              label: elements[j].getAttribute('name'), 
-              mass:10,
-              image:dir_image+'archimate/'+image+'.'+imageExtension,
-              type:"ModelElement",
-              noe:"node"
-              }]);
+
           
             if (elements[j].getAttribute("xsi:type") != "archimate:ArchimateDiagramModel"){
               if (elements[j].getAttribute("xsi:type") != "archimate:SketchModel"){
