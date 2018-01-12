@@ -1039,21 +1039,22 @@ if (displayViews){
              +'}';
           //   alert(nodeString);
           node=JSON.parse(nodeString);
-          console.log ("4");
-          loadedData.add([{
-            id:folders[i].getAttribute('id'),
-            shape:"image",
-            title:folders[i].getAttribute('name'),
-            label: folders[i].getAttribute('name'), 
-            mass:10,
-            image:dir_image+'archimate/'+image+'.'+imageExtension,
-            type:"ModelElement",
-            noe:"node"
-            }]);
+
 
           document.getElementById('folders').checked=false;
           if (document.getElementById('folders').checked == true ){
             nodes.push(node);
+            console.log ("4");
+            loadedData.add([{
+              id:folders[i].getAttribute('id'),
+              shape:"image",
+              title:folders[i].getAttribute('name'),
+              label: folders[i].getAttribute('name'), 
+              mass:10,
+              image:dir_image+'archimate/'+image+'.'+imageExtension,
+              type:"folder",
+              noe:"node"
+              }]);
           }
 
           nodeString=null;
