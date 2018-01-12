@@ -9,26 +9,28 @@ var ArchiMateModel = null;
 var selectedModel="ER";
 var folders=null;
 var W4S=null;
-ArchiMateObjects=["Resource","Capability", "Course_Of_Action","Actor","Business_Role", "Business_Collaboration", "Business_Interface", "Business_Process", "Business_Function", "Business_Interaction", "Business_Event", "Business_Service", "Business_Object", "Contract", "Representation", "Product", "Application_Component", "Application_Collaboration", "Application_Interface", "Application_Function", "Application_Interaction", "Application_Process", "Application_Event","Application_Service", "Data_Object", "Node", "Device", "System_Software","Technology_Collaboration", "Technology_Interface", "Path","Communication_Network", "Technology_Function", "Technology_Process", "Technology_Interaction", "Technology_Event", "Technology_Service", "Artifact", "Equipment", "Facility", "Distribution_Network", "Material", "Stakeholder", "Driver", "Assessment", "Goal", "Outcome", "Principle", "Requirement", "Constraint", "Meaning", "Value", "WorkPackage", "Deliverable", "Implementation_Event", "Plateau", "Gap", "Location", "Grouping", "Junction"];
-StrategyObjectsWithNames=["Resource", "Capability", "Course_Of_Action" ];
-BusinessObjectsWithNames=["Actor","Business_Role", "Business_Collaboration", "Business_Interface", "Business_Process", "Business_Function", "Business_Interaction", "Business_Event", "Business_Service", "Business_Object", "Contract", "Representation", "Product"];
-ApplicationObjectsWithNames=["Application_Component", "Application_Collaboration", "Application_Interface", "Application_Function", "Application_Interaction", "Application_Process", "Application_Event","Application_Service", "Data_Object"];
-TechnicalObjectsWithNames=["Node", "Device", "System_Software","Technology_Collaboration", "Technology_Interface", "Path","Communication_Network", "Technology_Function", "Technology_Process", "Technology_Interaction", "Technology_Event", "Technology_Service", "Artifact", "Equipment", "Facility", "Distribution_Network", "Material"];
-MotivationObjectsWithNames=["Stakeholder", "Driver", "Assessment", "Goal", "Outcome", "Principle", "Requirement", "Constraint", "Meaning", "Value"];
-ImplementationMigrationObjectWithNames=["WorkPackage", "Deliverable", "Implementation_Event", "Plateau", "Gap"];
-OtherObjectsWithNames=["Location", "Grouping", "Junction"];
-StrategyObjectsWithId=[0,1,2];
-BusinessObjectsWithId=[4,5,6,7,9,9,10,11,12,13,14,15,16];
-ApplicationObjectsWithId=[17,18,19,20,21,22,23,24,25];
-TechnicalObjectsWithId=[26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42];
-MotivationObjectsWithId=[43,44,45,46,47,48,49,50,51,52];
-ImplementationMigrationObjectWithId=[53,54,55,56,57];
-OtherObjectsWithId=[59,60,61];
-Viewpoints=["Application Cooperation","Application Usage", "Business Process Cooperation", "Capability","Goal Realization", "Implementation and Deployment", "Implementation and Migration", "Information Structure", "Layered", "Migration","Motivation","Organization","Outcome Realization","Physical", "Product", "Project","Requirements Realization","Resource","Service Realization","StakeholderHL","Strategy","Technology","Technology Usage"];
-ViewpointsWithId=[ 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22];
-Stakeholders=["Enterprise Architect", "Process Architect", "Application Architect", "Domain Architect", "Operational Manager", "Business Manager", "Business Architect","ICT Architect", "Business Analyst", "Requirements Manager","Employee", "Shareholder", "Information Architect", "Infrastructure Architect", "Manager", "Product Developer", "Product Manager","Stakeholder" ];
-StakeholdersWithId=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17];
-W4S=[
+var loadedDataOptions = {};
+var loadedData = null;
+var ArchiMateObjects=["Resource","Capability", "Course_Of_Action","Actor","Business_Role", "Business_Collaboration", "Business_Interface", "Business_Process", "Business_Function", "Business_Interaction", "Business_Event", "Business_Service", "Business_Object", "Contract", "Representation", "Product", "Application_Component", "Application_Collaboration", "Application_Interface", "Application_Function", "Application_Interaction", "Application_Process", "Application_Event","Application_Service", "Data_Object", "Node", "Device", "System_Software","Technology_Collaboration", "Technology_Interface", "Path","Communication_Network", "Technology_Function", "Technology_Process", "Technology_Interaction", "Technology_Event", "Technology_Service", "Artifact", "Equipment", "Facility", "Distribution_Network", "Material", "Stakeholder", "Driver", "Assessment", "Goal", "Outcome", "Principle", "Requirement", "Constraint", "Meaning", "Value", "WorkPackage", "Deliverable", "Implementation_Event", "Plateau", "Gap", "Location", "Grouping", "Junction"];
+var StrategyObjectsWithNames=["Resource", "Capability", "Course_Of_Action" ];
+var BusinessObjectsWithNames=["Actor","Business_Role", "Business_Collaboration", "Business_Interface", "Business_Process", "Business_Function", "Business_Interaction", "Business_Event", "Business_Service", "Business_Object", "Contract", "Representation", "Product"];
+var ApplicationObjectsWithNames=["Application_Component", "Application_Collaboration", "Application_Interface", "Application_Function", "Application_Interaction", "Application_Process", "Application_Event","Application_Service", "Data_Object"];
+var TechnicalObjectsWithNames=["Node", "Device", "System_Software","Technology_Collaboration", "Technology_Interface", "Path","Communication_Network", "Technology_Function", "Technology_Process", "Technology_Interaction", "Technology_Event", "Technology_Service", "Artifact", "Equipment", "Facility", "Distribution_Network", "Material"];
+var MotivationObjectsWithNames=["Stakeholder", "Driver", "Assessment", "Goal", "Outcome", "Principle", "Requirement", "Constraint", "Meaning", "Value"];
+var ImplementationMigrationObjectWithNames=["WorkPackage", "Deliverable", "Implementation_Event", "Plateau", "Gap"];
+var OtherObjectsWithNames=["Location", "Grouping", "Junction"];
+var StrategyObjectsWithId=[0,1,2];
+var BusinessObjectsWithId=[4,5,6,7,9,9,10,11,12,13,14,15,16];
+var ApplicationObjectsWithId=[17,18,19,20,21,22,23,24,25];
+var TechnicalObjectsWithId=[26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42];
+var MotivationObjectsWithId=[43,44,45,46,47,48,49,50,51,52];
+var ImplementationMigrationObjectWithId=[53,54,55,56,57];
+var OtherObjectsWithId=[59,60,61];
+var Viewpoints=["Application Cooperation","Application Usage", "Business Process Cooperation", "Capability","Goal Realization", "Implementation and Deployment", "Implementation and Migration", "Information Structure", "Layered", "Migration","Motivation","Organization","Outcome Realization","Physical", "Product", "Project","Requirements Realization","Resource","Service Realization","StakeholderHL","Strategy","Technology","Technology Usage"];
+var ViewpointsWithId=[ 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22];
+var Stakeholders=["Enterprise Architect", "Process Architect", "Application Architect", "Domain Architect", "Operational Manager", "Business Manager", "Business Architect","ICT Architect", "Business Analyst", "Requirements Manager","Employee", "Shareholder", "Information Architect", "Infrastructure Architect", "Manager", "Product Developer", "Product Manager","Stakeholder" ];
+var StakeholdersWithId=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17];
+var W4S=[
     [0,1,2],
     [0,1,2,3],
     [1,3,4],
@@ -53,7 +55,7 @@ W4S=[
     [9,13],
     [2,4,13]
 ];
-O4W=[
+var O4W=[
     [16,17,18,19,20,21,22,23,24,57,58],
     [3,4,5,7,8,9,10,12,16,17,18,19,20,21,22,23,24,58],
     [3,4,5,6,7,8,9,10,11,12,14,16,17,18,19,20,21,22,23,24,57,58],
@@ -79,7 +81,7 @@ O4W=[
     [16,17,19,20,21,22,25,26,27,28,29,30,31,32,33,34,35,36,37,58]
 ];
 
-ArchiMateRelations=
+var ArchiMateRelations=
 [
  [ "Resource",
   "cfgost", "fiotv", "forv",
@@ -623,6 +625,8 @@ function createVis(model){
   var EDGE_LENGTH_MAIN = 150;
   var EDGE_LENGTH_SUB = 50;
   var imageExtension="png";
+  loadedData=null;
+  loadedData=new vis.DataSet(loadedDataOptions);
   destroy();
   document.getElementById('configureDisplay').innerHTML="";
   checkedRelations=[];
@@ -683,35 +687,114 @@ function createVis(model){
   
   var folders = model.getElementsByTagName("folder");
   console.log(folders);
+
+  for (i = 0; i < viewpoints.length; i++){
+    
+    loadedData.add([{
+      id:viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_").replace(" ","_")+"_viewpoint",
+      shape:"image",
+      title:viewpoints[i],
+      label: viewpoints[i], 
+      mass:10,
+      image:dir_image+"viewpoint"+imageExtension,
+      type:"viewpoint",
+      noe:"node"
+      }]);
+    loadedData.add([{
+      from:viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"),
+      to:"viewpoint",
+      arrows:'to',
+      length: EDGE_LENGTH_MAIN,
+      label:"is a",
+      title:"is a",
+      type:"viewpoint_typing",
+      noe:"edge"
+      }]);
+  }
+
+  for (i = 0; i < stakeholders.length; i++){
+    loadedData.add([{
+      id:stakeholders[i].toLowerCase().replace(" ","_")+"_stakeholder",
+      shape:"image",
+      title:stakeholders[i],
+      label: stakeholderss[i], 
+      mass:10,
+      image:dir_image+"stakeholder"+imageExtension,
+      group:"stakeholders",
+      type:"node"
+      }]);
+    loadedData.add([{
+      from:viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"),
+      to:"stakeholder",
+      arrows:'to',
+      length: EDGE_LENGTH_MAIN,
+      label:"is a",
+      title:"is a",
+      type:"stakeholder_typing",
+      noe:"edge"
+      }]);
+  }
+  for (i = 0; i < W4S.length; i++){
+    for (j = 0; j < W4S[i].length; j++){
+     loadedData.add([{
+      from:viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"),
+      to:stakeholders[i][j].toLowerCase().replace(" ","_"),
+      arrows:'to',
+      length: EDGE_LENGTH_MAIN,
+      label:"concerns",
+      title:"concerns",
+      type:"W4S",
+      noe:"edge"
+      }]);
+    }
+  } 
+
+  for (i = 0; i < O4W.length; i++){
+    for (j = 0; j < O4W[i].length; j++){
+
+     loadedData.add([{
+      from:ArchiMateObjects[O4W[i][j]],
+      to:viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"),
+      arrows:'to',
+      length: EDGE_LENGTH_MAIN,
+      label:"belongTo",
+      title:"belongsTo",
+      type:"O4W",
+      noe:"edge"
+      }]);
+    }
+  } 
+
   if (displayViewpoints){
-
-
-    var i; 
+    
     // A node is first created for each ArchiMate viewpoint, relying on the way Archi captures it, i.e. with a property viewpoint
-    viewpoints=["Application Cooperation","Application Usage", "Business Process Cooperation", "Capability","Goal Realization", "Implementation and Deployment", "Implementation and Migration", "Information Structure", "Layered", "Migration","Motivation","Organization","Outcome Realization","Physical", "Product", "Project","Requirements Realization","Resource","Service Realization","StakeholderHL","Strategy","Technology","Technology Usage"];
-    for (i = 0; i < viewpoints.length; i++){
+        for (i = 0; i < viewpoints.length; i++){
       var viewpointId=viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_").replace(" ","_")+"_viewpoint";
       //image= elements[j].getAttribute('xsi:type').toLowerCase().replace("archimate:", "").replace("application", "application-").replace("business", "business-").replace("data", "data-").replace("technology", "technology-").replace("implementation", "implementation-").replace("distribution", "distribution-").replace("communication", "communication-").replace("courseofaction", "course-of-action").replace("systemsoftware", "system-software");
       nodeString='{'
       +'"id":"'+viewpointId+'",'
       +'"shape":"image"' +','
       +'"title":"'+viewpoints[i]+'"'+","
-      +'"shape":"image"' +','
       +'"label":"'+viewpoints[i]+'"'+','
       +'" mass":10 ,'
       +'"image":"'+dir_image+'viewpoint.'+imageExtension+'"'
       +'}';
       node=JSON.parse(nodeString);
+      
       if (document.getElementById("filterViewpoint").checked==true){
         //alert(viewpointId);
-        if (document.getElementById(viewpointId).checked==true){ nodes.push(node);}
-        else{ nodes.push(node);}
-        
+        if (document.getElementById(viewpointId).checked==true){ 
+          nodes.push(node);
+        }
+        else{ 
+          nodes.push(node);
+        }
+
       }
     }
   }
   if (displayStakeholders){
-    var stakeholders=["Enterprise Architect", "Process Architect", "Application Architect", "Domain Architect", "Operational Manager", "Business Manager", "Business Architect","ICT Architect", "Business Analyst", "Requirements Manager","Employee", "Shareholder", "Information Architect", "Infrastructure Architect", "Manager", "Product Developer", "Product Manager","Stakeholder" ];
+    
     for (i = 0; i < stakeholders.length; i++){
       var stakeholderId=stakeholders[i].toLowerCase().replace(" ","_")+"_stakeholder";
       //image= elements[j].getAttribute('xsi:type').toLowerCase().replace("archimate:", "").replace("application", "application-").replace("business", "business-").replace("data", "data-").replace("technology", "technology-").replace("implementation", "implementation-").replace("distribution", "distribution-").replace("communication", "communication-").replace("courseofaction", "course-of-action").replace("systemsoftware", "system-software");
@@ -723,16 +806,18 @@ function createVis(model){
       +'"label":"'+stakeholders[i]+'"'+','
       +'"image":"'+dir_image+'stakeholder.'+imageExtension+'"'
       +'}';
-      node=JSON.parse(nodeString);
+      node=JSON.parse(nodeString);        
+
       if (document.getElementById("filterStakeholder").checked==true){
        // alert (stakeholderId);
         if (document.getElementById(stakeholderId).checked==true){nodes.push(node);}
       }else{
         nodes.push(node);
       }
-
     }
-  }
+  
+ 
+
   if ( displayViewpoints){
     if (document.getElementById("filterViewpoint").checked==true){
       for (i=0;i<23;i++){
@@ -741,155 +826,29 @@ function createVis(model){
         edges.push({from: viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
         }
       }
-
-    }else{
+    }
+    else{
       nodes.push({id: "viewpoint", shape: 'image',label: 'Viewpoint', image: dir_image + 'viewpoint.'+imageExtension, shape: 'image'});
       for (i=0;i<23;i++){
        edges.push({from: viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
       }
   //edges.push({from: viewpoints[0].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  //edges.push({from: viewpoints[1].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  //edges.push({from: viewpoints[2].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  //edges.push({from: viewpoints[3].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  //edges.push({from: viewpoints[4].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  //edges.push({from: viewpoints[5].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  //edges.push({from: viewpoints[6].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  //edges.push({from: viewpoints[7].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  //edges.push({from: viewpoints[8].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  //edges.push({from: viewpoints[9].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  //edges.push({from: viewpoints[10].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  //edges.push({from: viewpoints[11].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  //edges.push({from: viewpoints[12].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  //edges.push({from: viewpoints[13].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  //edges.push({from: viewpoints[14].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  //edges.push({from: viewpoints[15].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  //edges.push({from: viewpoints[16].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  //edges.push({from: viewpoints[17].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  //edges.push({from: viewpoints[18].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  //edges.push({from: viewpoints[19].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  //edges.push({from: viewpoints[20].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  //edges.push({from: viewpoints[21].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-  //edges.push({from: viewpoints[22].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
     }
   }
 
+ 
+
+ 
 
 if (displayStakeholders && displayViewpoints){
-  if (document.getElementById("filterStakeholder").checked==true || document.getElementById("filterViewpoint").checked==true){}else{
-
-  edges.push({from: viewpoints[0].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[0].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[0].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[1].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[0].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[2].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  
-  edges.push({from: viewpoints[1].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[0].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[1].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[1].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[1].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[2].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[1].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[3].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  
-  edges.push({from: viewpoints[2].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[1].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[2].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[3].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[2].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[4].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  
-  edges.push({from: viewpoints[3].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[0].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[3].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[5].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[3].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[6].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  
-  edges.push({from: viewpoints[4].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[17].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[4].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[5].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[4].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[0].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[4].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[7].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[4].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[8].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[4].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[4].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  
-  edges.push({from: viewpoints[5].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[2].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[5].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[3].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  
-  edges.push({from: viewpoints[6].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[9].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[6].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[10].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[6].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[11].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[6].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[0].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[6].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[7].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  
-  edges.push({from: viewpoints[7].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[3].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[7].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[12].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-   
-  edges.push({from: viewpoints[8].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[0].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[8].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[1].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[8].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[2].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[8].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[3].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[8].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[13].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-   
-
-  edges.push({from: viewpoints[9].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[0].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[9].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[1].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[9].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[2].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[9].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[3].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[9].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[13].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[9].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[10].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[9].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[11].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
- 
-  edges.push({from: viewpoints[10].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[0].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[10].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[7].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[10].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[8].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[10].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[4].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
- 
-  edges.push({from: viewpoints[11].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[0].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[11].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[1].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[11].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[3].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[11].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[10].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[11].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[11].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[11].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[14].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
- 
-  edges.push({from: viewpoints[12].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[0].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[12].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[5].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[12].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[6].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  
-  edges.push({from: viewpoints[13].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[9].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[13].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[13].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
- 
-  edges.push({from: viewpoints[14].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[1].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[14].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[3].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[14].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[15].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[14].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[16].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
- 
-  edges.push({from: viewpoints[15].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[0].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[15].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[7].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[15].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[5].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[15].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[11].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[15].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[12].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  
-  edges.push({from: viewpoints[16].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[0].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[16].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[7].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[16].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[8].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[16].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[4].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  
-  edges.push({from: viewpoints[17].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[0].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[17].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[5].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[17].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[6].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  
-  edges.push({from: viewpoints[18].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[1].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[18].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[3].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[18].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[9].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[18].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[16].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  
-  edges.push({from: viewpoints[19].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[17].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[19].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[5].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[19].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[0].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[19].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[7].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[19].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[8].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[19].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[4].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  
-  edges.push({from: viewpoints[20].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[0].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[20].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[6].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[20].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[7].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  
-  edges.push({from: viewpoints[21].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[9].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[21].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[13].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
- 
-  edges.push({from: viewpoints[22].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[2].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[22].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[13].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-  edges.push({from: viewpoints[22].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[4].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
-}
+  if (document.getElementById("filterStakeholder").checked==true || document.getElementById("filterViewpoint").checked==true){}
+  else {
+    for (i = 0; i < W4S.length; i++){
+      for (j = 0; j < W4S[i].length; j++){
+       edges.push({from: viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[i][j].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
+      }
+    } 
+  }
 }
 
 if (displayViews){
@@ -902,16 +861,30 @@ if (displayViews){
 
   for (i = 0; i < queryViews.snapshotLength; i++) {
     views.push(queryViews.snapshotItem(i)); 
-    nodeString='{'+'"id":"'+views[i].getAttribute('id')+'",'+'"shape":"image"' +','
+    nodeString='{'+'"id":"'+views[i].getAttribute('id')+'",'+
        +'"title":"'+views[i].getAttribute('name')+'"'+","+'"shape":"image"' +','
        +'"label":"'+views[i].getAttribute('name')+'"'+','
        +'"image":"'+dir_image+'view.'+imageExtension+'"'
        +'}';
     //alert (nodeString);
-       node=JSON.parse(nodeString);
+    node=JSON.parse(nodeString);
     nodes.push(node);
+
+  loadedData.add([{
+    id:views[i].getAttribute('id'),
+    shape:"image",
+    title:views[i].getAttribute('name'),
+    label: stakeholderss[i], 
+    mass:10,
+    image:dir_image+"view"+imageExtension,
+    type:"views",
+    noe:"node"
+    }]);
+
     viewIds.push(views[i].getAttribute('id'));
     viewNames.push(views[i].getAttribute('name'));
+
+
   //now let's associate each view to the viewpoint it is associated with
   var associatedViewpoint="";
   if (views[i].getAttribute('viewpoint')){ 
@@ -925,6 +898,16 @@ if (displayViews){
     };
     edge=JSON.parse(JSON.stringify(edgeString));
     edges.push(edge);
+    loadedData.add([{
+      from:views[i].getAttribute('id'),
+      to:views[i].getAttribute('viewpoint'),
+      arrows:'to',
+      length: EDGE_LENGTH_MAIN,
+      label:"--(associated viewpoint)->",
+      title:"--(associated viewpoint)->",
+      type:"view_viewpoints_association",
+      noe:"edge"
+      }]);
 
   };
 
@@ -937,6 +920,18 @@ if (displayViews){
           var archiMateElement=views[i].getElementsByTagName("child")[j].getAttribute("archimateElement");
           var image=model.getElementById(archiMateElement).getAttribute('xsi:type').toLowerCase().replace("archimate:", "").replace("application", "application-").replace("business", "business-").replace("data", "data-").replace("technology", "technology-").replace("implementation", "implementation-").replace("distribution", "distribution-").replace("communication", "communication-").replace("courseofaction", "course-of-action").replace("systemsoftware", "system-software");
           var diagramObject=views[i].getElementsByTagName("child")[j].getAttribute("id");
+
+          loadedData.add([{
+            id:views[i].getElementsByTagName("child")[j].getAttribute("id"),
+            shape:"image",
+            title:model.getElementById(archiMateElement).getAttribute('name'),
+            label: model.getElementById(archiMateElement).getAttribute('name'), 
+            mass:10,
+            image:dir_image+'archimate/'+image+'.'+imageExtension,
+            type:"DiagramObject",
+            noe:"node"
+            }]);
+      
           nodeString='{'+'"id":"'+diagramObject+'",'+'"shape":"image"' +','
             +'"title":"'+model.getElementById(archiMateElement).getAttribute('name')+'"'+","+'"shape":"image"' +','
             +'"label":"'+model.getElementById(archiMateElement).getAttribute('name')+'"'+','
@@ -957,6 +952,17 @@ if (displayViews){
           };
           edge=JSON.parse(JSON.stringify(edgeString));
           edges.push(edge);
+
+          loadedData.add([{
+            from:diagramObject,
+            to:archiMateElement,
+            arrows:'to',
+            length: EDGE_LENGTH_MAIN,
+            label:"--(represent)->",
+            title:"--(represent)->",
+            type:"represent",
+            noe:"edge"
+            }]);
          
           edgeString={
             "from": views[i].getAttribute('id'),
@@ -965,6 +971,16 @@ if (displayViews){
             "length": EDGE_LENGTH_MAIN,
             "title":"--(contains)->"
           };
+          loadedData.add([{
+            from:views[i].getAttribute('id'),
+            to:diagramObject,
+            arrows:'to',
+            length: EDGE_LENGTH_MAIN,
+            label:"--(contains)->",
+            title:"--(contains)->",
+            type:"view_contains_diagramObject",
+            noe:"edge"
+            }]);
           edge=JSON.parse(JSON.stringify(edgeString));
           edges.push(edge);
           var k=0;
@@ -986,6 +1002,16 @@ if (displayViews){
               "length": EDGE_LENGTH_MAIN,
               "title": myTitle
             };
+            loadedData.add([{
+              from:sourceConnection.getAttribute('source'),
+              to:sourceConnection.getAttribute('target'),
+              arrows:'to',
+              length: EDGE_LENGTH_MAIN,
+              label:myTitle,
+              title:myTitle,
+              type:sourceConnection.getAttribute('xsi:type').replace("archimate:", "").replace("Relationship", ""),
+              noe:"edge"
+              }]);
             edge=JSON.parse(JSON.stringify(edgeString));
             edges.push(edge);
 
@@ -1011,6 +1037,17 @@ if (displayViews){
              +'}';
           //   alert(nodeString);
           node=JSON.parse(nodeString);
+          loadedData.add([{
+            id:folders[i].getAttribute('id'),
+            shape:"image",
+            title:folders[i].getAttribute('name'),
+            label: folders[i].getAttribute('name'), 
+            mass:10,
+            image:dir_image+'archimate/'+image+'.'+imageExtension,
+            type:"ModelElement",
+            noe:"node"
+            }]);
+
           document.getElementById('folders').checked=false;
           if (document.getElementById('folders').checked == true ){
             nodes.push(node);
@@ -1030,6 +1067,17 @@ if (displayViews){
               +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
               +'}';
             node=JSON.parse(nodeString);
+
+            loadedData.add([{
+              id:elements[j].getAttribute('id'),
+              shape:"image",
+              title:elements[j].getAttribute('name')+elements[j].getAttribute('xsi:type').replace("archimate:",":"),
+              label: elements[j].getAttribute('name'), 
+              mass:10,
+              image:dir_image+'archimate/'+image+'.'+imageExtension,
+              type:"ModelElement",
+              noe:"node"
+              }]);
           
             if (elements[j].getAttribute("xsi:type") != "archimate:ArchimateDiagramModel"){
               if (elements[j].getAttribute("xsi:type") != "archimate:SketchModel"){
@@ -1045,6 +1093,17 @@ if (displayViews){
                       "title":'contains'
                     };
                     edge=JSON.parse(JSON.stringify(edgeString));
+                    loadedData.add([{
+                      from:from,
+                      to:to,
+                      arrows:'to',
+                      length: EDGE_LENGTH_MAIN,
+                      label:'contains',
+                      title:'contains',
+                      type:'contains',
+                      noe:"edge"
+                      }]);
+
                     if (document.getElementById('folders').checked == true ){
                       edges.push(edge);
                     }
@@ -1075,6 +1134,17 @@ if (displayViews){
             };
             edge=JSON.parse(JSON.stringify(edgeString));
             edges.push(edge);
+            loadedData.add([{
+              from:from,
+              to:to,
+              arrows:'to',
+              length: EDGE_LENGTH_MAIN,
+              label:'contains',
+              title:model.getElementById(from).getAttribute('name'),
+              type:elements[j].getAttribute("xsi:type").replace("archimate:", "").replace("Relationship", ""),
+              noe:"edge"
+              }]);
+
           }
         }  
       }
