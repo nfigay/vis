@@ -688,20 +688,20 @@ function createVis(model){
   var folders = model.getElementsByTagName("folder");
   console.log(folders);
 
-  for (i = 0; i < viewpoints.length; i++){
+  for (i = 0; i < Viewpoints.length; i++){
     
     loadedData.add([{
-      id:viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_").replace(" ","_")+"_viewpoint",
+      id:Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_").replace(" ","_")+"_viewpoint",
       shape:"image",
-      title:viewpoints[i],
-      label: viewpoints[i], 
+      title:Viewpoints[i],
+      label:Viewpoints[i], 
       mass:10,
       image:dir_image+"viewpoint"+imageExtension,
       type:"viewpoint",
       noe:"node"
       }]);
     loadedData.add([{
-      from:viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"),
+      from:Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"),
       to:"viewpoint",
       arrows:'to',
       length: EDGE_LENGTH_MAIN,
@@ -724,7 +724,7 @@ function createVis(model){
       type:"node"
       }]);
     loadedData.add([{
-      from:viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"),
+      from:Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"),
       to:"stakeholder",
       arrows:'to',
       length: EDGE_LENGTH_MAIN,
@@ -737,7 +737,7 @@ function createVis(model){
   for (i = 0; i < W4S.length; i++){
     for (j = 0; j < W4S[i].length; j++){
      loadedData.add([{
-      from:viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"),
+      from:Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"),
       to:stakeholders[i][j].toLowerCase().replace(" ","_"),
       arrows:'to',
       length: EDGE_LENGTH_MAIN,
@@ -768,14 +768,14 @@ function createVis(model){
   if (displayViewpoints){
     
     // A node is first created for each ArchiMate viewpoint, relying on the way Archi captures it, i.e. with a property viewpoint
-        for (i = 0; i < viewpoints.length; i++){
-      var viewpointId=viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_").replace(" ","_")+"_viewpoint";
+        for (i = 0; i < Viewpoints.length; i++){
+      var viewpointId=Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_").replace(" ","_")+"_viewpoint";
       //image= elements[j].getAttribute('xsi:type').toLowerCase().replace("archimate:", "").replace("application", "application-").replace("business", "business-").replace("data", "data-").replace("technology", "technology-").replace("implementation", "implementation-").replace("distribution", "distribution-").replace("communication", "communication-").replace("courseofaction", "course-of-action").replace("systemsoftware", "system-software");
       nodeString='{'
       +'"id":"'+viewpointId+'",'
       +'"shape":"image"' +','
-      +'"title":"'+viewpoints[i]+'"'+","
-      +'"label":"'+viewpoints[i]+'"'+','
+      +'"title":"'+Viewpoints[i]+'"'+","
+      +'"label":"'+Viewpoints[i]+'"'+','
       +'" mass":10 ,'
       +'"image":"'+dir_image+'viewpoint.'+imageExtension+'"'
       +'}';
@@ -821,16 +821,16 @@ function createVis(model){
   if ( displayViewpoints){
     if (document.getElementById("filterViewpoint").checked==true){
       for (i=0;i<23;i++){
-        var viewpointId=viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_").replace(" ","_")+"_viewpoint";
+        var viewpointId=Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_").replace(" ","_")+"_viewpoint";
        if (document.getElementById(viewpointId).checked==true){
-        edges.push({from: viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+        edges.push({from: Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
         }
       }
     }
     else{
       nodes.push({id: "viewpoint", shape: 'image',label: 'Viewpoint', image: dir_image + 'viewpoint.'+imageExtension, shape: 'image'});
       for (i=0;i<23;i++){
-       edges.push({from: viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+       edges.push({from: Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
       }
   //edges.push({from: viewpoints[0].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
     }
