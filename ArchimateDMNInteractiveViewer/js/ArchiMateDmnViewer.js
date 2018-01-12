@@ -867,7 +867,7 @@ if (displayViews){
     console.log (nodeString);
     node=JSON.parse(nodeString);
     nodes.push(node);
-
+    console.log ("10");
   loadedData.add([{
     id:views[i].getAttribute('id'),
     shape:"image",
@@ -896,6 +896,7 @@ if (displayViews){
     };
     edge=JSON.parse(JSON.stringify(edgeString));
     edges.push(edge);
+    console.log ("9");
     loadedData.add([{
       from:views[i].getAttribute('id'),
       to:views[i].getAttribute('viewpoint'),
@@ -917,7 +918,7 @@ if (displayViews){
           var archiMateElement=views[i].getElementsByTagName("child")[j].getAttribute("archimateElement");
           var image=model.getElementById(archiMateElement).getAttribute('xsi:type').toLowerCase().replace("archimate:", "").replace("application", "application-").replace("business", "business-").replace("data", "data-").replace("technology", "technology-").replace("implementation", "implementation-").replace("distribution", "distribution-").replace("communication", "communication-").replace("courseofaction", "course-of-action").replace("systemsoftware", "system-software");
           var diagramObject=views[i].getElementsByTagName("child")[j].getAttribute("id");
-
+          console.log ("8");
           loadedData.add([{
             id:views[i].getElementsByTagName("child")[j].getAttribute("id"),
             shape:"image",
@@ -949,6 +950,7 @@ if (displayViews){
           };
           edge=JSON.parse(JSON.stringify(edgeString));
           edges.push(edge);
+          console.log ("7");
 
           loadedData.add([{
             from:diagramObject,
@@ -968,6 +970,7 @@ if (displayViews){
             "length": EDGE_LENGTH_MAIN,
             "title":"--(contains)->"
           };
+          console.log ("6");
           loadedData.add([{
             from:views[i].getAttribute('id'),
             to:diagramObject,
@@ -999,6 +1002,7 @@ if (displayViews){
               "length": EDGE_LENGTH_MAIN,
               "title": myTitle
             };
+            console.log ("5");
             loadedData.add([{
               from:sourceConnection.getAttribute('source'),
               to:sourceConnection.getAttribute('target'),
@@ -1035,6 +1039,7 @@ if (displayViews){
              +'}';
           //   alert(nodeString);
           node=JSON.parse(nodeString);
+          console.log ("4");
           loadedData.add([{
             id:folders[i].getAttribute('id'),
             shape:"image",
@@ -1065,6 +1070,7 @@ if (displayViews){
               +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
               +'}';
             node=JSON.parse(nodeString);
+            console.log ("3");
 
             loadedData.add([{
               id:elements[j].getAttribute('id'),
@@ -1091,6 +1097,7 @@ if (displayViews){
                       "title":'contains'
                     };
                     edge=JSON.parse(JSON.stringify(edgeString));
+                    console.log ("2");
                     loadedData.add([{
                       from:from,
                       to:to,
@@ -1132,6 +1139,7 @@ if (displayViews){
             };
             edge=JSON.parse(JSON.stringify(edgeString));
             edges.push(edge);
+            console.log ("1");
             loadedData.add([{
               from:from,
               to:to,
