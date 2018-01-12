@@ -754,7 +754,7 @@ function createVis(model){
 
      loadedData.add([{
       from:ArchiMateObjects[O4W[i][j]],
-      to:viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"),
+      to:Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"),
       arrows:'to',
       length: EDGE_LENGTH_MAIN,
       label:"belongTo",
@@ -843,7 +843,7 @@ if (displayStakeholders && displayViewpoints){
   else {
     for (i = 0; i < W4S.length; i++){
       for (j = 0; j < W4S[i].length; j++){
-       edges.push({from: viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[i][j].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
+       edges.push({from: Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[i][j].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
       }
     } 
   }
