@@ -712,12 +712,12 @@ function createVis(model){
       }]);
   }
 
-  for (i = 0; i < stakeholders.length; i++){
+  for (i = 0; i < Stakeholders.length; i++){
     loadedData.add([{
-      id:stakeholders[i].toLowerCase().replace(" ","_")+"_stakeholder",
+      id:Stakeholders[i].toLowerCase().replace(" ","_")+"_stakeholder",
       shape:"image",
-      title:stakeholders[i],
-      label: stakeholderss[i], 
+      title: Stakeholders[i],
+      label: Stakeholderss[i], 
       mass:10,
       image:dir_image+"stakeholder"+imageExtension,
       group:"stakeholders",
@@ -738,7 +738,7 @@ function createVis(model){
     for (j = 0; j < W4S[i].length; j++){
      loadedData.add([{
       from:Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"),
-      to:stakeholders[i][j].toLowerCase().replace(" ","_"),
+      to: Stakeholders[i][j].toLowerCase().replace(" ","_"),
       arrows:'to',
       length: EDGE_LENGTH_MAIN,
       label:"concerns",
@@ -795,15 +795,15 @@ function createVis(model){
   }
   if (displayStakeholders){
     
-    for (i = 0; i < stakeholders.length; i++){
-      var stakeholderId=stakeholders[i].toLowerCase().replace(" ","_")+"_stakeholder";
+    for (i = 0; i < Stakeholders.length; i++){
+      var stakeholderId=Stakeholders[i].toLowerCase().replace(" ","_")+"_stakeholder";
       //image= elements[j].getAttribute('xsi:type').toLowerCase().replace("archimate:", "").replace("application", "application-").replace("business", "business-").replace("data", "data-").replace("technology", "technology-").replace("implementation", "implementation-").replace("distribution", "distribution-").replace("communication", "communication-").replace("courseofaction", "course-of-action").replace("systemsoftware", "system-software");
       nodeString='{'
       +'"id":"'+stakeholderId+'",'
       +'"shape":"image"' +','
-      +'"title":"'+stakeholders[i]+'"'+","
+      +'"title":"'+Stakeholders[i]+'"'+","
       +'"shape":"image"' +','
-      +'"label":"'+stakeholders[i]+'"'+','
+      +'"label":"'+Stakeholders[i]+'"'+','
       +'"image":"'+dir_image+'stakeholder.'+imageExtension+'"'
       +'}';
       node=JSON.parse(nodeString);        
@@ -872,7 +872,7 @@ if (displayViews){
     id:views[i].getAttribute('id'),
     shape:"image",
     title:views[i].getAttribute('name'),
-    label: stakeholderss[i], 
+    label: "view", 
     mass:10,
     image:dir_image+"view"+imageExtension,
     type:"views",
