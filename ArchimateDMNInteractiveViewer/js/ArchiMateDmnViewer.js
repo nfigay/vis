@@ -864,7 +864,7 @@ if (displayViews){
        +'"label":"'+views[i].getAttribute('name')+'"'+','
        +'"image":"'+dir_image+'view.'+imageExtension+'"'
        +'}';
-    //alert (nodeString);
+    console.log (nodeString);
     node=JSON.parse(nodeString);
     nodes.push(node);
 
