@@ -717,7 +717,7 @@ function createVis(model){
       id:Stakeholders[i].toLowerCase().replace(" ","_")+"_stakeholder",
       shape:"image",
       title: Stakeholders[i],
-      label: Stakeholderss[i], 
+      label: Stakeholders[i], 
       mass:10,
       image:dir_image+"stakeholder"+imageExtension,
       group:"stakeholders",
