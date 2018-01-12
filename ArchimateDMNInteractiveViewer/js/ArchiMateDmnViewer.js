@@ -1073,7 +1073,10 @@ if (displayViews){
             node=JSON.parse(nodeString);
             console.log ("3");
             if (elements[j].getAttribute('id')=="f88bd846-6ea9-46be-ba08-a6f1498cf44d"){
-              console.log (document.getElementById ("f88bd846-6ea9-46be-ba08-a6f1498cf44d").parentNode.getAttribute('id'));
+              console.log (document.getElementById("f88bd846-6ea9-46be-ba08-a6f1498cf44d"));
+              console.log (document.getElementById("f88bd846-6ea9-46be-ba08-a6f1498cf44d").parentNode);
+              console.log (document.getElementById("f88bd846-6ea9-46be-ba08-a6f1498cf44d").parentNode.getAttribute('id'));
+
             }
 
             loadedData.add([{
