@@ -1041,7 +1041,7 @@ if (displayViews){
           node=JSON.parse(nodeString);
 
 
-          document.getElementById('folders').checked=true;
+          //document.getElementById('folders').checked=true;
           if (document.getElementById('folders').checked == true ){
             nodes.push(node);
             console.log ("4");
