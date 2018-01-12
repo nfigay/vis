@@ -738,7 +738,7 @@ function createVis(model){
     for (j = 0; j < W4S[i].length; j++){
      loadedData.add([{
       from:Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"),
-      to: Stakeholders[i][j].toLowerCase().replace(" ","_"),
+      to: Stakeholders[j].toLowerCase().replace(" ","_"),
       arrows:'to',
       length: EDGE_LENGTH_MAIN,
       label:"concerns",
