@@ -1029,7 +1029,7 @@ if (displayViews){
       from=folders[i].getAttribute('id');
       folderName= folders[i].getAttribute("name");   
           
-      switch(foldername){
+      switch(folderName){
         case "Views": console.log ("Views"); 
           nodeString=null;
           elements=folders[i].getElementsByTagName("element");
