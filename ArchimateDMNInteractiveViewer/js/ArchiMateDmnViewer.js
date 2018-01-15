@@ -1,5 +1,7 @@
 var myModel="ArchiMagineModelDynamicViewer";
 var displayViews=false;
+var folderName=null;
+var elementType=null;
 var clusterViews=false;
 var displayViewpoints=false;
 var displayStakeholders=false;
