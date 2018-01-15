@@ -1166,8 +1166,8 @@ if (displayViews){
         }  
    
    
-  //  }
-  // }
+    }
+  
 
 
     container = document.getElementById('ArchiMateModel');
