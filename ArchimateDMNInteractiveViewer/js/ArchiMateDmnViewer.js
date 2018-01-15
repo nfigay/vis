@@ -684,9 +684,6 @@ function createVis(model){
     }
   };
 
-  
-  var folders = model.getElementsByTagName("folder");
-  console.log(folders);
 
   for (i = 0; i < Viewpoints.length; i++){
     
@@ -1025,11 +1022,17 @@ if (displayViews){
 }
  
     // Lets now include the model elements
+    var folders = model.getElementsByTagName("folder");
+    console.log(folders);
 
     for (i = 0; i < folders.length; i++) {
-      from=folders[i].getAttribute('id');        
-      if (folders[i].getAttribute("name")  !="Views"){
-        if (folders[i].getAttribute("name")  !="Relations"){
+      from=folders[i].getAttribute('id');
+      folderName= folders[i].getAttribute("name");   
+          
+      switch(foldername){
+        case "Views": console.log ("Viewpoints"); return;
+        case "Relations": console.log("Relations");return;
+        default:
           txt+=folders[i].getAttribute('name')+"  ";
           image="folder";
           nodeString='{'+'"id":"'+folders[i].getAttribute('id')+'",'+'"shape":"image"' +','
@@ -1072,8 +1075,9 @@ if (displayViews){
               +'}';
             node=JSON.parse(nodeString);
 
-//  Just element which are direct child of the folder are considered 
-//  in order to avoid duplication of the element in the dataset
+
+          //  Just element which are direct child of the folder are considered 
+          //  in order to avoid duplication of the element in the dataset
             if (elements[j].parentElement.getAttribute('id')==folders[i].getAttribute("id")){
               console.log ("3");
               loadedData.add([{
@@ -1160,8 +1164,10 @@ if (displayViews){
 
           }
         }  
-      }
-    }
+   
+   
+  //  }
+  // }
 
 
     container = document.getElementById('ArchiMateModel');
