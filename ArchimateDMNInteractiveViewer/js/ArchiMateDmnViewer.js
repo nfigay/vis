@@ -1030,109 +1030,52 @@ if (displayViews){
       folderName= folders[i].getAttribute("name");   
           
       switch(foldername){
-        case "Views": console.log ("Viewpoints"); return;
-        case "Relations": console.log("Relations");return;
-        default:
-          txt+=folders[i].getAttribute('name')+"  ";
-          image="folder";
-          nodeString='{'+'"id":"'+folders[i].getAttribute('id')+'",'+'"shape":"image"' +','
-             +'"title":"'+folders[i].getAttribute('name')+'"'+","+'"shape":"image"' +','
-             +'"label":"'+folders[i].getAttribute('name')+'"'+','
-             +'"image":"'+dir_image+'archimate/'+image+'.'+imageExtension+'"'
-             +'}';
-          //   alert(nodeString);
-          node=JSON.parse(nodeString);
-
-
-          //document.getElementById('folders').checked=true;
-          if (document.getElementById('folders').checked == true ){
-            nodes.push(node);
-            console.log ("4");
-            loadedData.add([{
-              id:folders[i].getAttribute('id'),
-              shape:"image",
-              title:folders[i].getAttribute('name'),
-              label: folders[i].getAttribute('name'), 
-              mass:10,
-              image:dir_image+'archimate/'+image+'.'+imageExtension,
-              type:"folder",
-              noe:"node"
-              }]);
-          }
-
+        case "Views": console.log ("Views"); 
           nodeString=null;
-          var j;
           elements=folders[i].getElementsByTagName("element");
-          txt+=elements.length+"<br/>";
           for (j = 0; j < elements.length; j++){
-            txt+= "element with name: "+ elements[j].getAttribute("name") + ", id:"+ 
-            elements[j].getAttribute("id")+ " and type: "+elements[j].getAttribute("xsi:type") + "<br/>";
-            image= elements[j].getAttribute('xsi:type').toLowerCase().replace("archimate:", "").replace("application", "application-").replace("business", "business-").replace("data", "data-").replace("technology", "technology-").replace("implementation", "implementation-").replace("distribution", "distribution-").replace("communication", "communication-").replace("courseofaction", "course-of-action").replace("systemsoftware", "system-software");
-            nodeString='{'+'"id":"'+elements[j].getAttribute('id')+'",'+'"shape":"image"' +','
-              +'"title":"'+elements[j].getAttribute('name')+elements[j].getAttribute('xsi:type').replace("archimate:",":")+'"'+","+'"shape":"image"' +','
-              +'"label":"'+elements[j].getAttribute('name')+'"'+','
-              +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
-              +'}';
-            node=JSON.parse(nodeString);
-
-
-          //  Just element which are direct child of the folder are considered 
-          //  in order to avoid duplication of the element in the dataset
-            if (elements[j].parentElement.getAttribute('id')==folders[i].getAttribute("id")){
-              console.log ("3");
-              loadedData.add([{
-                id:elements[j].getAttribute('id'),
-                shape:"image",
-                title:elements[j].getAttribute('name')+elements[j].getAttribute('xsi:type').replace("archimate:",":"),
-                label: elements[j].getAttribute('name'), 
-                mass:10,
-                image:dir_image+'archimate/'+image+'.'+imageExtension,
-                type:"ModelElement",
-                noe:"node"
-                }]);
+            elementType=elements[j].getAttribute("xsi:type");
+            switch(elementType){
+              case "archimate:ArchimateDiagramModel":
+              default: break;
             }
-
-
           
-            if (elements[j].getAttribute("xsi:type") != "archimate:ArchimateDiagramModel"){
-              if (elements[j].getAttribute("xsi:type") != "archimate:SketchModel"){
-                if (elements[j].getAttribute("xsi:type") != "archimate:Junction"){
-                  if (elements[j].getAttribute("xsi:type") != "archimate:Grouping"){              
-                    nodes.push(node);
-                    to=elements[j].getAttribute("id");
-                    edgeString={
-                      "from": from,
-                      "to": to,
-                      "arrows":'to',
-                      "length": EDGE_LENGTH_MAIN,
-                      "title":'contains'
-                    };
-                    edge=JSON.parse(JSON.stringify(edgeString));
-                    console.log ("2");
-                    loadedData.add([{
-                      from:from,
-                      to:to,
-                      arrows:'to',
-                      length: EDGE_LENGTH_MAIN,
-                      label:'contains',
-                      title:'contains',
-                      type:'contains',
-                      noe:"edge"
-                      }]);
-
-                    if (document.getElementById('folders').checked == true ){
-                      edges.push(edge);
-                    }
-                  }
-                }
-              }
-            }else{
-             // processing the elements of a view, i.e. the child 
-
-            }
-            nodeString=null;
-          } 
-        } else {
+           // if (elements[j].getAttribute("xsi:type") != "archimate:ArchimateDiagramModel"){
+           //   if (elements[j].getAttribute("xsi:type") != "archimate:SketchModel"){
+           //     if (elements[j].getAttribute("xsi:type") != "archimate:Junction"){
+           //       if (elements[j].getAttribute("xsi:type") != "archimate:Grouping"){              
+           //         nodes.push(node);
+           //         to=elements[j].getAttribute("id");
+           //         edgeString={
+           //           "from": from,
+           //           "to": to,
+           //           "arrows":'to',
+           //           "length": EDGE_LENGTH_MAIN,
+           //           "title":'contains'
+           //         };
+           //         edge=JSON.parse(JSON.stringify(edgeString));
+           //         console.log ("2");
+           //         loadedData.add([{
+           //           from:from,
+           //           to:to,
+           //           arrows:'to',
+           //           length: EDGE_LENGTH_MAIN,
+           //           label:'contains',
+           //           title:'contains',
+           //           type:'contains',
+           //             noe:"edge"
+           //             }]);
+           //
+           //            if (document.getElementById('folders').checked == true ){
+           //            edges.push(edge);
+           //          }
+           //       }
+           //     }
+           //   }
+           // }  
+          }
+          break;
+        case "Relations": console.log("Relations");
           elements=folders[i].getElementsByTagName("element");
           for (j = 0; j < elements.length; j++){             
             //console.log (elements[j].getAttribute("id"));
@@ -1161,14 +1104,76 @@ if (displayViews){
               type:elements[j].getAttribute("xsi:type").replace("archimate:", "").replace("Relationship", ""),
               noe:"edge"
               }]);
-
+            }
+          break;
+        default:
+          txt+=folders[i].getAttribute('name')+"  ";
+          //if folders checked, ear folder is loaded in the network 
+          if (document.getElementById('folders').checked == true ){
+            image="folder";
+            nodeString='{'+'"id":"'+folders[i].getAttribute('id')+'",'+'"shape":"image"' +','
+               +'"title":"'+folders[i].getAttribute('name')+'"'+","+'"shape":"image"' +','
+               +'"label":"'+folders[i].getAttribute('name')+'"'+','
+               +'"image":"'+dir_image+'archimate/'+image+'.'+imageExtension+'"'
+               +'}';
+             node=JSON.parse(nodeString);
           }
-        }  
-   
-   
-    }
-  
+          //if folders checked, each folder is loaded in the dataset
+          if (document.getElementById('folders').checked == true ){
+            nodes.push(node);
+            console.log ("4");
+            loadedData.add([{
+              id:folders[i].getAttribute('id'),
+              shape:"image",
+              title:folders[i].getAttribute('name'),
+              label: folders[i].getAttribute('name'), 
+              mass:10,
+              image:dir_image+'archimate/'+image+'.'+imageExtension,
+              type:"folder",
+              noe:"node"
+              }]);
+          }
+          nodeString=null;
+          elements=folders[i].getElementsByTagName("element");
+          txt+=elements.length+"<br/>";
 
+          // capture of model elements in the folder
+          for (j = 0; j < elements.length; j++){
+
+            txt+= "element with name: "+ elements[j].getAttribute("name") + ", id:"+ 
+            elements[j].getAttribute("id")+ " and type: "+elements[j].getAttribute("xsi:type") + "<br/>";
+
+            //  Just element which are direct child of the folder are considered 
+            //  in order to avoid duplication of the element in the dataset
+            if (elements[j].parentElement.getAttribute('id')==folders[i].getAttribute("id")){
+              image= elements[j].getAttribute('xsi:type').toLowerCase().replace("archimate:", "").replace("application", "application-").replace("business", "business-").replace("data", "data-").replace("technology", "technology-").replace("implementation", "implementation-").replace("distribution", "distribution-").replace("communication", "communication-").replace("courseofaction", "course-of-action").replace("systemsoftware", "system-software");
+              nodeString='{'+'"id":"'+elements[j].getAttribute('id')+'",'+'"shape":"image"' +','
+                +'"title":"'+elements[j].getAttribute('name')+elements[j].getAttribute('xsi:type').replace("archimate:",":")+'"'+","+'"shape":"image"' +','
+                +'"label":"'+elements[j].getAttribute('name')+'"'+','
+                +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
+                +'}';
+              node=JSON.parse(nodeString);
+            }
+
+             //  Just element which are direct child of the folder are considered 
+             //  in order to avoid duplication of the element in the dataset
+            if (elements[j].parentElement.getAttribute('id')==folders[i].getAttribute("id")){
+              console.log ("3");
+              loadedData.add([{
+                id:elements[j].getAttribute('id'),
+                shape:"image",
+                title:elements[j].getAttribute('name')+elements[j].getAttribute('xsi:type').replace("archimate:",":"),
+                label: elements[j].getAttribute('name'), 
+                mass:10,
+                image:dir_image+'archimate/'+image+'.'+imageExtension,
+                type:"ModelElement",
+                noe:"node"
+                }]);
+            }          
+           
+            nodeString=null;
+          } 
+        } 
 
     container = document.getElementById('ArchiMateModel');
     data = {
