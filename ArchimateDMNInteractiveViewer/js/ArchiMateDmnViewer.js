@@ -1119,11 +1119,11 @@ if (displayViews){
                +'"image":"'+dir_image+'archimate/'+image+'.'+imageExtension+'"'
                +'}';
              node=JSON.parse(nodeString);
+             nodes.push(node);
              console.log ("4_");
           }
           //if folders checked, each folder is loaded in the dataset
           if (document.getElementById('folders').checked == true ){
-            nodes.push(node);
             console.log ("4");
             loadedData.add([{
               id:folders[i].getAttribute('id'),
@@ -1156,6 +1156,7 @@ if (displayViews){
                 +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
                 +'}';
               node=JSON.parse(nodeString);
+              nodes.push(node);
               console.log ("3_");
             }
 
