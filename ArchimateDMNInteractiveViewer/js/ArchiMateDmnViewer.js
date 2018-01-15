@@ -1075,7 +1075,7 @@ if (displayViews){
            // }  
           }
           break;
-        case "Relations": console.log("Relations");
+        case "Relations": console.log("Relations");break;
           elements=folders[i].getElementsByTagName("element");
           for (j = 0; j < elements.length; j++){             
             //console.log (elements[j].getAttribute("id"));
@@ -1174,7 +1174,7 @@ if (displayViews){
             nodeString=null;
           } 
         } 
-
+      }
     container = document.getElementById('ArchiMateModel');
     data = {
         nodes: nodes,
