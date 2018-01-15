@@ -1077,7 +1077,7 @@ if (displayViews){
            // }  
           }
           break;
-        case "Relations": console.log("Relations");break;
+        case "Relations":
           elements=folders[i].getElementsByTagName("element");
           for (j = 0; j < elements.length; j++){             
             //console.log (elements[j].getAttribute("id"));
@@ -1119,6 +1119,7 @@ if (displayViews){
                +'"image":"'+dir_image+'archimate/'+image+'.'+imageExtension+'"'
                +'}';
              node=JSON.parse(nodeString);
+             console.log ("4_");
           }
           //if folders checked, each folder is loaded in the dataset
           if (document.getElementById('folders').checked == true ){
@@ -1155,6 +1156,7 @@ if (displayViews){
                 +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
                 +'}';
               node=JSON.parse(nodeString);
+              console.log ("3_");
             }
 
              //  Just element which are direct child of the folder are considered 
