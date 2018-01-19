@@ -637,8 +637,7 @@ function createVis(model){
   document.getElementById("ERSelection-pane").style.display="none";
   document.getElementById("displayPropertyButton").style.display="block";
   document.getElementById("displayEventButton").style.display="block";
-  document.getElementById("displayStakeholder").checked=false;
-  document.getElementById("displayViewpoint").checked=false;
+  
 
   if (selectedModel=="ER" || selectedModel=="R"){document.getElementById("ArchiMateModel").style.display="block";}
  
