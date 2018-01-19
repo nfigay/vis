@@ -837,7 +837,7 @@ function createVis(model){
 
 
 
-if (document.getElementById("displayStakeholders".checked==true && document.getElementById(" displayViewpoints").checked==true){
+if (displayStakeholders&& displayViewpoints){
   if (document.getElementById("filterStakeholder").checked==true || document.getElementById("filterViewpoint").checked==true){}
   else {
     for (i = 0; i < W4S.length; i++){
