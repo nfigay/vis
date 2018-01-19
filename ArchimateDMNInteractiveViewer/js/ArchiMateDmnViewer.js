@@ -637,6 +637,8 @@ function createVis(model){
   document.getElementById("ERSelection-pane").style.display="none";
   document.getElementById("displayPropertyButton").style.display="block";
   document.getElementById("displayEventButton").style.display="block";
+  document.getElementById("displayStakeholder").checked=false;
+  document.getElementById("displayViewpoint").checked=false;
 
   if (selectedModel=="ER" || selectedModel=="R"){document.getElementById("ArchiMateModel").style.display="block";}
  
@@ -764,7 +766,7 @@ function createVis(model){
     }
   } 
 
-  if (displayViewpoints){
+  if (document.getElementById("displayViewpoint").checked==true){
     
     // A node is first created for each ArchiMate viewpoint, relying on the way Archi captures it, i.e. with a property viewpoint
         for (i = 0; i < Viewpoints.length; i++){
@@ -817,7 +819,7 @@ function createVis(model){
   
  
 
-  if (displayViewpoints){
+  if (document.getElementById("displayViewpoint").checked==true){
     if (document.getElementById("filterViewpoint").checked==true){
       for (i=0;i<23;i++){
         var viewpointId=Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_").replace(" ","_")+"_viewpoint";
@@ -1372,7 +1374,7 @@ function displayViewpoint(button){
   } else {
       button.style.backgroundColor='white';
       document.getElementById("viewpoint").style.display="none";
-      displayViewpoints=false;  
+      //displayViewpoints=false;  
     }
 }
 
