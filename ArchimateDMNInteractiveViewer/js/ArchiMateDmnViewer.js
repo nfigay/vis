@@ -787,6 +787,7 @@ function createVis(model){
           nodes.push(node);
         }
         else{ 
+          alert ("viewpoint");
           nodes.push(node);
         }
 
