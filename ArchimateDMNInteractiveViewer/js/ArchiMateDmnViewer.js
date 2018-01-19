@@ -764,7 +764,7 @@ function createVis(model){
     }
   } 
 
-  if (displayViewpoints){
+  if (document.getElementById("displayViewpoint").checked==true){
     
     // A node is first created for each ArchiMate viewpoint, relying on the way Archi captures it, i.e. with a property viewpoint
         for (i = 0; i < Viewpoints.length; i++){
@@ -817,7 +817,7 @@ function createVis(model){
   
  
 
-  if ( displayViewpoints){
+  if ( document.getElementById("displayViewpoint").checked==true){
     if (document.getElementById("filterViewpoint").checked==true){
       for (i=0;i<23;i++){
         var viewpointId=Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_").replace(" ","_")+"_viewpoint";
@@ -837,7 +837,7 @@ function createVis(model){
 
 
 
-if (displayStakeholders && displayViewpoints){
+if (document.getElementById("displayStakeholders".checked==true && document.getElementById(" displayViewpoints").checked==true){
   if (document.getElementById("filterStakeholder").checked==true || document.getElementById("filterViewpoint").checked==true){}
   else {
     for (i = 0; i < W4S.length; i++){
