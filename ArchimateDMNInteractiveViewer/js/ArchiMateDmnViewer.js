@@ -826,8 +826,7 @@ function createVis(model){
 
 
 
-  if (document.getElementById("displayStakeholder").checked==true || document.getElementById("displayViewpoint").checked==true){}
-  else {
+  if (document.getElementById("displayStakeholder").checked==true && document.getElementById("displayViewpoint").checked==true){
     for (i = 0; i < W4S.length; i++){
       for (j = 0; j < W4S[i].length; j++){
         var stakeholderId=Stakeholders[i].toLowerCase().replace(" ","_")+"_stakeholder";
