@@ -1068,6 +1068,7 @@ if (displayViews){
            // }  
           }
           break;
+          
         case "Relations":
           elements=folders[i].getElementsByTagName("element");
           for (j = 0; j < elements.length; j++){             
@@ -1101,7 +1102,7 @@ if (displayViews){
           break;
         default:
           txt+=folders[i].getAttribute('name')+"  ";
-          //if folders checked, ear folder is loaded in the network 
+          //if folders checked,  folder is loaded in the network 
           if (document.getElementById('folders').checked == true ){
             image="folder";
             nodeString='{'+'"id":"'+folders[i].getAttribute('id')+'",'+'"shape":"image"' +','
