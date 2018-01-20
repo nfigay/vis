@@ -868,7 +868,6 @@ if (displayViews){
     type:"views",
     noe:"node"
     }]);
-
     viewIds.push(views[i].getAttribute('id'));
     viewNames.push(views[i].getAttribute('name'));
 
@@ -1068,7 +1067,6 @@ if (displayViews){
            // }  
           }
           break;
-          
         case "Relations":
           elements=folders[i].getElementsByTagName("element");
           for (j = 0; j < elements.length; j++){             
