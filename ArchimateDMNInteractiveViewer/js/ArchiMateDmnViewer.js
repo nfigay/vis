@@ -832,7 +832,7 @@ function createVis(model){
         var stakeholderId=Stakeholders[i].toLowerCase().replace(" ","_")+"_stakeholder";
         var viewpointId=Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_").replace(" ","_")+"_viewpoint";
         if (document.getElementById(viewpointId).checked==true && document.getElementById(stakeholderId).checked==true){
-          edges.push({from: Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"), to: stakeholders[i][j].toLowerCase().replace(" ","_"),  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
+          edges.push({from: viewpointId, to: stakeholderId,  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
         }
       }
     } 
