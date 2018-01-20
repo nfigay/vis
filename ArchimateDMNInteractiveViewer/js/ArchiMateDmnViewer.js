@@ -766,6 +766,7 @@ function createVis(model){
   } 
   
   if (document.getElementById("displayViewpoint").checked==true){
+    
     nodes.push({id: "viewpoint", shape: 'image',label: 'Viewpoint', image: dir_image + 'viewpoint.'+imageExtension, shape: 'image'});
              
     
@@ -820,26 +821,6 @@ function createVis(model){
 
       }
     }
-  
- 
-
-  if (document.getElementById("displayViewpoint").checked==true){
-    if (document.getElementById("filterViewpoint").checked==true){
-      for (i=0;i<23;i++){
-        var viewpointId=Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_").replace(" ","_")+"_viewpoint";
-       if (document.getElementById(viewpointId).checked==true){
-        edges.push({from: Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-        }
-      }
-    }
-    else{
-      nodes.push({id: "viewpoint", shape: 'image',label: 'Viewpoint', image: dir_image + 'viewpoint.'+imageExtension, shape: 'image'});
-      for (i=0;i<23;i++){
-       edges.push({from: Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-      }
-  //edges.push({from: viewpoints[0].toLowerCase().replace (" and ", "_").replace(" ","_"), to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
-    }
-  }
 
 
 
