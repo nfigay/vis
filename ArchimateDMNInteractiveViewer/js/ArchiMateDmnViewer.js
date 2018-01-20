@@ -830,7 +830,7 @@ function createVis(model){
     for (i = 0; i < W4S.length; i++){
       for (j = 0; j < W4S[i].length; j++){
         var stakeholderId=Stakeholders[i].toLowerCase().replace(" ","_")+"_stakeholder";
-        var viewpointId=Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_").replace(" ","_")+"_viewpoint";
+        var viewpointId=Viewpoints[j].toLowerCase().replace (" and ", "_").replace(" ","_").replace(" ","_")+"_viewpoint";
         if (document.getElementById(viewpointId).checked==true && document.getElementById(stakeholderId).checked==true){
           edges.push({from: viewpointId, to: stakeholderId,  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
         }
