@@ -829,7 +829,7 @@ function createVis(model){
   if (document.getElementById("displayStakeholder").checked==true && document.getElementById("displayViewpoint").checked==true){
     for (i = 0; i < W4S.length; i++){
       for (j = 0; j < W4S[i].length; j++){
-        var stakeholderId=Stakeholders[J].toLowerCase().replace(" ","_")+"_stakeholder";
+        var stakeholderId=Stakeholders[j].toLowerCase().replace(" ","_")+"_stakeholder";
         var viewpointId=Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_").replace(" ","_")+"_viewpoint";
         if (document.getElementById(viewpointId).checked==true && document.getElementById(stakeholderId).checked==true){
           edges.push({from: viewpointId, to: stakeholderId,  arrows:'to', length: EDGE_LENGTH_MAIN, label:"concerns", title:"concerns"});
