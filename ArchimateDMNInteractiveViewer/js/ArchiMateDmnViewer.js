@@ -764,11 +764,13 @@ function createVis(model){
       }]);
     }
   } 
-
+  
   if (document.getElementById("displayViewpoint").checked==true){
+    nodes.push({id: "viewpoint", shape: 'image',label: 'Viewpoint', image: dir_image + 'viewpoint.'+imageExtension, shape: 'image'});
+             
     
     // A node is first created for each ArchiMate viewpoint, relying on the way Archi captures it, i.e. with a property viewpoint
-        for (i = 0; i < Viewpoints.length; i++){
+    for (i = 0; i < Viewpoints.length; i++){
       var viewpointId=Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_").replace(" ","_")+"_viewpoint";
       //image= elements[j].getAttribute('xsi:type').toLowerCase().replace("archimate:", "").replace("application", "application-").replace("business", "business-").replace("data", "data-").replace("technology", "technology-").replace("implementation", "implementation-").replace("distribution", "distribution-").replace("communication", "communication-").replace("courseofaction", "course-of-action").replace("systemsoftware", "system-software");
       nodeString='{'
@@ -780,21 +782,20 @@ function createVis(model){
       +'"image":"'+dir_image+'viewpoint.'+imageExtension+'"'
       +'}';
       node=JSON.parse(nodeString);
-      
-      if (document.getElementById("filterViewpoint").checked==true){
-        //alert(viewpointId);
-        if (document.getElementById(viewpointId).checked==true){ 
-          nodes.push(node);
-        }
-        else{ 
-          alert ("viewpoint");
-          nodes.push(node);
-        }
+      nodes.push(node);
+      edges.push({from: viewpointId, to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
 
+     //to be moved and updated in order filtering views and displayed model elements 
+      if (document.getElementById("filterViewpoint").checked==true){
+        //in order being able filtering the viewpoints to display on the network - requires a list of clickable viewpion buttons
+        if (document.getElementById(viewpointId).checked==true){ }
+        else{ }
       }
     }
   }
-  if (displayStakeholders){
+  if (document.getElementById("displayStakeholder").checked==true){
+    nodes.push({id: "stakeholder", shape: 'image',label: 'Stakeholder', image: dir_image + 'stakeholder.'+imageExtension, shape: 'image'});
+
     
     for (i = 0; i < Stakeholders.length; i++){
       var stakeholderId=Stakeholders[i].toLowerCase().replace(" ","_")+"_stakeholder";
@@ -807,13 +808,16 @@ function createVis(model){
       +'"label":"'+Stakeholders[i]+'"'+','
       +'"image":"'+dir_image+'stakeholder.'+imageExtension+'"'
       +'}';
-      node=JSON.parse(nodeString);        
+      node=JSON.parse(nodeString);  
+      nodes.push(node); 
+      edges.push({from: stakeholderId, to: "stakeholder",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+     
 
       if (document.getElementById("filterStakeholder").checked==true){
        // alert (stakeholderId);
         if (document.getElementById(stakeholderId).checked==true){nodes.push(node);}
       }else{
-        nodes.push(node);
+
       }
     }
   
