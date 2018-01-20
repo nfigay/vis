@@ -810,13 +810,15 @@ function createVis(model){
       +'"image":"'+dir_image+'stakeholder.'+imageExtension+'"'
       +'}';
       node=JSON.parse(nodeString);  
-      nodes.push(node); 
-      edges.push({from: stakeholderId, to: "stakeholder",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+      if (document.getElementById(stakeholderId).checked==true){
+        nodes.push(node); 
+        edges.push({from: stakeholderId, to: "stakeholder",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
+      }
+//to be moved and updated in order filtering views and displayed model elements 
      
-
       if (document.getElementById("filterStakeholder").checked==true){
        // alert (stakeholderId);
-        if (document.getElementById(stakeholderId).checked==true){nodes.push(node);}
+        if (document.getElementById(stakeholderId).checked==true){}
       }else{
 
       }
@@ -824,8 +826,7 @@ function createVis(model){
 
 
 
-if (displayStakeholders&& displayViewpoints){
-  if (document.getElementById("filterStakeholder").checked==true || document.getElementById("filterViewpoint").checked==true){}
+  if (document.getElementById("displayStakehloder").checked==true || document.getElementById("displayViewpoint").checked==true){}
   else {
     for (i = 0; i < W4S.length; i++){
       for (j = 0; j < W4S[i].length; j++){
@@ -833,7 +834,7 @@ if (displayStakeholders&& displayViewpoints){
       }
     } 
   }
-}
+
 
 if (displayViews){
   // All the views are found by mean of an XPATH query, and will be pushed in an array before to be processed
