@@ -1053,7 +1053,7 @@ if (displayViews){
         case "Relations":
           elements=folders[i].getElementsByTagName("element");
           for (j = 0; j < elements.length; j++){             
-            //console.log (elements[j].getAttribute("id"));
+            console.log (elements[j].getAttribute("id"));
             from=elements[j].getAttribute("source");
             to=elements[j].getAttribute("target");
             title=model.getElementById(from).getAttribute('name');
