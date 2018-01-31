@@ -985,7 +985,8 @@ function createVis(model){
                 "length": EDGE_LENGTH_MAIN,
                 "title": myTitle
               };
-         //     console.log ("5");
+              console.log ("5");
+              console.log (sourceConnection);
               loadedData.add([{
                 from:sourceConnection.getAttribute('source'),
                 to:sourceConnection.getAttribute('target'),
