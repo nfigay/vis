@@ -854,7 +854,7 @@ function createVis(model){
          +'}';
       console.log (nodeString);
       node=JSON.parse(nodeString);
-      if (views[i].getAttribute('id')=="257ac25a-0e02-468d-9448-bc49fb3c52fc"){alert ("c'est ici");}
+      if (views[i].getAttribute('id')=="bbeb96f1-cbd4-4b3c-a4be-d637c97bbea2"){alert ("c'est ici");}
       nodes.push(node);
       console.log ("10");
       
