@@ -1056,6 +1056,7 @@ if (displayViews){
             console.log (elements[j].getAttribute("id"));
             from=elements[j].getAttribute("source");
             to=elements[j].getAttribute("target");
+            console.log (from);
             title=model.getElementById(from).getAttribute('name');
             title+=" <b>--( </b>"+ elements[j].getAttribute("xsi:type").replace("archimate:", "").replace("Relationship", "");
             title+="<b> )--> </b>"+model.getElementById(to).getAttribute('name');
