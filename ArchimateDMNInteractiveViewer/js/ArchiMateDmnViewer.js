@@ -1169,17 +1169,21 @@ function createVis(model){
              //  in order to avoid duplication of the element in the dataset
             if (elements[j].parentElement.getAttribute('id')==folders[i].getAttribute("id")){
               console.log ("3");
-              loadedData.add([{
-                id:elements[j].getAttribute('id'),
-                shape:"image",
-                title:elements[j].getAttribute('name')+elements[j].getAttribute('xsi:type').replace("archimate:",":"),
-                label: elements[j].getAttribute('name'), 
-                mass:10,
-                image:dir_image+'archimate/'+image+'.'+imageExtension,
-                type:"ModelElement",
-                noe:"node"
-                }]);
-            }          
+              if(elements[j].getAttribute('xsi:type')=="archimate:ArchimateDiagramModel") {
+                console.log("j'y passe oas");    
+              } else {
+                loadedData.add([{
+                  id:elements[j].getAttribute('id'),
+                  shape:"image",
+                  title:elements[j].getAttribute('name')+elements[j].getAttribute('xsi:type').replace("archimate:",":"),
+                  label: elements[j].getAttribute('name'), 
+                  mass:10,
+                  image:dir_image+'archimate/'+image+'.'+imageExtension,
+                  type:"ModelElement",
+                  noe:"node"
+                  }]);
+              }  
+            }        
            
             nodeString=null;
           } 
