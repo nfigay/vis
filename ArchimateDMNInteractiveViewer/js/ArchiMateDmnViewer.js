@@ -1,4 +1,5 @@
 var myModel="ArchiMagineModelDynamicViewer";
+var myType=null;
 var displayViews=false;
 var folderName=null;
 var elementType=null;
@@ -972,10 +973,12 @@ function createVis(model){
               var archimateRelationship=sourceConnection.getAttribute('archimateRelationship');
               //console.log (archimateRelationship);
               //console.log(model.getElementById(archimateRelationship));
+              myType="";
               if (sourceConnection.getAttribute('xsi:type')){
               myTitle="<b>--( </b>";
               myTitle+=sourceConnection.getAttribute('xsi:type').replace("archimate:", "").replace("Relationship", "");
               myTitle+="<b> )--> </b>";
+              myType=sourceConnection.getAttribute('xsi:type').replace("archimate:", "").replace("Relationship", "");
               }
 
               edgeString={
@@ -994,7 +997,7 @@ function createVis(model){
                 length: EDGE_LENGTH_MAIN,
                 label:myTitle,
                 title:myTitle,
-                type:sourceConnection.getAttribute('xsi:type').replace("archimate:", "").replace("Relationship", ""),
+                type:myType,
                 noe:"edge"
                 }]);
               edge=JSON.parse(JSON.stringify(edgeString));
