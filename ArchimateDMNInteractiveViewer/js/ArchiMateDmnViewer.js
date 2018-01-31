@@ -859,50 +859,50 @@ if (displayViews){
     node=JSON.parse(nodeString);
     nodes.push(node);
     console.log ("10");
-  loadedData.add([{
-    id:views[i].getAttribute('id'),
-    shape:"image",
-    title:views[i].getAttribute('name'),
-    label: "view", 
-    mass:10,
-    image:dir_image+"view"+imageExtension,
-    type:"views",
-    noe:"node"
+    
+    loadedData.add([{
+      id:views[i].getAttribute('id'),
+      shape:"image",
+      title:views[i].getAttribute('name'),
+      label: "view", 
+      mass:10,
+      image:dir_image+"view"+imageExtension,
+      type:"views",
+      noe:"node"
     }]);
     viewIds.push(views[i].getAttribute('id'));
     viewNames.push(views[i].getAttribute('name'));
 
 
   //now let's associate each view to the viewpoint it is associated with
-  var associatedViewpoint="";
-  if (views[i].getAttribute('viewpoint')){ 
-    associatedViewpoint=views[i].getAttribute('viewpoint');
-    edgeString={
-      "from": views[i].getAttribute('id'),
-      "to": associatedViewpoint,
-      "arrows":'to',
-      "length": EDGE_LENGTH_MAIN,
-      "title":"--(associated viewpoint)->"
-    };
-    edge=JSON.parse(JSON.stringify(edgeString));
-    edges.push(edge);
-    console.log ("9");
-    loadedData.add([{
-      from:views[i].getAttribute('id'),
-      to:views[i].getAttribute('viewpoint'),
-      arrows:'to',
-      length: EDGE_LENGTH_MAIN,
-      label:"--(associated viewpoint)->",
-      title:"--(associated viewpoint)->",
-      type:"view_viewpoints_association",
-      noe:"edge"
+    var associatedViewpoint="";
+    if (views[i].getAttribute('viewpoint')){ 
+      associatedViewpoint=views[i].getAttribute('viewpoint');
+      edgeString={
+        "from": views[i].getAttribute('id'),
+        "to": associatedViewpoint,
+        "arrows":'to',
+        "length": EDGE_LENGTH_MAIN,
+        "title":"--(associated viewpoint)->"
+      };
+      edge=JSON.parse(JSON.stringify(edgeString));
+      edges.push(edge);
+      console.log ("9");
+      loadedData.add([{
+        from:views[i].getAttribute('id'),
+        to:views[i].getAttribute('viewpoint'),
+        arrows:'to',
+        length: EDGE_LENGTH_MAIN,
+        label:"--(associated viewpoint)->",
+        title:"--(associated viewpoint)->",
+        type:"view_viewpoints_association",
+        noe:"edge"
       }]);
-  };
+    };
 
 
-  //now let's capture all the children for each view creating a dedicated XPATH query for each
+    //now let's capture all the children for each view creating a dedicated XPATH query for each
     for (j=0; j<views[i].getElementsByTagName("child").length;j++){
-
       //let's process the diagram objects first
         if (views[i].getElementsByTagName("child")[j].getAttribute("xsi:type")=="archimate:DiagramObject"){
           var archiMateElement=views[i].getElementsByTagName("child")[j].getAttribute("archimateElement");
@@ -929,7 +929,6 @@ if (displayViews){
           node=JSON.parse(nodeString);
           //  console.log(node);
           nodes.push(node);
-          
           
           edgeString={
             "from": diagramObject,
@@ -992,7 +991,7 @@ if (displayViews){
               "length": EDGE_LENGTH_MAIN,
               "title": myTitle
             };
-            console.log ("5");
+       //     console.log ("5");
             loadedData.add([{
               from:sourceConnection.getAttribute('source'),
               to:sourceConnection.getAttribute('target'),
@@ -1021,11 +1020,11 @@ if (displayViews){
     for (i = 0; i < folders.length; i++) {
       from=folders[i].getAttribute('id');
       folderName= folders[i].getAttribute("name");   
-      console.log(folderName);
+     // console.log(folderName);
           
       switch(folderName){
         case "Views":
-          console.log ("Views");
+      //    console.log ("Views");
           if (displayViews){ 
             txt+=folders[i].getAttribute('name')+"  ";
             //if folders checked,  folder is loaded in the network 
@@ -1038,7 +1037,7 @@ if (displayViews){
                  +'}';
                node=JSON.parse(nodeString);
                nodes.push(node);
-               console.log ("4_");
+      //         console.log ("4_");
             
               nodeString=null;
               elements=folders[i].getElementsByTagName("element");
@@ -1051,16 +1050,16 @@ if (displayViews){
               }
             }
           }
-          console.log("here I am");
+     //     console.log("here I am");
           break;
         case "Relations":
-          console.log("Relations" +"-"+ i);
+     //     console.log("Relations" +"-"+ i);
           elements=folders[i].getElementsByTagName("element");
           for (j = 0; j < elements.length; j++){             
-            console.log (elements[j].getAttribute("id")+ "-"+j);
+      //      console.log (elements[j].getAttribute("id")+ "-"+j);
             from=elements[j].getAttribute("source");
             to=elements[j].getAttribute("target");
-            console.log (from);
+      //      console.log (from);
             title=model.getElementById(from).getAttribute('name');
             title+=" <b>--( </b>"+ elements[j].getAttribute("xsi:type").replace("archimate:", "").replace("Relationship", "");
             title+="<b> )--> </b>"+model.getElementById(to).getAttribute('name');
@@ -1073,7 +1072,7 @@ if (displayViews){
             };
             edge=JSON.parse(JSON.stringify(edgeString));
             edges.push(edge);
-            console.log ("1");
+       //     console.log ("1");
             loadedData.add([{
               from:from,
               to:to,
@@ -1098,11 +1097,11 @@ if (displayViews){
                +'}';
              node=JSON.parse(nodeString);
              nodes.push(node);
-             console.log ("4_");
+     //        console.log ("4_");
           }
           //if folders checked, each folder is loaded in the dataset
           if (document.getElementById('folders').checked == true ){
-            console.log ("4");
+      //      console.log ("4");
             loadedData.add([{
               id:folders[i].getAttribute('id'),
               shape:"image",
@@ -1135,13 +1134,13 @@ if (displayViews){
                 +'}';
               node=JSON.parse(nodeString);
               nodes.push(node);
-              console.log ("3_");
+       //       console.log ("3_");
             }
 
              //  Just element which are direct child of the folder are considered 
              //  in order to avoid duplication of the element in the dataset
             if (elements[j].parentElement.getAttribute('id')==folders[i].getAttribute("id")){
-              console.log ("3");
+       //       console.log ("3");
               loadedData.add([{
                 id:elements[j].getAttribute('id'),
                 shape:"image",
