@@ -1160,7 +1160,7 @@ function createVis(model){
               node=JSON.parse(nodeString);
               if(elements[j].getAttribute('xsi:type')=="archimate:ArchimateDiagramModel") {
                 console.log("j'y passe oas");    
-              } else{
+              } else {
                 console.log("j'y passe");
                 nodes.push(node);}
             }
@@ -1168,7 +1168,7 @@ function createVis(model){
              //  Just element which are direct child of the folder are considered 
              //  in order to avoid duplication of the element in the dataset
             if (elements[j].parentElement.getAttribute('id')==folders[i].getAttribute("id")){
-       //       console.log ("3");
+              console.log ("3");
               loadedData.add([{
                 id:elements[j].getAttribute('id'),
                 shape:"image",
