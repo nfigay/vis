@@ -881,9 +881,12 @@ function createVis(model){
           "length": EDGE_LENGTH_MAIN,
           "title":"--(associated viewpoint)->"
         };
+        console.log(edgeString);
+        console.log ("9");
+        
         edge=JSON.parse(JSON.stringify(edgeString));
         edges.push(edge);
-        console.log ("9");
+
         loadedData.add([{
           from:views[i].getAttribute('id'),
           to:views[i].getAttribute('viewpoint'),
@@ -922,7 +925,7 @@ function createVis(model){
               +'}';
             
             node=JSON.parse(nodeString);
-            //  console.log(node);
+            console.log(nodeString);
             nodes.push(node);
           
             edgeString={
@@ -932,9 +935,11 @@ function createVis(model){
               "length": EDGE_LENGTH_MAIN,
               "title":"--(represent)->"
             };
+            consolode.log(edgeString);
+            console.log ("7");
             edge=JSON.parse(JSON.stringify(edgeString));
             edges.push(edge);
-            console.log ("7");
+
 
             loadedData.add([{
               from:diagramObject,
@@ -954,6 +959,7 @@ function createVis(model){
               "length": EDGE_LENGTH_MAIN,
               "title":"--(contains)->"
             };
+            consosole.log (edgeString);
             console.log ("6");
             loadedData.add([{
               from:views[i].getAttribute('id'),
@@ -988,6 +994,7 @@ function createVis(model){
                 "length": EDGE_LENGTH_MAIN,
                 "title": myTitle
               };
+              console.log(edgeString);
               console.log ("5");
               console.log (sourceConnection);
               loadedData.add([{
