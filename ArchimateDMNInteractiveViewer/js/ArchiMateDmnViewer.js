@@ -1051,7 +1051,7 @@ if (displayViews){
           break;
           console.log("here I am");
         }
-        case "Relations":console.log("Relations" +"-" i);
+        case "Relations":console.log("Relations" +"-"+ i);
           elements=folders[i].getElementsByTagName("element");
           for (j = 0; j < elements.length; j++){             
             console.log (elements[j].getAttribute("id")+ "-"+j);
