@@ -909,6 +909,7 @@ function createVis(model){
             var image=model.getElementById(archiMateElement).getAttribute('xsi:type').toLowerCase().replace("archimate:", "").replace("application", "application-").replace("business", "business-").replace("data", "data-").replace("technology", "technology-").replace("implementation", "implementation-").replace("distribution", "distribution-").replace("communication", "communication-").replace("courseofaction", "course-of-action").replace("systemsoftware", "system-software");
             var diagramObject=views[i].getElementsByTagName("child")[j].getAttribute("id");
             console.log ("8");
+
             loadedData.add([{
               id:views[i].getElementsByTagName("child")[j].getAttribute("id"),
               shape:"image",
@@ -926,8 +927,11 @@ function createVis(model){
               +'"image":"'+dir_image+'archimate/'+image+'.'+imageExtension+'"'
               +'}';
             
-            node=JSON.parse(nodeString);
-            console.log(nodeString);
+              if (views[i].getAttribute('id')=="bbeb96f1-cbd4-4b3c-a4be-d637c97bbea2"){alert ("c'est ici");}
+              console.log(nodeString);
+              node=JSON.parse(nodeString);
+
+
             nodes.push(node);
           
             edgeString={
