@@ -857,7 +857,7 @@ function createVis(model){
       console.log (nodeString);
       node=JSON.parse(nodeString);
       console.log ("10");
-      if (views[i].getAttribute('id')=="bbeb96f1-cbd4-4b3c-a4be-d637c97bbea2"){alert ("Coucou!!8");}
+      if (views[i].getAttribute('id')=="bbeb96f1-cbd4-4b3c-a4be-d637c97bbea2"){alert ("Coucou!");}
       nodes.push(node);
 
       
@@ -1153,6 +1153,7 @@ function createVis(model){
               console.log(elements[j].getAttribute('xsi:type'));
               node=JSON.parse(nodeString);
               if(elements[j].getAttribute('xsi:type')!="archimate:ArchimateDiagramModel") {
+                console.log("j'y passe");
                 nodes.push(node);
               }
 
