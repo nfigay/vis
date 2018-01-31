@@ -630,81 +630,7 @@ function process(data){
 
 function createVis(model){
   init();
-  for (i = 0; i < Viewpoints.length; i++){ 
-    loadedData.add([{
-      id:Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_").replace(" ","_")+"_viewpoint",
-      shape:"image",
-      title:Viewpoints[i],
-      label:Viewpoints[i], 
-      mass:10,
-      image:dir_image+"viewpoint"+imageExtension,
-      type:"viewpoint",
-      noe:"node"
-      }]);
-    loadedData.add([{
-      from:Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"),
-      to:"viewpoint",
-      arrows:'to',
-      length: EDGE_LENGTH_MAIN,
-      label:"is a",
-      title:"is a",
-      type:"viewpoint_typing",
-      noe:"edge"
-      }]);
-  }
 
-  for (i = 0; i < Stakeholders.length; i++){
-    loadedData.add([{
-      id:Stakeholders[i].toLowerCase().replace(" ","_")+"_stakeholder",
-      shape:"image",
-      title: Stakeholders[i],
-      label: Stakeholders[i], 
-      mass:10,
-      image:dir_image+"stakeholder"+imageExtension,
-      group:"stakeholders",
-      type:"node"
-      }]);
-    loadedData.add([{
-      from:Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"),
-      to:"stakeholder",
-      arrows:'to',
-      length: EDGE_LENGTH_MAIN,
-      label:"is a",
-      title:"is a",
-      type:"stakeholder_typing",
-      noe:"edge"
-      }]);
-  }
-  for (i = 0; i < W4S.length; i++){
-    for (j = 0; j < W4S[i].length; j++){
-     loadedData.add([{
-      from:Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"),
-      to: Stakeholders[j].toLowerCase().replace(" ","_"),
-      arrows:'to',
-      length: EDGE_LENGTH_MAIN,
-      label:"concerns",
-      title:"concerns",
-      type:"W4S",
-      noe:"edge"
-      }]);
-    }
-  } 
-
-  for (i = 0; i < O4W.length; i++){
-    for (j = 0; j < O4W[i].length; j++){
-
-     loadedData.add([{
-      from:ArchiMateObjects[O4W[i][j]],
-      to:Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"),
-      arrows:'to',
-      length: EDGE_LENGTH_MAIN,
-      label:"belongTo",
-      title:"belongsTo",
-      type:"O4W",
-      noe:"edge"
-      }]);
-    }
-  } 
   
   if (document.getElementById("displayViewpoint").checked==true){
     
@@ -1484,4 +1410,79 @@ function init(){
       container: document.getElementById('configureDisplay')
     }
   };
+  for (i = 0; i < Viewpoints.length; i++){ 
+    loadedData.add([{
+      id:Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_").replace(" ","_")+"_viewpoint",
+      shape:"image",
+      title:Viewpoints[i],
+      label:Viewpoints[i], 
+      mass:10,
+      image:dir_image+"viewpoint"+imageExtension,
+      type:"viewpoint",
+      noe:"node"
+      }]);
+    loadedData.add([{
+      from:Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"),
+      to:"viewpoint",
+      arrows:'to',
+      length: EDGE_LENGTH_MAIN,
+      label:"is a",
+      title:"is a",
+      type:"viewpoint_typing",
+      noe:"edge"
+      }]);
+  }
+
+  for (i = 0; i < Stakeholders.length; i++){
+    loadedData.add([{
+      id:Stakeholders[i].toLowerCase().replace(" ","_")+"_stakeholder",
+      shape:"image",
+      title: Stakeholders[i],
+      label: Stakeholders[i], 
+      mass:10,
+      image:dir_image+"stakeholder"+imageExtension,
+      group:"stakeholders",
+      type:"node"
+      }]);
+    loadedData.add([{
+      from:Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"),
+      to:"stakeholder",
+      arrows:'to',
+      length: EDGE_LENGTH_MAIN,
+      label:"is a",
+      title:"is a",
+      type:"stakeholder_typing",
+      noe:"edge"
+      }]);
+  }
+  for (i = 0; i < W4S.length; i++){
+    for (j = 0; j < W4S[i].length; j++){
+     loadedData.add([{
+      from:Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"),
+      to: Stakeholders[j].toLowerCase().replace(" ","_"),
+      arrows:'to',
+      length: EDGE_LENGTH_MAIN,
+      label:"concerns",
+      title:"concerns",
+      type:"W4S",
+      noe:"edge"
+      }]);
+    }
+  } 
+
+  for (i = 0; i < O4W.length; i++){
+    for (j = 0; j < O4W[i].length; j++){
+
+     loadedData.add([{
+      from:ArchiMateObjects[O4W[i][j]],
+      to:Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_"),
+      arrows:'to',
+      length: EDGE_LENGTH_MAIN,
+      label:"belongTo",
+      title:"belongsTo",
+      type:"O4W",
+      noe:"edge"
+      }]);
+    }
+  } 
 } 
