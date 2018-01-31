@@ -959,7 +959,7 @@ function createVis(model){
               "length": EDGE_LENGTH_MAIN,
               "title":"--(contains)->"
             };
-            consosole.log (edgeString);
+            console.log (edgeString);
             console.log ("6");
             loadedData.add([{
               from:views[i].getAttribute('id'),
