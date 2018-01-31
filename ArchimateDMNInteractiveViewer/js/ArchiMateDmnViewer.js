@@ -1036,15 +1036,15 @@ if (displayViews){
                node=JSON.parse(nodeString);
                nodes.push(node);
                console.log ("4_");
-            }
-            nodeString=null;
-            elements=folders[i].getElementsByTagName("element");
-            for (j = 0; j < elements.length; j++){
-              elementType=elements[j].getAttribute("xsi:type");
-              switch(elementType){
-                case "archimate:ArchimateDiagramModel":
-                default: break;
-              }
+            
+              nodeString=null;
+              elements=folders[i].getElementsByTagName("element");
+              for (j = 0; j < elements.length; j++){
+                elementType=elements[j].getAttribute("xsi:type");
+                switch(elementType){
+                  case "archimate:ArchimateDiagramModel":
+                  default: break;
+                }
           
            // if (elements[j].getAttribute("xsi:type") != "archimate:ArchimateDiagramModel"){
            //   if (elements[j].getAttribute("xsi:type") != "archimate:SketchModel"){
