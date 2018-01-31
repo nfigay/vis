@@ -841,6 +841,7 @@ function createVis(model){
 
 
 if (displayViews){
+  console.log("displayViews  checked");
   // All the views are found by mean of an XPATH query, and will be pushed in an array before to be processed
   var queryViews = model.evaluate( '//element[@xsi:type="archimate:ArchimateDiagramModel"]', model, nsResolver,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null );  
   var nbviews = model.evaluate( 'count(//element[@xsi:type="archimate:ArchimateDiagramModel"])', model, nsResolver, XPathResult.ANY_TYPE, null );
@@ -1010,7 +1011,7 @@ if (displayViews){
       }
     
     }
-  }else{console.log("displayViews not checked")};
+  }else{console.log("displayViews not checked");}
 }
  
     // Lets now include the model elements
