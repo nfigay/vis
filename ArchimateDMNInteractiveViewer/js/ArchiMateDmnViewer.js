@@ -1047,8 +1047,8 @@ if (displayViews){
                 }
               }
           console.log("here I am");
-          break;
           }
+          break;
          }
         case "Relations":console.log("Relations");
           elements=folders[i].getElementsByTagName("element");
