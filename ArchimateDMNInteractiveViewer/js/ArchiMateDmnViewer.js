@@ -1050,7 +1050,7 @@ if (displayViews){
           break;
           }
          }
-        case "Relations":
+        case "Relations":console.log("Relations");
           elements=folders[i].getElementsByTagName("element");
           for (j = 0; j < elements.length; j++){             
             console.log (elements[j].getAttribute("id"));
