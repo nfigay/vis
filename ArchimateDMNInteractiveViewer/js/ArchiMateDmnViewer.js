@@ -1046,10 +1046,11 @@ if (displayViews){
                   default: break;
                 }
               }
-          console.log("here I am");
+
           }
           break;
-         }
+          console.log("here I am");
+        }
         case "Relations":console.log("Relations");
           elements=folders[i].getElementsByTagName("element");
           for (j = 0; j < elements.length; j++){             
