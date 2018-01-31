@@ -1151,7 +1151,9 @@ function createVis(model){
               console.log ("3_");
               console.log(nodeString);
               node=JSON.parse(nodeString);
-              nodes.push(node);
+              if(elements[j].getAttribute('xsi:type')!="archimate:DiagramObject") {
+                nodes.push(node);
+              }
 
             }
 
