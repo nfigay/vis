@@ -850,7 +850,7 @@ if (displayViews){
 
   for (i = 0; i < queryViews.snapshotLength; i++) {
     views.push(queryViews.snapshotItem(i)); 
-    nodeString='{'+'"id":"'+views[i].getAttribute('id')+'",'+
+    nodeString='{'+'"id":"'+views[i].getAttribute('id')+'",'
        +'"title":"'+views[i].getAttribute('name')+'"'+","+'"shape":"image"' +','
        +'"label":"'+views[i].getAttribute('name')+'"'+','
        +'"image":"'+dir_image+'view.'+imageExtension+'"'
