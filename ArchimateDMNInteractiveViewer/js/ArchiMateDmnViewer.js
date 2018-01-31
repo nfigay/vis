@@ -629,8 +629,8 @@ function process(data){
 }
 
 function createVis(model){
-  for (i = 0; i < Viewpoints.length; i++){
-    
+  init();
+  for (i = 0; i < Viewpoints.length; i++){ 
     loadedData.add([{
       id:Viewpoints[i].toLowerCase().replace (" and ", "_").replace(" ","_").replace(" ","_")+"_viewpoint",
       shape:"image",
