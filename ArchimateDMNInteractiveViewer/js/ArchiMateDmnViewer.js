@@ -1010,7 +1010,7 @@ if (displayViews){
       }
     
     }
-  }
+  }else{console.log("displayViews not checked")};
 }
  
     // Lets now include the model elements
