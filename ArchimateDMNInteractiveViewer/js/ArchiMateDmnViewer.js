@@ -797,8 +797,6 @@ function createVis(model){
   }
   if (document.getElementById("displayStakeholder").checked==true){
     nodes.push({id: "stakeholder", shape: 'image',label: 'Stakeholder', image: dir_image + 'stakeholder.'+imageExtension, shape: 'image'});
-
-    
     for (i = 0; i < Stakeholders.length; i++){
       var stakeholderId=Stakeholders[i].toLowerCase().replace(" ","_")+"_stakeholder";
       //image= elements[j].getAttribute('xsi:type').toLowerCase().replace("archimate:", "").replace("application", "application-").replace("business", "business-").replace("data", "data-").replace("technology", "technology-").replace("implementation", "implementation-").replace("distribution", "distribution-").replace("communication", "communication-").replace("courseofaction", "course-of-action").replace("systemsoftware", "system-software");
@@ -815,18 +813,15 @@ function createVis(model){
         nodes.push(node); 
         edges.push({from: stakeholderId, to: "stakeholder",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
       }
-//to be moved and updated in order filtering views and displayed model elements 
-     
-      if (document.getElementById("filterStakeholder").checked==true){
-       // alert (stakeholderId);
-        if (document.getElementById(stakeholderId).checked==true){}
-      }else{
-
-      }
     }
-
-
-
+  }
+//to be moved and updated in order filtering views and displayed model elements 
+    
+  if (document.getElementById("filterStakeholder").checked==true){
+    // alert (stakeholderId);      if (document.getElementById(stakeholderId).checked==true){}
+  }else{}
+    
+    
   if (document.getElementById("displayStakeholder").checked==true && document.getElementById("displayViewpoint").checked==true){
     for (i = 0; i < W4S.length; i++){
       for (j = 0; j < W4S[i].length; j++){
@@ -840,185 +835,182 @@ function createVis(model){
   }
 
 
-if (displayViews){
-  console.log("displayViews  checked");
-  // All the views are found by mean of an XPATH query, and will be pushed in an array before to be processed
-  var queryViews = model.evaluate( '//element[@xsi:type="archimate:ArchimateDiagramModel"]', model, nsResolver,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null );  
-  var nbviews = model.evaluate( 'count(//element[@xsi:type="archimate:ArchimateDiagramModel"])', model, nsResolver, XPathResult.ANY_TYPE, null );
-  var views=[];
-  var viewIds=[];
-  var viewNames=[];
+  if (displayViews){
+    console.log("displayViews  checked");
+    // All the views are found by mean of an XPATH query, and will be pushed in an array before to be processed
+    var queryViews = model.evaluate( '//element[@xsi:type="archimate:ArchimateDiagramModel"]', model, nsResolver,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null );  
+    var nbviews = model.evaluate( 'count(//element[@xsi:type="archimate:ArchimateDiagramModel"])', model, nsResolver, XPathResult.ANY_TYPE, null );
+    var views=[];
+    var viewIds=[];
+    var viewNames=[];
 
-  for (i = 0; i < queryViews.snapshotLength; i++) {
-    views.push(queryViews.snapshotItem(i)); 
-    nodeString='{'+'"id":"'+views[i].getAttribute('id')+'",'
-       +'"title":"'+views[i].getAttribute('name')+'"'+","+'"shape":"image"' +','
-       +'"label":"'+views[i].getAttribute('name')+'"'+','
-       +'"image":"'+dir_image+'view.'+imageExtension+'"'
-       +'}';
-    console.log (nodeString);
-    node=JSON.parse(nodeString);
-    nodes.push(node);
-    console.log ("10");
-    
-    loadedData.add([{
-      id:views[i].getAttribute('id'),
-      shape:"image",
-      title:views[i].getAttribute('name'),
-      label: "view", 
-      mass:10,
-      image:dir_image+"view"+imageExtension,
-      type:"views",
-      noe:"node"
-    }]);
-    viewIds.push(views[i].getAttribute('id'));
-    viewNames.push(views[i].getAttribute('name'));
-
-
-  //now let's associate each view to the viewpoint it is associated with
-    var associatedViewpoint="";
-    if (views[i].getAttribute('viewpoint')){ 
-      associatedViewpoint=views[i].getAttribute('viewpoint');
-      edgeString={
-        "from": views[i].getAttribute('id'),
-        "to": associatedViewpoint,
-        "arrows":'to',
-        "length": EDGE_LENGTH_MAIN,
-        "title":"--(associated viewpoint)->"
-      };
-      edge=JSON.parse(JSON.stringify(edgeString));
-      edges.push(edge);
-      console.log ("9");
-      loadedData.add([{
-        from:views[i].getAttribute('id'),
-        to:views[i].getAttribute('viewpoint'),
-        arrows:'to',
-        length: EDGE_LENGTH_MAIN,
-        label:"--(associated viewpoint)->",
-        title:"--(associated viewpoint)->",
-        type:"view_viewpoints_association",
-        noe:"edge"
-      }]);
-    };
-
-
-    //now let's capture all the children for each view creating a dedicated XPATH query for each
-    for (j=0; j<views[i].getElementsByTagName("child").length;j++){
-      //let's process the diagram objects first
-        if (views[i].getElementsByTagName("child")[j].getAttribute("xsi:type")=="archimate:DiagramObject"){
-          var archiMateElement=views[i].getElementsByTagName("child")[j].getAttribute("archimateElement");
-          var image=model.getElementById(archiMateElement).getAttribute('xsi:type').toLowerCase().replace("archimate:", "").replace("application", "application-").replace("business", "business-").replace("data", "data-").replace("technology", "technology-").replace("implementation", "implementation-").replace("distribution", "distribution-").replace("communication", "communication-").replace("courseofaction", "course-of-action").replace("systemsoftware", "system-software");
-          var diagramObject=views[i].getElementsByTagName("child")[j].getAttribute("id");
-          console.log ("8");
-          loadedData.add([{
-            id:views[i].getElementsByTagName("child")[j].getAttribute("id"),
-            shape:"image",
-            title:model.getElementById(archiMateElement).getAttribute('name'),
-            label: model.getElementById(archiMateElement).getAttribute('name'), 
-            mass:10,
-            image:dir_image+'archimate/'+image+'.'+imageExtension,
-            type:"DiagramObject",
-            noe:"node"
-            }]);
+    for (i = 0; i < queryViews.snapshotLength; i++) {
+      views.push(queryViews.snapshotItem(i)); 
+      nodeString='{'+'"id":"'+views[i].getAttribute('id')+'",'
+         +'"title":"'+views[i].getAttribute('name')+'"'+","+'"shape":"image"' +','
+         +'"label":"'+views[i].getAttribute('name')+'"'+','
+         +'"image":"'+dir_image+'view.'+imageExtension+'"'
+         +'}';
+      console.log (nodeString);
+      node=JSON.parse(nodeString);
+      nodes.push(node);
+      console.log ("10");
       
-          nodeString='{'+'"id":"'+diagramObject+'",'+'"shape":"image"' +','
-            +'"title":"'+model.getElementById(archiMateElement).getAttribute('name')+'"'+","+'"shape":"image"' +','
-            +'"label":"'+model.getElementById(archiMateElement).getAttribute('name')+'"'+','
-            +'"image":"'+dir_image+'archimate/'+image+'.'+imageExtension+'"'
-            +'}';
+      loadedData.add([{
+        id:views[i].getAttribute('id'),
+        shape:"image",
+        title:views[i].getAttribute('name'),
+        label: "view", 
+        mass:10,
+        image:dir_image+"view"+imageExtension,
+        type:"views",
+        noe:"node"
+      }]);
+      viewIds.push(views[i].getAttribute('id'));
+      viewNames.push(views[i].getAttribute('name'));
+
+    //now let's associate each view to the viewpoint it is associated with
+      var associatedViewpoint="";
+      if (views[i].getAttribute('viewpoint')){ 
+        associatedViewpoint=views[i].getAttribute('viewpoint');
+        edgeString={
+          "from": views[i].getAttribute('id'),
+          "to": associatedViewpoint,
+          "arrows":'to',
+          "length": EDGE_LENGTH_MAIN,
+          "title":"--(associated viewpoint)->"
+        };
+        edge=JSON.parse(JSON.stringify(edgeString));
+        edges.push(edge);
+        console.log ("9");
+        loadedData.add([{
+          from:views[i].getAttribute('id'),
+          to:views[i].getAttribute('viewpoint'),
+          arrows:'to',
+          length: EDGE_LENGTH_MAIN,
+          label:"--(associated viewpoint)->",
+          title:"--(associated viewpoint)->",
+          type:"view_viewpoints_association",
+          noe:"edge"
+        }]);
+      };
+
+      //now let's capture all the children for each view creating a dedicated XPATH query for each
+      for (j=0; j<views[i].getElementsByTagName("child").length;j++){
+       //let's process the diagram objects first
+          if (views[i].getElementsByTagName("child")[j].getAttribute("xsi:type")=="archimate:DiagramObject"){
+            var archiMateElement=views[i].getElementsByTagName("child")[j].getAttribute("archimateElement");
+            var image=model.getElementById(archiMateElement).getAttribute('xsi:type').toLowerCase().replace("archimate:", "").replace("application", "application-").replace("business", "business-").replace("data", "data-").replace("technology", "technology-").replace("implementation", "implementation-").replace("distribution", "distribution-").replace("communication", "communication-").replace("courseofaction", "course-of-action").replace("systemsoftware", "system-software");
+            var diagramObject=views[i].getElementsByTagName("child")[j].getAttribute("id");
+            console.log ("8");
+            loadedData.add([{
+              id:views[i].getElementsByTagName("child")[j].getAttribute("id"),
+              shape:"image",
+              title:model.getElementById(archiMateElement).getAttribute('name'),
+              label: model.getElementById(archiMateElement).getAttribute('name'), 
+              mass:10,
+              image:dir_image+'archimate/'+image+'.'+imageExtension,
+              type:"DiagramObject",
+              noe:"node"
+              }]);
+      
+            nodeString='{'+'"id":"'+diagramObject+'",'+'"shape":"image"' +','
+              +'"title":"'+model.getElementById(archiMateElement).getAttribute('name')+'"'+","+'"shape":"image"' +','
+              +'"label":"'+model.getElementById(archiMateElement).getAttribute('name')+'"'+','
+              +'"image":"'+dir_image+'archimate/'+image+'.'+imageExtension+'"'
+              +'}';
             
-          node=JSON.parse(nodeString);
-          //  console.log(node);
-          nodes.push(node);
+            node=JSON.parse(nodeString);
+            //  console.log(node);
+            nodes.push(node);
           
-          edgeString={
-            "from": diagramObject,
-            "to": archiMateElement,
-            "arrows":'to',
-            "length": EDGE_LENGTH_MAIN,
-            "title":"--(represent)->"
-          };
-          edge=JSON.parse(JSON.stringify(edgeString));
-          edges.push(edge);
-          console.log ("7");
-
-          loadedData.add([{
-            from:diagramObject,
-            to:archiMateElement,
-            arrows:'to',
-            length: EDGE_LENGTH_MAIN,
-            label:"--(represent)->",
-            title:"--(represent)->",
-            type:"represent",
-            noe:"edge"
-            }]);
-         
-          edgeString={
-            "from": views[i].getAttribute('id'),
-            "to": diagramObject,
-            "arrows":'to',
-            "length": EDGE_LENGTH_MAIN,
-            "title":"--(contains)->"
-          };
-          console.log ("6");
-          loadedData.add([{
-            from:views[i].getAttribute('id'),
-            to:diagramObject,
-            arrows:'to',
-            length: EDGE_LENGTH_MAIN,
-            label:"--(contains)->",
-            title:"--(contains)->",
-            type:"view_contains_diagramObject",
-            noe:"edge"
-            }]);
-          edge=JSON.parse(JSON.stringify(edgeString));
-          edges.push(edge);
-          var k=0;
-          for (k=0; k<views[i].getElementsByTagName("child")[j].getElementsByTagName("sourceConnection").length;k++){
-            var sourceConnection=views[i].getElementsByTagName("child")[j].getElementsByTagName("sourceConnection")[k];
-            var archimateRelationship=sourceConnection.getAttribute('archimateRelationship');
-            //console.log (archimateRelationship);
-            //console.log(model.getElementById(archimateRelationship));
-            if (sourceConnection.getAttribute('xsi:type')){
-            myTitle="<b>--( </b>";
-            myTitle+=sourceConnection.getAttribute('xsi:type').replace("archimate:", "").replace("Relationship", "");
-            myTitle+="<b> )--> </b>";
-            }
-
             edgeString={
-              "from": sourceConnection.getAttribute('source'),
-              "to": sourceConnection.getAttribute('target'),
+              "from": diagramObject,
+              "to": archiMateElement,
               "arrows":'to',
               "length": EDGE_LENGTH_MAIN,
-              "title": myTitle
+              "title":"--(represent)->"
             };
-       //     console.log ("5");
+            edge=JSON.parse(JSON.stringify(edgeString));
+            edges.push(edge);
+            console.log ("7");
+
             loadedData.add([{
-              from:sourceConnection.getAttribute('source'),
-              to:sourceConnection.getAttribute('target'),
+              from:diagramObject,
+              to:archiMateElement,
               arrows:'to',
               length: EDGE_LENGTH_MAIN,
-              label:myTitle,
-              title:myTitle,
-              type:sourceConnection.getAttribute('xsi:type').replace("archimate:", "").replace("Relationship", ""),
+              label:"--(represent)->",
+              title:"--(represent)->",
+              type:"represent",
+              noe:"edge"
+              }]);
+         
+            edgeString={
+              "from": views[i].getAttribute('id'),
+              "to": diagramObject,
+              "arrows":'to',
+              "length": EDGE_LENGTH_MAIN,
+              "title":"--(contains)->"
+            };
+            console.log ("6");
+            loadedData.add([{
+              from:views[i].getAttribute('id'),
+              to:diagramObject,
+              arrows:'to',
+              length: EDGE_LENGTH_MAIN,
+              label:"--(contains)->",
+              title:"--(contains)->",
+              type:"view_contains_diagramObject",
               noe:"edge"
               }]);
             edge=JSON.parse(JSON.stringify(edgeString));
             edges.push(edge);
+            var k=0;
+            for (k=0; k<views[i].getElementsByTagName("child")[j].getElementsByTagName("sourceConnection").length;k++){
+              var sourceConnection=views[i].getElementsByTagName("child")[j].getElementsByTagName("sourceConnection")[k];
+              var archimateRelationship=sourceConnection.getAttribute('archimateRelationship');
+              //console.log (archimateRelationship);
+              //console.log(model.getElementById(archimateRelationship));
+              if (sourceConnection.getAttribute('xsi:type')){
+              myTitle="<b>--( </b>";
+              myTitle+=sourceConnection.getAttribute('xsi:type').replace("archimate:", "").replace("Relationship", "");
+              myTitle+="<b> )--> </b>";
+              }
 
+              edgeString={
+                "from": sourceConnection.getAttribute('source'),
+                "to": sourceConnection.getAttribute('target'),
+                "arrows":'to',
+                "length": EDGE_LENGTH_MAIN,
+                "title": myTitle
+              };
+         //     console.log ("5");
+              loadedData.add([{
+                from:sourceConnection.getAttribute('source'),
+                to:sourceConnection.getAttribute('target'),
+                arrows:'to',
+                length: EDGE_LENGTH_MAIN,
+                label:myTitle,
+                title:myTitle,
+                type:sourceConnection.getAttribute('xsi:type').replace("archimate:", "").replace("Relationship", ""),
+                noe:"edge"
+                }]);
+              edge=JSON.parse(JSON.stringify(edgeString));
+              edges.push(edge);
+            }
           }
-        }
+        }    
       }
-    
-    }
-  }else{console.log("displayViews not checked");}
-}
+  }
+  else{console.log("displayViews not checked");}
+
  
-    // Lets now include the model elements
-    var folders = model.getElementsByTagName("folder");
+  // Lets now include the model elements
+  var folders = model.getElementsByTagName("folder");
 
 
-    for (i = 0; i < folders.length; i++) {
+  for (i = 0; i < folders.length; i++) {
       from=folders[i].getAttribute('id');
       folderName= folders[i].getAttribute("name");   
      // console.log(folderName);
@@ -1158,17 +1150,17 @@ if (displayViews){
           } 
         } 
       }
-    container = document.getElementById('ArchiMateModel');
-    data = {
-        nodes: nodes,
-        edges: edges
-    };
-    document.getElementById("ArchiMateModel").innerHTML = "";
-    document.getElementById('configureDisplay').innerHTML="";
+  container = document.getElementById('ArchiMateModel');
+  data = {
+    nodes: nodes,
+    edges: edges
+  };
+  document.getElementById("ArchiMateModel").innerHTML = "";
+  document.getElementById('configureDisplay').innerHTML="";
 
-    ArchiMateModel = new vis.Network(container, data, options);
+  ArchiMateModel = new vis.Network(container, data, options);
 
-    ArchiMateModel.on("stabilizationProgress", function(params) {
+  ArchiMateModel.on("stabilizationProgress", function(params) {
       document.getElementById('loadingBar').style.display = 'block';
       document.getElementById('loadingBar').style.opacity = 1;
       document.getElementById('bar').style.width = '20px';
@@ -1188,9 +1180,9 @@ if (displayViews){
       // really clean the dom element
       setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
   });
-    ArchiMateModel.on("click", onClickModelNodes); 
+  ArchiMateModel.on("click", onClickModelNodes); 
     
-    ArchiMateModel.on("oncontext", function (params) {
+  ArchiMateModel.on("oncontext", function (params) {
       params.event = "[original event]";
       document.getElementById('eventSpan').innerHTML = '<h2>oncontext (right click) event:</h2>' + JSON.stringify(params, null, 4);
       });
