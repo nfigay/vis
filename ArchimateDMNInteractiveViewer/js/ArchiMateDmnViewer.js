@@ -1051,10 +1051,10 @@ if (displayViews){
           break;
           console.log("here I am");
         }
-        case "Relations":console.log("Relations");
+        case "Relations":console.log("Relations" +"-" i);
           elements=folders[i].getElementsByTagName("element");
           for (j = 0; j < elements.length; j++){             
-            console.log (elements[j].getAttribute("id"));
+            console.log (elements[j].getAttribute("id")+ "-"+j);
             from=elements[j].getAttribute("source");
             to=elements[j].getAttribute("target");
             console.log (from);
