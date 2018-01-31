@@ -1049,6 +1049,7 @@ function createVis(model){
     nodes: nodes,
     edges: edges
   };
+  console.log ("ready to create the network");
   document.getElementById("ArchiMateModel").innerHTML = "";
   document.getElementById('configureDisplay').innerHTML="";
 
