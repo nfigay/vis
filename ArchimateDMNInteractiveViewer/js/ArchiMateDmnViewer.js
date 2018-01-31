@@ -1109,9 +1109,11 @@ function createVis(model){
                +'"label":"'+folders[i].getAttribute('name')+'"'+','
                +'"image":"'+dir_image+'archimate/'+image+'.'+imageExtension+'"'
                +'}';
+             console.log ("4_");
+             console.log(nodeString);
              node=JSON.parse(nodeString);
              nodes.push(node);
-     //        console.log ("4_");
+
           }
           //if folders checked, each folder is loaded in the dataset
           if (document.getElementById('folders').checked == true ){
@@ -1146,9 +1148,11 @@ function createVis(model){
                 +'"label":"'+elements[j].getAttribute('name')+'"'+','
                 +'"image":"./img/archimate/'+image+'.'+imageExtension+'"'
                 +'}';
+              console.log ("3_");
+              console.log(nodeString);
               node=JSON.parse(nodeString);
               nodes.push(node);
-       //       console.log ("3_");
+
             }
 
              //  Just element which are direct child of the folder are considered 
