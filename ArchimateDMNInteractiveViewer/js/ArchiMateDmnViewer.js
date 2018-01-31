@@ -1152,11 +1152,11 @@ function createVis(model){
               console.log(nodeString);
               console.log(elements[j].getAttribute('xsi:type'));
               node=JSON.parse(nodeString);
-              if(elements[j].getAttribute('xsi:type')!="archimate:ArchimateDiagramModel") {
+              if(elements[j].getAttribute('xsi:type')=="archimate:ArchimateDiagramModel") {
+                console.log("j'y passe oas");    
+              } else{
                 console.log("j'y passe");
-                nodes.push(node);
-              }
-
+                nodes.push(node);}
             }
 
              //  Just element which are direct child of the folder are considered 
