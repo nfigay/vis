@@ -1022,15 +1022,29 @@ if (displayViews){
       folderName= folders[i].getAttribute("name");   
           
       switch(folderName){
-        case "Views": console.log ("Views"); 
-          nodeString=null;
-          elements=folders[i].getElementsByTagName("element");
-          for (j = 0; j < elements.length; j++){
-            elementType=elements[j].getAttribute("xsi:type");
-            switch(elementType){
-              case "archimate:ArchimateDiagramModel":
-              default: break;
+        case "Views": console.log ("Views");
+          if (displayViews){ 
+            txt+=folders[i].getAttribute('name')+"  ";
+            //if folders checked,  folder is loaded in the network 
+            if (document.getElementById('folders').checked == true ){
+              image="folder";
+              nodeString='{'+'"id":"'+folders[i].getAttribute('id')+'",'+'"shape":"image"' +','
+                 +'"title":"'+folders[i].getAttribute('name')+'"'+","+'"shape":"image"' +','
+                 +'"label":"'+folders[i].getAttribute('name')+'"'+','
+                 +'"image":"'+dir_image+'archimate/'+image+'.'+imageExtension+'"'
+                 +'}';
+               node=JSON.parse(nodeString);
+               nodes.push(node);
+               console.log ("4_");
             }
+            nodeString=null;
+            elements=folders[i].getElementsByTagName("element");
+            for (j = 0; j < elements.length; j++){
+              elementType=elements[j].getAttribute("xsi:type");
+              switch(elementType){
+                case "archimate:ArchimateDiagramModel":
+                default: break;
+              }
           
            // if (elements[j].getAttribute("xsi:type") != "archimate:ArchimateDiagramModel"){
            //   if (elements[j].getAttribute("xsi:type") != "archimate:SketchModel"){
@@ -1067,6 +1081,7 @@ if (displayViews){
            // }  
           }
           break;
+         }
         case "Relations":
           elements=folders[i].getElementsByTagName("element");
           for (j = 0; j < elements.length; j++){             
