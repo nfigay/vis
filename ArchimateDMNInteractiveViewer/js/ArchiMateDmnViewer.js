@@ -1015,11 +1015,12 @@ if (displayViews){
  
     // Lets now include the model elements
     var folders = model.getElementsByTagName("folder");
-    console.log(folders);
+
 
     for (i = 0; i < folders.length; i++) {
       from=folders[i].getAttribute('id');
       folderName= folders[i].getAttribute("name");   
+      console.log(folderName);
           
       switch(folderName){
         case "Views": console.log ("Views");
@@ -1051,7 +1052,6 @@ if (displayViews){
           break;
           console.log("here I am");
         }
-        
         case "Relations":console.log("Relations" +"-"+ i);
           elements=folders[i].getElementsByTagName("element");
           for (j = 0; j < elements.length; j++){             
