@@ -1023,7 +1023,8 @@ if (displayViews){
       console.log(folderName);
           
       switch(folderName){
-        case "Views": console.log ("Views");
+        case "Views":
+          console.log ("Views");
           if (displayViews){ 
             txt+=folders[i].getAttribute('name')+"  ";
             //if folders checked,  folder is loaded in the network 
@@ -1047,12 +1048,12 @@ if (displayViews){
                   default: break;
                 }
               }
-
+            }
           }
-          break;
           console.log("here I am");
-        }
-        case "Relations":console.log("Relations" +"-"+ i);
+          break;
+        case "Relations":
+          console.log("Relations" +"-"+ i);
           elements=folders[i].getElementsByTagName("element");
           for (j = 0; j < elements.length; j++){             
             console.log (elements[j].getAttribute("id")+ "-"+j);
