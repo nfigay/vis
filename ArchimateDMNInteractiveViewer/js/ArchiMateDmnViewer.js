@@ -1045,43 +1045,10 @@ if (displayViews){
                   case "archimate:ArchimateDiagramModel":
                   default: break;
                 }
-          
-           // if (elements[j].getAttribute("xsi:type") != "archimate:ArchimateDiagramModel"){
-           //   if (elements[j].getAttribute("xsi:type") != "archimate:SketchModel"){
-           //     if (elements[j].getAttribute("xsi:type") != "archimate:Junction"){
-           //       if (elements[j].getAttribute("xsi:type") != "archimate:Grouping"){              
-           //         nodes.push(node);
-           //         to=elements[j].getAttribute("id");
-           //         edgeString={
-           //           "from": from,
-           //           "to": to,
-           //           "arrows":'to',
-           //           "length": EDGE_LENGTH_MAIN,
-           //           "title":'contains'
-           //         };
-           //         edge=JSON.parse(JSON.stringify(edgeString));
-           //         console.log ("2");
-           //         loadedData.add([{
-           //           from:from,
-           //           to:to,
-           //           arrows:'to',
-           //           length: EDGE_LENGTH_MAIN,
-           //           label:'contains',
-           //           title:'contains',
-           //           type:'contains',
-           //             noe:"edge"
-           //             }]);
-           //
-           //            if (document.getElementById('folders').checked == true ){
-           //            edges.push(edge);
-           //          }
-           //       }
-           //     }
-           //   }
-           // }  
-          }
+              }
           console.log("here I am");
           break;
+          }
          }
         case "Relations":
           elements=folders[i].getElementsByTagName("element");
