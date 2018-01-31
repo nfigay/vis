@@ -784,6 +784,8 @@ function createVis(model){
       +'" mass":10 ,'
       +'"image":"'+dir_image+'viewpoint.'+imageExtension+'"'
       +'}';
+      console.log(nodeString);
+
       node=JSON.parse(nodeString);
       nodes.push(node);
       edges.push({from: viewpointId, to: "viewpoint",  arrows:'to', length: EDGE_LENGTH_MAIN, label:"is a", title:"is a"});
@@ -927,7 +929,7 @@ function createVis(model){
               +'"image":"'+dir_image+'archimate/'+image+'.'+imageExtension+'"'
               +'}';
             
-              if (views[i].getAttribute('id')=="bbeb96f1-cbd4-4b3c-a4be-d637c97bbea2"){alert ("c'est ici");}
+
               console.log(nodeString);
               node=JSON.parse(nodeString);
 
@@ -1045,9 +1047,11 @@ function createVis(model){
                  +'"label":"'+folders[i].getAttribute('name')+'"'+','
                  +'"image":"'+dir_image+'archimate/'+image+'.'+imageExtension+'"'
                  +'}';
-               node=JSON.parse(nodeString);
+               console.log ("4_");
+                 console.log(nodeString);
+                 node=JSON.parse(nodeString);
                nodes.push(node);
-      //         console.log ("4_");
+
             
               nodeString=null;
               elements=folders[i].getElementsByTagName("element");
