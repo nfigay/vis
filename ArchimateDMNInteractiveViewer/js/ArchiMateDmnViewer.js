@@ -14,6 +14,19 @@ var folders=null;
 var W4S=null;
 var loadedDataOptions = {};
 var loadedData = null;
+var txt="";
+var dir_image="./img/";
+var elements="";
+var nodes=[];
+var edges=[];
+var nodeString;
+var from="";
+var to="";
+var myTitle="";
+var EDGE_LENGTH_MAIN = 150;
+var EDGE_LENGTH_SUB = 50;
+var imageExtension="png";
+
 var ArchiMateObjects=["Resource","Capability", "Course_Of_Action","Actor","Business_Role", "Business_Collaboration", "Business_Interface", "Business_Process", "Business_Function", "Business_Interaction", "Business_Event", "Business_Service", "Business_Object", "Contract", "Representation", "Product", "Application_Component", "Application_Collaboration", "Application_Interface", "Application_Function", "Application_Interaction", "Application_Process", "Application_Event","Application_Service", "Data_Object", "Node", "Device", "System_Software","Technology_Collaboration", "Technology_Interface", "Path","Communication_Network", "Technology_Function", "Technology_Process", "Technology_Interaction", "Technology_Event", "Technology_Service", "Artifact", "Equipment", "Facility", "Distribution_Network", "Material", "Stakeholder", "Driver", "Assessment", "Goal", "Outcome", "Principle", "Requirement", "Constraint", "Meaning", "Value", "WorkPackage", "Deliverable", "Implementation_Event", "Plateau", "Gap", "Location", "Grouping", "Junction"];
 var StrategyObjectsWithNames=["Resource", "Capability", "Course_Of_Action" ];
 var BusinessObjectsWithNames=["Actor","Business_Role", "Business_Collaboration", "Business_Interface", "Business_Process", "Business_Function", "Business_Interaction", "Business_Event", "Business_Service", "Business_Object", "Contract", "Representation", "Product"];
@@ -616,80 +629,6 @@ function process(data){
 }
 
 function createVis(model){
-  
-  var txt="";
-  var dir_image="./img/";
-  var elements="";
-  var nodes=[];
-  var edges=[];
-  var nodeString;
-  var from="";
-  var to="";
-  var myTitle="";
-  var EDGE_LENGTH_MAIN = 150;
-  var EDGE_LENGTH_SUB = 50;
-  var imageExtension="png";
-  loadedData=null;
-  loadedData=new vis.DataSet(loadedDataOptions);
-  destroy();
-  document.getElementById('configureDisplay').innerHTML="";
-  checkedRelations=[];
-  checkedEntities=[];
-  document.getElementById("RSelection-pane").style.display="none";
-  document.getElementById("ERSelection-pane").style.display="none";
-  document.getElementById("displayPropertyButton").style.display="block";
-  document.getElementById("displayEventButton").style.display="block";
-  
-
-  if (selectedModel=="ER" || selectedModel=="R"){document.getElementById("ArchiMateModel").style.display="block";}
- 
-  
-  inputRelations = document.getElementsByClassName('relationsCheckbox');
-  inputEntities = document.getElementsByClassName('entitiesCheckbox');
-   
-  var options = {
-    nodes: {
-      shape: 'dot',
-      scaling: {
-        min: 10,
-        max: 30
-        },
-      font: {
-        size: 12,
-        face: 'Tahoma'
-      }
-    },
-    edges: {
-      width: 0.15,
-      color: {inherit: 'from'},
-      smooth: {
-        type: 'continuous'
-      }
-     },
-    physics: {
-      stabilization: {
-        enabled:true,
-        iterations:2000,
-        updateInterval:25
-    },
-      barnesHut: {
-        gravitationalConstant: -80000,
-        springConstant: 0.001,
-        springLength: 200
-      }
-    },
-    interaction: {
-      tooltipDelay: 200,
-      hideEdgesOnDrag: true
-    },
-    configure: { filter:function (option, path) {
-      if (path.indexOf('physics') !== -1) { return true;}
-      if (path.indexOf('smooth') !== -1 || option === 'smooth') {return true;} return false;},
-      container: document.getElementById('configureDisplay')
-    }
-  };
-
-
   for (i = 0; i < Viewpoints.length; i++){
     
     loadedData.add([{
@@ -1478,3 +1417,71 @@ function destroy() {
       ArchiMateModel = null;
   }
 }
+function init(){
+  txt="";
+  dir_image="./img/";
+  elements="";
+  nodes=[];
+  edges=[];
+  nodeString;
+  from="";
+  to="";
+  myTitle="";
+  EDGE_LENGTH_MAIN = 150;
+  EDGE_LENGTH_SUB = 50;
+  imageExtension="png";
+  loadedData=null;
+  loadedData=new vis.DataSet(loadedDataOptions);
+  destroy();
+  document.getElementById('configureDisplay').innerHTML="";
+  checkedRelations=[];
+  checkedEntities=[];
+  document.getElementById("RSelection-pane").style.display="none";
+  document.getElementById("ERSelection-pane").style.display="none";
+  document.getElementById("displayPropertyButton").style.display="block";
+  document.getElementById("displayEventButton").style.display="block";
+  if (selectedModel=="ER" || selectedModel=="R"){document.getElementById("ArchiMateModel").style.display="block";}
+  inputRelations = document.getElementsByClassName('relationsCheckbox');
+  inputEntities = document.getElementsByClassName('entitiesCheckbox'); 
+  var options = {
+    nodes: {
+      shape: 'dot',
+      scaling: {
+        min: 10,
+        max: 30
+        },
+      font: {
+        size: 12,
+        face: 'Tahoma'
+      }
+    },
+    edges: {
+      width: 0.15,
+      color: {inherit: 'from'},
+      smooth: {
+        type: 'continuous'
+      }
+     },
+    physics: {
+      stabilization: {
+        enabled:true,
+        iterations:2000,
+        updateInterval:25
+    },
+      barnesHut: {
+        gravitationalConstant: -80000,
+        springConstant: 0.001,
+        springLength: 200
+      }
+    },
+    interaction: {
+      tooltipDelay: 200,
+      hideEdgesOnDrag: true
+    },
+    configure: { filter:function (option, path) {
+      if (path.indexOf('physics') !== -1) { return true;}
+      if (path.indexOf('smooth') !== -1 || option === 'smooth') {return true;} return false;},
+      container: document.getElementById('configureDisplay')
+    }
+  };
+} 
