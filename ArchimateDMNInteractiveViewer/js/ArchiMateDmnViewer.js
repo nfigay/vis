@@ -935,7 +935,7 @@ function createVis(model){
               "length": EDGE_LENGTH_MAIN,
               "title":"--(represent)->"
             };
-            consolode.log(edgeString);
+            console.log(edgeString);
             console.log ("7");
             edge=JSON.parse(JSON.stringify(edgeString));
             edges.push(edge);
