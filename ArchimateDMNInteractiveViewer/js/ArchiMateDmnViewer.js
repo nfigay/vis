@@ -1080,6 +1080,7 @@ if (displayViews){
            //   }
            // }  
           }
+          console.log("here I am");
           break;
          }
         case "Relations":
