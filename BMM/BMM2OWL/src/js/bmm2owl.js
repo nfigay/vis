@@ -166,57 +166,57 @@ function loadBMMOWL()
             type:"entity",
             noe:"node"
           }]);
-          entityIds.push(entities[i].getAttribute('xmi:uuid'));
-          entityNames.push(entities[i].getElementsByTagName("name")[0].textContent);
-          console.log(entities[i].getAttribute('xmi:uuid'));
-          ownedAttributes=entities[i].getElementsByTagName("ownedAttribute");
-          for (j=0;j<ownedAttributes.length;j++){
-            loadedData.add([{
-                id:ownedAttributes[j].getAttribute('xmi:id'),
-                uuid:ownedAttributes[j].getAttribute('xmi:uuid'),
-                shape:"image",
-                title:ownedAttributes[j].getElementsByTagName("name")[0].textContent,
-                label: "property", 
-                mass:10,
-                image:dir_image+"view"+imageExtension,
-                type:"property",
-                noe:"edge",
-                from:entities[i].getAttribute('xmi:id'),
-                to:ownedAttributes[j].getElementsByTagName("association")[0].getAttribute('xmi:idref')
-              }]);
-              loadedData.add([{
-                id:"inverseOf_"+ownedAttributes[j].getAttribute('xmi:id'),
-                uuid:"inverseOf_"+ownedAttributes[j].getAttribute('xmi:uuid'),
-                shape:"image",
-                title:"inverseOf_"+ownedAttributes[j].getElementsByTagName("name")[0].textContent,
-                label: "inverse_property", 
-                mass:10,
-                image:dir_image+"view"+imageExtension,
-                type:"inverse_property",
-                noe:"edge",
-                to:entities[i].getAttribute('xmi:id'),
-                from:ownedAttributes[j].getElementsByTagName("association")[0].getAttribute('xmi:idref')
-              }]);
-              loadedData.add([{
-                id:ownedAttributes[j].getAttribute('xmi:id')+"_eo",
-                uuid:ownedAttributes[j].getAttribute('xmi:uuid')+"_eo",
-                shape:"image",
-                title:ownedAttributes[j].getElementsByTagName("name")[0].textContent,
-                label: "property", 
-                mass:10,
-                image:dir_image+"view"+imageExtension,
-                type:"property_eo",
-                noe:"edge",
-                from:entities[i].getAttribute('xmi:id'),
-                to:ownedAttributes[j].getElementsByTagName("type")[0].getAttribute('xmi:idref')
-              }]);
-            
+        entityIds.push(entities[i].getAttribute('xmi:uuid'));
+        entityNames.push(entities[i].getElementsByTagName("name")[0].textContent);
+        console.log(entities[i].getAttribute('xmi:uuid'));
+        ownedAttributes=entities[i].getElementsByTagName("ownedAttribute");
+        if (entities[i].getElementsByTagName("name")[0].textContent == "name"){;}else{
+            for (j=0;j<ownedAttributes.length;j++){
+                loadedData.add([{
+                    id:ownedAttributes[j].getAttribute('xmi:id'),
+                    uuid:ownedAttributes[j].getAttribute('xmi:uuid'),
+                    shape:"image",
+                    title:ownedAttributes[j].getElementsByTagName("name")[0].textContent,
+                    label: "property", 
+                    mass:10,
+                    image:dir_image+"view"+imageExtension,
+                    type:"property",
+                    noe:"edge",
+                    from:entities[i].getAttribute('xmi:id'),
+                    to:ownedAttributes[j].getElementsByTagName("association")[0].getAttribute('xmi:idref')
+                }]);
+                loadedData.add([{
+                    id:"inverseOf_"+ownedAttributes[j].getAttribute('xmi:id'),
+                    uuid:"inverseOf_"+ownedAttributes[j].getAttribute('xmi:uuid'),
+                    shape:"image",
+                    title:"inverseOf_"+ownedAttributes[j].getElementsByTagName("name")[0].textContent,
+                    label: "inverse_property", 
+                    mass:10,
+                    image:dir_image+"view"+imageExtension,
+                    type:"inverse_property",
+                    noe:"edge",
+                    to:entities[i].getAttribute('xmi:id'),
+                    from:ownedAttributes[j].getElementsByTagName("association")[0].getAttribute('xmi:idref')
+                }]);
+                loadedData.add([{
+                    id:ownedAttributes[j].getAttribute('xmi:id')+"_eo",
+                    uuid:ownedAttributes[j].getAttribute('xmi:uuid')+"_eo",
+                    shape:"image",
+                    title:ownedAttributes[j].getElementsByTagName("name")[0].textContent,
+                    label: "property", 
+                    mass:10,
+                    image:dir_image+"view"+imageExtension,
+                    type:"property_eo",
+                    noe:"edge",
+                    from:entities[i].getAttribute('xmi:id'),
+                    to:ownedAttributes[j].getElementsByTagName("type")[0].getAttribute('xmi:idref')
+                }]);
+            }
           }
     }
+    console.log ("processXMI");
+} 
 
-console.log ("processXMI");
-
- } 
 function nsResolver(prefix) {
     switch(prefix){
       //case "xsi":return 'http://www.w3.org/2001/XMLSchema-instance';
