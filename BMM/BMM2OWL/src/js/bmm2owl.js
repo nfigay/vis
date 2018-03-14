@@ -170,6 +170,7 @@ function loadBMMOWL()
         entityNames.push(entities[i].getElementsByTagName("name")[0].textContent);
         console.log(entities[i].getAttribute('xmi:uuid'));
         ownedAttributes=entities[i].getElementsByTagName("ownedAttribute");
+        console.log("association"+ownedAttributes[j].getElementsByTagName("association") );
       //  if (entities[i].getElementsByTagName("name")[0].textContent == "name"){;}
       //  else{
             for (j=0;j<ownedAttributes.length;j++){
