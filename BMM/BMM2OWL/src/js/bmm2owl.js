@@ -149,6 +149,7 @@ function loadBMMOWL()
     }
     for (i = 0; i < queryEntities.snapshotLength; i++) {
         //views.push(queryAssociations.snapshotItem(i));associations.push(queryAssociations.snapshotItem(i)); 
+        entities.push(queryEntities.snapshotItem(i)); 
         loadedData.add([{
             id:entities[i].getAttribute('xmi:uuid'),
             shape:"image",
