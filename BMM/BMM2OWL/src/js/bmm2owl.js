@@ -151,6 +151,7 @@ function loadBMMOWL()
        console.log(queryAssociations.snapshotItem(i));
     }
     for (i = 0; i < queryEntities.snapshotLength; i++) {
+        console.log(queryEntities.snapshotItem(i));
         var ownedAttributes='';
         //views.push(queryAssociations.snapshotItem(i));associations.push(queryAssociations.snapshotItem(i)); 
         entities.push(queryEntities.snapshotItem(i)); 
@@ -211,9 +212,6 @@ function loadBMMOWL()
               }]);
             
           }
-                  
-
-       console.log(queryEntities.snapshotItem(i));
     }
 
 console.log ("processXMI");
