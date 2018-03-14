@@ -145,7 +145,7 @@ function loadBMMOWL()
           associationIds.push(associations[i].getAttribute('xmi:uuid'));
           associationNames.push(associations[i].getElementsByTagName("name")[0].textContent);
           console.log(associations[i].getElementsByTagName("name")[0].textContent);
-       console.log(queryAssociations.snapshotItem(i)).getElementsByTag;
+       console.log(queryAssociations.snapshotItem(i));
     }
     for (i = 0; i < queryEntities.snapshotLength; i++) {
         //views.push(queryAssociations.snapshotItem(i));
