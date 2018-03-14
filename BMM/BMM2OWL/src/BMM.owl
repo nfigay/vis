@@ -1,0 +1,1144 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.plm-interop.org/omg/spec/BMM/1.3#"
+     xml:base="http://www.plm-interop.org/omg/spec/BMM/1.3"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#InverseOf_motivatedDirective -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#InverseOf_motivatedDirective">
+        <owl:inverseOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#motivatedDirective"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#affectedEnd -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#affectedEnd">
+        <owl:inverseOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_affectedEnd"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentAffectsAchievementOfEnd"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#End"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#affectedEnd_eo -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#affectedEnd_eo">
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Assessment"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#End"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_judgingAssessment"/>
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#affectedEnd"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#affectedMeans -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#affectedMeans">
+        <owl:inverseOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_affectedMeans"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentAffectsAchievementOfEnd"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Means"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#affectedMeans_eo -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#affectedMeans_eo">
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Assessment"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Means"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_judgingAssessment"/>
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#affectedMeans"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#affectingAssessment -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#affectingAssessment">
+        <owl:inverseOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_affectingAssessment"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentAffectsAchievementOfEnd"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Assessment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#categorizedAssessment -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#categorizedAssessment">
+        <owl:inverseOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_categorizedAssessment"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentCategoryCategorizesAssessment"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Assessment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#categorizedAssessment_eo -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#categorizedAssessment_eo">
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentCategory"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Assessment"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_categorizingAssessmentCategory"/>
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#categorizedAssessment"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#categorizingAssessmentCategory -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#categorizingAssessmentCategory">
+        <owl:inverseOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_categorizingAssessmentCategory"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentCategoryCategorizesAssessment"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentCategory"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#categorizingAssessmentCategory_eo -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#categorizingAssessmentCategory_eo">
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Assessment"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentCategory"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_categorizedAssessment"/>
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#categorizingAssessmentCategory"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#end_judgingAssessment_eo -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#end_judgingAssessment_eo">
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#End"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Assessment"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_affectedEnd"/>
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#judgingAssessment"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#identifiedPotentialImpact -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#identifiedPotentialImpact">
+        <owl:inverseOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_identifiedPotentialImpact"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentIdentifiesPotentialImpact"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#PotentialImpact"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#identifiedPotentialImpact_eo -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#identifiedPotentialImpact_eo">
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Assessment"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#PotentialImpact"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_identifyingAssessment"/>
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#identifiedPotentialImpact"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#identifyingAssessment -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#identifyingAssessment">
+        <owl:inverseOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_identifyingAssessment"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentIdentifiesPotentialImpact"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Assessment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#identifyingAssessment_eo -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#identifyingAssessment_eo">
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#PotentialImpact"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Assessment"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_identifiedPotentialImpact"/>
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#identifyingAssessment"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#implementedStrategy -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#implementedStrategy">
+        <owl:inverseOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_implementedStrategy"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#TacticImplementsStrategy"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Strategy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#implementedStrategy_eo -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#implementedStrategy_eo">
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Tactic"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Strategy"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_implementingTactic"/>
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#implementedStrategy"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#implementingTactic -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#implementingTactic">
+        <owl:inverseOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_implementingTactic"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#TacticImplementsStrategy"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Tactic"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#implementingTactic_eo -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#implementingTactic_eo">
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Strategy"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Tactic"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_implementedStrategy"/>
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#implementingTactic"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#influencer_judgingAssessment_eo -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#influencer_judgingAssessment_eo">
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Influencer"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Assessment"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_JudgeInfluencer"/>
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#judgingAssessment"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_JudgeInfluencer -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_JudgeInfluencer">
+        <owl:inverseOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#judgedInfluencer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_affectedEnd -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_affectedEnd"/>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_affectedMeans -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_affectedMeans"/>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_affectingAssessment -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_affectingAssessment"/>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_categorizedAssessment -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_categorizedAssessment">
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentCategoryCategorizesAssessment"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Assessment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_categorizingAssessmentCategory -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_categorizingAssessmentCategory"/>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_identifiedPotentialImpact -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_identifiedPotentialImpact"/>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_identifyingAssessment -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_identifyingAssessment"/>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_implementedStrategy -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_implementedStrategy"/>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_implementingTactic -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_implementingTactic"/>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_judgingAssessment -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_judgingAssessment">
+        <owl:inverseOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#judgingAssessment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_motivatingAssessment -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_motivatingAssessment">
+        <owl:inverseOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#motivatingAssessment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#judgedInfluencer -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#judgedInfluencer">
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentIsJudgmentOfInfluencer"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Influencer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#judgedInfluencer_eo -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#judgedInfluencer_eo">
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Assessment"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Influencer"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_judgingAssessment"/>
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#judgedInfluencer"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#judgingAssessment -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#judgingAssessment">
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentAffectsAchievementOfEnd"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentAffectsEmploymentOfMeans"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentIsJudgmentOfInfluencer"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Assessment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#means_judgingAssessment_eo -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#means_judgingAssessment_eo">
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Means"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Assessment"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_affectedMeans"/>
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#judgingAssessment"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#motivatedDirective -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#motivatedDirective">
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentProvidesImpetusForDirective"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Directive"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#motivatedDirective_eo -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#motivatedDirective_eo">
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Assessment"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Directive"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#inverseOf_motivatingAssessment"/>
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#motivatedDirective"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#motivatingAssessment -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#motivatingAssessment">
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentProvidesImpetusForDirective"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Assessment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#motivatingAssessment_eo -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#motivatingAssessment_eo">
+        <rdfs:domain rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Directive"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Assessment"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#InverseOf_motivatedDirective"/>
+            <rdf:Description rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#motivatingAssessment"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#Assessment -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#Assessment">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#MotivationElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentAffectsAchievementOfEnd -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentAffectsAchievementOfEnd">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentAffectsEmploymentOfMeans -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentAffectsEmploymentOfMeans">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentCategory -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentCategory">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#MotivationElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentCategoryCategorizesAssessment -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentCategoryCategorizesAssessment">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentIdentifiesPotentialImpact -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentIdentifiesPotentialImpact">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentIsJudgmentOfInfluencer -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentIsJudgmentOfInfluencer">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentProvidesImpetusForDirective -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#AssessmentProvidesImpetusForDirective">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#Asset -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#Asset">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#MotivationElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#BroaderAssessmentCategoryCategorizesNarrowerAssessmentCategory -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#BroaderAssessmentCategoryCategorizesNarrowerAssessmentCategory">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#BroaderBusinessPolicyIncludesMoreSpecificBusinessPolicy -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#BroaderBusinessPolicyIncludesMoreSpecificBusinessPolicy">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#BroaderCourseOfActionIncludesMoreSpecificCourseOfAction -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#BroaderCourseOfActionIncludesMoreSpecificCourseOfAction">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#BroaderDesiredCategoryCategorizesMoreSpecificDesiredResultCategory -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#BroaderDesiredCategoryCategorizesMoreSpecificDesiredResultCategory">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#BroaderDesiredResultIncludesMoreSpecificDesiredResult -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#BroaderDesiredResultIncludesMoreSpecificDesiredResult">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#BroaderInfluencerCategorizesNarrowerInfluencerCategory -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#BroaderInfluencerCategorizesNarrowerInfluencerCategory">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#BroaderOrganizationCategoryCategorizesNarrowerOrganizationCategory -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#BroaderOrganizationCategoryCategorizesNarrowerOrganizationCategory">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#BusinessPolicy -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#BusinessPolicy">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Directive"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#BusinessPolicyGovernsBusinessProcess -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#BusinessPolicyGovernsBusinessProcess">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#BusinessPolicyIsBasisOfBusinessRule -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#BusinessPolicyIsBasisOfBusinessRule">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#BusinessProcess -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#BusinessProcess">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#MotivationElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#BusinessProcessDeliversOffering -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#BusinessProcessDeliversOffering">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#BusinessProcessManagesAsset -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#BusinessProcessManagesAsset">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#BusinessProcessRealizesCourseOfAction -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#BusinessProcessRealizesCourseOfAction">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#BusinessRule -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#BusinessRule">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Directive"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#BusinessRuleGuidesBusinessProcess -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#BusinessRuleGuidesBusinessProcess">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#CourseOfAction -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#CourseOfAction">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Means"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#CourseOfActionChannelsEffortsTowardsDesiredResult -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#CourseOfActionChannelsEffortsTowardsDesiredResult">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#CourseOfActionDefinesOffering -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#CourseOfActionDefinesOffering">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#CourseOfActionDeploysAsset -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#CourseOfActionDeploysAsset">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#CourseOfActionDischargesLiability -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#CourseOfActionDischargesLiability">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#CourseOfActionIsFormulatedBasedOnDirective -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#CourseOfActionIsFormulatedBasedOnDirective">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#DesiredResult -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#DesiredResult">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#End"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#DesiredResultCategory -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#DesiredResultCategory">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#MotivationElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#DesiredResultCategoryCategorizesDesiredResult -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#DesiredResultCategoryCategorizesDesiredResult">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#Directive -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#Directive">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Means"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#DirectiveActsAsRegulation -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#DirectiveActsAsRegulation">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#DirectiveGovernsCourseOfAction -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#DirectiveGovernsCourseOfAction">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#DirectiveGovernsUseOfAsset -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#DirectiveGovernsUseOfAsset">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#DirectiveSupportsAchievementOfDesiredResult -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#DirectiveSupportsAchievementOfDesiredResult">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#EnablingCourseOfActionEnablesEnabledCourseOfAction -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#EnablingCourseOfActionEnablesEnabledCourseOfAction">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#End -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#End">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#MotivationElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#EnfluencingOrganization -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#EnfluencingOrganization">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#MotivationElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#ExternalInfluencer -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#ExternalInfluencer">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Influencer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#FixedAsset -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#FixedAsset">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Asset"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#FixedAssetProvidesResource -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#FixedAssetProvidesResource">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#Goal -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#Goal">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#DesiredResult"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#GoalAmplifiesVision -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#GoalAmplifiesVision">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#Influencer -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#Influencer">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#MotivationElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#InfluencerCategory -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#InfluencerCategory">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#MotivationElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#InfluencerCategoryCategorizesInfluencer -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#InfluencerCategoryCategorizesInfluencer">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#InfluencingOrganizationIsSourceofInfluencer -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#InfluencingOrganizationIsSourceofInfluencer">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#InternalInfluencer -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#InternalInfluencer">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Influencer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#Liability -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#Liability">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#MotivationElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#LiabilityClaimsResource -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#LiabilityClaimsResource">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#Means -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#Means">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#MotivationElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#Mission -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#Mission">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Means"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#MissionMakesOperativeVision -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#MissionMakesOperativeVision">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#MotivationElement -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#MotivationElement"/>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#Objective -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#Objective">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#DesiredResult"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#ObjectiveQuantitiesGoal -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#ObjectiveQuantitiesGoal">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#Offering -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#Offering">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#FixedAsset"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#OfferingRequiresResource -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#OfferingRequiresResource">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#OfferingUsesFixedAsset -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#OfferingUsesFixedAsset">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#OrganizationCategory -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#OrganizationCategory">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#MotivationElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#OrganizationCategoryCategorizesInfluencingOrganization -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#OrganizationCategoryCategorizesInfluencingOrganization">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#OrganizationUnit -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#OrganizationUnit">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#MotivationElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#OrganizationUnitActsAsInfluencingOrganization -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#OrganizationUnitActsAsInfluencingOrganization">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#OrganizationUnitDefinesEnd -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#OrganizationUnitDefinesEnd">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#OrganizationUnitEstablishesMeans -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#OrganizationUnitEstablishesMeans">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#OrganizationUnitIsResponsibleForAsset -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#OrganizationUnitIsResponsibleForAsset">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#OrganizationUnitIsResponsibleForBusinessProcess -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#OrganizationUnitIsResponsibleForBusinessProcess">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#OrganizationUnitIsResponsibleForLiability -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#OrganizationUnitIsResponsibleForLiability">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#OrganizationUnitMakesAssessment -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#OrganizationUnitMakesAssessment">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#OrganizationUnitRecognizesInfluencer -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#OrganizationUnitRecognizesInfluencer">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#PotentialImpact -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#PotentialImpact">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#MotivationElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#PotentialImpactProvidesImpetursForDirective -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#PotentialImpactProvidesImpetursForDirective">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#PotentialReward -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#PotentialReward">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#PotentialImpact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#Regulation -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#Regulation">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#ExternalInfluencer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#Relation -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#Resource -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#Resource">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Asset"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#Risk -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#Risk">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#PotentialImpact"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#Strategy -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#Strategy">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#CourseOfAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#StrategyDeterminesOrganizationUnit -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#StrategyDeterminesOrganizationUnit">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#StrategyIsAComponentfOfThe_PlanForMIssion -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#StrategyIsAComponentfOfThe_PlanForMIssion">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#Tactic -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#Tactic">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#CourseOfAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#TacticEffectsEnforcementLevelOfBusinessRule -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#TacticEffectsEnforcementLevelOfBusinessRule">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#TacticImplementsStrategy -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#TacticImplementsStrategy">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#UsingAssessmentUsesUsedAssessment -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#UsingAssessmentUsesUsedAssessment">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#Relation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.org/omg/spec/BMM/1.3#Vision -->
+
+    <owl:Class rdf:about="http://www.plm-interop.org/omg/spec/BMM/1.3#Vision">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.org/omg/spec/BMM/1.3#End"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
