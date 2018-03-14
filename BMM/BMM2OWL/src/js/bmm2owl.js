@@ -115,13 +115,39 @@ function loadBMMOWL()
  {
     loadedData=null;
     loadedData=new vis.DataSet(loadedDataOptions);
+    var associations=[];
+    var associationIds=[];
+    var associationNames=[];
+    var entities=[];
+    var entityIds=[];
+    var entityNames=[];
     var queryAssociations = data.evaluate( '//packagedElement[@xmi:type="uml:Association"]', data, nsResolver,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null );  
     var nbassociations = data.evaluate( 'count(//packagedElement[@xmi:type="uml:Association"])', data, nsResolver, XPathResult.ANY_TYPE, null );
+    alert (nbassociations);
+  
+    var queryEntities=data.evaluate( '//packagedElement[@xmi:type="uml:Class"]', data, nsResolver,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null );
   
     console.log ("ok"+nbassociations.value);
     for (i = 0; i < queryAssociations.snapshotLength; i++) {
         //views.push(queryAssociations.snapshotItem(i));
+        associations.push(queryAssociations.snapshotItem(i)); 
+        loadedData.add([{
+            id:associations[i].getAttribute('xmi:uuid'),
+            shape:"image",
+            title:associations[i].getAttribute('xmi:id'),
+            label: "association", 
+            mass:10,
+            image:dir_image+"view"+imageExtension,
+            type:"association",
+            noe:"node"
+          }]);
+          associationIds.push(associations[i].getAttribute('xmi:uuid'));
+          assocationNames.push(associations[i].getAttribute('xmi:id'));
        console.log(queryAssociations.snapshotItem(i));
+    }
+    for (i = 0; i < queryEntities.snapshotLength; i++) {
+        //views.push(queryAssociations.snapshotItem(i));
+       console.log(queryEntitiess.snapshotItem(i));
     }
 
 console.log ("processXMI");
