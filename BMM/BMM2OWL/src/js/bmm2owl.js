@@ -74,6 +74,7 @@ var nodes = null;
     var relationArcValue;
     var loadedDataOptions = {};
     var loadedData = null;
+    var dir_image="./img/";
  
 
 
@@ -142,8 +143,9 @@ function loadBMMOWL()
             noe:"node"
           }]);
           associationIds.push(associations[i].getAttribute('xmi:uuid'));
-          assocationNames.push(associations[i].getAttribute('xmi:id'));
-       console.log(queryAssociations.snapshotItem(i));
+          assocationNames.push(associations[i].getElementsByTagName("name")[0].textContent);
+          console.log(associations[i].getElementsByTagName("name")[0].textContent);
+       console.log(queryAssociations.snapshotItem(i)).getElementsByTag;
     }
     for (i = 0; i < queryEntities.snapshotLength; i++) {
         //views.push(queryAssociations.snapshotItem(i));
