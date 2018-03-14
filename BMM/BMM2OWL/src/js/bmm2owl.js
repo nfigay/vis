@@ -174,7 +174,7 @@ function loadBMMOWL()
       //  if (entities[i].getElementsByTagName("name")[0].textContent == "name"){;}
       //  else{
             for (j=0;j<ownedAttributes.length;j++){
-                console.log("association"+ownedAttributes[j].getElementsByTagName("association") );
+                console.log(ownedAttributes[j].getElementsByTagName("association"));
                 loadedData.add([{
                     id:ownedAttributes[j].getAttribute('xmi:id'),
                     uuid:ownedAttributes[j].getAttribute('xmi:uuid'),
