@@ -128,10 +128,10 @@ console.log ("processXMI");
 function nsResolver(prefix) {
     switch(prefix){
       case "xsi":return 'http://www.w3.org/2001/XMLSchema-instance';
-      case "xmi":return 'http://www.omg.org/spec/XMI/20110701';
-      case "uml":return 'http://www.omg.org/spec/UML/20110701';
-      case "mofext":return 'http://www.omg.org/spec/MOF/20110701';
-      default: return null;
+     // case "xmi":return 'http://www.omg.org/spec/XMI/20110701';
+     // case "uml":return 'http://www.omg.org/spec/UML/20110701';
+     // case "mofext":return 'http://www.omg.org/spec/MOF/20110701';
+     // default: return null;
     }
 }
 
