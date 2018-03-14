@@ -83,6 +83,19 @@ function  initBMM2OWL()
 {
     
     loadBMMXMI();
+    var viewNodes = new vis.DataView(loadedData, {
+        filter: function (item) {
+          return (item.noe == "node");
+        },
+        fields: ['id', 'shape', 'title', 'label', 'mass', 'image']
+      });
+    var viewRelations=new vis.DataView(loadedData, {
+        filter: function (item) {
+          return (item.noe == "edge");
+        },
+        fields: ['id', 'title', 'label', 'from', 'to']
+      });
+      
     loadBMMOWL();
 }
 //open the XMI file provided with the BMM specification
