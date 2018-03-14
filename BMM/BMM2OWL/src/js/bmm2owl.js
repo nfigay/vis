@@ -115,10 +115,10 @@ function loadBMMOWL()
  {
     loadedData=null;
     loadedData=new vis.DataSet(loadedDataOptions);
-    var queryAssociations = data.evaluate( '/packagedElement[@xmi:type="uml:Association"]', data, nsResolver,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null );  
-    var nbassociations = data.evaluate( 'count(/packagedElement[@xmi:type="uml:Association"])', data, nsResolver, XPathResult.ANY_TYPE, null );
+    var queryAssociations = data.evaluate( '//packagedElement[@xmi:type="uml:Association"]', data, nsResolver,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null );  
+    var nbassociations = data.evaluate( 'count(//packagedElement[@xmi:type="uml:Association"])', data, nsResolver, XPathResult.ANY_TYPE, null );
   
-    console.log ("ok"+nbassociations.value);
+    console.log ("ok"+nbassociations);
     for (i = 0; i < queryAssociations.snapshotLength; i++) {
         //views.push(queryAssociations.snapshotItem(i));
        console.log(queryAssociations.snapshotItem(i));
@@ -129,10 +129,10 @@ console.log ("processXMI");
  } 
 function nsResolver(prefix) {
     switch(prefix){
-      case "xsi":return 'http://www.w3.org/2001/XMLSchema-instance';
+      //case "xsi":return 'http://www.w3.org/2001/XMLSchema-instance';
       case "xmi":return 'http://www.omg.org/spec/XMI/20110701';
-      case "uml":return 'http://www.omg.org/spec/UML/20110701';
-      case "mofext":return 'http://www.omg.org/spec/MOF/20110701';
+      //case "uml":return 'http://www.omg.org/spec/UML/20110701';
+      //case "mofext":return 'http://www.omg.org/spec/MOF/20110701';
       default: return null;
     }
 }
