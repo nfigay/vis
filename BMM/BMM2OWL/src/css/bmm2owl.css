@@ -112,17 +112,11 @@
       text-align: justify;
       text-justify: inter-word;
       display:none;
-
   }  
 
 
-#sub-pane2 {
-    display="none"; 
-    text-align: left;
-    overflow: scroll;
-
-
-  } 
+   
+  
   #myArchi {
   display:"none";
   width:1000px; 
@@ -136,9 +130,9 @@
   margin-bottom:20px;
   background-repeat:no-repeat;
   border:10px solid #ddd;
- 
-}  
-    table.legend_table {
+  }  
+  
+  table.legend_table {
       font-size: 11px;
       border-width:1px;
       border-color:#d3d3d3;

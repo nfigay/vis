@@ -76,21 +76,45 @@ var nodes = null;
 
 function  initBMM2OWL()
 {
-    loadBMM();
+    loadBMMXMI();
+    loadBMMOWL();
 }
 //open the XMI file provided with the BMM specification
 // URI: https://www.omg.org/spec/BMM/20141108/BMM.xmi
-function loadBMM()
+function loadBMMXMI()
 {
   fetch('./BMM.xmi')
   .then(response => response.text())
   .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
   .then( function(data){
-    process(data);
+    processXMI(data);
     console.log(data);
     }
   );
 }
+//modifications for the work to perform
+
+function loadBMMOWL()
+{
+    fetch('./BMM.owl')
+    .then(response => response.text())
+    .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
+    .then( function(data){
+      processOWL(data);
+      console.log(data);
+      }
+    );
+  }
+
+ function processXMI()
+ {
+console.log ("processXMI");
+ } 
+
+ function processOWL()
+ {
+   console.log("processOWL");  
+ }
     // Called when the Visualization API is loaded.
 function draw() {
 
