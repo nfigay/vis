@@ -143,7 +143,7 @@ function loadBMMOWL()
             noe:"node"
           }]);
           associationIds.push(associations[i].getAttribute('xmi:uuid'));
-          assocationNames.push(associations[i].getElementsByTagName("name")[0].textContent);
+          associationNames.push(associations[i].getElementsByTagName("name")[0].textContent);
           console.log(associations[i].getElementsByTagName("name")[0].textContent);
        console.log(queryAssociations.snapshotItem(i)).getElementsByTag;
     }
