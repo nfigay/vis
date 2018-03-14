@@ -116,8 +116,7 @@
   }  
 
 
-  }
-     #sub-pane2 {
+#sub-pane2 {
     display="none"; 
     text-align: left;
     overflow: scroll;
