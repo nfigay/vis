@@ -115,8 +115,8 @@ function loadBMMOWL()
  {
     loadedData=null;
     loadedData=new vis.DataSet(loadedDataOptions);
-    var queryAssociations = data.evaluate( '//packagedElement[@xmi:type="uml:Association"]', data, nsResolver,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null );  
-    var nbassociations = data.evaluate( 'count(//packagedElement[@xmi:type="uml:Association"])', data, nsResolver, XPathResult.ANY_TYPE, null );
+    var queryAssociations = data.evaluate( '/packagedElement[@xmi:type="uml:Association"]', data, nsResolver,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null );  
+    var nbassociations = data.evaluate( 'count(/packagedElement[@xmi:type="uml:Association"])', data, nsResolver, XPathResult.ANY_TYPE, null );
   
     console.log ("ok"+nbassociations.value);
     for (i = 0; i < queryAssociations.snapshotLength; i++) {
