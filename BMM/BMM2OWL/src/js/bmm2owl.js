@@ -72,10 +72,15 @@ var nodes = null;
     var oneArcPerRelation=false;
     var listOfNodeIds;
     var relationArcValue;
+    var loadedDataOptions = {};
+    var loadedData = null;
+ 
+
 
 
 function  initBMM2OWL()
 {
+    
     loadBMMXMI();
     loadBMMOWL();
 }
@@ -106,12 +111,27 @@ function loadBMMOWL()
     );
   }
 
- function processXMI()
+ function processXMI(data)
  {
-console.log ("processXMI");
- } 
+    loadedData=null;
+    loadedData=new vis.DataSet(loadedDataOptions);
+    var queryAssociations = data.evaluate( '//packagedElement[@mxi:type="uml:Association"]', model, nsResolver,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null );  
+    for (i = 0; i < queryAssociations.snapshotLength; i++) {
+        //views.push(queryAssociations.snapshotItem(i));
+       console.log(queryAssociations.snapshotItem(i));
+    }
 
- function processOWL()
+console.log ("processXMI");
+
+ } 
+function nsResolver(prefix) {
+    switch(prefix){
+      case "xsi":return 'http://www.w3.org/2001/XMLSchema-instance';
+      default: return null;
+    }
+}
+
+ function processOWL(data)
  {
    console.log("processOWL");  
  }
