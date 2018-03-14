@@ -169,7 +169,7 @@ function loadBMMOWL()
           entityNames.push(entities[i].getElementsByTagName("name")[0].textContent);
           console.log(entities[i].getAttribute('xmi:uuid'));
           ownedAttributes=entities[i].getElementsByTagName("ownedAttribute");
-          for (j=O;j<ownedAttributes.length;j++){
+          for (j=0;j<ownedAttributes.length;j++){
             loadedData.add([{
                 id:ownedAttributes[j].getAttribute('xmi:id'),
                 uuid:ownedAttributes[j].getAttribute('xmi:uuid'),
@@ -211,8 +211,7 @@ function loadBMMOWL()
               }]);
             
           }
-            
-            
+                  
 
        console.log(queryEntities.snapshotItem(i));
     }
