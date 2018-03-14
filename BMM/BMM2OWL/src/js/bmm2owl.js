@@ -115,7 +115,7 @@ function loadBMMOWL()
  {
     loadedData=null;
     loadedData=new vis.DataSet(loadedDataOptions);
-    var queryAssociations = data.evaluate( '//packagedElement[@mxi:type="uml:Association"]', data, nsResolver,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null );  
+    var queryAssociations = data.evaluate( '//packagedElement[@xmi:type="uml:Association"]', data, nsResolver,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null );  
     for (i = 0; i < queryAssociations.snapshotLength; i++) {
         //views.push(queryAssociations.snapshotItem(i));
 
