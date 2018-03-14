@@ -124,7 +124,7 @@ function loadBMMOWL()
     var entityNames=[];
     var queryAssociations = data.evaluate( '//packagedElement[@xmi:type="uml:Association"]', data, nsResolver,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null );  
     var nbassociations = data.evaluate( 'count(//packagedElement[@xmi:type="uml:Association"])', data, nsResolver, XPathResult.ANY_TYPE, null );
-    alert (nbassociations);
+    //alert (nbassociations);
   
     var queryEntities=data.evaluate( '//packagedElement[@xmi:type="uml:Class"]', data, nsResolver,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null );
   
