@@ -133,7 +133,10 @@ function loadBMMOWL()
         //views.push(queryAssociations.snapshotItem(i));
         associations.push(queryAssociations.snapshotItem(i)); 
         loadedData.add([{
-            id:associations[i].getAttribute('xmi:uuid'),
+            id:associations[i].getAttribute('xmi:id'),
+            uuid:associations[i].getAttribute('xmi:uuid'),
+            ref1:associations[i].getElementsByTagName("memberEnd")[0].getAttribute('xmi:idref'),
+            ref2:associations[i].getElementsByTagName("memberEnd")[1].getAttribute('xmi:idref'),
             shape:"image",
             title:associations[i].getElementsByTagName("name")[0].textContent,
             label: "association", 
@@ -148,10 +151,12 @@ function loadBMMOWL()
        console.log(queryAssociations.snapshotItem(i));
     }
     for (i = 0; i < queryEntities.snapshotLength; i++) {
+        var ownAttributes='';
         //views.push(queryAssociations.snapshotItem(i));associations.push(queryAssociations.snapshotItem(i)); 
         entities.push(queryEntities.snapshotItem(i)); 
         loadedData.add([{
-            id:entities[i].getAttribute('xmi:uuid'),
+            id:entities[i].getAttribute('xmi:id'),
+            uuid:entities[i].getAttribute('xmi:uuid'),
             shape:"image",
             title:entities[i].getElementsByTagName("name")[0].textContent,
             label: "entity", 
@@ -163,6 +168,51 @@ function loadBMMOWL()
           entityIds.push(entities[i].getAttribute('xmi:uuid'));
           entityNames.push(entities[i].getElementsByTagName("name")[0].textContent);
           console.log(entities[i].getAttribute('xmi:uuid'));
+          ownedAttributes=entities[i].getElementsByTagName("ownedAttribute");
+          for (j=O;j<ownedAttributes.length;j++){
+            loadedData.add([{
+                id:ownedAttributes[j].getAttribute('xmi:id'),
+                uuid:ownedAttributes[j].getAttribute('xmi:uuid'),
+                shape:"image",
+                title:ownedAttributes[j].getAttribute('xmi:id').getElementsByTagName("name")[0].textContent,
+                label: "property", 
+                mass:10,
+                image:dir_image+"view"+imageExtension,
+                type:"property",
+                noe:"edge",
+                from:entities[i].getAttribute('xmi:id'),
+                to:ownedAttributes[j].getAttribute('xmi:id').getElementsByTagName("association")[0].getAttribute('xmi:idref');
+              }]);
+              loadedData.add([{
+                id:"inverseOf_"+ownedAttributes[j].getAttribute('xmi:id'),
+                uuid:"inverseOf_"+ownedAttributes[j].getAttribute('xmi:uuid'),
+                shape:"image",
+                title:"inverseOf_"+ownedAttributes[j].getAttribute('xmi:id').getElementsByTagName("name")[0].textContent,
+                label: "inverse_property", 
+                mass:10,
+                image:dir_image+"view"+imageExtension,
+                type:"inverse_property",
+                noe:"edge",
+                to:entities[i].getAttribute('xmi:id'),
+                from:ownedAttributes[j].getAttribute('xmi:id').getElementsByTagName("association")[0].getAttribute('xmi:idref');
+              }]);
+              loadedData.add([{
+                id:ownedAttributes[j].getAttribute('xmi:id')+"_eo",
+                uuid:ownedAttributes[j].getAttribute('xmi:uuid')+"_eo",
+                shape:"image",
+                title:ownedAttributes[j].getAttribute('xmi:id').getElementsByTagName("name")[0].textContent,
+                label: "property", 
+                mass:10,
+                image:dir_image+"view"+imageExtension,
+                type:"property_eo",
+                noe:"edge",
+                from:entities[i].getAttribute('xmi:id'),
+                to:ownedAttributes[j].getAttribute('xmi:id').getElementsByTagName("type")[0].getAttribute('xmi:idref');
+              }]);
+            
+          }
+            
+            
 
        console.log(queryEntities.snapshotItem(i));
     }
