@@ -151,7 +151,7 @@ function loadBMMOWL()
        console.log(queryAssociations.snapshotItem(i));
     }
     for (i = 0; i < queryEntities.snapshotLength; i++) {
-        var ownAttributes='';
+        var ownedAttributes='';
         //views.push(queryAssociations.snapshotItem(i));associations.push(queryAssociations.snapshotItem(i)); 
         entities.push(queryEntities.snapshotItem(i)); 
         loadedData.add([{
@@ -174,40 +174,40 @@ function loadBMMOWL()
                 id:ownedAttributes[j].getAttribute('xmi:id'),
                 uuid:ownedAttributes[j].getAttribute('xmi:uuid'),
                 shape:"image",
-                title:ownedAttributes[j].getAttribute('xmi:id').getElementsByTagName("name")[0].textContent,
+                title:ownedAttributes[j].getElementsByTagName("name")[0].textContent,
                 label: "property", 
                 mass:10,
                 image:dir_image+"view"+imageExtension,
                 type:"property",
                 noe:"edge",
                 from:entities[i].getAttribute('xmi:id'),
-                to:ownedAttributes[j].getAttribute('xmi:id').getElementsByTagName("association")[0].getAttribute('xmi:idref')
+                to:ownedAttributes[j].getElementsByTagName("association")[0].getAttribute('xmi:idref')
               }]);
               loadedData.add([{
                 id:"inverseOf_"+ownedAttributes[j].getAttribute('xmi:id'),
                 uuid:"inverseOf_"+ownedAttributes[j].getAttribute('xmi:uuid'),
                 shape:"image",
-                title:"inverseOf_"+ownedAttributes[j].getAttribute('xmi:id').getElementsByTagName("name")[0].textContent,
+                title:"inverseOf_"+ownedAttributes[j].getElementsByTagName("name")[0].textContent,
                 label: "inverse_property", 
                 mass:10,
                 image:dir_image+"view"+imageExtension,
                 type:"inverse_property",
                 noe:"edge",
                 to:entities[i].getAttribute('xmi:id'),
-                from:ownedAttributes[j].getAttribute('xmi:id').getElementsByTagName("association")[0].getAttribute('xmi:idref')
+                from:ownedAttributes[j].getElementsByTagName("association")[0].getAttribute('xmi:idref')
               }]);
               loadedData.add([{
                 id:ownedAttributes[j].getAttribute('xmi:id')+"_eo",
                 uuid:ownedAttributes[j].getAttribute('xmi:uuid')+"_eo",
                 shape:"image",
-                title:ownedAttributes[j].getAttribute('xmi:id').getElementsByTagName("name")[0].textContent,
+                title:ownedAttributes[j].getElementsByTagName("name")[0].textContent,
                 label: "property", 
                 mass:10,
                 image:dir_image+"view"+imageExtension,
                 type:"property_eo",
                 noe:"edge",
                 from:entities[i].getAttribute('xmi:id'),
-                to:ownedAttributes[j].getAttribute('xmi:id').getElementsByTagName("type")[0].getAttribute('xmi:idref')
+                to:ownedAttributes[j].getElementsByTagName("type")[0].getAttribute('xmi:idref')
               }]);
             
           }
