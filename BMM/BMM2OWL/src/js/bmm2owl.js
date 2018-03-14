@@ -135,7 +135,7 @@ function loadBMMOWL()
         loadedData.add([{
             id:associations[i].getAttribute('xmi:uuid'),
             shape:"image",
-            title:associations[i].getAttribute('xmi:id'),
+            title:associations[i].getElementsByTagName("name")[0].textContent,
             label: "association", 
             mass:10,
             image:dir_image+"view"+imageExtension,
@@ -144,12 +144,26 @@ function loadBMMOWL()
           }]);
           associationIds.push(associations[i].getAttribute('xmi:uuid'));
           associationNames.push(associations[i].getElementsByTagName("name")[0].textContent);
-          console.log(associations[i].getElementsByTagName("name")[0].textContent);
+          console.log(associations[i].getAttribute('xmi:uuid'));
        console.log(queryAssociations.snapshotItem(i));
     }
     for (i = 0; i < queryEntities.snapshotLength; i++) {
-        //views.push(queryAssociations.snapshotItem(i));
-       console.log(queryEntitiess.snapshotItem(i));
+        //views.push(queryAssociations.snapshotItem(i));associations.push(queryAssociations.snapshotItem(i)); 
+        loadedData.add([{
+            id:entities[i].getAttribute('xmi:uuid'),
+            shape:"image",
+            title:entities[i].getElementsByTagName("name")[0].textContent,
+            label: "entity", 
+            mass:10,
+            image:dir_image+"view"+imageExtension,
+            type:"entity",
+            noe:"node"
+          }]);
+          entityIds.push(entities[i].getAttribute('xmi:uuid'));
+          entityNames.push(entities[i].getElementsByTagName("name")[0].textContent);
+          console.log(entities[i].getAttribute('xmi:uuid'));
+
+       console.log(queryEntities.snapshotItem(i));
     }
 
 console.log ("processXMI");
