@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<book id="123">
+  <title value="Object Thinking"/>
+  <author value="David West"/>
+  <published>
+    <by value="Microsoft Press">
+    <year value="2004"/>
+  </published>
+</book>
+
+
