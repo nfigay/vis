@@ -170,7 +170,8 @@ function loadBMMOWL()
         entityNames.push(entities[i].getElementsByTagName("name")[0].textContent);
         console.log(entities[i].getAttribute('xmi:uuid'));
         ownedAttributes=entities[i].getElementsByTagName("ownedAttribute");
-        if (entities[i].getElementsByTagName("name")[0].textContent == "name"){;}else{
+      //  if (entities[i].getElementsByTagName("name")[0].textContent == "name"){;}
+      //  else{
             for (j=0;j<ownedAttributes.length;j++){
                 loadedData.add([{
                     id:ownedAttributes[j].getAttribute('xmi:id'),
@@ -182,8 +183,9 @@ function loadBMMOWL()
                     image:dir_image+"view"+imageExtension,
                     type:"property",
                     noe:"edge",
-                    from:entities[i].getAttribute('xmi:id'),
-                    to:ownedAttributes[j].getElementsByTagName("association")[0].getAttribute('xmi:idref')
+                    from:entities[i].getAttribute('xmi:id')
+                    //,
+                   // to:ownedAttributes[j].getElementsByTagName("association")[0].getAttribute('xmi:idref')
                 }]);
                 loadedData.add([{
                     id:"inverseOf_"+ownedAttributes[j].getAttribute('xmi:id'),
@@ -195,8 +197,9 @@ function loadBMMOWL()
                     image:dir_image+"view"+imageExtension,
                     type:"inverse_property",
                     noe:"edge",
-                    to:entities[i].getAttribute('xmi:id'),
-                    from:ownedAttributes[j].getElementsByTagName("association")[0].getAttribute('xmi:idref')
+                    to:entities[i].getAttribute('xmi:id')
+                    //,
+                    //from:ownedAttributes[j].getElementsByTagName("association")[0].getAttribute('xmi:idref')
                 }]);
                 loadedData.add([{
                     id:ownedAttributes[j].getAttribute('xmi:id')+"_eo",
@@ -208,12 +211,13 @@ function loadBMMOWL()
                     image:dir_image+"view"+imageExtension,
                     type:"property_eo",
                     noe:"edge",
-                    from:entities[i].getAttribute('xmi:id'),
-                    to:ownedAttributes[j].getElementsByTagName("type")[0].getAttribute('xmi:idref')
+                    from:entities[i].getAttribute('xmi:id')
+                    //,
+                    //to:ownedAttributes[j].getElementsByTagName("type")[0].getAttribute('xmi:idref')
                 }]);
             }
           }
-    }
+    //}
     console.log ("processXMI");
 } 
 
