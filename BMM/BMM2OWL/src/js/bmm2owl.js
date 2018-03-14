@@ -118,7 +118,7 @@ function loadBMMOWL()
     var queryAssociations = data.evaluate( '//packagedElement[@xmi:type="uml:Association"]', data, nsResolver,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null );  
     var nbassociations = data.evaluate( 'count(//packagedElement[@xmi:type="uml:Association"])', data, nsResolver, XPathResult.ANY_TYPE, null );
   
-    console.log ("ok"+nbassociations);
+    console.log ("ok"+nbassociations.value);
     for (i = 0; i < queryAssociations.snapshotLength; i++) {
         //views.push(queryAssociations.snapshotItem(i));
        console.log(queryAssociations.snapshotItem(i));
