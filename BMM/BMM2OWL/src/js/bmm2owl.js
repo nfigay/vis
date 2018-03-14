@@ -181,7 +181,7 @@ function loadBMMOWL()
                 type:"property",
                 noe:"edge",
                 from:entities[i].getAttribute('xmi:id'),
-                to:ownedAttributes[j].getAttribute('xmi:id').getElementsByTagName("association")[0].getAttribute('xmi:idref');
+                to:ownedAttributes[j].getAttribute('xmi:id').getElementsByTagName("association")[0].getAttribute('xmi:idref')
               }]);
               loadedData.add([{
                 id:"inverseOf_"+ownedAttributes[j].getAttribute('xmi:id'),
@@ -194,7 +194,7 @@ function loadBMMOWL()
                 type:"inverse_property",
                 noe:"edge",
                 to:entities[i].getAttribute('xmi:id'),
-                from:ownedAttributes[j].getAttribute('xmi:id').getElementsByTagName("association")[0].getAttribute('xmi:idref');
+                from:ownedAttributes[j].getAttribute('xmi:id').getElementsByTagName("association")[0].getAttribute('xmi:idref')
               }]);
               loadedData.add([{
                 id:ownedAttributes[j].getAttribute('xmi:id')+"_eo",
@@ -207,7 +207,7 @@ function loadBMMOWL()
                 type:"property_eo",
                 noe:"edge",
                 from:entities[i].getAttribute('xmi:id'),
-                to:ownedAttributes[j].getAttribute('xmi:id').getElementsByTagName("type")[0].getAttribute('xmi:idref');
+                to:ownedAttributes[j].getAttribute('xmi:id').getElementsByTagName("type")[0].getAttribute('xmi:idref')
               }]);
             
           }
