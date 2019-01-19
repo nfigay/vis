@@ -1,0 +1,333 @@
+<?xml version="1.0"?>
+
+<rdf:RDF xmlns="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#"
+     xml:base="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:DocumentStructure="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:annotations="http://www.plm-interop.net/iso-iec/annotations#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Structure="http://www.plm-interop.net/structuration/DocumentStructure#">
+
+<owl:Ontology rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure">
+
+
+<owl:imports rdf:resource="http://www.plm-interop.net/iso-iec/annotations"/>
+
+
+<owl:imports rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure"/>
+        <annotations:Number_of_pages rdf:datatype="http://www.w3.org/2001/XMLSchema#int">80</annotations:Number_of_pages>
+        <rdfs:comment xml:lang="en">Abstract 
+
+Cloud computing can and does mean different things to different people. The common characteristics most interpretations share are on-demand scalability of highly available and reliable pooled computing resources, secure access to metered services from nearly anywhere, and displacement of data and services from inside to outside the organization. While aspects of these characteristics have been realized to a certain extent, cloud computing remains a work in progress. This publication provides an overview of the security and privacy challenges pertinent to public cloud computing and points out considerations organizations should take when outsourcing data, applications, and infrastructure to a public cloud environment.
+Keywords: Cloud Computing; Computer Security and Privacy; Information Technology Outsourcing</rdfs:comment>
+        <annotations:Reference_Number xml:lang="en">NIST Special Publication 800-144</annotations:Reference_Number>
+        <annotations:Organisation xml:lang="en">NIST Computer Security Division Information Technology Laboratory</annotations:Organisation>
+        <annotations:English_Name xml:lang="en">Guidelines on Security and Privacy in Public Cloud Computing</annotations:English_Name>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#Guidelines_on_Security_and_Privacy_and_Privacy_in_Public_Cloud_Computing -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#Guidelines_on_Security_and_Privacy_and_Privacy_in_Public_Cloud_Computing">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document"/>
+        <Structure:compositionForDocumentAndDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#1-Introduction"/>
+        <Structure:compositionForDocumentAndDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#2-Background"/>
+        <Structure:compositionForDocumentAndDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#3-Public_Cloud_Services"/>
+        <Structure:compositionForDocumentAndDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4-Key_Security_and_Privacy_Issues"/>
+        <Structure:compositionForDocumentAndDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#5-Public_Cloud_Outsourcing"/>
+        <Structure:compositionForDocumentAndDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#6-Conclusion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#1-Introduction -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#1-Introduction">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#1.1_Authority"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#1.2_Purpose_and_Scope"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#1.3_Audience"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#1.4_Document_Structure"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#1.1_Authority -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#1.1_Authority">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#1.2_Purpose_and_Scope -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#1.2_Purpose_and_Scope">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#1.3_Audience -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#1.3_Audience">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#1.4_Document_Structure -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#1.4_Document_Structure">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#2-Background -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#2-Background">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#2.1-Deployment_Models"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#2.2_Service_Models"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#2.3-Outsourcing_and_Accountability"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#2.1-Deployment_Models -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#2.1-Deployment_Models">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#2.2_Service_Models -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#2.2_Service_Models">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#2.3-Outsourcing_and_Accountability -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#2.3-Outsourcing_and_Accountability">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#3-Public_Cloud_Services -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#3-Public_Cloud_Services">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#3.1-Service_Agreements"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#3.2-The_Security_and_Privacy_Upside"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#3.3-The_Security_and_privacy_Downside"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#3.1-Service_Agreements -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#3.1-Service_Agreements">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#3.2-The_Security_and_Privacy_Upside -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#3.2-The_Security_and_Privacy_Upside">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#3.3-The_Security_and_privacy_Downside -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#3.3-The_Security_and_privacy_Downside">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4-Key_Security_and_Privacy_Issues -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4-Key_Security_and_Privacy_Issues">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.1_Governance"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.10-Summary_of_Recommandations"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.2-Compliance"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.3-Trust"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.4-Architecture"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.5-Identity_and_Access_Management"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.6-Software_Isolation"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.7-Data_Protection"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.8-Availibility"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.9-Incident_Response"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.1_Governance -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.1_Governance">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.10-Summary_of_Recommandations -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.10-Summary_of_Recommandations">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.2-Compliance -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.2-Compliance">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.3-Trust -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.3-Trust">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.4-Architecture -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.4-Architecture">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.5-Identity_and_Access_Management -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.5-Identity_and_Access_Management">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.6-Software_Isolation -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.6-Software_Isolation">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.7-Data_Protection -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.7-Data_Protection">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.8-Availibility -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.8-Availibility">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.9-Incident_Response -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#4.9-Incident_Response">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#5-Public_Cloud_Outsourcing -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#5-Public_Cloud_Outsourcing">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#5.1-General_Concerns"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#5.2-Preliminary_Activities"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#5.3_Initiating_and_Coincident_Activities"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#5.4-Concluding_Activities"/>
+        <Structure:CompositionForDocumentSections rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#5.5-Summary_of_Recommantions"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#5.1-General_Concerns -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#5.1-General_Concerns">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#5.2-Preliminary_Activities -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#5.2-Preliminary_Activities">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#5.3_Initiating_and_Coincident_Activities -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#5.3_Initiating_and_Coincident_Activities">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#5.4-Concluding_Activities -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#5.4-Concluding_Activities">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#5.5-Summary_of_Recommantions -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#5.5-Summary_of_Recommantions">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#6-Conclusion -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure#6-Conclusion">
+        <rdf:type rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

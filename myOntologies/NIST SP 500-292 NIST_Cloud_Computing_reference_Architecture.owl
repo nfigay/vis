@@ -1,0 +1,976 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.plm_interop.net/cloud/nist/SP/500-292#"
+     xml:base="http://www.plm_interop.net/cloud/nist/SP/500-292"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:annotations="http://www.plm-interop.net/iso-iec/annotations#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292">
+        <owl:imports rdf:resource="http://www.plm-interop.net/iso-iec/annotations"/>
+        <rdfs:isDefinedBy xml:lang="en">NIST SP 500-292 NIST_Cloud_Computing_reference_Architecture.pdf</rdfs:isDefinedBy>
+        <annotations:Reference_Number xml:lang="en">NIST SP 500-292 September 2011</annotations:Reference_Number>
+        <annotations:English_Name xml:lang="en">NIST Cloud Computing Reference Architecture</annotations:English_Name>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#fulfilled_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#fulfilled_by">
+        <rdfs:domain rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Technical_Performance_Requirement"/>
+        <rdfs:range rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Provider"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#include -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#include"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#provide -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#provide">
+        <rdfs:domain rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Broker"/>
+        <rdfs:range rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Aggregation"/>
+        <rdfs:range rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Arbitrage"/>
+        <rdfs:range rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Intermediation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#ReferenceDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#ReferenceDescription">
+        <rdfs:domain rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Reference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#ReferenceLink -->
+
+    <owl:DatatypeProperty rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#ReferenceLink">
+        <rdfs:domain rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Reference"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Accounting_and_Billing -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Accounting_and_Billing">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Business_Support_Process_or_service_to_be_decided"/>
+        <rdfs:comment>Manage customer billing information, send billing statements, process received payments, track invoices, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Actor -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Actor"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#App_Svc_Migration_Process -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#App_Svc_Migration_Process">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#System_Portability_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Bulk_Data_Transfer_Process -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Bulk_Data_Transfer_Process">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Data_Portability_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Business_Relationship -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Business_Relationship"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Business_Support -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Business_Support">
+        <rdfs:comment>Business Support entails the set of business-related services dealing with clients and supporting processes. It includes the components used to run business operations that are client-facing.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Business_Support_Process_or_service_to_be_decided -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Business_Support_Process_or_service_to_be_decided">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Provider"/>
+        <rdfs:comment></rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Chief_Information_Officer -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Chief_Information_Officer">
+        <rdfs:comment xml:lang="en">Acronym:CIO</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Access -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Access">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Carrier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Auditor -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Auditor">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Actor"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Party"/>
+        <rdfs:comment>A cloud auditor is a party that can perform an independent examination of cloud service controls with the intent to express an opinion thereon. Audits are performed to verify conformance to standards through review of objective evidence. A cloud auditor can evaluate the services provided by a cloud provider in terms of security controls, privacy impact, performance, etc.
+Auditing is especially important for federal agencies as “agencies should include a contractual clause enabling third parties to assess security controls of cloud providers” [4] (by Vivek Kundra, Federal Cloud Computing Strategy, Feb. 2011.). Security controls [3] are the management, operational, and technical safeguards or countermeasures employed within an organizational information system to protect the confidentiality, integrity, and availability of the system and its information. For security auditing, a cloud auditor can make an assessment of the security controls in the information system to determine the extent to which the controls are implemented correctly, operating as intended, and producing the desired outcome with respect to the security requirements for the system. The security auditing should also include the verification of the compliance with regulation and security policy. For example, an auditor can be tasked with ensuring that the correct policies are applied to data retention according to relevant rules for the jurisdiction. The auditor may ensure that fixed content has not been modified and that the legal and business data archival requirements have been satisfied.
+A privacy impact audit can help Federal agencies comply with applicable privacy laws and regulations governing an individual‟s privacy, and to ensure confidentiality, integrity, and availability of an individual‟s personal information at every stage of development and operation [5].</rdfs:comment>
+        <rdfs:comment>A party that can conduct independent assessment of cloud services, information system operations, performance and security of the cloud implementation.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Broker -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Broker">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Actor"/>
+        <rdfs:comment>An entity that manages the use, performance and delivery of cloud services, and negotiates relationships between Cloud Providers and Cloud Consumers.</rdfs:comment>
+        <rdfs:comment>As cloud computing evolves, the integration of cloud services can be too complex for cloud consumers to manage. A cloud consumer may request cloud services from a cloud broker, instead of contacting a cloud provider directly. A cloud broker is an entity that manages the use, performance and delivery of cloud services and negotiates relationships between cloud providers and cloud consumers.
+In general, a cloud broker can provide services in three categories [9]: Service Intermediation: A cloud broker enhances a given service by improving some specific capability and providing value-added services to cloud consumers. The improvement can be managing access to cloud services, identity management, performance reporting, enhanced security, etc. Service Aggregation: A cloud broker combines and integrates multiple services into one or more new services. The broker provides data integration and ensures the secure data movement between the cloud consumer and multiple cloud providers. Service Arbitrage: Service arbitrage is similar to service aggregation except that the services being aggregated are not fixed. Service arbitrage means a broker has the flexibility to choose services from multiple agencies. The cloud broker, for example, can use a credit-scoring service to measure and select an agency with the best score.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Carrier -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Carrier">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Actor"/>
+        <rdfs:comment>A cloud carrier acts as an intermediary that provides connectivity and transport of cloud services between cloud consumers and cloud providers. Cloud carriers provide access to consumers through network, telecommunication and other access devices. For example, cloud consumers can obtain cloud services through network access devices, such as computers, laptops, mobile phones, mobile Internet devices (MIDs), etc [1]. The distribution of cloud services is normally provided by network and telecommunication carriers or a transport agent [8], where a transport agent refers to a business organization that provides physical transport of storage media such as high-capacity hard drives. Note that a cloud provider will set up SLAs with a cloud carrier to provide services consistent with the level of SLAs offered to cloud consumers, and may require the cloud carrier to provide dedicated and secure connections between cloud consumers and cloud providers.</rdfs:comment>
+        <rdfs:comment>An intermediary that provides connectivity and transport of cloud services from Cloud Providers to Cloud Consumers.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Consumer -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Consumer">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Actor"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Person_or_Organization"/>
+        <rdfs:comment>A person or organization that maintains a business relationship with, and uses service from, Cloud Providers.</rdfs:comment>
+        <rdfs:comment>SaaS applications in the cloud and made accessible via a network to the SaaS consumers. The consumers of SaaS can be organizations that provide their members with access to software applications, end users who directly use software applications, or software application administrators who configure applications for end users. SaaS consumers can be billed based on the number of end users, the time of use, the network bandwidth consumed, the amount of data stored or duration of stored data.
+Cloud consumers of PaaS can employ the tools and execution resources provided by cloud providers to develop, test, deploy and manage the applications hosted in a cloud environment. PaaS consumers can be application developers who design and implement application software, application testers who run and test applications in cloud-based environments, application deployers who publish applications into the cloud, and application administrators who configure and monitor application performance on a platform. PaaS consumers can be billed according to, processing, database storage and network resources consumed by the PaaS application, and the duration of the platform usage.
+Consumers of IaaS have access to virtual computers, network-accessible storage, network infrastructure components, and other fundamental computing resources on which they can deploy and run arbitrary software. The consumers of IaaS can be system developers, system administrators and IT managers who are interested in creating, installing, managing and monitoring services for IT infrastructure operations. IaaS consumers are provisioned with the capabilities to access these computing resources, and are billed according to the amount or duration of the resources consumed, such as CPU hours used by virtual computers, volume and duration of data stored, network bandwidth consumed, number of IP addresses used for certain intervals..</rdfs:comment>
+        <rdfs:comment>The cloud consumer is the principal stakeholder for the cloud computing service. A cloud consumer represents a person or organization that maintains a business relationship with, and uses the service from a cloud provider. A cloud consumer browses the service catalog from a cloud provider, requests the appropriate service, sets up service contracts with the cloud provider, and uses the service. The cloud consumer may be billed for the service provisioned, and needs to arrange payments accordingly.
+Cloud consumers need SLAs to specify the technical performance requirements fulfilled by a cloud provider. SLAs can cover terms regarding the quality of service, security, remedies for performance failures. A cloud provider may also list in the SLAs a set of promises explicitly not made to consumers, i.e. limitations, and obligations that cloud consumers must accept. A cloud consumer can freely choose a cloud provider with better pricing and more favorable terms. Typically a cloud provider‟s pricing policy and SLAs are non-negotiable, unless the customer expects heavy usage and might be able to negotiate for better contracts. [2].
+Depending on the services requested, the activities and usage scenarios can be different among cloud consumers. Figure 6 presents some example cloud services available to a cloud consumer (For details, see Appendix B: Examples of Cloud Services) [13].</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Distribution -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Distribution">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Carrier"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Provider -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Provider">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Actor"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Person_or_Organization"/>
+        <rdfs:comment>A cloud provider is a person, an organization; it is the entity responsible for making a service available to interested parties. A Cloud Provider acquires and manages the computing infrastructure required for providing the services, runs the cloud software that provides the services, and makes arrangement to deliver the cloud services to the Cloud Consumers through network access.
+For Software as a Service, the cloud provider deploys, configures, maintains and updates the operation of the software applications on a cloud infrastructure so that the services are provisioned at the expected service levels to cloud consumers. The provider of SaaS assumes most of the responsibilities in managing and controlling the applications and the infrastructure, while the cloud consumers have limited administrative control of the applications.
+For PaaS, the Cloud Provider manages the computing infrastructure for the platform and runs the cloud software that provides the components of the platform, such as runtime software execution stack, databases, and other middleware components. The PaaS Cloud Provider typically also supports the development, deployment and management process of the PaaS Cloud Consumer by providing tools such as integrated development environments (IDEs), development version of cloud software, software development kits (SDKs), deployment and management tools. The PaaS Cloud Consumer has control over the applications and possibly some the hosting environment settings, but has no or limited access to the infrastructure underlying the platform such as network, servers, operating systems (OS), or storage.</rdfs:comment>
+        <rdfs:comment>A person, organization, or entity responsible for making a service available to interested parties.</rdfs:comment>
+        <rdfs:comment>For IaaS, the Cloud Provider acquires the physical computing resources underlying the service, including the servers, networks, storage and hosting infrastructure. The Cloud Provider runs the cloud software necessary to makes computing resources available to the IaaS Cloud Consumer through a set of service interfaces and computing resource abstractions, such as virtual machines and virtual network interfaces. The IaaS Cloud Consumer in turn uses these computing resources, such as a virtual computer, for their fundamental computing needs Compared to SaaS and PaaS Cloud Consumers, an IaaS Cloud Consumer has access to more fundamental forms of computing resources and thus has more control over the more software components in an application stack, including the OS and network. The IaaS Cloud Provider, on the other hand, has control over the physical hardware and cloud software that makes the provisioning of these infrastructure services possible, for example, the physical servers, network equipments, storage devices, host OS and hypervisors for virtualization.
+A Cloud Provider‟s activities can be described in five major areas, as shown in Figure 7, a cloud provider conducts its activities in the areas of service deployment, service orchestration, cloud service management, security, and privacy. The details are discussed in Section 3.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Service_Management -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Service_Management">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Provider"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Service_Managment -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Service_Managment">
+        <rdfs:comment>Cloud Service Management includes all of the service-related functions that are necessary for the management and operation of those services required by or proposed to cloud consumers. As illustrated in Figure 16, cloud service management can be described from the perspective of business support, provisioning and configuration, and from the perspective of portability and interoperability requirements</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Community_Cloud -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Community_Cloud">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Deployment"/>
+        <rdfs:comment>A community cloud serves a group of Cloud Consumers which have shared concerns such as mission objectives, security, privacy and compliance policy, rather than serving a single organization as does a private cloud. Similar to private clouds, a community cloud may be managed by the organizations or by a third party, and may be implemented on customer premise (i.e. on-site community cloud) or outsourced to a hosting company (i.e. outsourced community cloud). Figure 12 depicts an on-site community cloud comprised of a number of participant organizations. A cloud consumer can access the local cloud resources, and also the resources of other participating organizations through the connections between the associated organizations. Figure 13 shows an outsourced community cloud, where the server side is outsourced to a hosting company. In this case, an outsourced community cloud builds its infrastructure off premise, and serves a set of organizations that request and consume cloud services.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Content_Delivery_Network -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Content_Delivery_Network">
+        <rdfs:comment xml:lang="en">Acronym: CDN</rdfs:comment>
+        <rdfs:label xml:lang="en">Content Delivery Network</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Contract_Management -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Contract_Management">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Business_Support_Process_or_service_to_be_decided"/>
+        <rdfs:comment>Manage service contracts, setup/negotiate/close/terminate contract, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Copy_Data_to_From_process -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Copy_Data_to_From_process">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Data_Portability_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Customer_Management -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Customer_Management">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Business_Support_Process_or_service_to_be_decided"/>
+        <rdfs:comment>Manage customer accounts, open/close/terminate accounts, manage user profiles, manage customer relationships by providing points-of-contact and resolving customer issues and problems, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Customer_Relationship_Manager -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Customer_Relationship_Manager">
+        <rdfs:comment xml:lang="en">Acronym CRM</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Data_Portability_Process -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Data_Portability_Process">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Portability_and_Interoperability_processes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Electronic_Transfer -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Electronic_Transfer">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Distribution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Enterprise_Resource_Planning -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Enterprise_Resource_Planning">
+        <rdfs:comment xml:lang="en">acronym ERP</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Facility -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Facility"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Fixed_Endpoint -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Fixed_Endpoint">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Access"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Hardware -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Hardware"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Hybrid_Cloud -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Hybrid_Cloud">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Deployment"/>
+        <rdfs:comment>A hybrid cloud is a composition of two or more clouds (on-site private, on-site community, off-site private, off-site community or public) that remain as distinct entities but are bound together by standardized or proprietary technology that enables data and application portability. Figure 14 presents a simple view of a hybrid cloud that could be built with a set of clouds in the five deployment model variants.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Infrastructure_as_a_Service -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Infrastructure_as_a_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Consumer"/>
+        <rdfs:comment xml:lang="en">acronym IaaS</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Inventory_Management -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Inventory_Management">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Business_Support_Process_or_service_to_be_decided"/>
+        <rdfs:comment>Set up and manage service catalogs, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Metering -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Metering">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Provisionnind_and_Configuration_Services"/>
+        <rdfs:comment>Providing a metering capability at some level of abstraction appropriate to the type of service (e.g., storage, processing, bandwidth, and active user accounts).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Mobile_Endpoint -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Mobile_Endpoint">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Access"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Monitoring_and_Reporting -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Monitoring_and_Reporting">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Provisionnind_and_Configuration_Services"/>
+        <rdfs:comment>Discovering and monitoring virtual resources, monitoring cloud operations and events and generating performance reports.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Party -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Party"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Performance_Audit -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Performance_Audit">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Auditor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Person_or_Organization -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Person_or_Organization"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Personal_Information -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Personal_Information"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Personally_Identifiable_Information -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Personally_Identifiable_Information"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Physical_Resource_Layer -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Physical_Resource_Layer">
+        <rdfs:comment>The lowest layer in the stack is the physical resource layer, which includes all the physical computing resources. This layer includes hardware resources, such as computers (CPU and memory), networks (routers, firewalls, switches, network links and interfaces), storage components (hard disks) and other physical computing infrastructure elements. It also includes facility resources, such as heating, ventilation and air conditioning (HVAC), power, communications, and other aspects of the physical plant.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Physical_Transfer -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Physical_Transfer">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Distribution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Platform_as_a_Service -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Platform_as_a_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Consumer"/>
+        <rdfs:comment xml:lang="en">Acronym: PaaS</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Portability_Interoperability -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Portability_Interoperability">
+        <rdfs:comment>It should be noted that various cloud service models may have different requirements in related with portability and interoperability [35]. For example, IaaS requires the ability to migrate the data and run the applications on a new cloud. Thus, it is necessary to capture virtual machine images and migrate to new cloud providers which may use different virtualization technologies. Any provider-specific extensions to the VM images need to be removed or recorded upon being ported. While for SaaS, the focus is on data portability, and thus it is essential to perform data extractions and backups in a standard format.</rdfs:comment>
+        <rdfs:comment>The proliferation of cloud computing promises cost savings in technology infrastructure and faster software upgrades. The US government, along with other potential cloud computing customers, has a strong interest in moving to the cloud. However, the adoption of cloud computing depends greatly on how the cloud can address users‟ concerns on security, portability and interoperability. This section briefly discusses the requirement for portability and interoperability, with security addressed in Section 3.4.
+For portability, prospective customers are interested to know whether they can move their data or applications across multiple cloud environments at low cost and minimal disruption. From an interoperability perspective, users are concerned about the capability to communicate between or among multiple clouds.
+Cloud providers should provide mechanisms to support data portability, service interoperability, and system portability [8]. Data portability is the ability of cloud consumers to copy data objects into or out of a cloud or to use a disk for bulk data transfer. Service interoperability is the ability of cloud consumers to use their data and services across multiple cloud providers with a unified management interface. System portability allows the migration of a fully-stopped virtual machine instance or a machine image from one provider to another provider, or migrate applications and services and their contents from one service provider to another.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Portability_and_Interoperability_processes -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Portability_and_Interoperability_processes">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Service_Management"/>
+        <rdfs:comment>It should be noted that various cloud service models may have different requirements in related with portability and interoperability [35]. For example, IaaS requires the ability to migrate the data and run the applications on a new cloud. Thus, it is necessary to capture virtual machine images and migrate to new cloud providers which may use different virtualization technologies. Any provider-specific extensions to the VM images need to be removed or recorded upon being ported. While for SaaS, the focus is on data portability, and thus it is essential to perform data extractions and backups in a standard format.</rdfs:comment>
+        <rdfs:comment>The proliferation of cloud computing promises cost savings in technology infrastructure and faster software upgrades. The US government, along with other potential cloud computing customers, has a strong interest in moving to the cloud. However, the adoption of cloud computing depends greatly on how the cloud can address users‟ concerns on security, portability and interoperability. This section briefly discusses the requirement for portability and interoperability, with security addressed in Section 3.4.
+For portability, prospective customers are interested to know whether they can move their data or applications across multiple cloud environments at low cost and minimal disruption. From an interoperability perspective, users are concerned about the capability to communicate between or among multiple clouds.
+Cloud providers should provide mechanisms to support data portability, service interoperability, and system portability [8]. Data portability is the ability of cloud consumers to copy data objects into or out of a cloud or to use a disk for bulk data transfer. Service interoperability is the ability of cloud consumers to use their data and services across multiple cloud providers with a unified management interface. System portability allows the migration of a fully-stopped virtual machine instance or a machine image from one provider to another provider, or migrate applications and services and their contents from one service provider to another.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Pricing_and_Rating -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Pricing_and_Rating">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Business_Support_Process_or_service_to_be_decided"/>
+        <rdfs:comment>Evaluate cloud services and determine prices, handle promotions and pricing rules based on a user&apos;s profile, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Privacy -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Privacy">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Provider"/>
+        <rdfs:comment>Cloud providers should protect the assured, proper, and consistent collection, processing, communication, use and disposition of personal information (PI) and personally identifiable information (PII) in the cloud [14].
+According to the Federal CIO Council [5], one of the Federal government‟s key business imperatives is to ensure the privacy of the collected personally identifiable information. PII is the information that can be used to distinguish or trace an individual‟s identity, such as their name, social security number, biometric records, etc. alone, or when combined with other personal or identifying information that is linked or linkable to a specific individual, such as date and place of birth, mother‟s maiden name, etc [6]. Though cloud computing provides a flexible solution for shared resources, software and information, it also poses additional privacy challenges to consumers using the clouds.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Privacy_Impact_Audit -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Privacy_Impact_Audit">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Auditor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Private_Cloud -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Private_Cloud">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Deployment"/>
+        <rdfs:comment>A private cloud gives a single Cloud Consumer‟s organization the exclusive access to and usage of the infrastructure and computational resources. It may be managed either by the Cloud Consumer organization or by a third party, and may be hosted on the organization‟s premises (i.e. on-site private clouds) or outsourced to a hosting company (i.e. outsourced private clouds). Figure 10 and Figure 11 present an on-site private cloud and an outsourced private cloud, respectively.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Provisionnind_and_Configuration_Services -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Provisionnind_and_Configuration_Services">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Service_Management"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Provisionning_Configuration -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Provisionning_Configuration"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Public_Cloud -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Public_Cloud">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Deployment"/>
+        <rdfs:comment>A public cloud is one in which the cloud infrastructure and computing resources are made available to the general public over a public network. A public cloud is owned by an organization selling cloud services, and serves a diverse pool of clients. Figure 9 presents a simple view of a public cloud and its customers.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Quality_of_Service -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Quality_of_Service">
+        <rdfs:comment xml:lang="en">acronym:QoS</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Rapid_Provisioning -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Rapid_Provisioning">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Provisionnind_and_Configuration_Services"/>
+        <rdfs:comment>Automatically deploying cloud systems based on the requested service/resources/capabilities.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Reference -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Reference"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Reporting_and_Auditing -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Reporting_and_Auditing">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Business_Support_Process_or_service_to_be_decided"/>
+        <rdfs:comment>Monitor user operations, generate reports, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Resource_Abstraction_and_Control_Layer -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Resource_Abstraction_and_Control_Layer">
+        <rdfs:comment>The middle layer in the model is the resource abstraction and control layer. This layer contains the system components that Cloud Providers use to provide and manage access to the physical computing resources through software abstraction. Examples of resource abstraction components include software elements such as hypervisors, virtual machines, virtual data storage, and other computing resource abstractions. The resource abstraction needs to ensure efficient, secure, and reliable usage of the underlying physical resources. While virtual machine technology is commonly used at this layer, other means of providing the necessary software abstractions are also possible. The control aspect of this layer refers to the software components that are responsible for resource allocation, access control, and usage monitoring. This is the software fabric that ties together the numerous underlying physical resources and their software abstractions to enable resource pooling, dynamic allocation, and measured service. Various open source and proprietary cloud software are examples of this type of middleware.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Resource_Change -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Resource_Change">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Provisionnind_and_Configuration_Services"/>
+        <rdfs:comment>Adjusting configuration/resource assignment for repairs, upgrades and joining new nodes into the cloud.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#SLA_Management -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#SLA_Management">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Provisionnind_and_Configuration_Services"/>
+        <rdfs:comment>Encompassing the SLA contract definition (basic schema with the QoS parameters), SLA monitoring and SLA enforcement according to defined policies.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Security -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Security">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Provider"/>
+        <rdfs:comment>3.4.1 Cloud Service Model Perspectives
+The three service models identified by the NIST cloud computing definition, i.e. SaaS, PaaS, and IaaS, present consumers with different types of service management operations and expose different entry points into cloud systems, which in turn also create different attacking surfaces for adversaries. Hence, it is important to consider the impact of cloud service models and their different issues in security design and implementation. For example, SaaS provides users with accessibility of cloud offerings using a network connection, normally over the Internet and through a Web browser. There has been an emphasis on Web browser security in SaaS cloud system security considerations [2]. Cloud Consumers of IaaS are provided with virtual machines (VMs) that are executed on hypervisors on the hosts, therefore, hypervisor security for achieving VM isolation has been studied extensively for IaaS Cloud Providers that use virtualization technologies.</rdfs:comment>
+        <rdfs:comment>3.4.2 Implications of Cloud Deployment Models
+The variations of cloud deployment models discussed in section 3.1 have important security implication as well. One way to look at the security implications from the deployment model perspective is the differing level of exclusivity of tenants in a deployment model. A private cloud is dedicated to one consumer organization, where as a public cloud could have unpredictable tenants co-existing with each other, therefore, workload isolation is less of a security concern in a private cloud than in a public cloud. Another way to analyze the security impact of cloud deployment models is to use the concept of access boundaries as shown in [2]. For example, an on-site private cloud may or may not need additional boundary controllers at the cloud boundary when the private cloud is hosted on-site within the Cloud Consumer organization‟s network boundary, whereas an out-sourced private cloud tends to require the establishment of such perimeter protection at the boundary of the cloud.</rdfs:comment>
+        <rdfs:comment>3.4.3 Shared Security Responsibilities
+As discussed in Section 2.7, the Cloud Provider and the Cloud Consumer have differing degrees of control over the computing resources in a cloud system. Compared to traditional IT systems, where one organization has control over the whole stack of computing resources and the entire life-cycle of the systems, Cloud Providers and Cloud Consumers collaboratively design, build, deploy, and operate cloud-based systems. The split of control means both parties now share the responsibilities in providing adequate protections to the cloud-based systems. Security is a shared responsibility. Security controls, i.e., measures used to provide protections, need to be analyzed to determine which party is in a better position to implement. This analysis needs to include considerations from a service model perspective, where different service models imply different degrees of control between Cloud Providers and Cloud Consumers. For example, account management controls for initial system privileged users in IaaS scenarios are typically performed by the IaaS Provider whereas application user account management for the application deployed in an IaaS environment is typically not the provider‟s responsibility.</rdfs:comment>
+        <rdfs:comment>It is critical to recognize that security is a cross-cutting aspect of the architecture that spans across all layers of the reference model, ranging from physical security to application security. Therefore, security in cloud computing architecture concerns is not solely under the purview of the Cloud Providers, but also Cloud Consumers and other relevant actors. Cloud-based systems still need to address security requirements such as authentication, authorization, availability, confidentiality, identity management, integrity, audit, security monitoring, incident response, and security policy management. While these security requirements are not new, we discuss cloud specific perspectives to help discuss, analyze and implement security in a cloud system.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Security_Audit -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Security_Audit">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Auditor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Aggregation -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Aggregation">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Provision"/>
+        <rdfs:comment>A cloud broker combines and integrates multiple services into one or more new services. The broker provides data integration and ensures the secure data movement between the cloud consumer and multiple cloud providers.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Arbitrage -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Arbitrage">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Provision"/>
+        <rdfs:comment>Service arbitrage is similar to service aggregation except that the services being aggregated are not fixed. Service arbitrage means a broker has the flexibility to choose services from multiple agencies. The cloud broker, for example, can use a credit-scoring service to measure and select an agency with the best score.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Consumption -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Consumption">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Broker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Deployment -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Deployment">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Provider"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Intermediation -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Intermediation">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Provision"/>
+        <rdfs:comment>A cloud broker enhances a given service by improving some specific capability and providing value-added services to cloud consumers. The improvement can be managing access to cloud services, identity management, performance reporting, enhanced security, etc.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Interoperability_Process -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Interoperability_Process">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Portability_and_Interoperability_processes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Layer -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Layer">
+        <rdfs:comment>this is where Cloud Providers define interfaces for Cloud Consumers to access the computing services. Access interfaces of each of the three service models are provided in this layer. It is possible, though not necessary, that SaaS applications can be built on top of PaaS components and PaaS components can be built on top of IaaS components. The optional dependency relationships among SaaS, PaaS, and IaaS components are represented graphically as components stacking on each other; while the angling of the components represents that each of the service component can stand by itself. For example, a SaaS application can be implemented and hosted on virtual machines from an IaaS cloud or it can be implemented directly on top of cloud resources without using IaaS virtual machines.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Level_Agreement -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Level_Agreement">
+        <rdfs:comment xml:lang="en">acronym SLA</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Orchestration -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Orchestration">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Provider"/>
+        <rdfs:comment>Service Orchestration refers to the composition of system components to support the Cloud Providers activities in arrangement, coordination and management of computing resources in order to provide cloud services to Cloud Consumers. Figure 15 shows a generic stack diagram of this composition that underlies the provisioning of cloud services.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Provision -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Provision">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Broker"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Software_as_a_Service -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Software_as_a_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Consumer"/>
+        <rdfs:comment xml:lang="en">Acronym:  SaaS</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Standard_Development_Organisation -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Standard_Development_Organisation">
+        <rdfs:comment xml:lang="en">acronym: SDO</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#System_Portability_Process -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#System_Portability_Process">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Cloud_Service_Management"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Technical_Performance_Requirement -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Technical_Performance_Requirement"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Unified_Management_Interface_Process -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Unified_Management_Interface_Process">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Service_Interoperability_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#VM_Image_Migration_Process -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#VM_Image_Migration_Process">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#System_Portability_Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#Heating,_Ventilation_and_Air_Conditioning -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#Heating,_Ventilation_and_Air_Conditioning">
+        <rdfs:comment xml:lang="en">acronym HVAC</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#ref1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#ref1">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Reference"/>
+        <ReferenceDescription>NIST SP 800-145, “A NIST definition of cloud computing”</ReferenceDescription>
+        <ReferenceLink rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://csrc.nist.gov/publications/drafts/800-145/Draft-SP-800-145_cloud-definition.pdf</ReferenceLink>
+        <rdfs:comment xml:lang="en">Not available anymore on the NIST site due to US budget cut</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#ref10 -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#ref10">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Reference"/>
+        <ReferenceDescription xml:lang="en">IETF internet-draft &quot;“Cloud Reference Framework&quot;</ReferenceDescription>
+        <ReferenceLink xml:lang="en">http://tools.ietf.org/html/draft-khasnabish-cloud-reference-framework-00</ReferenceLink>
+        <rdfs:comment xml:lang="en">The link points on a draft.
+The last release of the document, issued in 2015, is the version 08.
+PDF document uploaded by NFI in January 2018 draft-khasnabish-cloud-reference-framework-08.pdf</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#ref11 -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#ref11">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Reference"/>
+        <ReferenceDescription xml:lang="en">IBM, “Cloud Computing Reference Architecture v2.0”</ReferenceDescription>
+        <ReferenceLink xml:lang="en">http://www.opengroup.org/cloudcomputing/doc.tpl?CALLER=documents.tpl&amp;dcat=15&amp;gdid=23840</ReferenceLink>
+        <rdfs:comment xml:lang="en">TODO To investigate how to obtain the document</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#ref12 -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#ref12">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Reference"/>
+        <ReferenceDescription xml:lang="en">GSA, “Cloud Computing Initiative Vision and Strategy Document (DRAFT)”</ReferenceDescription>
+        <ReferenceLink xml:lang="en">http://info.apps.gov/sites/default/files/Cloud_Computing_Strategy_0.ppt</ReferenceLink>
+        <rdfs:comment xml:lang="en">2018 01 GSA is also subject to the US shutdown</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#ref13 -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#ref13">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Reference"/>
+        <ReferenceDescription xml:lang="en">Cloud Taxonomy</ReferenceDescription>
+        <ReferenceLink xml:lang="en">http://cloudtaxonomy.opencrowd.com/</ReferenceLink>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#ref14 -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#ref14">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Reference"/>
+        <ReferenceDescription xml:lang="en">OASIS, the charter for the OASIS Privacy Management Reference Model Technical Committee</ReferenceDescription>
+        <ReferenceLink xml:lang="en">http://www.oasis-open.org/committees/pmrm/charter.php</ReferenceLink>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#ref15 -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#ref15">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Reference"/>
+        <ReferenceDescription xml:lang="en">Open Security Architecture (OSA), “Cloud Computing Patterns”</ReferenceDescription>
+        <ReferenceLink xml:lang="en">http://www.opensecurityarchitecture.org/cms/library/patternlandscape/251-pattern-cloud-computing</ReferenceLink>
+        <rdfs:comment xml:lang="en">It is a site with Cloud comuting patterns, availabel at http://www.opensecurityarchitecture.org/cms/foundations/osa-landscape.
+Similarly, patterns are also defined at http://www.cloudcomputingpatterns.org/, a very intersting site</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#ref16 -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#ref16">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Reference"/>
+        <ReferenceDescription xml:lang="en">Juniper Networks, “Cloud-ready Data Center Reference Architecture”</ReferenceDescription>
+        <ReferenceLink xml:lang="en">www.juniper.net/us/en/local/pdf/reference-architectures/8030001-en.pdf</ReferenceLink>
+        <rdfs:isDefinedBy>8030001-en.pdf</rdfs:isDefinedBy>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#ref17 -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#ref17">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Reference"/>
+        <ReferenceDescription xml:lang="en">Federal Information Security Management Act of 2002 (FISMA),</ReferenceDescription>
+        <ReferenceLink xml:lang="en">http://csrc.nist.gov/drivers/documents/FISMA-final.pdf</ReferenceLink>
+        <rdfs:comment xml:lang="en">20180116 Not accessible anymore on NIST Site due to US budget cut</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#ref18 -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#ref18">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Reference"/>
+        <ReferenceDescription xml:lang="en">NIST IR-7756, DRAFT “CAESARS Framework Extension: An Enterprise Continuous Monitoring Technical Reference Architecture”</ReferenceDescription>
+        <ReferenceLink xml:lang="en">http://csrc.nist.gov/publications/drafts/nistir-7756/Draft-nistir-7756_feb2011.pdf</ReferenceLink>
+        <rdfs:comment xml:lang="en">Not available anymore on the NIST site due to US budget cut
+However obtained and available as file 9730.pdf</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#ref2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#ref2">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Reference"/>
+        <ReferenceDescription xml:lang="en">NIST SP 800-146, “NIST Cloud Computing Synopsis and Recommendations”</ReferenceDescription>
+        <ReferenceLink xml:lang="en">http://csrc.nist.gov/publications/drafts/800-146/Draft-NIST-SP800-146.pdf</ReferenceLink>
+        <rdfs:comment xml:lang="en">Not available anymore on the NIST site due to US budget cut</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#ref3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#ref3">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Reference"/>
+        <ReferenceDescription xml:lang="en">NIST SP 800-53, “Recommended Security Controls for Federal Information Systems and Organizations”</ReferenceDescription>
+        <ReferenceLink xml:lang="en">http://csrc.nist.gov/publications/nistpubs/800-53-Rev3/sp800-53-rev3-final_updated-errata_05-01-2010.pdf</ReferenceLink>
+        <rdfs:comment xml:lang="en">Not available anymore on the NIST site due to US budget cut</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#ref4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#ref4">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Reference"/>
+        <ReferenceDescription xml:lang="en">Federal Cloud Computing Strategy</ReferenceDescription>
+        <ReferenceLink xml:lang="en">http://www.cio.gov/documents/Federal-Cloud-Computing-Strategy.pdf</ReferenceLink>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#ref5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#ref5">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Reference"/>
+        <ReferenceDescription xml:lang="en">Chief Information Officers Council, “Privacy Recommendations for Cloud Computing”</ReferenceDescription>
+        <ReferenceLink xml:lang="en">http://www.cio.gov/Documents/Privacy-Recommendations-Cloud-Computing-8-19-2010.docx</ReferenceLink>
+        <rdfs:isDefinedBy xml:lang="en">Privacy-Recommendations-Cloud-Computing-8-19-2010.docx</rdfs:isDefinedBy>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#ref6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#ref6">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Reference"/>
+        <ReferenceDescription xml:lang="en">Office of Management and Budget, Memorandum 07-16</ReferenceDescription>
+        <ReferenceLink xml:lang="en">http://www.whitehouse.gov/sites/default/files/omb/memoranda/fy2007/m07-16.pdf</ReferenceLink>
+        <rdfs:isDefinedBy xml:lang="en">m07-16.pdf</rdfs:isDefinedBy>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#ref7 -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#ref7">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Reference"/>
+        <ReferenceDescription xml:lang="en">NIST SP 800-144, “Guidelines on Security and Privacy Issues in Public Cloud Computing”</ReferenceDescription>
+        <ReferenceLink xml:lang="en">http://csrc.nist.gov/publications/drafts/800-144/Draft-SP-800-144_cloud-computing.pdf</ReferenceLink>
+        <rdfs:comment xml:lang="en">Not available anymore on the NIST site due to US budget cut.
+However obtained and in the PLM-interop referential</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">nist-sp800-144-guidelines-on-security-and-privacy-in-public-cloud-computing-2011.pdf</rdfs:isDefinedBy>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#ref8 -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#ref8">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Reference"/>
+        <ReferenceDescription xml:lang="en">NIST Cloud Computing Use Cases</ReferenceDescription>
+        <ReferenceLink xml:lang="en">http://collaborate.nist.gov/twiki-cloud-computing/bin/view/CloudComputing/UseCaseCopyFromCloud</ReferenceLink>
+        <rdfs:comment xml:lang="en">Not available anymore on the NIST site due to US budget cut</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/500-292#ref9 -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/500-292#ref9">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/500-292#Reference"/>
+        <ReferenceDescription xml:lang="en">Gartner, “Gartner Says Cloud Consumers Need Brokerages to Unlock the Potential of Cloud Services”,</ReferenceDescription>
+        <ReferenceLink xml:lang="en">http://www.gartner.com/it/page.jsp?id=1064712</ReferenceLink>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

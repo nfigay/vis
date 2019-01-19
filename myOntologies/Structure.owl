@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/fini151/ontologies/2019/0/untitled-ontology-77#"
+     xml:base="http://www.semanticweb.org/fini151/ontologies/2019/0/untitled-ontology-77"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:DocumentStructure="http://www.plm-interop.net/structuration/DocumentStructure#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:annotations="http://www.plm-interop.net/iso-iec/annotations#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.plm-interop.net/structuration/DocumentStructure">
+        <owl:imports rdf:resource="http://www.plm-interop.net/iso-iec/annotations"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.plm-interop.net/structuration/DocumentStructure#CompositionForDocumentSections -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/structuration/DocumentStructure#CompositionForDocumentSections">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/structuration/DocumentStructure#MainlyDefinedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/structuration/DocumentStructure#MainlyDefinedIn"/>
+    
+
+
+    <!-- http://www.plm-interop.net/structuration/DocumentStructure#RefinedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/structuration/DocumentStructure#RefinedIn"/>
+    
+
+
+    <!-- http://www.plm-interop.net/structuration/DocumentStructure#UsedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/structuration/DocumentStructure#UsedIn"/>
+    
+
+
+    <!-- http://www.plm-interop.net/structuration/DocumentStructure#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/structuration/DocumentStructure#belongsTo">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Considered_Domain"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/structuration/DocumentStructure#compositionForDocumentAndDocumentSections -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/structuration/DocumentStructure#compositionForDocumentAndDocumentSections">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/structuration/DocumentStructure#includes -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/structuration/DocumentStructure#includes">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Considered_Domain"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Considered_Domain"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/structuration/DocumentStructure#intersects_with -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/structuration/DocumentStructure#intersects_with">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Considered_Domain"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#Considered_Domain"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/structuration/DocumentStructure#locatedAt -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/structuration/DocumentStructure#locatedAt">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#File"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#FileLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/structuration/DocumentStructure#realizes -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/structuration/DocumentStructure#realizes">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#File"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.plm-interop.net/structuration/DocumentStructure#Considered_Domain -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/structuration/DocumentStructure#Considered_Domain"/>
+    
+
+
+    <!-- http://www.plm-interop.net/structuration/DocumentStructure#Document -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/structuration/DocumentStructure#Document"/>
+    
+
+
+    <!-- http://www.plm-interop.net/structuration/DocumentStructure#Document_Section -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/structuration/DocumentStructure#Document_Section"/>
+    
+
+
+    <!-- http://www.plm-interop.net/structuration/DocumentStructure#File -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/structuration/DocumentStructure#File"/>
+    
+
+
+    <!-- http://www.plm-interop.net/structuration/DocumentStructure#FileLocation -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/structuration/DocumentStructure#FileLocation"/>
+    
+
+
+    <!-- http://www.plm-interop.net/structuration/DocumentStructure#FileLocationOnReferential -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/structuration/DocumentStructure#FileLocationOnReferential">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#FileLocation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/structuration/DocumentStructure#FileLocationOnTheWeb -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/structuration/DocumentStructure#FileLocationOnTheWeb">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/structuration/DocumentStructure#FileLocation"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

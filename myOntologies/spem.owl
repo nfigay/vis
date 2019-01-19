@@ -1,0 +1,2451 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.plm-interop.net/spem/2.0#"
+     xml:base="http://www.plm-interop.net/spem/2.0"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.plm-interop.net/spem/2.0">
+        <owl:versionIRI rdf:resource="urn:absolute:0.1"/>
+        <rdfs:comment>CurrentVersion: capture stopped page 142 of the specification</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#aggregatedRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#aggregatedRole">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#CompositeRole"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#RoleDefinition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#applicableMetaClass -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#applicableMetaClass">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Kind"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Class_UML_Metaclass"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#baseConfiguration -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#baseConfiguration">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#MethodConfiguration"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#MethodConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#categorizedElement -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#categorizedElement">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Category"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#DescribableElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#connectedPort -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#connectedPort">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductPortConnector"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductPort"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#contentPackageSelection -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#contentPackageSelection">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#MethodConfiguration"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentPackage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#defaultContext -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#defaultContext">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Activity"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#MethodConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#defaultResponsabilityContext -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#defaultResponsabilityContext">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Default_ResponsabilityAssignment"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#State_ext"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#defaultView -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#defaultView">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#MethodConfiguration"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Category"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#description -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#description">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#DescribableElement"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#ContentDescription"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#direction -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#direction">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkSequence"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#ParameterDirectionKind"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#entryState -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#entryState">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkDefinitionParameter"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#State_ext"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#exitState -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#exitState">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkDefinitionParameter"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#State_ext"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#expression -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#expression">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Metric"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#ValueSpecification"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#guidance -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#guidance">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#DescribableElement"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Guidance"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#kind -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#kind">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#ExtensibleElement"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Kind"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#linkKind -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#linkKind">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkSequence"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#WorkSequence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#linkToPredecessor -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#linkToPredecessor">
+        <owl:inverseOf rdf:resource="http://www.plm-interop.net/spem/2.0#predecessor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#linkToSuccessor -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#linkToSuccessor">
+        <owl:inverseOf rdf:resource="http://www.plm-interop.net/spem/2.0#successor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#linkedActivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#linkedActivity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessPerformer"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#linkedRoleDefinition -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#linkedRoleDefinition">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Default_ResponsabilityAssignment"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Default_TaskDefinitionPerformer"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#RoleDefinition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#linkedRoleUse -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#linkedRoleUse">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessPerformer"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessResponsabilityAssignment"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#RoleUse"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#linkedTaskUse -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#linkedTaskUse">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessPerformer"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#TaskUse"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#linkedWorkDefinition -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#linkedWorkDefinition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkDefinitionPerformer"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#WorkDefinition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#linkedWorkProductDefinition -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#linkedWorkProductDefinition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Default_ResponsabilityAssignment"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductDefinition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#linkedWorkProductInUse -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#linkedWorkProductInUse">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessResponsabilityAssignment"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductUse"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#linkedWorkProductUse -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#linkedWorkProductUse">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessResponsabilityAssignment"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductUse"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#managedWorkProduct -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#managedWorkProduct">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#ToolDefinition"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductDefinition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#methodPluginSelection -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#methodPluginSelection">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#MethodConfiguration"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#MethodPlugin"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#metric -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#metric">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#DescribableElement"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Metric"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#nestedBreakdownElement -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#nestedBreakdownElement">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Activity"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#BreakdownElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#nestedPackage -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#nestedPackage">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.plm-interop.net/spem/2.0#nestingPackage"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#nestingPackage -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#nestingPackage">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Package_UML_Metaclass"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Package_UML_Metaclass"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#optionality -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#optionality">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Default_TaskDefinitionParameter"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#OptionalityKind"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ownedMethodContentPackage -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#ownedMethodContentPackage">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#MethodPlugin"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentPackage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ownedMethodPlugin -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#ownedMethodPlugin">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#MethodLibrary"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#MethodPlugin"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ownedParameter -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#ownedParameter">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkDefinition"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#WorkDefinitionParameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ownedPort -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#ownedPort">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessComponent"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductPort"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ownedProcessMember -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#ownedProcessMember">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessPackage"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessPackageableElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ownedProcessPackage -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#ownedProcessPackage">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#MethodPlugin"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessPackage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ownedProcessParameter -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#ownedProcessParameter">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Activity"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#TaskUse"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessParameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ownedTaskDefinitionParameter -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#ownedTaskDefinitionParameter">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#TaskDefinition"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Default_TaskDefinitionParameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#owningMethodLibrary -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#owningMethodLibrary">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#MethodLibrary"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#MethodLibraryPackageableElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#owningPackage -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#owningPackage">
+        <owl:inverseOf rdf:resource="http://www.plm-interop.net/spem/2.0#packagedElement"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#PackageableElement"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Package_UML_Metaclass"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#owningProcessPackage -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#owningProcessPackage">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessPackageableElement"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessPackage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#packagedElement -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#packagedElement">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#parameterType -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#parameterType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessParameter"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductUse"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#paramterType -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#paramterType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Default_TaskDefinitionParameter"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#WorkDefinition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#portKind -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#portKind">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductPort"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#ParameterDirectionKind"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#portType -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#portType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductPort"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductDefinition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#postCondition -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#postCondition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkDefinition"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Constraint"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#preCondition -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#preCondition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Constraint"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#WorkDefinition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#predecessor -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#predecessor">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkSequence"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#WorkBreakdownElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#predecessor2 -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#predecessor2">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Section"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Section"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#predefinedConfiguration -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#predefinedConfiguration">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#MethodLibrary"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#MethodConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#process -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#process">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessComponent"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#processPackageSelection -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#processPackageSelection">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#MethodConfiguration"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessPackage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#processResponsabilityContext -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#processResponsabilityContext">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessResponsabilityAssignment"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#State_ext"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#processView -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#processView">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#MethodConfiguration"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Category"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#providedQualification -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#providedQualification">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#RoleDefinition"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Qualification"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#reference -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#reference">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#ExternalReference"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Element"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#requiredQualification -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#requiredQualification">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#TaskDefinition"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Qualification"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#requiredResults -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#requiredResults">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Milestone"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductUse"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#role -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#role">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#RoleUse"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#RoleDefinition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#roleDefinitionContext -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#roleDefinitionContext">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#RoleUse"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Transition_ext"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#roleUseContext -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#roleUseContext">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#RoleUse"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Transition_ext"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#section -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#section">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#ContentDescription"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Section"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#selectedStep -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#selectedStep">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#TaskUse"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Step"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#source -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#source">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductUseRelationship"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductDefinition"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductUse"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#step -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#step">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#TaskDefinition"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Step"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#subCategory -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#subCategory">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Category"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Category"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#subSection -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#subSection">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Section"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Section"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#subTeam -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#subTeam">
+        <owl:inverseOf rdf:resource="http://www.plm-interop.net/spem/2.0#superTeam"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#TeamProfile"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#TeamProfile"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#substractedCategory -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#substractedCategory">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#MethodConfiguration"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Category"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#successor -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#successor">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkSequence"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#WorkBreakdownElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#superTeam -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#superTeam">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#TeamProfile"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#TeamProfile"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#suppressedBreakdownElement -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#suppressedBreakdownElement">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Activity"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#BreakdownElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#suppressedMethodContentElement -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#suppressedMethodContentElement">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentElement"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#target -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#target">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductUseRelationship"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductUse"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#task -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#task">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#TaskUse"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#TaskDefinition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#teamRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#teamRole">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#TeamProfile"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#RoleUse"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#useKind -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#useKind">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Activity"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#usedActivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#usedActivity">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Activity"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#usedPort -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#usedPort">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessComponentUse"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#usedQualification -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#usedQualification">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#TaskUse"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Qualification"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#validContexts -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#validContexts">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Activity"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#MethodConfiguration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#variabilityBasedOnElement -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#variabilityBasedOnElement">
+        <owl:inverseOf rdf:resource="http://www.plm-interop.net/spem/2.0#variabilitySpecialElement"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#VariabilityElement"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#VariabilityElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#variabilitySpecialElement -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#variabilitySpecialElement">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#VariabilityElement"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#VariabilityElement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#workDefinitionActivityContext -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#workDefinitionActivityContext">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductDefinition"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Activity_ext"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#workDefinitionTransitionContext -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#workDefinitionTransitionContext">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkDefinition"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#Transition_ext"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#workProduct -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#workProduct">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductUse"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductDefinition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#workProductDefinitionContext -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#workProductDefinitionContext">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductDefinition"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#State_ext"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#workProductUseContext -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#workProductUseContext">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductDefinition"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#State_ext"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#workSequenceContext -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/spem/2.0#workSequenceContext">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkDefinition"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/spem/2.0#ControlFlow_ext"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#briefDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.plm-interop.net/spem/2.0#briefDescription">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#ContentDescription"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#DescribableElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#duration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.plm-interop.net/spem/2.0#duration">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#PlannedElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#finishDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.plm-interop.net/spem/2.0#finishDate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#PlannedElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#hasMultipleOccurences -->
+
+    <owl:DatatypeProperty rdf:about="http://www.plm-interop.net/spem/2.0#hasMultipleOccurences">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#BreakdownElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#isEventDriven -->
+
+    <owl:DatatypeProperty rdf:about="http://www.plm-interop.net/spem/2.0#isEventDriven">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkBreakdownElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#isOnGoing -->
+
+    <owl:DatatypeProperty rdf:about="http://www.plm-interop.net/spem/2.0#isOnGoing">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkBreakdownElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#isOptional -->
+
+    <owl:DatatypeProperty rdf:about="http://www.plm-interop.net/spem/2.0#isOptional">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#BreakdownElement"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductPort"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#isPlanned -->
+
+    <owl:DatatypeProperty rdf:about="http://www.plm-interop.net/spem/2.0#isPlanned">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#BreakdownElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#isRepeatable -->
+
+    <owl:DatatypeProperty rdf:about="http://www.plm-interop.net/spem/2.0#isRepeatable">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#WorkBreakdownElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#mainDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.plm-interop.net/spem/2.0#mainDescription">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#ContentDescription"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#DescribableElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#presentationName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.plm-interop.net/spem/2.0#presentationName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#ContentDescription"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#DescribableElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#purpose -->
+
+    <owl:DatatypeProperty rdf:about="http://www.plm-interop.net/spem/2.0#purpose">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#ContentDescription"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#DescribableElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#rank -->
+
+    <owl:DatatypeProperty rdf:about="http://www.plm-interop.net/spem/2.0#rank">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#PlannedElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#sectionDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.plm-interop.net/spem/2.0#sectionDescription">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Section"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#sectionName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.plm-interop.net/spem/2.0#sectionName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#Section"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#startDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.plm-interop.net/spem/2.0#startDate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/spem/2.0#PlannedElement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Action_UML_Metaclass -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Action_UML_Metaclass"/>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Activity -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Activity">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#PlannedElement"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#VariabilityElement"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#WorkBreakdownElement"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#WorkDefinition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ActivityKind -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ActivityKind">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Classifier_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ActivityUseKind -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ActivityUseKind"/>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Activity_ext -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Activity_ext">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ExternalReference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#AggregatedRole -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#AggregatedRole">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Association_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Aggregation -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Aggregation">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductRelationshipKind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Artifact -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Artifact">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductKind"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Artifact Definition is a Work Product Definition that provides a description and definition for tangible work product types. Artifacts may be composed of other artifacts. For example, a model artifact can be composed of model elements,
+which are also artifacts.
+Artifacts are tangible work products consumed, produced, or modified by Tasks. They may serve as a basis for defining reusable assets. Roles use Artifacts to perform Tasks and produce Artifacts in the course of performing Tasks. Artifacts
+are the responsibility of a single Role, making responsibility easy to identify and understand, and promoting the idea that every piece of information produced in the method requires the appropriate set of skills. Even though one role might
+“own” a specific type of Artifact, other roles can still use the Artifacts, and perhaps even update them if the Role has been given permission to do so.</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Association_UML_Metaclass -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Association_UML_Metaclass"/>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#BaseConfiguration -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#BaseConfiguration">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Dependency_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#BasePlugin -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#BasePlugin">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Dependency_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#BreakdownElement -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#BreakdownElement">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Category -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Category">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#CategoryKind -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#CategoryKind">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Class_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Checklist -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Checklist">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#GuidanceKind"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Checklist is a specific type of guidance that identifies a series of items that need to be completed or verified.
+Checklists are often used in reviews such as walkthroughs or inspections.</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Class_UML_Metaclass -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Class_UML_Metaclass"/>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Classifier_UML_Metaclass -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Classifier_UML_Metaclass"/>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#CompositeRole -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#CompositeRole">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#RoleUse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Composition -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Composition">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductRelationshipKind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Concept -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Concept">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#GuidanceKind"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Concept is a specific type of guidance that outlines key ideas associated with basic principles underlying the referenced
+item. Concepts normally address more general topics than Guidelines and span across several work product and/or tasks/
+activities.</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Constraint -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Constraint"/>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ContentDescription -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ContentDescription"/>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ControlFlow_ext -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ControlFlow_ext">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ExternalReference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Default_ResponsabilityAssignment -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Default_ResponsabilityAssignment">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Default_TaskDefinitionParameter -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Default_TaskDefinitionParameter">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentElement"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#WorkDefinitionParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Default_TaskDefinitionPerformer -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Default_TaskDefinitionPerformer">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Deliverable -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Deliverable">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductKind"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Deliverable Definition is a Work Product Definition that provides a description and definition for packaging other Work Products, and may be delivered to an internal or external party. Therefore, a Deliverable aggregates other Work Products.
+A Deliverable is used to pre-define typical or recommended content in the form of work products that would be packaged for delivery. The packaging of the Deliverable in a process or project could be a modification of this recommendation.
+Deliverables are used to represent an output from a process that has value, material or otherwise, to a client, customer, or other stakeholder. A Deliverable is a work product that aggregates other work products. Method content maintains
+preconfigured potential deliverables.</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#DeliveryProcess -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#DeliveryProcess">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Dependency_UML_Metaclass -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Dependency_UML_Metaclass"/>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#DescribableElement -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#DescribableElement">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ExtensibleElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Discipline -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Discipline">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#CategoryKind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Domain -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Domain">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#CategoryKind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Element -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Element"/>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Estimate -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Estimate">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MetricKind"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An Estimate is a specific type of Guidance that provides sizing measures, or standards for sizing the work effort
+associated with performing a particular piece of work and instructions for their successful use. It may be comprised of
+estimation considerations and estimation metrics.</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#EstimatingMetric -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#EstimatingMetric">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MetricKind"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estimation Metric describes a metric or measure that is associated with an element and which is used to calculate the size
+of the work effort as well as a range of potential labor.</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#EstimationConsiderations -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#EstimationConsiderations">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MetricKind"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estimation Considerations qualify the usage and application of estimation metrics in the development of an actual
+estimate.</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Example -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Example">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#GuidanceKind"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An Example is a specific type of Guidance that represents a typical, partially completed, sample instance of one or more
+work products or scenario-like description of how Task may be performed. Examples can be related to Work Products as
+well as Tasks that produce them and any other Content Element.</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ExtensibleElement -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ExtensibleElement">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Class_UML_Metaclass"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Classifier_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ExternalReference -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ExternalReference"/>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Generalization_UML_metaclass -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Generalization_UML_metaclass"/>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Guidance -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Guidance">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#GuidanceKind -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#GuidanceKind">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Class_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Guideline -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Guideline">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#GuidanceKind"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Guideline is a specific type of guidance that provides additional detail on how to perform a particular task or grouping of tasks (e.g., grouped together as activities), or that provides additional detail, rules, and recommendations on work
+products and their properties. Among others, it can include details about best practices and different approaches for doing work, how to use particular types of work products, information on different subtypes and variants of the work product
+and how they evolve throughout a lifecycle, discussions on skills the performing roles should acquire or improve upon, measurements for progress and maturity, etc.</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ImpactedBy -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ImpactedBy">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductRelationshipKind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Kind -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Kind">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ExtensibleElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Mandatory -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Mandatory">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#OptionalityKind"/>
+        <owl:disjointWith rdf:resource="http://www.plm-interop.net/spem/2.0#Optional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#MethodConfiguration -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#MethodConfiguration">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Class_UML_Metaclass"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentUse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#MethodContentElement -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#MethodContentElement">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#DescribableElement"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ExtensibleElement"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentPackageableElement"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#VariabilityElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#MethodContentKind -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#MethodContentKind">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#MethodContentPackage -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#MethodContentPackage">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentPackageableElement"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Package_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#MethodContentPackageableElement -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#MethodContentPackageableElement">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#PackageableElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#MethodContentTrace -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#MethodContentTrace">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Dependency_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#MethodContentUse -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#MethodContentUse">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#MethodLibrary -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#MethodLibrary">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Package_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#MethodLibraryPackageableElement -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#MethodLibraryPackageableElement">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#PackageableElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#MethodPlugin -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#MethodPlugin">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MethodLibraryPackageableElement"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Package_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#MethodPluginPackageableElement -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#MethodPluginPackageableElement">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Package_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Metric -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Metric">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#DescribableElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#MetricKind -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#MetricKind">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Class_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Milestone -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Milestone">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#WorkBreakdownElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#NestedBreakdownElement -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#NestedBreakdownElement">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Association_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Optional -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Optional">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#OptionalityKind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#OptionalityKind -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#OptionalityKind"/>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#OptionalityMandatory -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#OptionalityMandatory">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Association_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#OptionalityOptional -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#OptionalityOptional">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Association_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Outcome -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Outcome">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#WorkProductKind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#PackageSelection -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#PackageSelection">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Dependency_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Package_UML_Metaclass -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Package_UML_Metaclass"/>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#PackageableElement -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#PackageableElement"/>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ParameterDirectionKind -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ParameterDirectionKind"/>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ParameterIn -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ParameterIn">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Association_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ParameterInOut -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ParameterInOut">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Association_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ParameterOut -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ParameterOut">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Association_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Performer -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Performer">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ExtensibleElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#PlannedElement -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#PlannedElement"/>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#PlanningData -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#PlanningData">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Port_UML_Metaclass -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Port_UML_Metaclass"/>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Practice -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Practice">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#GuidanceKind"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Practice represents a proven way or strategy of doing work to achieve a goal that has a positive impact on work product or process quality. Practices are defined orthogonal to methods and processes. They could summarize aspects that impact
+many different parts of a method or specific processes. Examples for practices would be “Manage Risks,” “Continuously verify quality,” “Architecture-centric and component-based development,” etc.</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Process -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Process">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ActivityKind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ProcessComponent -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ProcessComponent">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Class_UML_Metaclass"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Package_UML_Metaclass"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessPackage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ProcessComponentUse -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ProcessComponentUse">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#BreakdownElement"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentUse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ProcessElement -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ProcessElement">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#DescribableElement"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ExtensibleElement"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessPackageableElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ProcessKind -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ProcessKind">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ProcessPackage -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ProcessPackage">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MethodLibraryPackageableElement"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MethodPluginPackageableElement"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Package_UML_Metaclass"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessPackageableElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ProcessPackageableElement -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ProcessPackageableElement">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#PackageableElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ProcessParameter -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ProcessParameter">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#BreakdownElement"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#WorkDefinitionParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ProcessPattern -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ProcessPattern">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ProcessPerformer -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ProcessPerformer">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#BreakdownElement"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#WorkDefinitionPerformer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ProcessPlanningTemplate -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ProcessPlanningTemplate">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ProcessResponsabilityAssignment -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ProcessResponsabilityAssignment">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Association_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Qualification -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Qualification">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Class_UML_Metaclass"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Report -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Report">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#GuidanceKind"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Report is a predefined template of a result that is generated on the basis of other work products as an output from some form of tool automation. An example for a report would be a use case model survey, which is generated by extracting diagram information from a graphical model and textual information from documents, and then combines these two types of information into a report.</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#RequiredResult -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#RequiredResult">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Association_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ResponsabilityAssignment -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ResponsabilityAssignment">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Association_UML_Metaclass"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ExtensibleElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ReusableAsset -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ReusableAsset">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#GuidanceKind"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Reusable Asset provides a solution to a problem for a given context. The asset may have a variability point, which is a location in the asset that may have a value provided or customized by the asset consumer. The asset has rules for usage that are the instructions describing how the asset should be used.</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Roadmap -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Roadmap">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#GuidanceKind"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Roadmap is a special Guidance Kind that is only related to Activities. A Roadmap represents a linear walkthrough of an Activity, typically a Process. An instance of a Roadmap represents important documentation for the Activity or Process
+it is related to. Often a complex Activity, such as a Process, can be much easier understood by providing a walkthrough with a linear thread of a typical instantiation of this Activity. In addition to making the process practitioner understand how work in the process is being performed, a Roadmap provides additional information about how Activities and Tasks
+relate to each other over time. Roadmaps are also used to show how specific aspects are distributed over a whole process, providing a kind of filter on the process for this information.</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#RoleDefinition -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#RoleDefinition">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Class_UML_Metaclass"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#RoleSet -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#RoleSet">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#CategoryKind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#RoleUse -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#RoleUse">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentUse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Section -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Section">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#VariabilityElement"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#VariabilitySpecialization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#State_ext -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#State_ext">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ExternalReference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Step -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Step">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentElement"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Section"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#WorkDefinition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#SupportingMaterial -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#SupportingMaterial">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#GuidanceKind"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Supporting Materials is a catch-all for other types of guidance not specifically defined elsewhere. It can be related to all kinds of Content Elements, i.e., including other guidance elements.</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Suppressed -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Suppressed">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Dependency_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#TaskDefinition -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#TaskDefinition">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentElement"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#WorkDefinition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#TaskUse -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#TaskUse">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentUse"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#PlannedElement"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#WorkBreakdownElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#TeamProfile -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#TeamProfile">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessPerformer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Template -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Template">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#GuidanceKind"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Template is a specific type of guidance that provides for a work product a predefined table of contents, sections, packages, and/or headings, a standardized format, as well as descriptions how the sections and packages are supposed to be used and completed. Templates can be provided for documents and also for conceptual models or physical data stores.</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#TermDefinition -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#TermDefinition">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#GuidanceKind"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Term Definitions define concepts and are used to build up the Glossary. They are not directly related to Content Elements, but their relationship is derived when the Term is used in the Content Elements description text.</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ToolCategory -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ToolCategory">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#CategoryKind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ToolDefinition -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ToolDefinition">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Class_UML_Metaclass"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ToolMentor -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ToolMentor">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#GuidanceKind"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A Tool Mentor is a specific type of guidance that shows how to use a specific tool to accomplish some piece of work either in the context of or independent from a Task or Activity.</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#Transition_ext -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#Transition_ext">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ExternalReference"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#UsedActivityExtension -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#UsedActivityExtension">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Generalization_UML_metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#UsedActivityLocalContribution -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#UsedActivityLocalContribution">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Dependency_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#UsedActivityLocalReplacement -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#UsedActivityLocalReplacement">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Dependency_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#ValueSpecification -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#ValueSpecification"/>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#VariabilityContributes -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#VariabilityContributes">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#VariabilitySpecialization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#VariabilityElement -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#VariabilityElement">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Classifier_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#VariabilityExtends -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#VariabilityExtends">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#VariabilitySpecialization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#VariabilityExtendsReplaces -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#VariabilityExtendsReplaces">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#VariabilitySpecialization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#VariabilityReplaces -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#VariabilityReplaces">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#VariabilitySpecialization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#VariabilitySpecialization -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#VariabilitySpecialization">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Generalization_UML_metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#VariabilityType -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#VariabilityType"/>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#WhitePaper -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#WhitePaper">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#GuidanceKind"/>
+        <rdfs:isDefinedBy rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Whitepapers are a special Concept guidance that have been externally reviewed or published and can be read and understood in isolation from other content elements and guidance.</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#WorkBreakdownElement -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#WorkBreakdownElement">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#BreakdownElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#WorkDefinition -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#WorkDefinition">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Action_UML_Metaclass"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Classifier_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#WorkDefinitionParameter -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#WorkDefinitionParameter">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Classifier_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#WorkDefinitionPerformer -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#WorkDefinitionPerformer">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Classifier_UML_Metaclass"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Performer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#WorkProductDefinition -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#WorkProductDefinition">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Class_UML_Metaclass"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#WorkProductKind -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#WorkProductKind">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Class_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#WorkProductPort -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#WorkProductPort">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Port_UML_Metaclass"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ProcessElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#WorkProductPortConnector -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#WorkProductPortConnector">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#BreakdownElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#WorkProductRelationship -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#WorkProductRelationship">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Association_UML_Metaclass"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentElement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#WorkProductRelationshipKind -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#WorkProductRelationshipKind">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Association_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#WorkProductUse -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#WorkProductUse">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#MethodContentUse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#WorkProductUseRelationship -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#WorkProductUseRelationship">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Association_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#WorkSequence -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#WorkSequence">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#BreakdownElement"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#Dependency_UML_Metaclass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#WorkSequenceKind -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#WorkSequenceKind"/>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#contributes -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#contributes">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#VariabilityType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#extends -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#extends">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#VariabilityType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#extends-replaces -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#extends-replaces">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#VariabilityType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#extension -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#extension">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ActivityUseKind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#finishToFinish -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#finishToFinish">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#WorkSequenceKind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#finishToStart -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#finishToStart">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#WorkSequenceKind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#in -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#in">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ParameterDirectionKind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#inout -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#inout">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ParameterDirectionKind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#localContribution -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#localContribution">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ActivityUseKind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#localReplacement -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#localReplacement">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ActivityUseKind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#na -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#na">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ActivityUseKind"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#VariabilityType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#out -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#out">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#ParameterDirectionKind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#replaces -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#replaces">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#VariabilityType"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#startToFinish -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#startToFinish">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#WorkSequenceKind"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/spem/2.0#startToStart -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/spem/2.0#startToStart">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/spem/2.0#WorkSequenceKind"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.plm-interop.net/spem/2.0#contributes"/>
+            <rdf:Description rdf:about="http://www.plm-interop.net/spem/2.0#extends"/>
+            <rdf:Description rdf:about="http://www.plm-interop.net/spem/2.0#extends-replaces"/>
+            <rdf:Description rdf:about="http://www.plm-interop.net/spem/2.0#na"/>
+            <rdf:Description rdf:about="http://www.plm-interop.net/spem/2.0#replaces"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.plm-interop.net/spem/2.0#extension"/>
+            <rdf:Description rdf:about="http://www.plm-interop.net/spem/2.0#localContribution"/>
+            <rdf:Description rdf:about="http://www.plm-interop.net/spem/2.0#localReplacement"/>
+            <rdf:Description rdf:about="http://www.plm-interop.net/spem/2.0#na"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.plm-interop.net/spem/2.0#finishToFinish"/>
+            <rdf:Description rdf:about="http://www.plm-interop.net/spem/2.0#finishToStart"/>
+            <rdf:Description rdf:about="http://www.plm-interop.net/spem/2.0#startToFinish"/>
+            <rdf:Description rdf:about="http://www.plm-interop.net/spem/2.0#startToStart"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.plm-interop.net/spem/2.0#in"/>
+            <rdf:Description rdf:about="http://www.plm-interop.net/spem/2.0#inout"/>
+            <rdf:Description rdf:about="http://www.plm-interop.net/spem/2.0#out"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

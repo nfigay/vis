@@ -1,0 +1,912 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.plm-interop.net/standard/iso-iec/17788#"
+     xml:base="http://www.plm-interop.net/standard/iso-iec/17788"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:annotations="http://www.plm-interop.net/iso-iec/annotations#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.plm-interop.net/standard/iso-iec/17788">
+        <owl:imports rdf:resource="http://www.plm-interop.net/iso-iec/annotations"/>
+        <rdfs:isDefinedBy>c060544_ISO_IEC_17788_2014.pdf</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#ISO_IEC_17788_2014"/>
+        <annotations:Reference_Number xml:lang="en">ISO/IEC 17788:2014(E)</annotations:Reference_Number>
+        <annotations:English_Name xml:lang="en">Information technology - Cloud computing--Overview and vocabulary</annotations:English_Name>
+        <annotations:Version xml:lang="en">First edition 2014-10-15</annotations:Version>
+        <annotations:French_Name xml:lang="fr">Technologies de l&apos;information — Informatique en nuage — Vue d&apos;ensemble et vocabulaire</annotations:French_Name>
+        <owl:versionInfo xml:lang="en">First edition 2014-10-15</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#compose -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#compose">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.5_Cloud_Computing"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Cloud_Computing_Activity"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Cloud_Computing_Role"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.10_Cloud_Service_Category"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.4_Cloud_Capability_Type"/>
+        <rdfs:range rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.7_Cloud_Deployment_Model"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#include -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#include">
+        <rdfs:range rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.4_Cloud_Capability_Type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#use -->
+
+    <owl:ObjectProperty rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#use">
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.11_Cloud_Service_Customer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Id">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Document"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Title -->
+
+    <owl:DatatypeProperty rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Title">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Document"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Auditability -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Auditability">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#6.6_Cross_Cutting_Aspect"/>
+        <rdfs:comment xml:lang="en">The capability of collecting and making available necessary evidential information related to the operation and use of a cloud service, for the purpose of conducting an audit</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Broad_Network_Access -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Broad_Network_Access">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Key_Characteristic"/>
+        <rdfs:comment xml:lang="en">A feature where the physical and virtual resources are available over a network and accessed through standard mechanisms that promote use by heterogeneous client platforms. The focus of this key characteristic is that cloud computing offers an increased level of convenience in that users can access physical and virtual resources from wherever they need to work, as long as it is network accessible, using a wide variety of clients including devices such as mobile phones, tablets, laptops, and workstations</rdfs:comment>
+        <rdfs:label xml:lang="en">Broad Network Access</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Cloud_Computing_Activity -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Cloud_Computing_Activity">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Key_Characteristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Cloud_Computing_Role -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Cloud_Computing_Role">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Key_Characteristic"/>
+        <rdfs:label xml:lang="en">Cloud Computing Role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Database_as_a_Service -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Database_as_a_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.10_Cloud_Service_Category"/>
+        <rdfs:comment>The capability provided to the cloud service customer is database functionalities on demand where the installation and maintenance of the databases are performed by the cloud service provider.</rdfs:comment>
+        <rdfs:label>Database as a Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Desktop_as_a_Service -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Desktop_as_a_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.10_Cloud_Service_Category"/>
+        <rdfs:comment xml:lang="en">The capabilities provided to the cloud service customer are the ability to build, configure, manage, store, execute, and deliver users&apos; desktop functions remotely.</rdfs:comment>
+        <rdfs:label xml:lang="en">Desktop as a Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Document -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Document"/>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Email_as_a_Service -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Email_as_a_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.10_Cloud_Service_Category"/>
+        <rdfs:comment xml:lang="en">The capabilities provided to the cloud service customer are a complete email service including related support services such as storage, receipt, transmission, backup, and recovery of email.</rdfs:comment>
+        <rdfs:label xml:lang="en">Email as a Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Financial_Agreement -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Financial_Agreement"/>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Governance -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Governance">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#6.6_Cross_Cutting_Aspect"/>
+        <rdfs:comment xml:lang="en">The system by which the provision and use of cloud services are directed and controlled.
+Cloud governance is cited as a cross-cutting aspect because of the requirement for transparency and the need to rationalize governance practices with SLAs and other contractual elements of the cloud service customer to cloud service provider relationship. The term internal cloud governance is used for the application of design-time and run-time policies to ensure that cloud computing based solutions are designed and implemented, and cloud computing based services are delivered, according to specified expectations. The term external cloud governance is used for some form of agreement between the cloud service customer and the cloud service provider concerning the use of cloud services by the cloud service customer;</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Identity_and_Access_Management -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Identity_and_Access_Management">
+        <rdfs:label xml:lang="en">IAM</rdfs:label>
+        <rdfs:label xml:lang="en">Identity and Access Management</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Identity_as_a_Service -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Identity_as_a_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.10_Cloud_Service_Category"/>
+        <rdfs:comment xml:lang="en">The capabilities provided to the cloud service customer are Identity and Access Management (IAM) that can be extended and centralized into existing operating environments. This includes provisioning, directory management, and the operation of a single sign-on service.</rdfs:comment>
+        <rdfs:label xml:lang="en">Identity as a Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Key_Characteristic -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Key_Characteristic">
+        <rdfs:label xml:lang="en">Key Characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Maintenance_and_Versioning -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Maintenance_and_Versioning">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#6.6_Cross_Cutting_Aspect"/>
+        <rdfs:comment xml:lang="en">Maintenance refers to changes to a cloud service or the resources it uses in order to fix faults or in order to upgrade or extend capabilities for business reasons. Versioning implies the appropriate labelling of a service so that it is clear to the cloud service customer that a particular version is in use</rdfs:comment>
+        <rdfs:label xml:lang="en">Maintenance and versioning</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Management_as_a_Service -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Management_as_a_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.10_Cloud_Service_Category"/>
+        <rdfs:comment xml:lang="en">The capabilities provided to the cloud service customer including application management, asset and change management, capacity management, problem management (service desk), project portfolio management, service catalog, and service level management.</rdfs:comment>
+        <rdfs:label xml:lang="en">Management as a Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Performance -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Performance">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#6.6_Cross_Cutting_Aspect"/>
+        <rdfs:comment xml:lang="en">A set of behaviours relating to the operation of a cloud service, and having metrics defined in a SLA;</rdfs:comment>
+        <rdfs:label xml:lang="en">Performance</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Personally_Identifiable_Information -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Personally_Identifiable_Information">
+        <rdfs:label xml:lang="en">PII</rdfs:label>
+        <rdfs:label xml:lang="en">Personally Identifiable Information</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Portability -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Portability">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#6.6_Cross_Cutting_Aspect"/>
+        <rdfs:comment xml:lang="en">Ability of cloud service customers to move their data or their applications between multiple cloud service providers at low cost and with minimal disruption. The amount of cost and disruption that is acceptable may vary based upon the type of cloud service that is being used</rdfs:comment>
+        <rdfs:label xml:lang="en">Portability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Protection_of_PII -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Protection_of_PII">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#6.6_Cross_Cutting_Aspect"/>
+        <rdfs:comment xml:lang="en">Protect the assured, proper, and consistent collection, processing, communication, use and disposal of Personally Identifiable Information (PII) in relation to cloud services</rdfs:comment>
+        <rdfs:label xml:lang="en">Protection of PII</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Rapid_Elasticity_and_scalability -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Rapid_Elasticity_and_scalability">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Key_Characteristic"/>
+        <rdfs:comment xml:lang="en">A feature where physical or virtual resources can be rapidly and elastically adjusted, in some cases automatically, to quickly increase or decrease resources. For the cloud service customer, the physical or virtual resources available for provisioning often appear to be unlimited and can be purchased in any quantity at any time automatically, subject to constraints of service agreements. Therefore, the focus of this key characteristic is that cloud computing means that the customers no longer need to worry about limited resources and might not need to worry about capacity planning</rdfs:comment>
+        <rdfs:label xml:lang="en">Rapid elasticity and scalability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Regulatory -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Regulatory">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#6.6_Cross_Cutting_Aspect"/>
+        <rdfs:comment xml:lang="en">There are a number of different regulations that may influence the use and delivery of cloud services. Statutory, regulatory, and legal requirements vary by market sector and jurisdiction, and they can change the responsibilities of both cloud service customers and cloud service providers. Compliance with such requirements is often related to governance and risk management activities;</rdfs:comment>
+        <rdfs:label xml:lang="en">Regulatory</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Resiliency -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Resiliency">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#6.6_Cross_Cutting_Aspect"/>
+        <rdfs:comment xml:lang="en">Ability of a system to provide and maintain an acceptable level of service in the face of faults (unintentional, intentional, or naturally caused) affecting normal operation</rdfs:comment>
+        <rdfs:label xml:lang="en">Resiliency</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Security -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Security">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#6.6_Cross_Cutting_Aspect"/>
+        <rdfs:comment xml:lang="en">Ranges from physical security to application security, and includes requirements such as authentication, authorization, availability, confidentiality, identity management, integrity, non-repudiation, audit, security monitoring, incident response, and security policy management</rdfs:comment>
+        <rdfs:label xml:lang="en">Security</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Security_as_a_Service -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Security_as_a_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.10_Cloud_Service_Category"/>
+        <rdfs:comment xml:lang="en">The capabilities provided to the cloud service customer are the integration of a suite of security services with the existing operating environment by the cloud service provider. This may include authentication, anti-virus, anti-malware/spyware, intrusion detection, and security event management, among others.</rdfs:comment>
+        <rdfs:label xml:lang="en">Security as a Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.1.1_Availability -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.1.1_Availability">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#6.6_Cross_Cutting_Aspect"/>
+        <rdfs:comment xml:lang="en">The property of being accessible and usable upon demand by an authorized entity. The &quot;authorized entity&quot; is typically a cloud service customer</rdfs:comment>
+        <rdfs:label xml:lang="en">Availability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.1.2_Confidentiality -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.1.2_Confidentiality">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#6.6_Cross_Cutting_Aspect"/>
+        <rdfs:comment xml:lang="en">Property that information is not made available or disclosed to unauthorized individuals, entities, or processes</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.1.3_Information_Security -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.1.3_Information_Security">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Security"/>
+        <rdfs:comment xml:lang="en">NOTE – In addition, other properties, such as authenticity, accountability, non-repudiation, and reliability can also be involved.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Preservation of confidentiality (3.1.2), integrity (3.1.4) and availability (3.1.1) of information.</rdfs:comment>
+        <rdfs:label xml:lang="en">Information Security</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.1.4_Integrity -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.1.4_Integrity">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#6.6_Cross_Cutting_Aspect"/>
+        <rdfs:comment xml:lang="en">Property of accuracy and completeness.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.1.5_Interoperability -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.1.5_Interoperability">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#6.6_Cross_Cutting_Aspect"/>
+        <rdfs:comment xml:lang="en">Ability of a cloud service customer to interact with a cloud service and exchange information according to a prescribed method and obtain predictable results</rdfs:comment>
+        <rdfs:comment xml:lang="en">The ability of two or more systems or applications to exchange information and to mutually use the information that has been exchanged.</rdfs:comment>
+        <rdfs:label xml:lang="en">Interoperability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.1.6_Party -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.1.6_Party">
+        <rdfs:comment xml:lang="en">Natural person or legal person, whether or not incorporated, or a group of either.</rdfs:comment>
+        <rdfs:label xml:lang="en">Party</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.1.7_Service_Level_Agreement -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.1.7_Service_Level_Agreement">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#6.6_Cross_Cutting_Aspect"/>
+        <rdfs:comment xml:lang="en">Documented agreement between the service provider and customer that identifies services and service targets.</rdfs:comment>
+        <rdfs:comment xml:lang="en">NOTE 1 – A service level agreement can also be established between the service provider and a supplier, an internal group or a customer acting as a supplier.</rdfs:comment>
+        <rdfs:comment xml:lang="en">NOTE 2 – A service level agreement can be included in a contract or another type of documented agreement.</rdfs:comment>
+        <rdfs:comment>The cloud computing service level agreement (cloud SLA) is a service level agreement between a cloud service provider and a cloud service customer based on a taxonomy of cloud computing specific terms to set the quality of the cloud services delivered. It characterizes quality of the cloud services delivered in terms of: 1) a set of measurable properties specific to cloud computing (business and technical) and 2) a given set of cloud computing roles (cloud service customer and cloud service provider and related sub-roles).</rdfs:comment>
+        <rdfs:label xml:lang="en">Service Level Agreement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.1_Application_Capability_Type -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.1_Application_Capability_Type">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.4_Cloud_Capability_Type"/>
+        <rdfs:comment xml:lang="en">Cloud capabilities type (3.2.4) in which the cloud service customer (3.2.11)
+can use the cloud service provider&apos;s (3.2.15) applications</rdfs:comment>
+        <rdfs:label>Application</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.1_Cloud_Auditor -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.1_Cloud_Auditor">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.14_Cloud_Service_Partner"/>
+        <rdfs:comment xml:lang="en">Cloud service partner (3.2.14) with the responsibility to conduct an audit of the provision
+and use of cloud services (3.2.8).</rdfs:comment>
+        <rdfs:label xml:lang="en">Cloud Auditor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.10_Cloud_Service_Category -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.10_Cloud_Service_Category">
+        <rdfs:comment xml:lang="en">A cloud service category is a group of cloud services that possess some common set of qualities. A cloud service category can include capabilities from one or more cloud capabilities types.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Group of cloud services (3.2.8) that possess some common set of qualities.</rdfs:comment>
+        <rdfs:comment xml:lang="en">NOTE – A cloud service category can include capabilities from one or more cloud capabilities types (3.2.4).</rdfs:comment>
+        <rdfs:label xml:lang="en">Cloud Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.11_Cloud_Service_Customer -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.11_Cloud_Service_Customer">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Cloud_Computing_Role"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.1.6_Party"/>
+        <rdfs:comment>A party which is in a business relationship for the purpose of using cloud services. The business relationship is with a cloud service provider or a cloud service partner. Key activities for a cloud service customer include, but are not limited to, using cloud services, performing business administration, and administering use of cloud services</rdfs:comment>
+        <rdfs:comment xml:lang="en">NOTE – A business relationship does not necessarily imply financial agreements.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Party (3.1.6) which is in a business relationship for the purpose of using cloud
+services (3.2.8).</rdfs:comment>
+        <rdfs:label xml:lang="en">Cloud Service Customer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.12_Cloud_Service_Customer_Data -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.12_Cloud_Service_Customer_Data">
+        <rdfs:comment xml:lang="en">Class of data objects under the control, by legal or other reasons, of the cloud
+service customer (3.2.11) that were input to the cloud service (3.2.8), or resulted from exercising the capabilities of the cloud service (3.2.8) by or on behalf of the cloud service customer (3.2.11) via the published interface of the cloud service (3.2.8).</rdfs:comment>
+        <rdfs:comment xml:lang="en">NOTE 1 – An example of legal controls is copyright.</rdfs:comment>
+        <rdfs:comment xml:lang="en">NOTE 2 – It may be that the cloud service (3.2.8) contains or operates on data that is not cloud service customer data; this might be data made available by the cloud service providers (3.2.15), or obtained from another source, or it might be publicly
+available data. However, any output data produced by the actions of the cloud service customer (3.2.11) using the capabilities of the cloud service (3.2.8) on this data is likely to be cloud service customer data (3.2.12), following the general principles of copyright, unless there are specific provisions in the cloud service (3.2.8) agreement to the contrary.</rdfs:comment>
+        <rdfs:label xml:lang="en">Cloud Service Customer Data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.13_Cloud_Service_Derived_Data -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.13_Cloud_Service_Derived_Data">
+        <rdfs:comment xml:lang="en">Class of data objects under cloud service provider (3.2.15) control that are
+derived as a result of interaction with the cloud service (3.2.8) by the cloud service customer (3.2.11).</rdfs:comment>
+        <rdfs:comment xml:lang="en">NOTE – Cloud service derived data includes log data containing records of who used the service, at what times, which functions, types of data involved and so on. It can also include information about the numbers of authorized users and their
+identities. It can also include any configuration or customization data, where the cloud service (3.2.8) has such configuration and customization capabilities.</rdfs:comment>
+        <rdfs:label xml:lang="en">Cloud Service Derived Data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.14_Cloud_Service_Partner -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.14_Cloud_Service_Partner">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Cloud_Computing_Role"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.1.6_Party"/>
+        <rdfs:comment>A party which is engaged in support of, or auxiliary to, activities of either the cloud service provider or the cloud service customer, or both. A cloud service partner&apos;s activities vary depending on the type of partner and their relationship with the cloud service provider and the cloud service customer. Examples of cloud service partners include cloud auditor and cloud service broker</rdfs:comment>
+        <rdfs:comment xml:lang="en">Party (3.1.6) which is engaged in support of, or auxiliary to, activities of either the
+cloud service provider (3.2.15) or the cloud service customer (3.2.11), or both.</rdfs:comment>
+        <rdfs:label xml:lang="en">Cloud Service Partner</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.15_Cloud_Service_Provider -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.15_Cloud_Service_Provider">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Cloud_Computing_Role"/>
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.1.6_Party"/>
+        <rdfs:comment>A party which makes cloud services available. The cloud service provider focuses on activities necessary to provide a cloud service and activities necessary to ensure its delivery to the cloud service customer as well as cloud service maintenance. The cloud service provider includes an extensive set of activities (e.g., provide service, deploy and monitor service, manage business plan, provide audit data, etc.) as well as numerous sub-roles (e.g., business manager, service manager,
+network provider, security and risk manager, etc.).</rdfs:comment>
+        <rdfs:comment xml:lang="en">Party (3.1.6) which makes cloud services (3.2.8) available</rdfs:comment>
+        <rdfs:label xml:lang="en">Cloud Service Provider</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.16_Cloud_Service_Provider_Data -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.16_Cloud_Service_Provider_Data">
+        <rdfs:comment xml:lang="en">Class of data objects, specific to the operation of the cloud service (3.2.8),
+under the control of the cloud service provider (3.2.15).</rdfs:comment>
+        <rdfs:comment xml:lang="en">NOTE – Cloud service provider data includes but is not limited to resource configuration and utilization information, cloud service (3.2.8) specific virtual machine, storage and network resource allocations, overall data centre configuration and utilization, physical and virtual resource failure rates, operational costs and so on.</rdfs:comment>
+        <rdfs:label xml:lang="en">Cloud Service Producer Data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.17_Cloud_Service_User -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.17_Cloud_Service_User">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Cloud_Computing_Role"/>
+        <rdfs:comment xml:lang="en">NOTE – Examples of such entities include devices and applications.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Natural person, or entity acting on their behalf, associated with a cloud service customer (3.2.11) that uses cloud services (3.2.8).</rdfs:comment>
+        <rdfs:label xml:lang="en">Cloud Service User</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.18_Communication_as_a_Service -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.18_Communication_as_a_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.10_Cloud_Service_Category"/>
+        <rdfs:comment xml:lang="en">Cloud service category (3.2.10) in which the capability provided to the cloud service customer (3.2.11) is real time interaction and collaboration.</rdfs:comment>
+        <rdfs:comment xml:lang="en">NOTE – CaaS can provide both application capabilities type (3.2.1) and platform capabilities type (3.2.31).</rdfs:comment>
+        <rdfs:label xml:lang="en">CaaS</rdfs:label>
+        <rdfs:label xml:lang="en">Communication as a Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.19_Community_Cloud -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.19_Community_Cloud">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.7_Cloud_Deployment_Model"/>
+        <rdfs:comment xml:lang="en">Cloud deployment model (3.2.7) where cloud services (3.2.8) exclusively support and are shared by a specific collection of cloud service customers (3.2.11) who have shared requirements and a relationship with one another, and where resources are controlled by at least one member of this collection.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Cloud deployment model where cloud services exclusively support and are shared by a specific collection of cloud service customers who have shared requirements and a relationship with one another, and where resources are controlled by at least one member of this collection. A community cloud may be owned, managed, and operated by one or more of the organizations in the community, a third party, or some combination of them, and it may exist on or off premises.
+Community clouds limit participation to a group of cloud service customers who have a shared set of concerns, in contrast to the openness of public clouds, while community clouds have broader participation than private clouds. These shared concerns include, but are not limited to, mission, information security requirements, policy, and compliance considerations</rdfs:comment>
+        <rdfs:label xml:lang="en">Community Cloud</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.2_Cloud_Application_Portability -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.2_Cloud_Application_Portability">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Portability"/>
+        <rdfs:comment xml:lang="en">Ability to migrate an application from one cloud service (3.2.8) to another
+cloud service (3.2.8).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.20_Computer_as_a_Service -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.20_Computer_as_a_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.10_Cloud_Service_Category"/>
+        <rdfs:comment xml:lang="en">Cloud service category (3.2.10) in which the capabilities provided to
+the cloud service customer (3.2.11) are the provision and use of processing resources needed to deploy and runsoftware.</rdfs:comment>
+        <rdfs:comment xml:lang="en">NOTE – To run some software, capabilities other than processing resources may be needed.</rdfs:comment>
+        <rdfs:label xml:lang="en">CompaaS</rdfs:label>
+        <rdfs:label xml:lang="en">Computer as a Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.21_Data_Portability -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.21_Data_Portability">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Portability"/>
+        <rdfs:comment xml:lang="en">Ability to easily transfer data from one system to another without being required to re-enter data.</rdfs:comment>
+        <rdfs:comment xml:lang="en">NOTE – It is the ease of moving the data that is the essence here. This might be achieved by the source system supplying the data in exactly the format that is accepted by the target system. But even if the formats do not match, the transformation between them may be simple and straightforward to achieve with commonly available tools. On the other hand, a process of printing out the data and rekeying it for the target system could not be described as &quot;easy&quot;.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.22_Data_Storage_as_a_Service -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.22_Data_Storage_as_a_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.10_Cloud_Service_Category"/>
+        <rdfs:comment xml:lang="en">Cloud service category (3.2.10) in which the capability provided to the cloud service customer (3.2.11) is the provision and use of data storage and related capabilities.</rdfs:comment>
+        <rdfs:label xml:lang="en">DSaaS</rdfs:label>
+        <rdfs:label xml:lang="en">Data Storage as a Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.23_Hybrid_Cloud -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.23_Hybrid_Cloud">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.7_Cloud_Deployment_Model"/>
+        <rdfs:comment xml:lang="en">Cloud deployment model (3.2.7) using at least two different cloud deployment models(3.2.7).</rdfs:comment>
+        <rdfs:comment xml:lang="en">Cloud deployment model using at least two different cloud deployment models. The deployments involved remain unique entities but are bound together by appropriate technology that enables interoperability, data portability and application portability. A hybrid cloud may be owned, managed, and operated by the organization itself or a third party and may exist on premises or off  premises. Hybrid clouds represent situations where interactions between two different deployments may be needed but remained linked via appropriate technologies. As such the boundaries set by a hybrid cloud reflect its two base deployments.</rdfs:comment>
+        <rdfs:label xml:lang="en">Hybrid Cloud</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.24_Infrastructure_as_a_Service -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.24_Infrastructure_as_a_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.10_Cloud_Service_Category"/>
+        <rdfs:comment xml:lang="en">Cloud service category (3.2.10) in which the cloud capabilities type (3.2.4) provided to the cloud service customer (3.2.11) is an infrastructure capabilities type (3.2.25).</rdfs:comment>
+        <rdfs:comment xml:lang="en">NOTE – The cloud service customer (3.2.11) does not manage or control the underlying physical and virtual resources, but does have control over operating systems, storage, and deployed applications that use the physical and virtual resources. The cloud service customer (3.2.11) may also have limited ability to control certain networking components (e.g., host firewalls).</rdfs:comment>
+        <rdfs:label xml:lang="en">IaaS</rdfs:label>
+        <rdfs:label xml:lang="en">Infrastructure as a Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.25_Infrastructure_Capabilties_Type -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.25_Infrastructure_Capabilties_Type">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.4_Cloud_Capability_Type"/>
+        <rdfs:comment xml:lang="en">Cloud capabilities type (3.2.4) in which the cloud service customer (3.2.11) can provision and use processing, storage or networking resources.</rdfs:comment>
+        <rdfs:label>Infrastructure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.26_Measured_Service -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.26_Measured_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Key_Characteristic"/>
+        <rdfs:comment xml:lang="en">Metered delivery of cloud services (3.2.8) such that usage can be monitored, controlled, reported and billed.</rdfs:comment>
+        <rdfs:comment>feature where the metered delivery of cloud services is such that usage can be monitored, controlled, reported, and billed. This is an important feature needed to optimize and validate the delivered cloud service. The focus of this key characteristic is that the customer may only pay for the resources that they use. From the customers&apos; perspective, cloud computing offers the users value by enabling a switch from a low efficiency and asset utilization business model to a high efficiency one;</rdfs:comment>
+        <rdfs:label xml:lang="en">Measured Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.27_Multi-Tenancy -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.27_Multi-Tenancy">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Key_Characteristic"/>
+        <rdfs:comment xml:lang="en">A feature where physical or virtual resources are allocated in such a way that multiple tenants and their computations and data are isolated from and inaccessible to one another. Typically, and within the context of multi-tenancy, the group of cloud service users that form a tenant will all belong to the same cloud service customer organization. There might be cases where the group of cloud service users involves users from multiple different cloud service customers, particularly in the case of public cloud and community cloud deployments. However, a given cloud service customer organization might have many different tenancies with a single cloud service provider representing different groups within the organization;</rdfs:comment>
+        <rdfs:comment xml:lang="en">Allocation of physical or virtual resources such that multiple tenants (3.2.37) and their computations and data are isolated from and inaccessible to one another.</rdfs:comment>
+        <rdfs:label xml:lang="en">Multi-tenancy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.28_Network_as_a_Service -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.28_Network_as_a_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.10_Cloud_Service_Category"/>
+        <rdfs:comment xml:lang="en">Cloud service category (3.2.10) in which the capability provided to the cloud
+service customer (3.2.11) is transport connectivity and related network capabilities.</rdfs:comment>
+        <rdfs:comment xml:lang="en">NOTE – NaaS can provide any of the three cloud capabilities types (3.2.4).</rdfs:comment>
+        <rdfs:label xml:lang="en">NaaS</rdfs:label>
+        <rdfs:label xml:lang="en">Network as a Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.29_On_demand_Self_Service -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.29_On_demand_Self_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Key_Characteristic"/>
+        <rdfs:comment xml:lang="en">Feature where a cloud service customer (3.2.11) can provision computing capabilities, as needed, automatically or with minimal interaction with the cloud service provider (3.2.15).</rdfs:comment>
+        <rdfs:comment xml:lang="en">feature where a cloud service customer can provision computing capabilities, as needed, automatically or with minimal interaction with the cloud service provider. The focus of this key characteristic is that cloud computing offers users a relative reduction in costs, time, and effort needed to take an action, since it grants the user the ability to do what they need, when they need it, without requiring additional human user interactions or overhead;</rdfs:comment>
+        <rdfs:label xml:lang="en">On demand Self-Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.30_Platform_as_a_Service -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.30_Platform_as_a_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.10_Cloud_Service_Category"/>
+        <rdfs:comment xml:lang="en">Cloud service category (3.2.10) in which the cloud capabilities type (3.2.4) provided to the cloud service customer (3.2.11) is a platform capabilities type (3.2.31).</rdfs:comment>
+        <rdfs:label xml:lang="en">PaaS</rdfs:label>
+        <rdfs:label xml:lang="en">Platform as a Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.31_Platform_Capabilities_Type -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.31_Platform_Capabilities_Type">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.4_Cloud_Capability_Type"/>
+        <rdfs:comment xml:lang="en">Cloud capabilities type (3.2.4) in which the cloud service customer (3.2.11) can deploy, manage and run customer-created or customer-acquired applications using one or more programming languages and one or more execution environments supported by the cloud service provider (3.2.15).</rdfs:comment>
+        <rdfs:label>Platform</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.32_Private_Cloud -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.32_Private_Cloud">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.7_Cloud_Deployment_Model"/>
+        <rdfs:comment xml:lang="en">Cloud deployment model (3.2.7) where cloud services (3.2.8) are used exclusively by a single cloud service customer (3.2.11) and resources are controlled by that cloud service customer (3.2.11).</rdfs:comment>
+        <rdfs:comment xml:lang="en">Cloud deployment model where cloud services are used exclusively by a single cloud service customer and resources are controlled by that cloud service customer. A private cloud may be owned, managed, and operated by the organization itself or a third party and may exist on premises or off premises. The cloud service customer may also authorize access to other parties for its benefit. Private clouds seek to set a narrowly controlled boundary around the private cloud based on limiting the customers to a single organization;</rdfs:comment>
+        <rdfs:label xml:lang="en">Private Cloud</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.33_Public_Cloud -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.33_Public_Cloud">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.7_Cloud_Deployment_Model"/>
+        <rdfs:comment xml:lang="en">Cloud deployment model (3.2.7) where cloud services (3.2.8) are potentially available to any cloud service customer (3.2.11) and resources are controlled by the cloud service provider (3.2.15).</rdfs:comment>
+        <rdfs:comment xml:lang="en">Cloud deployment model where cloud services are potentially available to any cloud service customer and resources are controlled by the cloud service provider. A public cloud may be owned, managed, and operated by a business, academic, or government organization, or some combination of them. It exists on the premises of the cloud service provider. Actual availability for specific cloud service customers may be subject to jurisdictional regulations. Public clouds have very broad boundaries, where cloud service customer access to public cloud services has few, if any, restrictions;</rdfs:comment>
+        <rdfs:label xml:lang="en">Public Cloud</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.34_Resource_Pooling -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.34_Resource_Pooling">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Key_Characteristic"/>
+        <rdfs:comment xml:lang="en">A feature where a cloud service provider&apos;s physical or virtual resources can be
+aggregated in order to serve one or more cloud service customers. The focus of this key characteristic is that cloud service providers can support multi-tenancy while at the same time using abstraction to mask the complexity of the process from the customer. From the customer&apos;s perspective, all they know is that the service works, while they generally have no control or knowledge over how the resources are being provided or where the resources are located. This offloads some of the customer&apos;s original workload, such as maintenance requirements, to the provider. Even with this level of abstraction, it should be pointed out that users might still be able to specify location at a higher level of abstraction (e.g., country, state, or data centre).</rdfs:comment>
+        <rdfs:comment xml:lang="en">Aggregation of a cloud service provider&apos;s (3.2.15) physical or virtual resources to serve one or more cloud service customers (3.2.11).</rdfs:comment>
+        <rdfs:label xml:lang="en">Resource Pooling</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.35_Reversibility -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.35_Reversibility">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#6.6_Cross_Cutting_Aspect"/>
+        <rdfs:comment xml:lang="en">Process for cloud service customers (3.2.11) to retrieve their cloud service customer data (3.2.12) and application artefacts and for the cloud service provider (3.2.15) to delete all cloud service customer data (3.2.12) as well as contractually specified cloud service derived data (3.2.13) after an agreed period.</rdfs:comment>
+        <rdfs:label xml:lang="en">Reversibility</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.36_Software_as_a_Service -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.36_Software_as_a_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.10_Cloud_Service_Category"/>
+        <rdfs:comment xml:lang="en">Cloud service category (3.2.10) in which the cloud capabilities type (3.2.4) provided to the cloud service customer (3.2.11) is an application capabilities type (3.2.1).</rdfs:comment>
+        <rdfs:label xml:lang="en">SaaS</rdfs:label>
+        <rdfs:label xml:lang="en">Software as a Service</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.37_Tenant -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.37_Tenant">
+        <rdfs:comment xml:lang="en">One or more cloud service users (3.2.17) sharing access to a set of physical and virtual resources.</rdfs:comment>
+        <rdfs:label xml:lang="en">Tenant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.4_Cloud_Capability_Type -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.4_Cloud_Capability_Type">
+        <rdfs:comment>A cloud capabilities type is a classification of the functionality provided by a cloud service to the cloud service customer, based on the resources used. There are three different cloud capabilities types: application capabilities type, infrastructure capabilities type, and platform capabilities type, which are different because they follow the principle of separation of concerns, i.e. they have minimal functionality overlap between each other</rdfs:comment>
+        <rdfs:comment xml:lang="en">Classification of the functionality provided by a cloud service (3.2.8) to the cloud
+service customer (3.2.11), based on resources used.</rdfs:comment>
+        <rdfs:comment xml:lang="en">NOTE – The cloud capabilities types are application capabilities type (3.2.1), infrastructure capabilities type (3.2.25) and
+platform capabilities type (3.2.31).</rdfs:comment>
+        <rdfs:label>Cloud Capability</rdfs:label>
+        <rdfs:label xml:lang="en">There are only three cloud capabilities types defined in this Recommendation | International Standard. These cloud capabilities types should not be confused with other categorizations of cloud services.</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.5_Cloud_Computing -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.5_Cloud_Computing">
+        <rdfs:comment xml:lang="en">Cloud computing is a paradigm for enabling network access to a scalable and elastic pool of shareable physical or virtual resources with self-service provisioning and administration on-demand. The cloud computing paradigm is composed of key characteristics, cloud computing roles and activities, cloud capabilities types and cloud service categories, cloud deployment models and cloud computing cross cutting aspects that are briefly described in this clause 6.</rdfs:comment>
+        <rdfs:comment xml:lang="en">NOTE – Examples of resources include servers, operating systems, networks, software, applications, and storage equipment</rdfs:comment>
+        <rdfs:comment xml:lang="en">Paradigm for enabling network access to a scalable and elastic pool of shareable physical or virtual resources with self-service provisioning and administration on-demand.</rdfs:comment>
+        <rdfs:label xml:lang="en">Cloud Computing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.6_Cloud_Data_Portability -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.6_Cloud_Data_Portability">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.21_Data_Portability"/>
+        <rdfs:comment xml:lang="en">Data portability (3.2.21) from one cloud service (3.2.8) to another cloud service
+(3.2.8).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.7_Cloud_Deployment_Model -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.7_Cloud_Deployment_Model">
+        <rdfs:comment xml:lang="en">NOTE – The cloud deployment models include community cloud (3.2.19), hybrid cloud (3.2.23), private cloud (3.2.32) and
+public cloud (3.2.33).</rdfs:comment>
+        <rdfs:comment xml:lang="en">Way in which cloud computing (3.2.5) can be organized based on the control and
+sharing of physical or virtual resources.</rdfs:comment>
+        <rdfs:label xml:lang="en">Cloud Deployment Model</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#3.2.9_Cloud_Service_Broker -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#3.2.9_Cloud_Service_Broker">
+        <rdfs:subClassOf rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#3.2.14_Cloud_Service_Partner"/>
+        <rdfs:comment xml:lang="en">Cloud service partner (3.2.14) that negotiates relationships between cloud service
+customers (3.2.11) and cloud service providers (3.2.15).</rdfs:comment>
+        <rdfs:label xml:lang="en">Cloud Service Broker</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#6.6_Cross_Cutting_Aspect -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#6.6_Cross_Cutting_Aspect">
+        <rdfs:label xml:lang="en">Cross Cutting Aspect</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#ISO_27729_2012 -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#ISO_27729_2012">
+        <rdf:type rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Document"/>
+        <Id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISO 27729:2012</Id>
+        <Title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Information and documentation – International standard name identifier (ISNI).</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#ISO_IEC_17788_2014 -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#ISO_IEC_17788_2014">
+        <rdf:type rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Document"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#ISO_IEC_2000-1_2011 -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#ISO_IEC_2000-1_2011">
+        <rdf:type rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Document"/>
+        <Id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISO/IEC 20000-1:2011</Id>
+        <Title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Information technology – Service management – Part 1: Specification.</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#ISO_IEC_27000_2014 -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#ISO_IEC_27000_2014">
+        <rdf:type rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Document"/>
+        <Id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISO/IEC 27000:2014</Id>
+        <Title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Information technology – Security techniques – Information security management
+systems – Overview and vocabulary.</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#Recommendation_ITU-T_Y.101_2000 -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#Recommendation_ITU-T_Y.101_2000">
+        <rdf:type rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Document"/>
+        <Id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Recommendation ITU-T Y.101 (2000)</Id>
+        <Title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Global Information Infrastructure terminology: Terms anddefinitions.</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#SP_500-292_NIST -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#SP_500-292_NIST">
+        <rdf:type rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Document"/>
+        <Id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SP 500 992 NIST</Id>
+        <Title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NIST Cloud Computing Reference Architecture</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#SP_800-145_NIST -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#SP_800-145_NIST">
+        <rdf:type rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Document"/>
+        <Id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SP 800-145 NIST</Id>
+        <Title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The NIST Definition of Cloud Computing.</Title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm-interop.net/standard/iso-iec/17788#SP_800-146_NIST -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm-interop.net/standard/iso-iec/17788#SP_800-146_NIST">
+        <rdf:type rdf:resource="http://www.plm-interop.net/standard/iso-iec/17788#Document"/>
+        <Id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NIST SP 800-146</Id>
+        <Title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cloud Computing Synopsis and Recommendations</Title>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

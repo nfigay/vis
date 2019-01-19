@@ -1,0 +1,873 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.plm_interop.net/cloud/nist/SP/800-145#"
+     xml:base="http://www.plm_interop.net/cloud/nist/SP/800-145"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:annotations="http://www.plm-interop.net/iso-iec/annotations#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:SP="http://www.plm_interop.net/cloud/nist/SP/800-145#">
+    <owl:Ontology rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145">
+        <owl:imports rdf:resource="http://www.plm-interop.net/iso-iec/annotations"/>
+        <annotations:Organisation>NIST</annotations:Organisation>
+        <annotations:Number_of_pages>7</annotations:Number_of_pages>
+        <annotations:Reference_Number>NIST Special Publication 800-145</annotations:Reference_Number>
+        <annotations:English_Name>The NIST Definition of Cloud Computing
+Recommendations of the National Institute of Standards and Technology
+September 2011</annotations:English_Name>
+        <annotations:Date>09-2011</annotations:Date>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Acronym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Acronym"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Definition"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Ability -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Ability"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Academic_Organisation -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Academic_Organisation">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Organisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Active_User_account_Metering_Service -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Active_User_account_Metering_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Metering_Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Application -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Application">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Computing_Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Application_Portability_Capability -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Application_Portability_Capability">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Automatic_Provisioning_of_Computing_Capability -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Automatic_Provisioning_of_Computing_Capability">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Computing_Capability_provisionning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Bandwith_Metering_Service -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Bandwith_Metering_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Metering_Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Capability -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Characteristic -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Characteristic"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Client_Platform -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Client_Platform"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Cloud_Bursting_Capability -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Cloud_Bursting_Capability">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Cloud_Computing -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Cloud_Computing">
+        <Definition xml:lang="en">Cloud computing is a model for enabling ubiquitous, convenient, on-demand network access to a shared pool of configurable computing resources (e.g., networks, servers, storage, applications, and services) that can be rapidly provisioned and released with minimal management effort or service provider interaction. This cloud model is composed of five essential characteristics, three service models, and four deployment models.</Definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Cloud_Infrastructure -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Cloud_Infrastructure"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Cloud_Infrastructure_Managing_Capability -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Cloud_Infrastructure_Managing_Capability">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Cloud_Infrastructure_Operating_Capability -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Cloud_Infrastructure_Operating_Capability">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Cloud_Infrastructure_Owning_Capability -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Cloud_Infrastructure_Owning_Capability">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Cloud_Provisionning_Capability -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Cloud_Provisionning_Capability">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Community -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Community"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Compliance_Consideration_Concern -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Compliance_Consideration_Concern">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Sharing_Concern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Computing_Capability -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Computing_Capability">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Computing_Capability_provisionning -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Computing_Capability_provisionning">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Computing_Resource -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Computing_Resource"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Concern -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Concern"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Data -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Data"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Data_Portability_Capability -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Data_Portability_Capability">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Datacentre -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Datacentre">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Deployment_Model -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Deployment_Model"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Dynamic_Resource_assignment_and_reassignment -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Dynamic_Resource_assignment_and_reassignment">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Elastic_Provisionning_of_Computing_Capability -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Elastic_Provisionning_of_Computing_Capability">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Computing_Capability_provisionning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#General_public -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#General_public"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Government_Organization -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Government_Organization">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Organisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Laptop -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Laptop">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Client_Platform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Load_balancing_between_clouds_capability -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Load_balancing_between_clouds_capability">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Location -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Location"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Location_Enforcement -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Location_Enforcement">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Location_Specification -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Location_Specification">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Management_Effort -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Management_Effort"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Memory_Resource -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Memory_Resource">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Metering -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Metering">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_Optimization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Metering_Service -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Metering_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Mission_Concern -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Mission_Concern">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Sharing_Concern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Model -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Model"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Multi-tenant_model -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Multi-tenant_model"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Network -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Network">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Computing_Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Network_Bandwith_Resource -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Network_Bandwith_Resource">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Network_Storage_Capability -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Network_Storage_Capability">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Computing_Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Operating_System -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Operating_System"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Organisation -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Organisation"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Party -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Party"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Physical_Resource -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Physical_Resource">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Policy_Concern -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Policy_Concern">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Sharing_Concern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Pooling_for_serving_multiple_consumer_using_a_multi-tenant_model -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Pooling_for_serving_multiple_consumer_using_a_multi-tenant_model">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Premises -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Premises"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Processing_Metering_Service -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Processing_Metering_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Metering_Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Processing_Resource -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Processing_Resource">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Provisionning -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Provisionning">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Releasing -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Releasing">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Resource -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Resource"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_Assignement -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_Assignement">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_Controling_Service -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_Controling_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_Optimisation_Service -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_Optimisation_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_Optimization -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_Optimization">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_Reassignment -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_Reassignment">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_Usage_Controlling -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_Usage_Controlling">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_Usage_Controlling_Service -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_Usage_Controlling_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_Usage_Monitoring_Service -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_Usage_Monitoring_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_Usage_Reporting -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_Usage_Reporting">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_Usage_Reporting_Service -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_Usage_Reporting_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_controling -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_controling">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Ressource_Usage_Reporting -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Ressource_Usage_Reporting">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Security_requirements_concern -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Security_requirements_concern">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Sharing_Concern"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Server -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Server">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Computing_Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Server_Time_Capability -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Server_Time_Capability">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Computing_Capability"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Service -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Computing_Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Service_Consumer -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Service_Consumer"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Service_Model -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Service_Model"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Service_Provider -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Service_Provider"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Service_Provider_Interaction -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Service_Provider_Interaction"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Sharing_Concern -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Sharing_Concern"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Standard_Access_Mechanism -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Standard_Access_Mechanism"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#State -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#State">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Storage -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Storage">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Computing_Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Storage_Metering_Service -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Storage_Metering_Service">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Metering_Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Storage_Resource -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Storage_Resource">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Tablet -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Tablet">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Client_Platform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Technology -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Technology"/>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Third_Party -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Third_Party">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Party"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Virtual_Resource -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Virtual_Resource">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Workstation -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Workstation">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Client_Platform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#business_organization -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#business_organization">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Organisation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#country -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#country">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#mobile_phone -->
+
+    <owl:Class rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#mobile_phone">
+        <rdfs:subClassOf rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Client_Platform"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Broad_network_access -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Broad_network_access">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Characteristic"/>
+        <Definition xml:lang="en">Capabilities are available over the network and accessed through standard mechanisms that promote use by heterogeneous thin or thick client platforms (e.g., mobile phones, tablets, laptops, and workstations).</Definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Community_Cloud -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Community_Cloud">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Deployment_Model"/>
+        <Definition xml:lang="en">The cloud infrastructure is provisioned for exclusive use by a specific community of consumers from organizations that have shared concerns (e.g., mission, security requirements, policy, and compliance considerations). It may be owned, managed, and operated by one or more of the organizations in the community, a third party, or some combination of them, and it may exist on or off premises.</Definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Hybrid_Cloud -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Hybrid_Cloud">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Deployment_Model"/>
+        <Definition xml:lang="en">The cloud infrastructure is a composition of two or more distinct cloud infrastructures (private, community, or public) that remain unique entities, but are bound together by standardized or proprietary technology that enables data and application portability (e.g., cloud bursting for load balancing between clouds).</Definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Infrastructure_as_a_Service -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Infrastructure_as_a_Service">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Service_Model"/>
+        <Acronym xml:lang="en">IaaS</Acronym>
+        <Definition xml:lang="en">The capability provided to the consumer is to provision processing, storage, networks, and other fundamental computing resources where the consumer is able to deploy and run arbitrary software, which can include operating systems and applications. The consumer does not manage or control the underlying cloud infrastructure but has control over operating systems, storage, and deployed applications; and possibly limited control of select networking components (e.g., host firewalls).</Definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Measured_Service -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Measured_Service">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Characteristic"/>
+        <Definition xml:lang="en">Cloud systems automatically control and optimize resource use by leveraging a metering capability1 at some level of abstraction appropriate to the type of service (e.g., storage, processing, bandwidth, and active user accounts). Resource usage can be monitored, controlled, and reported, providing transparency for both the provider and consumer of the utilized service.</Definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#On_demand_self-service -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#On_demand_self-service">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Characteristic"/>
+        <Definition xml:lang="en">A consumer can unilaterally provision computing capabilities, such as server time and network storage, as needed automatically without requiring human interaction with each service provider.</Definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Platform_as_a_Service -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Platform_as_a_Service">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Service_Model"/>
+        <Acronym xml:lang="en">PaaS</Acronym>
+        <Definition xml:lang="en">The capability provided to the consumer is to deploy onto the cloud infrastructure consumer-created or acquired applications created using programming languages, libraries, services, and tools supported by the provider.3 The consumer does not manage or control the underlying cloud infrastructure including network, servers, operating systems, or storage, but has control over the deployed applications and possibly configuration settings for the application-hosting environment.</Definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Private_Cloud -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Private_Cloud">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Deployment_Model"/>
+        <Definition xml:lang="en">The cloud infrastructure is provisioned for exclusive use by a single organization comprising multiple consumers (e.g., business units). It may be owned, managed, and operated by the organization, a third party, or some combination of them, and it may exist on or off premises.</Definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Public_Cloud -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Public_Cloud">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Deployment_Model"/>
+        <Definition xml:lang="en">The cloud infrastructure is provisioned for open use by the general public. It may be owned, managed, and operated by a business, academic, or government organization, or some combination of them. It exists on the premises of the cloud provider.</Definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Rapid_Elasticity -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Rapid_Elasticity">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Characteristic"/>
+        <Definition xml:lang="en">Capabilities can be elastically provisioned and released, in some cases automatically, to scale rapidly outward and inward commensurate with demand. To the consumer, the capabilities available for provisioning often appear to be unlimited and can be appropriated in any quantity at any time.</Definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_pooling -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Resource_pooling">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Characteristic"/>
+        <Definition xml:lang="en">The provider’s computing resources are pooled to serve multiple consumers using a multi-tenant model, with different physical and virtual resources dynamically assigned and reassigned according to consumer demand. There is a sense of location independence in that the customer generally has no control or knowledge over the exact location of the provided resources but may be able to specify location at a higher level of abstraction (e.g., country, state, or datacenter). Examples of resources include storage, processing, memory, and network bandwidth</Definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#Software_as_a_Service -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#Software_as_a_Service">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Service_Model"/>
+        <Acronym xml:lang="en">SaaS</Acronym>
+        <Definition xml:lang="en">The capability provided to the consumer is to use the provider’s applications running on a cloud infrastructure2. The applications are accessible from various client devices through either a thin client interface, such as a web browser (e.g., web-based email), or a program interface. The consumer does not manage or control the underlying cloud infrastructure including network, servers, operating systems, storage, or even individual application capabilities, with the possible exception of limited user-specific application configuration settings.</Definition>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.plm_interop.net/cloud/nist/SP/800-145#transparency -->
+
+    <owl:NamedIndividual rdf:about="http://www.plm_interop.net/cloud/nist/SP/800-145#transparency">
+        <rdf:type rdf:resource="http://www.plm_interop.net/cloud/nist/SP/800-145#Ability"/>
+        <Definition xml:lang="en">providing transparency for both the provider and consumer of the utilized service</Definition>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

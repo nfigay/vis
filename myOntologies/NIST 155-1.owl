@@ -1,0 +1,258 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.plm-interop.net/cloud/nist/155-1#"
+     xml:base="http://www.plm-interop.net/cloud/nist/155-1"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.plm-interop.net/cloud/nist/155-1"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Analytics_process -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Analytics_process">
+        <rdfs:comment xml:lang="en">The analytics process is the synthesis of knowledge from information.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Big_Data -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Big_Data">
+        <rdfs:comment xml:lang="en">consists of extensive datasetsprimarily in the characteristics of volume, variety, velocity, and/or variability that require a scalable architecture for efficient storage, manipulation, and analysis</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Big_Data_Engineering -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Big_Data_Engineering">
+        <rdfs:comment xml:lang="en">includes advanced techniques that harness independent resources for building scalable data systems when the characteristics of the datasets require new architectures for efficient storage, manipulation, and analysis</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Big_Data_paradigm -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Big_Data_paradigm">
+        <rdfs:comment xml:lang="en">consists of the distribution of data systems across horizontally coupled, independent resources to achieve the scalability needed for the efficient processing of extensive datasets</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Computational_portability -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Computational_portability">
+        <rdfs:comment xml:lang="en">Computational portability is the movement of the computation to the location of the data.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Data_Governance -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Data_Governance">
+        <rdfs:comment xml:lang="en">Data governance refers to administering, or formalizing, discipline (e.g., behavior patterns) around the management of data.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Data_Lifecycle -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Data_Lifecycle">
+        <rdfs:comment xml:lang="en">The data life cycle is the set of processes in an application that transform raw data into actionable knowledge.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Data_Science -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Data_Science">
+        <rdfs:comment xml:lang="en">Data science is the extraction of actionable knowledge directly from data through a process of discovery, or hypothesis formulation and hypothesis testing.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Data_Science_application -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Data_Science_application">
+        <rdfs:comment xml:lang="en">Data science applications implement data transformation processes from the data life cycle in the context of Big Data Engineering.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Data_Scientist -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Data_Scientist">
+        <rdfs:comment xml:lang="en">A data scientist is a practitioner who has sufficient knowledge in the overlapping regimes of business needs, domain knowledge, analytical skills, and software and systems engineering to manage the end-to-end data processes in the data life cycle.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Distributed_Computing -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Distributed_Computing">
+        <rdfs:comment xml:lang="en">Distributed Computing is a computing system in which components located on networked computers communicate and coordinate their actions by passing messages.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Distributed_File_System -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Distributed_File_System">
+        <rdfs:comment xml:lang="en">Distributed File Systems contain multi-structured (object) datasets that are distributed across the computing nodes of the server cluster(s).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Federated_Database_System -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Federated_Database_System">
+        <rdfs:comment xml:lang="en">A federated database system is a type of meta-database management system, which transparently maps multiple autonomous database systems into a single federated database.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Horizontal_Scaling -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Horizontal_Scaling">
+        <rdfs:comment xml:lang="en">horizontal scaling implies the coordination of individual resources (e.g., server) that are integrated to act in parallel as a single system (i.e., operate as a cluster).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Latency -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Latency">
+        <rdfs:comment xml:lang="en">Latency refers to the delay in processing or in availability.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Massively_parallel_processing -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Massively_parallel_processing">
+        <rdfs:comment xml:lang="en">refers to a multitude of individual processors working in parallel to execute a particular program</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Non_relational_model -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Non_relational_model">
+        <rdfs:comment xml:lang="en">Non-relational models, frequently referred to as NoSQL, refer to logical data models that do not follow relational algebra for the storage and manipulation of data.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Resource_Negotiation -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Resource_Negotiation">
+        <rdfs:comment xml:lang="en">Resource Negotiation consists of built-in data management capabilities that provide the necessary support functions, such as operations management, workflow integration, security, governance, support for additional processing models, and controls for multi-tenant environments, providing higher availability and lower latency applications.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Schema_on_read -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Schema_on_read">
+        <rdfs:comment xml:lang="en">Schema-on-read is the application of a data schema through preparation steps such as transformations, cleansing, and integration at the time the data is read from the database.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Shared_disk_file_system -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Shared_disk_file_system">
+        <rdfs:comment xml:lang="en">Shared-disk File Systems, such as Storage Area Networks (SANs) and Network Attached Storage (NAS), use a single storage pool, which is accessed from multiple computing resources.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Validity -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Validity">
+        <rdfs:comment xml:lang="en">refers to appropriateness of the data for its intended use.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Value -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Value">
+        <rdfs:comment xml:lang="en">refers to the inherent wealth, economic and social, embedded in any dataset.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Variability -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Variability">
+        <rdfs:comment xml:lang="en">refers to the change in other data characteristics.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Variety -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Variety">
+        <rdfs:comment xml:lang="en">refers to data from multiple repositories, domains, or types.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Velocity -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Velocity">
+        <rdfs:comment xml:lang="en">refers to the rate of data flow</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Veracity -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Veracity">
+        <rdfs:comment xml:lang="en">refers to the accuracy of the data.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Vertical_Scaling -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Vertical_Scaling">
+        <rdfs:comment xml:lang="en">Vertical scaling implies increasing the system parameters of processing speed, storage, and memory for greater performance.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Volatility -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Volatility">
+        <rdfs:comment xml:lang="en">refers to the tendency for data structures to change over time.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.plm-interop.net/cloud/nist/155-1#Volume -->
+
+    <owl:Class rdf:about="http://www.plm-interop.net/cloud/nist/155-1#Volume">
+        <rdfs:comment xml:lang="en">refers to the size of the dataset.</rdfs:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

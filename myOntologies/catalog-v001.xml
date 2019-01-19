@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="User Entered Import Resolution" name="http://www.plm_interop.net/cloud/nist/SP/800-144/Structure" uri="NIST%20SP%20800-144_Guideline%20on%20security%20an%20privacy%20in%20public%20cloud%20computing%202011%20-%20structure.owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.plm_interop.net/cloud/nist/SP/800-145/Structure" uri="NIST%20SP%20800-144_Guideline%20on%20security%20an%20privacy%20in%20public%20cloud%20computing%202011%20-%20structure.owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.plm-interop.net/structuration/DocumentStructure" uri="Structure.owl"/>
+    <uri id="Imports Wizard Entry" name="http://www.plm-interop.net/structuration/DocumentStructure" uri="DocumentStructure.owl"/>
+    <uri id="User Entered Import Resolution" name="http://www.plm-interop.net/iso-iec/annotations" uri="ISO_IEC_annotations.owl"/>
+</catalog>
