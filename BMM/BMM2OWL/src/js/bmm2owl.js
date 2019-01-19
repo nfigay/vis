@@ -135,13 +135,10 @@ function loadBMMOWL()
     var entities=[];
     var entityIds=[];
     var entityNames=[];
-    var queryAssociations = data.evaluate( '//packagedElement[@xmi:type="uml:Association"]', data, nsResolver,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null );  
-    var nbassociations = data.evaluate( 'count(//packagedElement[@xmi:type="uml:Association"])', data, nsResolver, XPathResult.ANY_TYPE, null );
-    //alert (nbassociations);
-  
+    var queryAssociations = data.evaluate( '//packagedElement[@xmi:type="uml:Association"]', data, nsResolver,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null );   
     var queryEntities=data.evaluate( '//packagedElement[@xmi:type="uml:Class"]', data, nsResolver,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null );
   
-    console.log ("ok"+nbassociations.value);
+
     for (i = 0; i < queryAssociations.snapshotLength; i++) {
         //views.push(queryAssociations.snapshotItem(i));
         associations.push(queryAssociations.snapshotItem(i)); 
