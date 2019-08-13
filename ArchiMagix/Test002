@@ -1,0 +1,103 @@
+// Aims at producing an http server - comes with node.js
+var http = require('http');
+
+// Aims at being open to access local files - comes with node.js
+var fs = require('fs');
+
+// Aims at unmarshalling model exported by mean of the Open Group Open Format for ArchiMate
+var Jsonix = require('jsonix').Jsonix;
+
+// Mappings created automatically from XML schemas from ArchiMate Open Format Exchange in one hand - the 3 schemas provided by the Open Group
+// from Dublin Core in the other hand with dc.xsd - if not error when unmarshaling export files coming from some tools which are using it.
+var PO = require('./PO.js').PO;
+var P1 = require('./P1.js').P1;
+
+// Import of visjs-network - a library for advanced interactive visualisations and creation of associated DataSets and DataViews
+// The goal is to be able to import models coming from different origins, but prior the open format for ArchiMate
+// visjs-network data sets and data views will be the neutral transient data source for all the kind of visualisation with visjs.
+// The goal is to rely on libraries making it easy, quick and reliable - jsonix, etc.
+var vis=require('vis');
+
+
+// creation of  a vijs DataSet
+var options = {fieldId:"identifier"};
+var dataset = new vis.DataSet(options);
+
+// First we construct a Jsonix context - a factory for unmarshaller (parser)
+// and marshaller (serializer)
+// In order to support a model combining several schemas, we can create mappings for the different schemas and include them in the context together
+   var context = new Jsonix.Context([ PO , P1 ]);
+
+// Then we create an unmarshaller
+   var unmarshaller = context.createUnmarshaller();
+
+   unmarshaller.unmarshalFile('Model.xml',
+   function (data) {
+      var myModel= data; 
+
+// All the following lines are the ways to extract data from the resuling unmarshalled model which I tested and works
+// Some difficulties with names, which can be accessed a complicated way through nameGroup - probably related to the ArchiMate schemas but I was not able
+// to identify why not a simpler access whith simply .name 
+
+//      console.log(myModel); 
+//      console.log(myModel.value); 
+
+//Exploring the model elements
+//      console.log(myModel.value.elements); 
+      console.log(myModel.value.elements.element); 
+//      console.log(myModel.value.elements.element[1].nameGroup[0,0].value); 
+//      console.log(myModel.value.elements.element[1].nameGroup[0,0].lang); 
+//      console.log(myModel.value.elements.element[1].nameGroup[0,0].TYPE_NAME); 
+
+//Exploring the model relationships
+//      console.log(myModel.value.relationships);
+
+//Exploring the metadata
+//      console.log(myModel.value.metadata); 
+
+//Exploring the properties - to check at which level it can be initiated
+//      console.log(myModel.value.properties); 
+
+// Exploring the views and content of the diagrams
+//     console.log(myModel.value.views); 
+//     console.log(myModel.value.views.diagrams); 
+//     console.log(myModel.value.views.diagrams.view[0]); 
+//     console.log(myModel.value.views.diagrams.view[0].nameGroup);  
+//     console.log(myModel.value.views.diagrams.view[0].nameGroup[0,0].value);
+//     console.log(myModel.value.views.diagrams.view[0].nameGroup[0,0].lang);  
+//     console.log(myModel.value.views.diagrams.view[0].nameGroup[0,0].TYPE_NAME);             
+//     console.log(myModel.value.views.diagrams.view[0].node);  
+//     console.log(myModel.value.views.diagrams.view[0].node[0]);  
+//     console.log(myModel.value.views.diagrams.view[0].node[0].x); 
+//     console.log(myModel.value.views.diagrams.view[0].node[0].style.font); 
+
+// Exploring the viewpoints and what can be found inside
+// Undefined as model created from Archi, which doesn't support it yet. But no error when running the program, as defined in P0
+// Test model can be created from Modelio
+//     console.log(myModel.value.viewpoints); 
+
+
+// Empty on the model - to check what kind of information should be there
+//      console.log(myModel.value.organizations);          
+
+
+// The following code is about adding the unmarshalled data from the model in the data set, knowing that the most relevant
+// queries from the unmarshalled data should be made in order to feed the dataset, knowing that:
+// - elements are  network graph nodes
+// - relathionships are  network graph arcs
+// - graph can be created from views and viewpoints for visual analysis of ArchiMate
+// - representations in diagrams, which are in fact views, can also be represented as a graph
+
+// The following lines shows that all elements can easily be imported in a data set and that it can be indicated that the identifier attribute in the archimate schemas
+// with be used as the identifier IDs for the visjs dataset.
+// Potentially, some fields should be renamed in the mapping file P0 in order to correspond to the accurate field names of node and arcs of visjs networks
+
+  dataset.add(myModel.value.elements.element);
+      var ids = dataset.getIds();
+      console.log('ids', ids);
+   });
+
+
+
+
+

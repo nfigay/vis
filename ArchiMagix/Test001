@@ -1,0 +1,29 @@
+var http = require('http');
+var fs = require('fs');
+var Jsonix = require('jsonix').Jsonix;
+var PO = require('./PO.js').PO;
+
+
+http.createServer(function (req, res) {
+
+// First we construct a Jsonix context - a factory for unmarshaller (parser)
+// and marshaller (serializer)
+   var context = new Jsonix.Context([PO]);
+
+// Then we create a unmarshaller
+   var unmarshaller = context.createUnmarshaller();
+
+ //  unmarshaller.unmarshalFile(fileName,
+ //  function (data) {
+ //  var objectFromFile = data;
+ // }, options);
+
+   //unmarshaller.unmarshalURL('./Model_View.xml',
+   //function (unmarshalled) {
+   //   var myModel= ummarshalled; 
+   //   console.log('OK'); 
+   //});
+
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.end('Hello World!');
+}).listen(8080);
