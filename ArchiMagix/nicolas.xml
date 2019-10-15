@@ -126,7 +126,7 @@
     <element identifier="id-m-71daad14-7136-4e1b-88dc-ca4d4cf90659" xsi:type="Location">
       <name xml:lang="en">Location 014</name>
     </element>
-    <element identifier="id-m-e1375531-65ff-453f-9e6e-67739ba48675" xsi:type="Grouping" toto="toto">
+    <element identifier="id-m-e1375531-65ff-453f-9e6e-67739ba48675" xsi:type="Grouping">
       <name xml:lang="en">Grouping 015</name>
     </element>
   </elements>

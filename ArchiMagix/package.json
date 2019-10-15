@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "visjs-network": "^4.24.10"
+    "visjs-network": "^4.24.10",
+    "xsd-schema-validator": "^0.6.0"
   }
 }
